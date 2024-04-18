@@ -1,3 +1,4 @@
+//Soma da diagonal principal, secundária, triângulo inferior e maior elemento e as suas respectivas posições.
 #include<stdio.h>
 int main(){
     int n, somat = 0, somalinha = 0;
