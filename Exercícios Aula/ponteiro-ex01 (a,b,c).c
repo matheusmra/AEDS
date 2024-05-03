@@ -7,7 +7,7 @@
 
     srand(time(NULL));
     if(p==NULL){
-      printf("sem espaço");
+      printf("sem espaÃ§o");
       return 0;
     }
 
@@ -24,7 +24,7 @@
         maior = *pAux;
         endMaior = pAux;
       }
-      if(*pAux < menor){
+      if(*pAux < menor) {
         menor = *pAux;
         endMaior = pAux;
       }
