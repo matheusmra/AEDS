@@ -10,7 +10,12 @@
  Windows: 0211
 */
 #include<stdio.h>
-void verificar(int numero) {
+void ex0211(void) {
+    int numero = 0;
+    // identificacao
+    printf( "\nExercicio 0211:\n\n" );
+    //programa
+    scanf("%d", &numero);
     if (numero % 2 == 0) {
         printf("\n%d eh um numero par.", numero);
     } else {
@@ -18,7 +23,5 @@ void verificar(int numero) {
     }
 }
 int main(){
-    int n;
-    scanf("%d", &n);
-    verificar(n);
+    ex0211();
 }
