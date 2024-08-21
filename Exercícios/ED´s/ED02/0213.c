@@ -10,14 +10,17 @@
  Windows: 0213
 */
 #include<stdio.h>
-void verificarIntervaloAberto(int numero) {
+void ex0213(void) {
+    int numero = 0;
+    // identificacao
+    printf( "\nExercicio 0213:\n\n" );
+    //programa
+    scanf("%d", &numero);
     if (numero > 25 && numero < 45) {
         printf("%d faz parte do intervalo de 25 e 45.", numero);
     }else{
         printf("%d nao faz parte do intervalo.", numero);}
 }
 int main(){
-    int n;
-    scanf("%d", &n);
-    verificarIntervaloAberto(n);
+    ex0213();
 }
