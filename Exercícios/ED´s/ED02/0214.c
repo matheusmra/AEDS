@@ -10,14 +10,18 @@
  Windows: 0214
 */
 #include<stdio.h>
-void verificarIntervaloFechado(int numero) {
+void ex0214(void) {
+    int numero = 0;
+    // identificacao
+    printf( "\nExercicio 0214:\n\n" );
+    //programa
+    printf("Digite o numero:");
+    scanf("%d", &numero);
     if (numero >= 20 && numero <= 60) {
         printf("%d faz parte do intervalo de 20 e 60.", numero);
     }else{
         printf("%d nao faz parte do intervalo.", numero);}
 }
 int main(){
-    int n;
-    scanf("%d", &n);
-    verificarIntervaloFechado(n);
+    ex0214();
 }
