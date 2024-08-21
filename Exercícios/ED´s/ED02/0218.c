@@ -11,21 +11,24 @@
 */
 #include <stdio.h>
 
-void verificarNumeros(int numero1, int numero2) {
+void ex0218(void) {
+    double numero1, numero2;
+    // identificacao
+    printf( "\nExercicio 0218:\n\n" );
+    //programa
+    printf("Digite o primeiro numero: ");
+    scanf("%lf", &numero1);
+    printf("\nDigite o segundo numero: ");
+    scanf("%lf", &numero2);
     if (numero1 < (numero2 / 2)) {
-    printf("O numero %d eh menor que a metade de %d", numero1, numero2);
+    printf("O numero %.2lf eh menor que a metade de %.2lf", numero1, numero2);
 }else if(numero1 == (numero2 / 2)){
-    printf("O numero %d eh a metade de %d", numero1, numero2);
+    printf("O numero %.2lf eh a metade de %.2lf", numero1, numero2);
 }else if(numero1 > (numero2 / 2)){
-    printf("O numero %d eh maior que a metade de %d", numero1, numero2);
+    printf("O numero %.2lf eh maior que a metade de %.2lf", numero1, numero2);
 }
 }
 int main() {
-    int n1, n2;
-    printf("Digite o primeiro numero: ");
-    scanf("%d", &n1);
-    printf("\nDigite o segundo numero: ");
-    scanf("%d", &n2);
-    verificarNumeros(n1, n2);
+    ex0218();
     return 0;
 }
