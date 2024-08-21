@@ -11,8 +11,14 @@
 */
 #include <stdio.h>
 
-void verificarIntervalos(int numero) {
-    if (numero >= 16 && numero <= 25) {
+void ex0215(void) {
+    int numero = 0;
+    // identificacao
+    printf( "\nExercicio 0215:\n\n" );
+    //programa
+    printf("Digite um numero inteiro: ");
+    scanf("%d", &numero);
+    if ((numero >= 10 && numero <= 25) && (numero > 15 && numero < 50))) {
         printf("%d faz parte da intersecao.\n", numero);
     } else if (numero >= 10 && numero <= 25) {
         printf("%d faz parte do intervalo de 10 e 25.\n", numero);
@@ -22,10 +28,7 @@ void verificarIntervalos(int numero) {
 }
 
 int main() {
-    int n;
-    printf("Digite um numero inteiro: ");
-    scanf("%d", &n);
-    verificarIntervalos(n);
+    ex0215();
     return 0;
 }
 
