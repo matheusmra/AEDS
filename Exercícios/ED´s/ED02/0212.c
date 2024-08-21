@@ -10,17 +10,42 @@
  Windows: 0212
 */
 #include<stdio.h>
-void verificarPareMaior(int numero) {
-    if (numero % 2 == 0 && numero > 15) {
-        printf("\n%d eh um numero par e maior que 15.", numero);
-    } else {
-        if(numero < -15){
-        printf("\n%d eh um numero impar e menor que -15.", numero);
+void ex0212(void) {
+    int numero = 0;
+    // identificacao
+    printf( "\nExercicio 0212:\n\n" );
+    //programa
+    printf("Digite o numero:");
+    scanf("%d", &numero);
+    if( numero % 2 == 0 ) // par
+    {
+        if( numero > 15 )
+        {
+            printf( "O numero %d e par e maior que 15\n" , numero );
+        }
+        else
+        {
+            printf( "O numero %d e par e menor que 15 \n" , numero );
+        }
     }
-}
-}
+
+    if( numero % 2 != 0 ) // impar
+    {
+        if( numero < -15 )
+        {
+            printf( "O numero %d e impar e menor que -15\n" , numero );
+        }
+        else
+        {
+            printf( "O numero %d e impar e maior que -15\n" , numero );
+        }
+    }
+
+    // encerrar
+    printf( "\nAperte ENTER para continuar!\n" );
+    getchar();
+} // fim exercicio0212
+
 int main(){
-    int n;
-    scanf("%d", &n);
-    verificarPareMaior(n);
+    ex0212();
 }
