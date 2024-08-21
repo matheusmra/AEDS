@@ -11,18 +11,26 @@
 */
 #include <stdio.h>
 
-void verificarNumeros(int numero1, int numero2) {
+void ex0216(void) {
+    int numero1 = 0, numero2 = 0;
+    // identificacao
+    printf( "\nExercicio 0216:\n\n" );
+    //programa
+    printf("Digite o primeiro numero: ");
+    scanf("%d", &numero1);
+    printf("\nDigite o segundo numero: ");
+    scanf("%d", &numero2);
     if (numero1 % 2 == 0 && numero2 % 2 != 0) {
     printf("O primeiro numero: %d eh par e o Segundo numero: %d eh impar.", numero1, numero2);
-}   else{
-    printf("O programa foi feito para identificar se o primeiro numero eh par e o segundo impar");}
+}   if(numero1 % 2 != 0 && numero2 % 2 != 0){
+    printf("Os dois numeros sao impares");
+    }if(numero1 %2 != 0 && numero2 % 2 == 0){
+    printf("O primeiro numero eh impar e o segundo eh par");
+    }if(numero1 % 2 == 0 && numero2 % 2 == 0){
+    printf("Os dois numeros sao pares");
+    }
 }
 int main() {
-    int n1, n2;
-    printf("Digite o primeiro numero: ");
-    scanf("%d", &n1);
-    printf("\nDigite o segundo numero: ");
-    scanf("%d", &n2);
-    verificarNumeros(n1, n2);
+    ex0216();
     return 0;
 }
