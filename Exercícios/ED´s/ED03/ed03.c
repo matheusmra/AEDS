@@ -12,7 +12,10 @@
 
 // dependencias
 #include <stdio.h>
-
+#include <stdlib.h>
+#include <string.h>
+// Tamanho max string
+const int TAM_STR = 80;
 // Função para mostrar o menu de opções
 void menuOpcoes() {
     printf("\nEscolha alguma das opcoes a seguir:\n\n");
@@ -31,30 +34,44 @@ void menuOpcoes() {
     printf(" 12 - Exercicio 03E2\n");
 } // fim menuOpcoes()
 
-// Função para o exercício 0211
-//- Ler um valor inteiro do teclado e
-//- Dizer se é par ou ímpar
-void ex0311(void) {
-    int numero = 0;
-    //Identificação
-    printf("\nExercicio 0211:\n\n");
-    // Inicio do programa
-    printf("Digite um numero: ");
-    scanf("%d", &numero);
-    getchar(); // Limpar o buffer de entrada
-    if (numero % 2 == 0) { // Testa se o resultado da divisão por dois é 0 (Par)
-        printf("\n%d eh um numero par.\n", numero);
-    } else { //Caso não seja, significa que o número é impar
-        printf("\n%d eh um numero impar.\n", numero);
-    }
-    printf("Aperte ENTER para continuar!\n"); //Encerrar a execução da função
+// Função para o exercício 0311
+// - ler uma palavra do teclado;
+// - mostrar as letras maiúsculas.
+// DICA: Definir um teste para determinar se um caractere é letra minúscula.
+
+void ex0311()
+{
+    // identificacao
+    printf( "\nExercicio 0311:\n\n" );
+
+    // programa
+    char palavra [TAM_STR];
+    int tam = 0;
+
+    printf( "Digite uma palavra: " );
+    scanf( "%s" , palavra);
     getchar();
-} // Fim da função ex0211
+    printf( "\n" );
+
+    tam = strlen(palavra);
+
+    for(int i = 0; i < tam; i++ )
+    {
+        if( ( 64 < palavra[i]) && (palavra[i] < 91) )
+        {
+            printf( "A letra: [%c] eh maiuscula\n" , palavra[i] );
+        }
+    }
+
+    // encerrar
+    printf( "\nAperte ENTER para continuar!\n" );
+    getchar();
+} // fim exercicio0311
 
 // Função para o exercício 0212
 // - Ler um valor inteiro do teclado e
 // - Dizer se é ímpar e menor que -15, ou par e maior que 15.
-void ex0212(void) {
+void ex0312(void) {
     int numero = 0;
     //Identificação
     printf("\nExercicio 0212:\n\n");
@@ -83,7 +100,7 @@ void ex0212(void) {
 // Função para o exercício 0213
 // - Ler um valor inteiro do teclado e
 // - Dizer se pertence ao intervalo aberto entre (25:45).
-void ex0213(void) {
+void ex0313(void) {
     int numero = 0;
     //Identificação
     printf("\nExercicio 0213:\n\n");
@@ -103,7 +120,7 @@ void ex0213(void) {
 // Função para o exercício 0214
 // - Ler um valor inteiro do teclado e
 // - Dizer se pertence ao intervalo fechado entre [20:60].
-void ex0214(void) {
+void ex0314(void) {
     int numero = 0;
     //Identificação
     printf("\nExercicio 0214:\n\n");
@@ -124,7 +141,7 @@ void ex0214(void) {
 // - ler um valor inteiro do teclado e
 // - dados os intervalos [10:25] e (15:50),
 // - dizer se pertence à interseção ou a apenas a um deles.
-void ex0215(void) {
+void ex0315(void) {
     int numero = 0;
     //Identificação
     printf("\nExercicio 0215:\n\n");
@@ -149,7 +166,7 @@ void ex0215(void) {
 // Função para o exercício 0216
 // - ler dois valores inteiros do teclado e
 // - dizer se o primeiro é par e o segundo é ímpar.
-void ex0216(void) {
+void ex0316(void) {
     int numero1 = 0, numero2 = 0;
     //Identificação
     printf("\nExercicio 0216:\n\n");
@@ -176,7 +193,7 @@ void ex0216(void) {
 // Função para o exercício 0217
 // - ler dois valores inteiros do teclado e
 // - dizer se o primeiro é ímpar e negativo, e se o segundo é par e positivo.
-void ex0217(void) {
+void ex0317(void) {
     int numero1 = 0, numero2 = 0;
     printf("\nExercicio 0217:\n\n");
     printf("Digite o primeiro numero: ");
@@ -202,7 +219,7 @@ void ex0217(void) {
 // Função para o exercício 0218
 // - ler dois valores reais do teclado e
 // - dizer se o primeiro é menor, igual ou maior que a metade do segundo.
-void ex0218(void) {
+void ex0318(void) {
     double numero1 = 0.0, numero2 = 0.0;
     printf("\nExercicio 0218:\n\n");
     printf("Digite o primeiro numero: ");
@@ -228,7 +245,7 @@ void ex0218(void) {
 // - quando esses dois forem diferentes entre si.
 // - OBS.: Notar a ordem dos testes.
 
-void ex0219(void) {
+void ex0319(void) {
     double numero1 = 0.0, numero2 = 0.0, numero3 = 0.0;
     printf("\nExercicio 0219:\n\n");
     printf("Digite o primeiro numero: ");
@@ -256,7 +273,7 @@ void ex0219(void) {
 // - ler três valores reais do teclado e
 // - dizer se o segundo não está entre o primeiro e o último,
 // - quando todos forem diferentes entre si.
-void ex0220(void) {
+void ex0320(void) {
     double numero1 = 1.0, numero2 = 1.0, numero3 = 1.0;
     printf("\nExercicio 0220:\n\n");
     printf("Digite o primeiro numero: ");
@@ -284,7 +301,7 @@ void ex0220(void) {
 // - ler três valores literais (caracteres) do teclado e
 // - dizer se o primeiro valor lido está entre os outros dois, ou se é igual a um deles.
 
-void ex02E1(void) {
+void ex03E1(void) {
     char a = 'a', b = 'b', c = 'c';
     printf("\nExercicio 02E1:\n\n");
     printf("Digite o primeiro caractere: ");
@@ -311,7 +328,7 @@ void ex02E1(void) {
 // - dizer se o primeiro valor lido está fora do intervalo definido pelos outros dois,
 // - se esses forem diferentes entre si.
 // - OBS.: Notar que não haverá garantias de ser o segundo menor que o terceiro.
-void ex02E2(void) {
+void ex03E2(void) {
     char a = 'a', b = 'b', c = 'c';
     printf("\nExercicio 02E2:\n\n");
     printf("Digite o primeiro caractere: ");
@@ -349,18 +366,18 @@ int main(void) {
         // Executar a opção escolhida
         switch (opcao) {
             case 0: break;
-            case 1: ex0211(); break;
-            case 2: ex0212(); break;
-            case 3: ex0213(); break;
-            case 4: ex0214(); break;
-            case 5: ex0215(); break;
-            case 6: ex0216(); break;
-            case 7: ex0217(); break;
-            case 8: ex0218(); break;
-            case 9: ex0219(); break;
-            case 10: ex0220(); break;
-            case 11: ex02E1(); break;
-            case 12: ex02E2(); break;
+            case 1: ex0311(); break;
+            case 2: ex0312(); break;
+            case 3: ex0313(); break;
+            case 4: ex0314(); break;
+            case 5: ex0315(); break;
+            case 6: ex0316(); break;
+            case 7: ex0317(); break;
+            case 8: ex0318(); break;
+            case 9: ex0319(); break;
+            case 10: ex0320(); break;
+            case 11: ex03E1(); break;
+            case 12: ex03E2(); break;
             default:
                 printf("\nERRO: OPCAO INVALIDA\n\n");
                 break;
