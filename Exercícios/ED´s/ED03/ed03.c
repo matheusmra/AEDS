@@ -69,31 +69,35 @@ void ex0311()
 } // fim exercicio0311
 
 // Função para o exercício 0212
-// - Ler um valor inteiro do teclado e
-// - Dizer se é ímpar e menor que -15, ou par e maior que 15.
-void ex0312(void) {
-    int numero = 0;
-    //Identificação
-    printf("\nExercicio 0212:\n\n");
-    //Inicio do programa
-    printf("Digite o numero: ");
-    scanf("%d", &numero);
-    getchar(); // Limpar o buffer de entrada
+// - ler uma palavra do teclado;
+// - contar e mostrar apenas as letras minúsculas.
+void ex0312() {
+    // identificacao
+    printf( "\nExercicio 0312:\n\n" );
 
-    if (numero % 2 == 0) { // Numero par
-        if (numero > 15) {
-            printf("O numero %d eh par e maior que 15.\n", numero);
-        } else {
-            printf("O numero %d eh par e menor que 15.\n", numero);
-        }
-    } else { // Número ímpar
-        if (numero < -15) {
-            printf("O numero %d eh impar e menor que -15.\n", numero);
-        } else {
-            printf("O numero %d eh impar e maior que -15.\n", numero);
+    // programa
+    char palavra [TAM_STR];
+    int tam = 0, contagem = 0;
+
+    printf( "Digite uma palavra: " );
+    scanf( "%s" , palavra);
+    getchar();
+    printf( "\n" );
+
+    tam = strlen(palavra);
+
+    for(int i = 0; i < tam; i++ )
+    {
+        if( !( ( 64 < palavra[i]) && (palavra[i] < 91) ))
+        {
+            contagem++;
+            printf("A letra: [%c] eh minuscula\n", palavra[i]);
         }
     }
-    printf("Aperte ENTER para continuar!\n");
+    printf("O total de letras minusculas eh: %d", contagem);
+
+    // encerrar
+    printf( "\nAperte ENTER para continuar!\n" );
     getchar();
 }// Fim da função ex0212
 
