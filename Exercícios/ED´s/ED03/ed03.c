@@ -101,69 +101,102 @@ void ex0312() {
     getchar();
 }// Fim da função ex0212
 
-// Função para o exercício 0213
-// - Ler um valor inteiro do teclado e
-// - Dizer se pertence ao intervalo aberto entre (25:45).
-void ex0313(void) {
-    int numero = 0;
-    //Identificação
-    printf("\nExercicio 0213:\n\n");
-    //Inicio do programa
-    printf("Digite um numero: ");
-    scanf("%d", &numero);
-    getchar(); // Limpar o buffer de entrada
-    if (numero > 25 && numero < 45) {
-        printf("%d faz parte do intervalo de 25 e 45.\n", numero);
-    } else {
-        printf("%d nao faz parte do intervalo.\n", numero);
-    }
-    printf("Aperte ENTER para continuar!\n");
+// Função para o exercício 0313
+// ler uma palavra do teclado;
+// - contar e mostrar as letras minúsculas percorrendo do fim para o início da palavra.
+void ex0313() {
+// identificacao
+    printf( "\nExercicio 0313:\n\n" );
+
+    // programa
+    char palavra [TAM_STR];
+    int tam = 0, contagem = 0;
+
+    printf( "Digite uma palavra: " );
+    scanf( "%s" , palavra);
     getchar();
-}// Fim da função ex0213
+    printf( "\n" );
 
-// Função para o exercício 0214
-// - Ler um valor inteiro do teclado e
-// - Dizer se pertence ao intervalo fechado entre [20:60].
-void ex0314(void) {
-    int numero = 0;
-    //Identificação
-    printf("\nExercicio 0214:\n\n");
-    //Inicio do programa
-    printf("Digite o numero: ");
-    scanf("%d", &numero);
-    getchar(); // Limpar o buffer de entrada
-    if (numero >= 20 && numero <= 60) {
-        printf("%d faz parte do intervalo de 20 e 60.\n", numero);
-    } else {
-        printf("%d não faz parte do intervalo.\n", numero);
-    }
-    printf("Aperte ENTER para continuar!\n");
-    getchar();
-}// Fim da função ex0214
+    tam = strlen(palavra);
 
-// Função para o exercício 0215
-// - ler um valor inteiro do teclado e
-// - dados os intervalos [10:25] e (15:50),
-// - dizer se pertence à interseção ou a apenas a um deles.
-void ex0315(void) {
-    int numero = 0;
-    //Identificação
-    printf("\nExercicio 0215:\n\n");
-    //Inicio do Programa
-    printf("Digite um numero inteiro: ");
-    scanf("%d", &numero);
-    getchar(); // Limpar o buffer de entrada
-
-    if ((numero >= 10 && numero <= 25) && (numero > 15 && numero < 50)) {
-        printf("%d faz parte da interseção.\n", numero);
-    } else if (numero >= 10 && numero <= 25) {
-        printf("%d faz parte do intervalo de 10 e 25.\n", numero);
-    } else if (numero > 15 && numero < 50) {
-        printf("%d faz parte do intervalo de 15 e 50.\n", numero);
-    }else if(numero < 10 || numero > 50){
-        printf("%d nao faz parte do intervalo.\n", numero);
+    for(int i = tam - 1; i >= 0; i--)
+    {
+        if( !( ( 64 < palavra[i]) && (palavra[i] < 91) ))
+        {
+            contagem++;
+            printf("A letra: [%c] eh minuscula\n", palavra[i]);
         }
-    printf("Aperte ENTER para continuar!\n");
+    }
+    printf("O total de letras minusculas eh: %d", contagem);
+
+    // encerrar
+    printf( "\nAperte ENTER para continuar!\n" );
+    getchar();
+}// Fim da função ex0313
+
+// Função para o exercício 0314
+// - ler uma cadeia de caracteres do teclado;
+// - contar e mostrar todos símbolos que forem letras, ou maiúsculas ou minúsculas.
+void ex0314() {
+// identificacao
+    printf( "\nExercicio 0314:\n\n" );
+
+    // programa
+    char palavra [TAM_STR];
+    int tam = 0, contagem = 0;
+
+    printf( "Digite uma palavra: " );
+    scanf( "%s" , palavra);
+    getchar();
+    printf( "\n" );
+
+    tam = strlen(palavra);
+
+    for(int i = 0; i < tam; i++ )
+    {
+        if( ( 64 < palavra[i]) && (palavra[i] < 91) || (96 < palavra[i] && (palavra[i]) < 123))
+        {
+            contagem++;
+            printf("O caracter: [%c] eh uma letra\n", palavra[i]);
+        }
+    }
+    printf("O total de caracteres que sao letras eh: %d", contagem);
+
+    // encerrar
+    printf( "\nAperte ENTER para continuar!\n" );
+    getchar();
+}// Fim da função ex0314
+
+// Função para o exercício 0315
+// - ler uma cadeia de caracteres do teclado;
+// - contar e mostrar todos os dígitos, percorrendo do fim para o início da cadeia de caracteres.
+void ex0315() {
+// identificacao
+    printf( "\nExercicio 0315:\n\n" );
+
+    // programa
+    char palavra [TAM_STR];
+    int tam = 0, contagem = 0;
+
+    printf( "Digite uma palavra: " );
+    scanf( "%s" , palavra);
+    getchar();
+    printf( "\n" );
+
+    tam = strlen(palavra);
+
+    for(int i = tam - 1; i >= 0; i--)
+    {
+        if( ( 32 < palavra[i]) && (palavra[i] < 48) || (57 < palavra[i] && (palavra[i]) < 65) || (90 < palavra[i]) && (palavra[i] < 97) || (122 < palavra[i]) && (palavra[i] < 127))
+        {
+            contagem++;
+            printf("O caracter: [%c] nao eh uma letra ou digito\n", palavra[i]);
+        }
+    }
+    printf("O total de caracteres que nao sao letras ou digitos eh: %d", contagem);
+
+    // encerrar
+    printf( "\nAperte ENTER para continuar!\n" );
     getchar();
 }// Fim da função ex0215
 
