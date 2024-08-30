@@ -14,6 +14,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 // Tamanho max string
 const int TAM_STR = 80;
 // Função para mostrar o menu de opções
@@ -198,7 +199,7 @@ void ex0315() {
     // encerrar
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
-}// Fim da função ex0215
+}// Fim da função ex0315
 
 // Função para o exercício 0316
 // - ler uma cadeia de caracteres do teclado;
@@ -232,7 +233,7 @@ void ex0316() {
     // encerrar
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
-}// Fim da função ex0216
+}// Fim da função ex0316
 
 // Função para o exercício 0317
 // - ler dois valores inteiros (a,b), limites para definirem um intervalo [a:b];
@@ -375,7 +376,7 @@ void ex0319() {
     // encerrar
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
-}// Fim da função ex0219
+}// Fim da função ex0319
 
 // Função para o exercício 0220
 // - ler dois valores reais (a e b), maiores que 0 e menores que 1, confirmadamente, para definirem um intervalo aberto (a:b);
@@ -388,16 +389,12 @@ void ex0320() {
     printf( "\nExercicio 0320:\n\n" );
     double a = 0.0, b = 0.0;
     int n = 0, count = 0;
-
     printf( "Insira o primeiro valor do intervalo: " );
     scanf( "%lf" , &a );
     getchar();
-
     printf( "Insira o valor final do intervalo: " );
     scanf( "%lf" , &b );
     getchar();
-
-
     if( a <= 0 || a >= 1 || b <= 0 || b >= 1 || a >= b ) //
     {
         printf( "\n%s\n" , "ERRO: O valor e inicial e final nao sao maiores que 0 e menores que 1" );
@@ -408,9 +405,7 @@ void ex0320() {
         scanf( "%d" , &n );
         getchar();
         printf( "\n" );
-
         double x[n];
-
         for(int i = 0; i < n; i=i+1 )
         {
             printf( "Digite o valor: " );
@@ -418,12 +413,10 @@ void ex0320() {
             getchar();
         }
         printf( "\n" );
-
         for(int i = 0; i < n; i=i+1 )
         {
             x[i] = x[i] - (int)x[i];
         }
-
         for (int i = 0; i < n; i++)
         {
             if( x[i] < a || x[i] > b ) // nao pertence ao intervalo
@@ -432,14 +425,13 @@ void ex0320() {
                 count++;
             }
         }
-
         printf( "\n%d valores tem partes fracionarias que nao pertencem ao intervalo\n" , count );
     }
 
     // encerrar
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
-}// Fim da função ex0220
+}// Fim da função ex0320
 
 // Função para o exercício 02E1
 // - ler uma linha do teclado;
@@ -449,13 +441,9 @@ void ex03E1()
 {
     // identificacao
     printf( "\nExercicio 03E1:\n\n" );
-
-    // programa
     char palavra[TAM_STR];
-
     printf( "Digite uma linha:\n" );
     fgets(palavra, sizeof(palavra), stdin);
-
     for(int i = 0; palavra[i] != '\0'; i++ )
     {
         if( !(isalnum(palavra[i])) && !(isspace(palavra[i])) )
@@ -463,30 +451,24 @@ void ex03E1()
             printf( "%c%s\n" , palavra[i], " nao eh alfanumerico." );
         }
     }
-
     // encerrar
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
     getchar();
 } // fim exercicio03E1
-// - Exercicio extra 03E2
+// Função para o exercício 03E2
 //- ler uma cadeia de caracteres do teclado;
 //- dizer se a sequência contém apenas símbolos que NÃO são letras
 void ex03E2()
 {
     // identificacao
     printf( "\nExercicio 03E2:\n\n" );
-
-    // programa
     char palavra[TAM_STR];
-    int i = 0, tam = 0, var = 0;
-
+    int tam = 0, var = 0;
     printf( "Digite uma sequencia de caracteres:\n" );
     scanf( "%s" , palavra );
-
     tam = strlen(palavra);
-
-    for( i = 0; i < tam; i++ )
+    for(int i = 0; i < tam; i++ )
     {
         if( isalpha(palavra[i]) )
         {
