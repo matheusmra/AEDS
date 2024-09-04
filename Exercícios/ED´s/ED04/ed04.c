@@ -42,30 +42,35 @@ void menuOpcoes() {
 void ex0411()
 {
     // identificacao
-    printf( "\nExercicio 0311:\n\n" );
+     printf("\nExercicio 0411:\n\n");
 
-    // programa
-    char palavra [TAM_STR];
-    int tam = 0;
+    // Programa
+    double v1 = 0.0, v2 = 0.0;
+    int n;
 
-    printf( "Digite uma palavra: " );
-    scanf( "%s" , palavra);
-    getchar();
-    printf( "\n" );
+    printf("Digite a quantidade de valores reais: ");
+    scanf("%d", &n);
 
-    tam = strlen(palavra);
+    double controle[n];
 
-    for(int i = 0; i < tam; i++ )
-    {
-        if( ( 64 < palavra[i]) && (palavra[i] < 91) )
-        {
-            printf( "A letra: [%c] eh maiuscula\n" , palavra[i] );
-        }
+    printf("\nDigite o primeiro valor do intervalo: ");
+    scanf("%lf", &v1);
+    printf("\nDigite o segundo valor do intervalo: ");
+    scanf("%lf", &v2);
+
+    for(int i = 0; i < n; i++) {
+        printf("Digite o valor: ");
+        scanf("%lf", &controle[i]);
     }
 
+    for(int i = 0; i < n; i++) {
+        printf("%lf\n", controle[i]);
+    }
+    getchar();
     // encerrar
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
+    return 0;
 } // fim exercicio0411
 
 // Função para o exercício 0412
@@ -78,29 +83,7 @@ void ex0412() {
     printf( "\nExercicio 0312:\n\n" );
 
     // programa
-    char palavra [TAM_STR];
-    int tam = 0, contagem = 0;
 
-    printf( "Digite uma palavra: " );
-    scanf( "%s" , palavra);
-    getchar();
-    printf( "\n" );
-
-    tam = strlen(palavra);
-
-    for(int i = 0; i < tam; i++ )
-    {
-        if( !( ( 64 < palavra[i]) && (palavra[i] < 91) ))
-        {
-            contagem++;
-            printf("A letra: [%c] eh minuscula\n", palavra[i]);
-        }
-    }
-    printf("O total de letras minusculas eh: %d", contagem);
-
-    // encerrar
-    printf( "\nAperte ENTER para continuar!\n" );
-    getchar();
 }// Fim da função ex0412
 
 // Função para o exercício 0413
@@ -113,29 +96,7 @@ void ex0413() {
     printf( "\nExercicio 0313:\n\n" );
 
     // programa
-    char palavra [TAM_STR];
-    int tam = 0, contagem = 0;
 
-    printf( "Digite uma palavra: " );
-    scanf( "%s" , palavra);
-    getchar();
-    printf( "\n" );
-
-    tam = strlen(palavra);
-
-    for(int i = tam - 1; i >= 0; i--)
-    {
-        if( !( ( 64 < palavra[i]) && (palavra[i] < 91) ))
-        {
-            contagem++;
-            printf("A letra: [%c] eh minuscula\n", palavra[i]);
-        }
-    }
-    printf("O total de letras minusculas eh: %d", contagem);
-
-    // encerrar
-    printf( "\nAperte ENTER para continuar!\n" );
-    getchar();
 }// Fim da função ex0413
 
 // Função para o exercício 0414
@@ -149,29 +110,7 @@ void ex0414() {
     printf( "\nExercicio 0314:\n\n" );
 
     // programa
-    char palavra [TAM_STR];
-    int tam = 0, contagem = 0;
 
-    printf( "Digite uma palavra: " );
-    scanf( "%s" , palavra);
-    getchar();
-    printf( "\n" );
-
-    tam = strlen(palavra);
-
-    for(int i = 0; i < tam; i++ )
-    {
-        if( ( 64 < palavra[i]) && (palavra[i] < 91) || (96 < palavra[i] && (palavra[i]) < 123))
-        {
-            contagem++;
-            printf("O caracter: [%c] eh uma letra\n", palavra[i]);
-        }
-    }
-    printf("O total de caracteres que sao letras eh: %d", contagem);
-
-    // encerrar
-    printf( "\nAperte ENTER para continuar!\n" );
-    getchar();
 }// Fim da função ex0414
 
 // Função para o exercício 0415
@@ -183,29 +122,7 @@ void ex0415() {
     printf( "\nExercicio 0315:\n\n" );
 
     // programa
-    char palavra [TAM_STR];
-    int tam = 0, contagem = 0;
 
-    printf( "Digite uma palavra: " );
-    scanf( "%s" , palavra);
-    getchar();
-    printf( "\n" );
-
-    tam = strlen(palavra);
-
-    for(int i = tam - 1; i >= 0; i--)
-    {
-        if( ( 47 < palavra[i]) && (palavra[i] < 58))
-        {
-            contagem++;
-            printf("O caracter: [%c] eh um digito\n", palavra[i]);
-        }
-    }
-    printf("O total de caracteres que sao digitos eh: %d", contagem);
-
-    // encerrar
-    printf( "\nAperte ENTER para continuar!\n" );
-    getchar();
 }// Fim da função ex0415
 
 // Função para o exercício 0416
@@ -219,29 +136,7 @@ void ex0416() {
     printf( "\nExercicio 0316:\n\n" );
 
     // programa
-    char palavra [TAM_STR];
-    int tam = 0, contagem = 0;
 
-    printf( "Digite uma palavra: " );
-    scanf( "%s" , palavra);
-    getchar();
-    printf( "\n" );
-
-    tam = strlen(palavra);
-
-    for(int i = tam - 1; i >= 0; i--)
-    {
-        if( ( 32 < palavra[i]) && (palavra[i] < 48) || (57 < palavra[i] && (palavra[i]) < 65) || (90 < palavra[i]) && (palavra[i] < 97) || (122 < palavra[i]) && (palavra[i] < 127))
-        {
-            contagem++;
-            printf("O caracter: [%c] nao eh uma letra ou digito\n", palavra[i]);
-        }
-    }
-    printf("O total de caracteres que nao sao letras ou digitos eh: %d", contagem);
-
-    // encerrar
-    printf( "\nAperte ENTER para continuar!\n" );
-    getchar();
 }// Fim da função ex0416
 
 // Função para o exercício 0417
@@ -253,40 +148,7 @@ void ex0416() {
 void ex0417(void) {
 // identificacao
     printf( "\nExercicio 0317:\n\n" );
-    int a = 0, b = 0, n = 0;
-    int count = 0;
-    printf( "Digite o primeiro valor do intervalo: " );
-    scanf( "%d" , &a );
-    getchar();
-    printf( "Digite o valor final do intervalo: " );
-    scanf( "%d" , &b );
-    getchar();
-    printf( "Digite a quantidade de valores: " );
-    scanf( "%d" , &n );
-    getchar();
-    printf( "\n" );
-    int x[n];
-    for(int i = 0; i < n; i=i+1 )
-    {
-        printf( "Digite o valor: " );
-        scanf( "%d" , &x[i] );
-        getchar();
-    }
-    printf( "\n" );
-    for(int i = 0; i < n; i++ )
-    {
-        if( (x[i] % 5 == 0) && (a <= x[i] && x[i] <= b) )
-        {
-            printf( "O numero %d eh multiplo de 5 e esta dentro do intervalo [ %d : %d ]\n" , x[i], a, b );
-            count++;
-        }
-    }
 
-    printf( "\n(%d) valores sao multiplos de 5 e pertecem ao intervalo\n", count );
-
-    // encerrar
-    printf( "\nAperte ENTER para continuar!\n" );
-    getchar();
 }// Fim da função ex0417
 // Função para o exercício 0418
 // - ler uma sequência de caracteres do teclado;
@@ -296,38 +158,7 @@ void ex0417(void) {
 void ex0418() {
 // identificacao
     printf( "\nExercicio 0318:\n\n" );
-    int a = 0, b = 0, n = 0;
-    int count = 0;
-    printf( "Digite o primeiro valor do intervalo: " );
-    scanf( "%d" , &a );
-    getchar();
-    printf( "Digite o valor final do intervalo: " );
-    scanf( "%d" , &b );
-    getchar();
-    printf( "Digite a quantidade de valores: " );
-    scanf( "%d" , &n );
-    getchar();
-    printf( "\n" );
-    int x[n];
-    for(int i = 0; i < n; i=i+1 )
-    {
-        printf( "Digite o valor: " );
-        scanf( "%d" , &x[i] );
-        getchar();
-    }
-    printf( "\n" );
-    for(int i = 0; i < n; i++ )
-    {
-        if( (x[i] % 3 == 0) && (x[i] % 5 != 0) && (a <= x[i] && x[i] <= b) )
-        {
-            printf( "O numero %d eh multiplo de 3, nao eh multiplo de 5 e esta dentro do intervalo [ %d : %d ]\n" , x[i], a, b );
-            count++;
-        }
-    }
-    printf( "\n(%d) valores sao multiplos de 3, nao sao multiplos de 5 e pertecem ao intervalo\n", count );
-    // encerrar
-    printf( "\nAperte ENTER para continuar!\n" );
-    getchar();
+
 }// Fim da função ex0418
 
 // Função para o exercício 0419
@@ -338,52 +169,7 @@ void ex0418() {
 void ex0419() {
     // identificacao
     printf( "\nExercicio 0319:\n\n" );
-    double a = 0.0, b = 0.0;
-    int n = 0, count = 0;
-    printf( "Digite o primeiro valor do intervalo: " );
-    scanf( "%lf" , &a );
-    getchar();
-    printf( "Digite o valor final do intervalo: " );
-    scanf( "%lf" , &b );
-    getchar();
-    if( a >= b )
-    {
-        printf( "\nERRO: A valores invalidos! Certifique-se de que a < b! \n" );
-    }
-    else
-    {
-        printf( "Digite a quantidade de valores: " );
-        scanf( "%d" , &n );
-        getchar();
-        printf( "\n" );
-        double x[n];
-        for(int i = 0; i < n; i=i+1 )
-        {
-            printf( "Digite o valor: " );
-            scanf( "%lf" , &x[i] );
-            getchar();
-        }
-        printf( "\n" );
-        for (int i = 0; i < n; i++)
-        {
-            if( a < x[i] && x[i] < b )
-            {
-                int inteiro = (int)x[i];
-                if( inteiro % 2 == 1 )
-                {
-                    printf( "%.2lf eh impar e pertece ao intervalo\n" , x[i] );
-                    count++;
-                }
 
-            }
-        }
-
-        printf( "\n%d valores com partes inteiras impares pertencem ao intervalo\n" , count );
-    }
-
-    // encerrar
-    printf( "\nAperte ENTER para continuar!\n" );
-    getchar();
 }// Fim da função ex0419
 
 // Função para o exercício 0420
@@ -395,50 +181,7 @@ void ex0419() {
 void ex0420() {
 // identificacao
     printf( "\nExercicio 0320:\n\n" );
-    double a = 0.0, b = 0.0;
-    int n = 0, count = 0;
-    printf( "Digite o primeiro valor do intervalo: " );
-    scanf( "%lf" , &a );
-    getchar();
-    printf( "Digite o valor final do intervalo: " );
-    scanf( "%lf" , &b );
-    getchar();
-    if( a <= 0 || a >= 1 || b <= 0 || b >= 1 || a >= b ) //
-    {
-        printf( "\n%s\n" , "ERRO: O valor e inicial e final nao sao maiores que 0 e menores que 1" );
-    }
-    else
-    {
-        printf( "Digite a quantidade de valores: " );
-        scanf( "%d" , &n );
-        getchar();
-        printf( "\n" );
-        double x[n];
-        for(int i = 0; i < n; i=i+1 )
-        {
-            printf( "Digite o valor: " );
-            scanf( "%lf" , &x[i] );
-            getchar();
-        }
-        printf( "\n" );
-        for(int i = 0; i < n; i=i+1 )
-        {
-            x[i] = x[i] - (int)x[i];
-        }
-        for (int i = 0; i < n; i++)
-        {
-            if( x[i] < a || x[i] > b ) // nao pertence ao intervalo
-            {
-                printf( "(%.2lf) nao pertece ao intervalo\n" , x[i] );
-                count++;
-            }
-        }
-        printf( "\n%d valores tem partes fracionarias que nao pertencem ao intervalo\n" , count );
-    }
 
-    // encerrar
-    printf( "\nAperte ENTER para continuar!\n" );
-    getchar();
 }// Fim da função ex0420
 
 // Função para o exercício 04E1
@@ -452,20 +195,7 @@ void ex04E1()
 {
     // identificacao
     printf( "\nExercicio 03E1:\n\n" );
-    char palavra[TAM_STR];
-    printf( "Digite uma linha:\n" );
-    fgets(palavra, sizeof(palavra), stdin);
-    for(int i = 0; palavra[i] != '\0'; i++ )
-    {
-        if( !(isalnum(palavra[i])) && !(isspace(palavra[i])) )
-        {
-            printf( "%c%s\n" , palavra[i], " nao eh alfanumerico." );
-        }
-    }
-    // encerrar
-    printf( "\nAperte ENTER para continuar!\n" );
-    getchar();
-    getchar();
+
 } // fim exercicio04E1
 // Função para o exercício 04E2
 // - ler duas cadeias de caracteres do teclado;
@@ -475,36 +205,7 @@ void ex04E2()
 {
     // identificacao
     printf( "\nExercicio 03E2:\n\n" );
-    char palavra[TAM_STR];
-    int tam = 0, var = 0;
-    printf( "Digite uma sequencia de caracteres:\n" );
-    scanf( "%s" , palavra );
-    tam = strlen(palavra);
-    for(int i = 0; i < tam; i++ )
-    {
-        if( isalpha(palavra[i]) )
-        {
-            var = 0;
-        }
-        else
-        {
-            var = 1;
-        }
-    }
 
-    if(var)
-    {
-        printf("\nA cadeia de caracteres \"%s\" so tem simbolos\n" , palavra);
-    }
-    else
-    {
-        printf("\nA cadeia de caracteres \"%s\" tem letra(s)\n" , palavra);
-    }
-
-    // encerrar
-    printf( "\nAperte ENTER para continuar!\n" );
-    getchar();
-    getchar();
 } // fim função 04E2
 
 // Função principal
