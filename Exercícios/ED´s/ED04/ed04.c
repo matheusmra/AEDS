@@ -69,8 +69,10 @@ void ex0411()
 } // fim exercicio0311
 
 // Função para o exercício 0212
-// - ler uma palavra do teclado;
-// - contar e mostrar apenas as letras minúsculas.
+// - ler uma sequência de caracteres do teclado;
+// - contar e mostrar a quantidade de letras minúsculas menores que 'm'.
+// DICA: Definir uma função para determinar se um caractere é letra maiúscula.
+// Exemplo: sequência = AaKkLmM0*Nx
 void ex0412() {
     // identificacao
     printf( "\nExercicio 0312:\n\n" );
