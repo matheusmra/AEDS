@@ -175,8 +175,9 @@ void ex0414() {
 }// Fim da função ex0314
 
 // Função para o exercício 0315
-// - ler uma cadeia de caracteres do teclado;
-// - contar e mostrar todos os dígitos, percorrendo do fim para o início da cadeia de caracteres.
+// - ler uma sequência de caracteres do teclado;
+// - mostrar a quantidade de letras (tanto maiúsculas, quanto minúsculas) menores que 'M' e 'm' contadas por uma função definida para receber uma cadeia de caracteres como parâmetro.
+// Exemplo: sequência = AaKkLmM0*Nx
 void ex0415() {
 // identificacao
     printf( "\nExercicio 0315:\n\n" );
@@ -208,8 +209,10 @@ void ex0415() {
 }// Fim da função ex0315
 
 // Função para o exercício 0316
-// - ler uma cadeia de caracteres do teclado;
-// - contar e mostrar tudo o que não for dígito e também não for letra.
+// - ler uma sequência de caracteres do teclado;
+// - mostrar as letras (tanto maiúsculas, quanto minúsculas) maiores que 'M' e 'm'
+ //separadas por uma função definida para receber uma cadeia de caracteres como parâmetro.
+//Exemplo: sequência = AaKkLmM0*Nx
 
 void ex0416() {
 // identificacao
@@ -242,10 +245,11 @@ void ex0416() {
 }// Fim da função ex0316
 
 // Função para o exercício 0317
-// - ler dois valores inteiros (a,b), limites para definirem um intervalo [a:b];
-// - ler uma quantidade (n) de valores inteiros a serem testados;
-// - repetir a leitura de outros tantos valores, quantos os indicados pela quantidade, um (x) por vez;
-// - contar e mostrar quantos dentre esses valores lidos (x) os que forem múltiplos de 5, e pertençam ao intervalo [a:b].
+// - ler uma sequência de caracteres do teclado;
+// - mostrar a quantidade de dígitos ímpares em uma cadeia de caracteres contados por uma função
+ //definida para receber uma cadeia de caracteres como parâmetro.
+ //DICA: Considerar o valor inteiro do código equivalente (type casting) para teste.
+//Exemplo: sequência = A1b2C3d4E5f6
 void ex0417(void) {
 // identificacao
     printf( "\nExercicio 0317:\n\n" );
@@ -285,10 +289,10 @@ void ex0417(void) {
     getchar();
 }// Fim da função ex0317
 // Função para o exercício 0318
-// - ler dois valores inteiros (a,b), limites para definirem um intervalo [a:b];
-// - ler uma quantidade (n) de valores inteiros a serem testados;
-// - ler outros tantos valores quantos os indicados pela quantidade, um (x) por vez;
-// - contar e mostrar quantos dentre esses valores lidos (x)os que forem múltiplos de 3, que não forem também múltiplos de 5,e pertençam ao intervalo [a:b].
+// - ler uma sequência de caracteres do teclado;
+// - mostrar todos os símbolos não alfanuméricos (letras e dígitos) em uma cadeia de caracteres
+ //separados por meio de uma função.
+// Exemplo: sequência = (A1b2+C3d4)*E5f6
 void ex0418() {
 // identificacao
     printf( "\nExercicio 0318:\n\n" );
@@ -327,12 +331,10 @@ void ex0418() {
 }// Fim da função ex0318
 
 // Função para o exercício 0319
-// - ler dois valores reais (a e b), o primeiro (a) menor que o segundo (b), confirmadamente, para definirem um intervalo aberto (a:b);
-// - ler a quantidade (n) de valores reais a serem testados, e ler outros tantos valores (x) quantos os indicados por essa quantidade;
-// - contar e mostrar todos os valores lidos, pertencentes ao do intervalo,cujas partes inteiras forem ímpares.
-// DICA: Usar conformação de tipo (type casting) para isolar a parte inteira (int),antes de testar se é ímpar (ver 0110).
-
-
+// - ler uma sequência de caracteres do teclado;
+// - mostrar todos os símbolos alfanuméricos (letras e dígitos) em uma cadeia de caracteres
+ //separados por meio de uma função.
+//Exemplo: sequência = (A1b2+C3d4)*E5f6
 void ex0419() {
     // identificacao
     printf( "\nExercicio 0319:\n\n" );
