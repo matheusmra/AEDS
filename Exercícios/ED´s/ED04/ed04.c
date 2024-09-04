@@ -104,8 +104,10 @@ void ex0412() {
 }// Fim da função ex0212
 
 // Função para o exercício 0313
-// ler uma palavra do teclado;
-// - contar e mostrar as letras minúsculas percorrendo do fim para o início da palavra.
+// - ler uma sequência de caracteres do teclado;
+// - mostrar a quantidade de letras minúsculas menores que 'm',
+// - definir e usar uma função para receber uma cadeia de caracteres como parâmetro e contar a quantidade desejada.
+// Exemplo: sequência = AaKkLmM0*Nx
 void ex0413() {
 // identificacao
     printf( "\nExercicio 0313:\n\n" );
@@ -137,8 +139,11 @@ void ex0413() {
 }// Fim da função ex0313
 
 // Função para o exercício 0314
-// - ler uma cadeia de caracteres do teclado;
-// - contar e mostrar todos símbolos que forem letras, ou maiúsculas ou minúsculas.
+// - ler uma sequência de caracteres do teclado;
+// - mostrar as letras minúsculas menores que 'm',
+// - definir e usar uma função para receber uma cadeia de caracteres como parâmetro e separar em outra cadeia de caracteres os símbolos desejados.
+// DICA: Usar concatenação para juntar a uma cadeia inicialmente vazia cada símbolo encontrado que satisfizer a condição.
+// Exemplo: sequência = AaKkLmM0*Nx
 void ex0414() {
 // identificacao
     printf( "\nExercicio 0314:\n\n" );
