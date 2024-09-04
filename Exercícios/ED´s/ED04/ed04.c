@@ -66,9 +66,9 @@ void ex0411()
     // encerrar
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
-} // fim exercicio0311
+} // fim exercicio0411
 
-// Função para o exercício 0212
+// Função para o exercício 0412
 // - ler uma sequência de caracteres do teclado;
 // - contar e mostrar a quantidade de letras minúsculas menores que 'm'.
 // DICA: Definir uma função para determinar se um caractere é letra maiúscula.
@@ -101,9 +101,9 @@ void ex0412() {
     // encerrar
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
-}// Fim da função ex0212
+}// Fim da função ex0412
 
-// Função para o exercício 0313
+// Função para o exercício 0413
 // - ler uma sequência de caracteres do teclado;
 // - mostrar a quantidade de letras minúsculas menores que 'm',
 // - definir e usar uma função para receber uma cadeia de caracteres como parâmetro e contar a quantidade desejada.
@@ -136,9 +136,9 @@ void ex0413() {
     // encerrar
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
-}// Fim da função ex0313
+}// Fim da função ex0413
 
-// Função para o exercício 0314
+// Função para o exercício 0414
 // - ler uma sequência de caracteres do teclado;
 // - mostrar as letras minúsculas menores que 'm',
 // - definir e usar uma função para receber uma cadeia de caracteres como parâmetro e separar em outra cadeia de caracteres os símbolos desejados.
@@ -172,9 +172,9 @@ void ex0414() {
     // encerrar
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
-}// Fim da função ex0314
+}// Fim da função ex0414
 
-// Função para o exercício 0315
+// Função para o exercício 0415
 // - ler uma sequência de caracteres do teclado;
 // - mostrar a quantidade de letras (tanto maiúsculas, quanto minúsculas) menores que 'M' e 'm' contadas por uma função definida para receber uma cadeia de caracteres como parâmetro.
 // Exemplo: sequência = AaKkLmM0*Nx
@@ -206,9 +206,9 @@ void ex0415() {
     // encerrar
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
-}// Fim da função ex0315
+}// Fim da função ex0415
 
-// Função para o exercício 0316
+// Função para o exercício 0416
 // - ler uma sequência de caracteres do teclado;
 // - mostrar as letras (tanto maiúsculas, quanto minúsculas) maiores que 'M' e 'm'
  //separadas por uma função definida para receber uma cadeia de caracteres como parâmetro.
@@ -242,9 +242,9 @@ void ex0416() {
     // encerrar
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
-}// Fim da função ex0316
+}// Fim da função ex0416
 
-// Função para o exercício 0317
+// Função para o exercício 0417
 // - ler uma sequência de caracteres do teclado;
 // - mostrar a quantidade de dígitos ímpares em uma cadeia de caracteres contados por uma função
  //definida para receber uma cadeia de caracteres como parâmetro.
@@ -287,8 +287,8 @@ void ex0417(void) {
     // encerrar
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
-}// Fim da função ex0317
-// Função para o exercício 0318
+}// Fim da função ex0417
+// Função para o exercício 0418
 // - ler uma sequência de caracteres do teclado;
 // - mostrar todos os símbolos não alfanuméricos (letras e dígitos) em uma cadeia de caracteres
  //separados por meio de uma função.
@@ -328,9 +328,9 @@ void ex0418() {
     // encerrar
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
-}// Fim da função ex0318
+}// Fim da função ex0418
 
-// Função para o exercício 0319
+// Função para o exercício 0419
 // - ler uma sequência de caracteres do teclado;
 // - mostrar todos os símbolos alfanuméricos (letras e dígitos) em uma cadeia de caracteres
  //separados por meio de uma função.
@@ -386,7 +386,7 @@ void ex0419() {
     getchar();
 }// Fim da função ex0419
 
-// Função para o exercício 0220
+// Função para o exercício 0420
 // - ler certa quantidade de cadeias de caracteres do teclado, uma por vez;
 // - mostrar e contar a quantidade de símbolos alfanuméricos (letras e dígitos) em cada palavra,
  //por meio de uma função, e calcular o total acumulado de todas as palavras.
@@ -439,11 +439,14 @@ void ex0420() {
     // encerrar
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
-}// Fim da função ex0320
+}// Fim da função ex0420
 
-// Função para o exercício 02E1
-// - ler uma linha do teclado;
-// - separar em outra cadeia de caracteres e mostrar todos os símbolos não alfanuméricos (letras ou dígitos) na cadeia de caracteres.
+// Função para o exercício 04E1
+// - ler certa quantidade de cadeias de caracteres do teclado;
+// - contar a quantidade de símbolos alfanuméricos, incluindo espaços em branco, em cada palavra,
+// e calcular o total de todas as palavras, por meio de uma função.
+//OBS.: Para a leitura incluir espaços em branco, usar IO_readln( ) ou fgets( ).
+// Exemplo: sequência = (A1b2 + C3d4) * E5f6
 
 void ex04E1()
 {
@@ -463,10 +466,11 @@ void ex04E1()
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
     getchar();
-} // fim exercicio03E1
-// Função para o exercício 03E2
-//- ler uma cadeia de caracteres do teclado;
-//- dizer se a sequência contém apenas símbolos que NÃO são letras
+} // fim exercicio04E1
+// Função para o exercício 04E2
+// - ler duas cadeias de caracteres do teclado;
+// - calcular qual das duas sequências possui a maior quantidade de dígitos,por meio de uma função.
+// Exemplo: sequência = { A1b2, C3d4E5 }
 void ex04E2()
 {
     // identificacao
@@ -501,7 +505,7 @@ void ex04E2()
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
     getchar();
-} // fim função 03E2
+} // fim função 04E2
 
 // Função principal
 int main(void) {
