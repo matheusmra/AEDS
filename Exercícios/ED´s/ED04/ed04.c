@@ -15,32 +15,31 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
-// Tamanho max string
-const int TAM_STR = 80;
 // Função para mostrar o menu de opções
 void menuOpcoes() {
     printf("\nEscolha alguma das opcoes a seguir:\n\n");
     printf("  0 - Encerrar programa\n");
-    printf("  1 - Exercicio 0311\n");
-    printf("  2 - Exercicio 0312\n");
-    printf("  3 - Exercicio 0313\n");
-    printf("  4 - Exercicio 0314\n");
-    printf("  5 - Exercicio 0315\n");
-    printf("  6 - Exercicio 0316\n");
-    printf("  7 - Exercicio 0317\n");
-    printf("  8 - Exercicio 0318\n");
-    printf("  9 - Exercicio 0319\n");
-    printf(" 10 - Exercicio 0320\n");
-    printf(" 11 - Exercicio 03E1\n");
-    printf(" 12 - Exercicio 03E2\n");
+    printf("  1 - Exercicio 0411\n");
+    printf("  2 - Exercicio 0412\n");
+    printf("  3 - Exercicio 0413\n");
+    printf("  4 - Exercicio 0414\n");
+    printf("  5 - Exercicio 0415\n");
+    printf("  6 - Exercicio 0416\n");
+    printf("  7 - Exercicio 0417\n");
+    printf("  8 - Exercicio 0418\n");
+    printf("  9 - Exercicio 0419\n");
+    printf(" 10 - Exercicio 0420\n");
+    printf(" 11 - Exercicio 04E1\n");
+    printf(" 12 - Exercicio 04E2\n");
 } // fim menuOpcoes()
 
-// Função para o exercício 0311
-// - ler uma palavra do teclado;
-// - mostrar as letras maiúsculas.
-// DICA: Definir um teste para determinar se um caractere é letra minúscula.
+// Função para o exercício 0411
+// - ler a quantidade de valores reais;
+// - ler dois valores reais para definir um intervalo fechado;
+// - ler tantos valores reais quanto a quantidade, um de cada vez e
+// - contar quantos desses valores estão dentro do intervalo, e quantos estão fora dele
 
-void ex0311()
+void ex0411()
 {
     // identificacao
     printf( "\nExercicio 0311:\n\n" );
