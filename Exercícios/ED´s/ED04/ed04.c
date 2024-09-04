@@ -71,7 +71,7 @@ void ex0411()
 // Função para o exercício 0212
 // - ler uma palavra do teclado;
 // - contar e mostrar apenas as letras minúsculas.
-void ex0312() {
+void ex0412() {
     // identificacao
     printf( "\nExercicio 0312:\n\n" );
 
@@ -104,7 +104,7 @@ void ex0312() {
 // Função para o exercício 0313
 // ler uma palavra do teclado;
 // - contar e mostrar as letras minúsculas percorrendo do fim para o início da palavra.
-void ex0313() {
+void ex0413() {
 // identificacao
     printf( "\nExercicio 0313:\n\n" );
 
@@ -137,7 +137,7 @@ void ex0313() {
 // Função para o exercício 0314
 // - ler uma cadeia de caracteres do teclado;
 // - contar e mostrar todos símbolos que forem letras, ou maiúsculas ou minúsculas.
-void ex0314() {
+void ex0414() {
 // identificacao
     printf( "\nExercicio 0314:\n\n" );
 
@@ -170,7 +170,7 @@ void ex0314() {
 // Função para o exercício 0315
 // - ler uma cadeia de caracteres do teclado;
 // - contar e mostrar todos os dígitos, percorrendo do fim para o início da cadeia de caracteres.
-void ex0315() {
+void ex0415() {
 // identificacao
     printf( "\nExercicio 0315:\n\n" );
 
@@ -204,7 +204,7 @@ void ex0315() {
 // - ler uma cadeia de caracteres do teclado;
 // - contar e mostrar tudo o que não for dígito e também não for letra.
 
-void ex0316() {
+void ex0416() {
 // identificacao
     printf( "\nExercicio 0316:\n\n" );
 
@@ -239,7 +239,7 @@ void ex0316() {
 // - ler uma quantidade (n) de valores inteiros a serem testados;
 // - repetir a leitura de outros tantos valores, quantos os indicados pela quantidade, um (x) por vez;
 // - contar e mostrar quantos dentre esses valores lidos (x) os que forem múltiplos de 5, e pertençam ao intervalo [a:b].
-void ex0317(void) {
+void ex0417(void) {
 // identificacao
     printf( "\nExercicio 0317:\n\n" );
     int a = 0, b = 0, n = 0;
@@ -282,7 +282,7 @@ void ex0317(void) {
 // - ler uma quantidade (n) de valores inteiros a serem testados;
 // - ler outros tantos valores quantos os indicados pela quantidade, um (x) por vez;
 // - contar e mostrar quantos dentre esses valores lidos (x)os que forem múltiplos de 3, que não forem também múltiplos de 5,e pertençam ao intervalo [a:b].
-void ex0318() {
+void ex0418() {
 // identificacao
     printf( "\nExercicio 0318:\n\n" );
     int a = 0, b = 0, n = 0;
@@ -326,7 +326,7 @@ void ex0318() {
 // DICA: Usar conformação de tipo (type casting) para isolar a parte inteira (int),antes de testar se é ímpar (ver 0110).
 
 
-void ex0319() {
+void ex0419() {
     // identificacao
     printf( "\nExercicio 0319:\n\n" );
     double a = 0.0, b = 0.0;
@@ -375,7 +375,7 @@ void ex0319() {
     // encerrar
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
-}// Fim da função ex0319
+}// Fim da função ex0419
 
 // Função para o exercício 0220
 // - ler dois valores reais (a e b), maiores que 0 e menores que 1, confirmadamente, para definirem um intervalo aberto (a:b);
@@ -383,7 +383,7 @@ void ex0319() {
 // - contar e mostrar todos os valores lidos que tenham suas partes fracionárias fora do intervalo ]a:b[.
 // DICA: Usar conformação de tipo (type casting) para isolar a parte inteira (int),e obter a parte fracionária mediante a subtração da parte inteira, antes de testar.
 
-void ex0320() {
+void ex0420() {
 // identificacao
     printf( "\nExercicio 0320:\n\n" );
     double a = 0.0, b = 0.0;
@@ -436,7 +436,7 @@ void ex0320() {
 // - ler uma linha do teclado;
 // - separar em outra cadeia de caracteres e mostrar todos os símbolos não alfanuméricos (letras ou dígitos) na cadeia de caracteres.
 
-void ex03E1()
+void ex04E1()
 {
     // identificacao
     printf( "\nExercicio 03E1:\n\n" );
@@ -458,7 +458,7 @@ void ex03E1()
 // Função para o exercício 03E2
 //- ler uma cadeia de caracteres do teclado;
 //- dizer se a sequência contém apenas símbolos que NÃO são letras
-void ex03E2()
+void ex04E2()
 {
     // identificacao
     printf( "\nExercicio 03E2:\n\n" );
