@@ -387,10 +387,10 @@ void ex0419() {
 }// Fim da função ex0419
 
 // Função para o exercício 0220
-// - ler dois valores reais (a e b), maiores que 0 e menores que 1, confirmadamente, para definirem um intervalo aberto (a:b);
-// - ler uma quantidade (n) de valores reais a serem testados, e ler outros tantos valores quantos os indicados por essa quantidade;
-// - contar e mostrar todos os valores lidos que tenham suas partes fracionárias fora do intervalo ]a:b[.
-// DICA: Usar conformação de tipo (type casting) para isolar a parte inteira (int),e obter a parte fracionária mediante a subtração da parte inteira, antes de testar.
+// - ler certa quantidade de cadeias de caracteres do teclado, uma por vez;
+// - mostrar e contar a quantidade de símbolos alfanuméricos (letras e dígitos) em cada palavra,
+ //por meio de uma função, e calcular o total acumulado de todas as palavras.
+//Exemplo: sequências = { (A1b2+C3d4)*E5f6, [P&&Q]||[R&&!S], (a<b&&b<c) }
 
 void ex0420() {
 // identificacao
