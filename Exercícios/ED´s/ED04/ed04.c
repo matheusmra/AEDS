@@ -42,7 +42,7 @@ int contarM(char v1[]) {
         }
         }
     return contagemM;
-}
+}//Fim função
 //Função para contar total de letras menor que M e m
 int contarm(char v1[]) {
     int contagem = 0;
@@ -54,27 +54,8 @@ int contarm(char v1[]) {
         }
     }
     return contagem;
-}
-void printarmenorm(char v1[]){
-    for(int i = 0; i < strlen(v1); i++ )
-    {
-        if( ( 96 < v1[i]) && (v1[i] < 109))
-        {
-            printf("A letra: [%c] eh minuscula e menor que 'm'\n", v1[i]);
-        }
-    }
-}
-
-void printarmenorM(char v1[]){
-    for(int i = 0; i < strlen(v1); i++ )
-    {
-        if( ( 64 < v1[i]) && (v1[i] < 77))
-        {
-            printf("A letra: [%c] eh maiuscula e menor que 'm'\n", v1[i]);
-        }
-    }
-}
-
+}//Fim função
+//Função para contar total de letras maior que M
 int contarmaiorM(char v1[]) {
     int contagemM = 0;
     for(int i = 0; i < strlen(v1); i++)
@@ -85,7 +66,7 @@ int contarmaiorM(char v1[]) {
         }
     return contagemM;
 }
-//Função para contar total de letras menor que M e m
+//Função para contar total de letras maior que m
 int contarmaiorm(char v1[]) {
     int contagem = 0;
     for(int i = 0; i < strlen(v1); i++ )
@@ -108,6 +89,30 @@ int impar(char v1[]) {
         }
     return total;
 }
+
+//Função para printar se o caracter digitado é minusculo e menor que a letra m.
+void printarmenorm(char v1[]){
+    for(int i = 0; i < strlen(v1); i++ )
+    {
+        if( ( 96 < v1[i]) && (v1[i] < 109))
+        {
+            printf("A letra: [%c] eh minuscula e menor que 'm'\n", v1[i]);
+        }
+    }
+}//Fim da função
+
+//Função para printar se o caracter digitado é maiusculo e menor que a letra M.
+void printarmenorM(char v1[]){
+    for(int i = 0; i < strlen(v1); i++ )
+    {
+        if( ( 64 < v1[i]) && (v1[i] < 77))
+        {
+            printf("A letra: [%c] eh maiuscula e menor que 'm'\n", v1[i]);
+        }
+    }
+}
+
+//Função para printar letras que são maiusculas e maiores que m.
 void printarmaiorm(char v1[]){
     for(int i = 0; i < strlen(v1); i++ )
     {
@@ -117,7 +122,8 @@ void printarmaiorm(char v1[]){
         }
     }
 }
-
+//Fim
+//Função para printar letra maiuscula e maior que M
 void printarmaiorM(char v1[]){
     for(int i = 0; i < strlen(v1); i++ )
     {
@@ -127,7 +133,8 @@ void printarmaiorM(char v1[]){
         }
     }
 }
-
+//Fim
+//Função para verificar se não é letra ou digito
 void verchar(char v1[]){
     for(int i = 0; i < strlen(v1); i++){
         if( ( 32 < v1[i]) && (v1[i] < 48) || (57 < v1[i] && (v1[i]) < 65) || (90 < v1[i]) && (v1[i] < 97) || (122 < v1[i]) && (v1[i] < 127))
@@ -137,8 +144,7 @@ void verchar(char v1[]){
     }
 
 }
-
-
+//Função para verificar se é Letra ou digito
 void alfanum(char v1[]) {
     for(int i = 0; i < strlen(v1); i++)
     {
@@ -362,7 +368,7 @@ void ex0418() {
 //Exemplo: sequência = (A1b2+C3d4)*E5f6
 void ex0419() {
     // identificacao
-    printf( "\nExercicio 0319:\n\n" );
+    printf( "\nExercicio 0419:\n\n" );
   // variavel
     char cadeia[80];
     // programa
@@ -399,7 +405,7 @@ void ex0420() {
 void ex04E1()
 {
     // identificacao
-    printf( "\nExercicio 03E1:\n\n" );
+    printf( "\nExercicio 04E1:\n\n" );
 
 } // fim exercicio04E1
 // Função para o exercício 04E2
@@ -409,7 +415,7 @@ void ex04E1()
 void ex04E2()
 {
     // identificacao
-    printf( "\nExercicio 03E2:\n\n" );
+    printf( "\nExercicio 04E2:\n\n" );
 
 } // fim função 04E2
 
