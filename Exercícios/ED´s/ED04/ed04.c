@@ -46,7 +46,8 @@ void ex0411()
 
     // Programa
     double v1 = 0.0, v2 = 0.0;
-    int n;
+    int n,totalp = 0, totalnp = 0;
+
 
     printf("Digite a quantidade de valores reais: ");
     scanf("%d", &n);
@@ -61,12 +62,14 @@ void ex0411()
     for(int i = 0; i < n; i++) {
         printf("Digite o valor: ");
         scanf("%lf", &controle[i]);
+        if(controle[i] >= v1 && controle[i] <= v2){
+            totalp++;
+        }else{
+        totalnp++;
+        }
     }
-
-    for(int i = 0; i < n; i++) {
-        printf("%lf\n", controle[i]);
-    }
-    getchar();
+    printf("Total de numeros dentro do intervalo: %d", totalp);
+    printf("\nTotal de numeros fora do intervalo: %d", totalnp);
     // encerrar
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
