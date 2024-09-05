@@ -32,6 +32,7 @@ void menuOpcoes() {
     printf(" 11 - Exercicio 04E1\n");
     printf(" 12 - Exercicio 04E2\n");
 } // fim menuOpcoes()
+
 // Função para testar se o caractere digitado é menor que m (minusculo)
 int contarM(char v1[]) {
     int contagemM = 0;
@@ -43,6 +44,7 @@ int contarM(char v1[]) {
         }
     return contagemM;
 }//Fim função
+
 //Função para contar total de letras menor que M e m
 int contarm(char v1[]) {
     int contagem = 0;
@@ -55,6 +57,7 @@ int contarm(char v1[]) {
     }
     return contagem;
 }//Fim função
+
 //Função para contar total de letras maior que M
 int contarmaiorM(char v1[]) {
     int contagemM = 0;
@@ -66,6 +69,7 @@ int contarmaiorM(char v1[]) {
         }
     return contagemM;
 }
+
 //Função para contar total de letras maior que m
 int contarmaiorm(char v1[]) {
     int contagem = 0;
@@ -78,6 +82,7 @@ int contarmaiorm(char v1[]) {
     }
     return contagem;
 }
+
 //Função para testar se é numero impar
 int impar(char v1[]) {
     int total = 0;
@@ -123,6 +128,7 @@ void printarmaiorm(char v1[]){
     }
 }
 //Fim
+
 //Função para printar letra maiuscula e maior que M
 void printarmaiorM(char v1[]){
     for(int i = 0; i < strlen(v1); i++ )
@@ -153,6 +159,35 @@ void alfanum(char v1[]) {
         }
         }
 
+}
+
+void metodo04E2(const char *cadeia1, const char *cadeia2)
+{
+  int cont1 = 0;
+  int tam1 = strlen(cadeia1);
+  int cont2 = 0;
+  int tam2 = strlen(cadeia2);
+  for( int i = 0; i < tam1; i=i+1 )
+  {
+    if( isdigit(cadeia1[i]) )
+    {
+      cont1 = cont1 + 1;
+    }
+  }
+  for( int j = 0; j < tam2; j=j+1 )
+  {
+    if( isdigit(cadeia2[j]) )
+    {
+      cont2 = cont2 + 1;
+    }
+  }
+         if( cont1 > cont2 ) {
+    printf("%s\n" , "A primeira cadeia possui maior quantidade de digitos do que a segunda");
+  } else if( cont2 > cont1 ) {
+    printf("%s\n" , "A segunda cadeia possui maior quantidade de digitos do que a primeira");
+  } else {
+    printf("%s\n" , "A primeira e a segunda cadeia tem quantidades iguais de digitos");
+  }
 }
 
 // Função para o exercício 0411
@@ -416,7 +451,19 @@ void ex04E2()
 {
     // identificacao
     printf( "\nExercicio 04E2:\n\n" );
-
+ // variavel
+    char cadeia1[80], cadeia2[80];
+    // programa
+    printf( "Digite a primeira cadeia: " );
+    scanf( "%s" , cadeia1);
+    getchar();
+    printf( "\n" );
+    printf( "Digite a segunda cadeia: " );
+    scanf( "%s" , cadeia2);
+    getchar();
+    metodo04E2(cadeia1, cadeia2);
+    printf( "\nAperte ENTER para continuar!\n" );
+    getchar();
 } // fim função 04E2
 
 // Função principal
