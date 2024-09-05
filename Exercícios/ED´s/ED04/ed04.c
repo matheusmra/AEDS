@@ -33,7 +33,18 @@ void menuOpcoes() {
     printf(" 12 - Exercicio 04E2\n");
 } // fim menuOpcoes()
 // Função para testar se o caractere digitado é menor que m (minusculo)
-int contarmenorm(char v1[]) {
+int contarM(char v1[]) {
+    int contagemM = 0;
+    for(int i = 0; i < strlen(v1); i++)
+    {
+        if(( 64 < v1[i]) && (v1[i] < 77)){
+            contagemM++;
+        }
+        }
+    return contagemM;
+}
+//Função para contar total de letras menor que M e m
+int contarm(char v1[]) {
     int contagem = 0;
     for(int i = 0; i < strlen(v1); i++ )
     {
@@ -50,6 +61,16 @@ void printarmenorm(char v1[]){
         if( ( 96 < v1[i]) && (v1[i] < 109))
         {
             printf("A letra: [%c] eh minuscula e menor que 'm'\n", v1[i]);
+        }
+    }
+}
+
+void printarmenorM(char v1[]){
+    for(int i = 0; i < strlen(v1); i++ )
+    {
+        if( ( 64 < v1[i]) && (v1[i] < 77))
+        {
+            printf("A letra: [%c] eh maiuscula e menor que 'm'\n", v1[i]);
         }
     }
 }
@@ -144,10 +165,10 @@ void ex0413() {
     scanf( "%s" , cadeia);
     getchar();
     printf( "\n" );
-    contarmenorm(cadeia);
+    contarm(cadeia);
     // Testar se o caractere é minusculo e menor que m
     printarmenorm(cadeia);
-    printf("O total de letras minusculas menores que 'm' eh: %d ", contarmenorm(cadeia));
+    printf("O total de letras minusculas menores que 'm' eh: %d ", contarm(cadeia));
     // encerrar
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
@@ -163,7 +184,7 @@ void ex0413() {
 // Exemplo: sequência = AaKkLmM0*Nx
 void ex0414() {
 // identificacao
-    printf( "\nExercicio 0314:\n\n" );
+    printf( "\nExercicio 0414:\n\n" );
 
     // programa
 
@@ -175,9 +196,20 @@ void ex0414() {
 // Exemplo: sequência = AaKkLmM0*Nx
 void ex0415() {
 // identificacao
-    printf( "\nExercicio 0315:\n\n" );
-
+    printf( "\nExercicio 0415:\n\n" );
+    // variavel
+    char cadeia[80];
     // programa
+    printf( "Digite uma palavra: " );
+    scanf( "%s" , cadeia);
+    getchar();
+    printf( "\n" );
+    contarM(cadeia);
+    contarm(cadeia);
+    printarmenorm(cadeia);
+    printarmenorM(cadeia);
+    printf( "\nAperte ENTER para continuar!\n" );
+    getchar();
 
 }// Fim da função ex0415
 
