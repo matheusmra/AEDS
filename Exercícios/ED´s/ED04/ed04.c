@@ -70,6 +70,7 @@ void ex0411()
     }
     printf("Total de numeros dentro do intervalo: %d", totalp);
     printf("\nTotal de numeros fora do intervalo: %d", totalnp);
+    getchar();
     // encerrar
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
@@ -83,10 +84,29 @@ void ex0411()
 // Exemplo: sequência = AaKkLmM0*Nx
 void ex0412() {
     // identificacao
-    printf( "\nExercicio 0312:\n\n" );
-
+    printf( "\nExercicio 0412:\n\n" );
+    char cadeia[80];
+    int tam = 0, contagem = 0;
     // programa
-
+    printf( "Digite uma palavra: " );
+    scanf( "%s" , cadeia);
+    getchar();
+    printf( "\n" );
+    tam = strlen(cadeia);
+    for(int i = 0; i < tam; i++ )
+    {
+        if( ( 96 < cadeia[i]) && (cadeia[i] < 109))
+        {
+            contagem++;
+            printf("A letra: [%c] eh minuscula e menor que 'm'\n", cadeia[i]);
+        }
+    }
+    printf("O total de letras minusculas menores que 'm' eh: %d", contagem);
+    getchar();
+    // encerrar
+    printf( "\nAperte ENTER para continuar!\n" );
+    getchar();
+    return 0;
 }// Fim da função ex0412
 
 // Função para o exercício 0413
@@ -97,7 +117,6 @@ void ex0412() {
 void ex0413() {
 // identificacao
     printf( "\nExercicio 0313:\n\n" );
-
     // programa
 
 }// Fim da função ex0413
