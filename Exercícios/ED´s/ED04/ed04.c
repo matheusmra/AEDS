@@ -32,7 +32,27 @@ void menuOpcoes() {
     printf(" 11 - Exercicio 04E1\n");
     printf(" 12 - Exercicio 04E2\n");
 } // fim menuOpcoes()
-
+// Função para testar se o caractere digitado é menor que m (minusculo)
+int contarmenorm(char v1[]) {
+    int contagem = 0;
+    for(int i = 0; i < strlen(v1); i++ )
+    {
+        if( ( 96 < v1[i]) && (v1[i] < 109))
+        {
+            contagem++;
+        }
+    }
+    return contagem;
+}
+void printarmenorm(char v1[]){
+    for(int i = 0; i < strlen(v1); i++ )
+    {
+        if( ( 96 < v1[i]) && (v1[i] < 109))
+        {
+            printf("A letra: [%c] eh minuscula e menor que 'm'\n", v1[i]);
+        }
+    }
+}
 // Função para o exercício 0411
 // - ler a quantidade de valores reais;
 // - ler dois valores reais para definir um intervalo fechado;
@@ -116,8 +136,22 @@ void ex0412() {
 // Exemplo: sequência = AaKkLmM0*Nx
 void ex0413() {
 // identificacao
-    printf( "\nExercicio 0313:\n\n" );
+    printf( "\nExercicio 0413:\n\n" );
+    // variáveis
+    char cadeia[80];
     // programa
+    printf( "Digite uma palavra: " );
+    scanf( "%s" , cadeia);
+    getchar();
+    printf( "\n" );
+    contarmenorm(cadeia);
+    // Testar se o caractere é minusculo e menor que m
+    printarmenorm(cadeia);
+    printf("O total de letras minusculas menores que 'm' eh: %d ", contarmenorm(cadeia));
+    // encerrar
+    printf( "\nAperte ENTER para continuar!\n" );
+    getchar();
+    return 0;
 
 }// Fim da função ex0413
 
