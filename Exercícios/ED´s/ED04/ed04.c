@@ -116,6 +116,16 @@ void printarmaiorM(char v1[]){
         }
     }
 }
+
+void verchar(char v1[]){
+    for(int i = 0; i < strlen(v1); i++){
+        if( ( 32 < v1[i]) && (v1[i] < 48) || (57 < v1[i] && (v1[i]) < 65) || (90 < v1[i]) && (v1[i] < 97) || (122 < v1[i]) && (v1[i] < 127))
+        {
+            printf("O caracter: [%c] nao eh uma letra ou digito\n", v1[i]);
+        }
+    }
+
+}
 // Função para o exercício 0411
 // - ler a quantidade de valores reais;
 // - ler dois valores reais para definir um intervalo fechado;
@@ -298,8 +308,17 @@ void ex0417(void) {
 // Exemplo: sequência = (A1b2+C3d4)*E5f6
 void ex0418() {
 // identificacao
-    printf( "\nExercicio 0318:\n\n" );
-
+    printf( "\nExercicio 0418:\n\n" );
+    // variavel
+    char cadeia[80];
+    // programa
+    printf( "Digite uma palavra: " );
+    scanf( "%s" , cadeia);
+    getchar();
+    printf( "\n" );
+    verchar(cadeia);
+    printf( "\nAperte ENTER para continuar!\n" );
+    getchar();
 }// Fim da função ex0418
 
 // Função para o exercício 0419
