@@ -97,6 +97,17 @@ int contarmaiorm(char v1[]) {
     }
     return contagem;
 }
+//Função para testar se é numero impar
+int impar(char v1[]) {
+    int total = 0;
+    for(int i = 0; i < strlen(v1); i++)
+    {
+        if((47 < v1[i] && v1[i] < 58 && v1[i] % 2 !=0)){
+            total++;
+        }
+        }
+    return total;
+}
 void printarmaiorm(char v1[]){
     for(int i = 0; i < strlen(v1); i++ )
     {
@@ -126,6 +137,18 @@ void verchar(char v1[]){
     }
 
 }
+
+
+void alfanum(char v1[]) {
+    for(int i = 0; i < strlen(v1); i++)
+    {
+        if((47 < v1[i] && v1[i] < 58) || (64 < v1[i] && v1[i] < 91) || (96 < v1[i] && v1[i] < 123)){
+            printf("\n(%c) eh simbolo alfanumerico",v1[i]);
+        }
+        }
+
+}
+
 // Função para o exercício 0411
 // - ler a quantidade de valores reais;
 // - ler dois valores reais para definir um intervalo fechado;
@@ -298,7 +321,18 @@ void ex0416() {
 //Exemplo: sequência = A1b2C3d4E5f6
 void ex0417(void) {
 // identificacao
-    printf( "\nExercicio 0317:\n\n" );
+    printf( "\nExercicio 0417:\n\n" );
+    // variavel
+    char cadeia[80];
+    // programa
+    printf( "Digite uma palavra: " );
+    scanf( "%s" , cadeia);
+    getchar();
+    printf( "\n" );
+    impar(cadeia);
+    printf("O total de numeros impares na cadeia eh: %d", impar(cadeia));
+    printf( "\nAperte ENTER para continuar!\n" );
+    getchar();
 
 }// Fim da função ex0417
 // Função para o exercício 0418
@@ -329,6 +363,16 @@ void ex0418() {
 void ex0419() {
     // identificacao
     printf( "\nExercicio 0319:\n\n" );
+  // variavel
+    char cadeia[80];
+    // programa
+    printf( "Digite uma palavra: " );
+    scanf( "%s" , cadeia);
+    getchar();
+    printf( "\n" );
+    alfanum(cadeia);
+    printf( "\nAperte ENTER para continuar!\n" );
+    getchar();
 
 }// Fim da função ex0419
 
@@ -340,7 +384,8 @@ void ex0419() {
 
 void ex0420() {
 // identificacao
-    printf( "\nExercicio 0320:\n\n" );
+    printf( "\nExercicio 0420:\n\n" );
+
 
 }// Fim da função ex0420
 
