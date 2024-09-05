@@ -74,6 +74,48 @@ void printarmenorM(char v1[]){
         }
     }
 }
+
+int contarmaiorM(char v1[]) {
+    int contagemM = 0;
+    for(int i = 0; i < strlen(v1); i++)
+    {
+        if((  77 < v1[i]) && (v1[i] < 91)){
+            contagemM++;
+        }
+        }
+    return contagemM;
+}
+//Função para contar total de letras menor que M e m
+int contarmaiorm(char v1[]) {
+    int contagem = 0;
+    for(int i = 0; i < strlen(v1); i++ )
+    {
+        if( (109 < v1[i]) && (v1[i] < 123))
+        {
+            contagem++;
+        }
+    }
+    return contagem;
+}
+void printarmaiorm(char v1[]){
+    for(int i = 0; i < strlen(v1); i++ )
+    {
+        if( ( 109 < v1[i]) && (v1[i] < 123))
+        {
+            printf("A letra: [%c] eh minuscula e maior que 'm'\n", v1[i]);
+        }
+    }
+}
+
+void printarmaiorM(char v1[]){
+    for(int i = 0; i < strlen(v1); i++ )
+    {
+        if( ( 77 < v1[i]) && (v1[i] < 91))
+        {
+            printf("A letra: [%c] eh maiuscula e maior que 'M'\n", v1[i]);
+        }
+    }
+}
 // Função para o exercício 0411
 // - ler a quantidade de valores reais;
 // - ler dois valores reais para definir um intervalo fechado;
@@ -221,9 +263,20 @@ void ex0415() {
 
 void ex0416() {
 // identificacao
-    printf( "\nExercicio 0316:\n\n" );
-
+    printf( "\nExercicio 0416:\n\n" );
+    // variavel
+    char cadeia[80];
     // programa
+    printf( "Digite uma palavra: " );
+    scanf( "%s" , cadeia);
+    getchar();
+    printf( "\n" );
+    contarmaiorM(cadeia);
+    contarmaiorm(cadeia);
+    printarmaiorm(cadeia);
+    printarmaiorM(cadeia);
+    printf( "\nAperte ENTER para continuar!\n" );
+    getchar();
 
 }// Fim da função ex0416
 
