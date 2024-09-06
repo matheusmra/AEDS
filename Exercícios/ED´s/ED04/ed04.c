@@ -171,6 +171,41 @@ void alfanum(char v1[]) {
         }
 
 }
+void printar(char v1[]) {
+    for (int i = 0; i < strlen(v1); i++) {
+        char c = v1[i];
+
+        // Verificar se é minúscula e menor que 'm'
+        if (c > 96 && c < 109) {
+            printf("A letra: [%c] eh minuscula e menor que 'm'\n", c);
+        }
+
+        // Verificar se é maiúscula e menor que 'M'
+        if (c > 64 && c < 77) {
+            printf("A letra: [%c] eh maiuscula e menor que 'M'\n", c);
+        }
+
+        // Verificar se é minúscula e maior que 'm'
+        if (c > 109 && c < 123) {
+            printf("A letra: [%c] eh minuscula e maior que 'm'\n", c);
+        }
+
+        // Verificar se é maiúscula e maior que 'M'
+        if (c > 77 && c < 91) {
+            printf("A letra: [%c] eh maiuscula e maior que 'M'\n", c);
+        }
+
+        // Verificar se não é letra ou dígito
+        if ((c > 32 && c < 48) || (c > 57 && c < 65) || (c > 90 && c < 97) || (c > 122 && c < 127)) {
+            printf("O caracter: [%c] nao eh uma letra ou digito\n", c);
+        }
+
+        // Verificar se é alfanumérico
+        if ((c > 47 && c < 58) || (c > 64 && c < 91) || (c > 96 && c < 123)) {
+            printf("(%c) eh simbolo alfanumerico\n", c);
+        }
+    }
+}
 //Função para separar em outra cadeia
 void separarDigitos(const char *v1, char *v2) {
     int j = 0;
