@@ -33,7 +33,7 @@ void menuOpcoes() {
     printf(" 12 - Exercicio 04E2\n");
 } // fim menuOpcoes()
 
-// Função para testar se o caractere digitado é menor que m (minusculo)
+// Função para testar se o caractere digitado é menor que M
 int contarM(char v1[]) {
     int contagemM = 0;
     for(int i = 0; i < strlen(v1); i++)
@@ -44,8 +44,19 @@ int contarM(char v1[]) {
         }
     return contagemM;
 }//Fim função
+// Função para contar alfanumerico
+int contaralfanum(char v1[]) {
+    int total = 0;
+    for(int i = 0; i < strlen(v1); i++)
+    {
+        if((47 < v1[i] && v1[i] < 58) || (64 < v1[i] && v1[i] < 91) || (96 < v1[i] && v1[i] < 123)){
+            total++;
+        }
+        }
+    return total;
 
-//Função para contar total de letras menor que M e m
+}
+//Função para contar total de letras menor que m
 int contarm(char v1[]) {
     int contagem = 0;
     for(int i = 0; i < strlen(v1); i++ )
@@ -160,6 +171,16 @@ void alfanum(char v1[]) {
         }
 
 }
+//Função para separar em outra cadeia
+void separarDigitos(const char *v1, char *v2) {
+    int j = 0;
+    for (int i = 0; i < strlen(v1); i++) {
+        if  ((96 < v1[i]) && (v1[i] < 109)) {
+            v2[j++] = v1[i];
+        }
+    }
+    v2[j] = '\0';
+}
 
 void metodo04E2(const char *cadeia1, const char *cadeia2)
 {
@@ -231,7 +252,6 @@ void ex0411()
     // encerrar
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
-    return 0;
 } // fim exercicio0411
 
 // Função para o exercício 0412
@@ -301,8 +321,18 @@ void ex0413() {
 void ex0414() {
 // identificacao
     printf( "\nExercicio 0414:\n\n" );
-
+    // variáveis
+    char cadeia[80], cadeia2[80];
     // programa
+    printf( "Digite uma palavra: " );
+    scanf( "%s" , cadeia);
+    getchar();
+    printf( "\n" );
+    separarDigitos(cadeia, cadeia2);
+    printf("Digitos separados: %s\n", cadeia2);
+    // encerrar
+    printf( "\nAperte ENTER para continuar!\n" );
+    getchar();
 
 }// Fim da função ex0414
 
