@@ -35,11 +35,9 @@ void menuOpcoes() {
 
 
 
-// Fun��o para o exerc�cio 0411
-// - ler a quantidade de valores reais;
-// - ler dois valores reais para definir um intervalo fechado;
-// - ler tantos valores reais quanto a quantidade, um de cada vez e
-// - contar quantos desses valores est�o dentro do intervalo, e quantos est�o fora dele
+// Incluir função e método (0511) para:
+// para ler uma quantidade inteira (n) do teclado e, mediante um procedimento,
+// testar a função para gerar valores múltiplos de 4 em ordem crescente.
 
 void ex0511()
 {
@@ -52,10 +50,9 @@ void ex0511()
 } // fim exercicio0511
 
 // Fun��o para o exerc�cio 0512
-// - ler uma sequ�ncia de caracteres do teclado;
-// - contar e mostrar a quantidade de letras min�sculas menores que 'm'.
-// DICA: Definir uma fun��o para determinar se um caractere � letra mai�scula.
-// Exemplo: sequ�ncia = AaKkLmM0*Nx
+// Incluir função e método (0512) para:
+// para ler uma quantidade inteira do teclado e, mediante um procedimento,
+// testar a função para gerar valores múltiplos de 3 e 4 em ordem crescente.
 void ex0512() {
     // identificacao
     printf( "\nExercicio 0512:\n\n" );
