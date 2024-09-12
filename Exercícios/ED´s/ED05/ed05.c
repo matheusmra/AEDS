@@ -207,11 +207,12 @@ void ex0518() {
     getchar();
 }// Fim da fun��o ex0418
 
-// Fun��o para o exerc�cio 0419
-// - ler uma sequ�ncia de caracteres do teclado;
-// - mostrar todos os s�mbolos alfanum�ricos (letras e d�gitos) em uma cadeia de caracteres
- //separados por meio de uma fun��o.
-//Exemplo: sequ�ncia = (A1b2+C3d4)*E5f6
+// Fun��o para o exerc�cio 0519
+Incluir função e método (0519) para
+calcular a soma dos quadrados da adição dos números naturais começando no valor 4.
+Testar essa função para quantidades diferentes de valores e
+e mostrar os resultados em outro método.
+Exemplo: n = 5 => 16 + 25 + 36 + 49 + 64
 void ex0519() {
     // identificacao
     printf( "\nExercicio 0519:\n\n" );
