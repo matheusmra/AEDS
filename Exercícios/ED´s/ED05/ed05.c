@@ -111,9 +111,12 @@ void ex0514() {
 }// Fim da fun��o ex0414
 
 // Fun��o para o exerc�cio 0415
-// - ler uma sequ�ncia de caracteres do teclado;
-// - mostrar a quantidade de letras (tanto mai�sculas, quanto min�sculas) menores que 'M' e 'm' contadas por uma fun��o definida para receber uma cadeia de caracteres como par�metro.
-// Exemplo: sequ�ncia = AaKkLmM0*Nx
+Incluir função e método (0515) para:
+para ler um valor real real (x) do teclado;
+para ler uma quantidade inteira do teclado e, mediante um procedimento,
+testar a função para gerar valores ímpares crescentes nos denominadores
+da sequência: 1 1/x1 1/x3 1/x5 ...
+DICA: Usar da biblioteca <math.h> a função pow ( x, y ) para calcular a potência
 void ex0515() {
 // identificacao
     printf( "\nExercicio 0515:\n\n" );
