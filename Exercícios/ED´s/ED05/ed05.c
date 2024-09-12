@@ -244,11 +244,10 @@ void ex0520() {
 }// Fim da fun��o ex0420
 
 // Fun��o para o exerc�cio 04E1
-// - ler certa quantidade de cadeias de caracteres do teclado;
-// - contar a quantidade de s�mbolos alfanum�ricos, incluindo espa�os em branco, em cada palavra,
-// e calcular o total de todas as palavras, por meio de uma fun��o.
-//OBS.: Para a leitura incluir espa�os em branco, usar IO_readln( ) ou fgets( ).
-// Exemplo: sequ�ncia = (A1b2 + C3d4) * E5f6
+Incluir função e método (Exemplo05E1) para
+ler um número inteiro do teclado (n) e,
+mediante o uso da função, calcular e mostrar o fatorial desse valor em outro método:
+n! = n * (n-1) * (n-2) * ... * 3 * 2 * 1 se n>0
 
 void ex05E1()
 {
@@ -257,10 +256,10 @@ void ex05E1()
 
 } // fim exercicio04E1
 // Fun��o para o exerc�cio 04E2
-Incluir função e método (Exemplo05E1) para
-ler um número inteiro do teclado (n) e,
-mediante o uso da função, calcular e mostrar o fatorial desse valor em outro método:
-n! = n * (n-1) * (n-2) * ... * 3 * 2 * 1 se n>0
+Incluir função e método (Exemplo05E2) para
+ler uma quantidade inteira do teclado (n) e,
+mediante o uso da função, calcular e mostrar o resultado em outro método de
+f ( n ) = (1+3/2!) * (1+5/4!) * (1+7/8!) * 
 void ex05E2()
 {
     // identificacao
