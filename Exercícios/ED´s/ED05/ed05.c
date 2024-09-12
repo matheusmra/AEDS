@@ -63,10 +63,9 @@ void ex0512() {
 }// Fim da fun��o ex0512
 
 // Fun��o para o exerc�cio 0513
-// - ler uma sequ�ncia de caracteres do teclado;
-// - mostrar a quantidade de letras min�sculas menores que 'm',
-// - definir e usar uma fun��o para receber uma cadeia de caracteres como par�metro e contar a quantidade desejada.
-// Exemplo: sequ�ncia = AaKkLmM0*Nx
+//  Incluir função e método (0513) para:
+//  para ler uma quantidade inteira do teclado e, mediante um procedimento,
+//  testar a função para gerar potências de 3 em ordem decrescente.
 void ex0513() {
 // identificacao
     printf( "\nExercicio 0513:\n\n" );
