@@ -15,7 +15,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
-// Função para mostrar o menu de opções
+// FunÃ§Ã£o para mostrar o menu de opÃ§Ãµes
 void menuOpcoes() {
     printf("\nEscolha alguma das opcoes a seguir:\n\n");
     printf("  0 - Encerrar programa\n");
@@ -33,7 +33,7 @@ void menuOpcoes() {
     printf(" 12 - Exercicio 04E2\n");
 } // fim menuOpcoes()
 
-// Função para testar se o caractere digitado é menor que M
+// FunÃ§Ã£o para testar se o caractere digitado Ã© menor que M
 int contarM(char v1[]) {
     int contagemM = 0;
     for(int i = 0; i < strlen(v1); i++)
@@ -43,8 +43,8 @@ int contarM(char v1[]) {
         }
         }
     return contagemM;
-}//Fim função
-// Função para contar alfanumerico
+}//Fim funÃ§Ã£o
+// FunÃ§Ã£o para contar alfanumerico
 int contaralfanum(char v1[]) {
     int total = 0;
     for(int i = 0; i < strlen(v1); i++)
@@ -56,7 +56,7 @@ int contaralfanum(char v1[]) {
     return total;
 
 }
-//Função para contar total de letras menor que m
+//FunÃ§Ã£o para contar total de letras menor que m
 int contarm(char v1[]) {
     int contagem = 0;
     for(int i = 0; i < strlen(v1); i++ )
@@ -67,9 +67,9 @@ int contarm(char v1[]) {
         }
     }
     return contagem;
-}//Fim função
+}//Fim funÃ§Ã£o
 
-//Função para contar total de letras maior que M
+//FunÃ§Ã£o para contar total de letras maior que M
 int contarmaiorM(char v1[]) {
     int contagemM = 0;
     for(int i = 0; i < strlen(v1); i++)
@@ -81,7 +81,7 @@ int contarmaiorM(char v1[]) {
     return contagemM;
 }
 
-//Função para contar total de letras maior que m
+//FunÃ§Ã£o para contar total de letras maior que m
 int contarmaiorm(char v1[]) {
     int contagem = 0;
     for(int i = 0; i < strlen(v1); i++ )
@@ -94,7 +94,7 @@ int contarmaiorm(char v1[]) {
     return contagem;
 }
 
-//Função para testar se é numero impar
+//FunÃ§Ã£o para testar se Ã© numero impar
 int impar(char v1[]) {
     int total = 0;
     for(int i = 0; i < strlen(v1); i++)
@@ -106,7 +106,7 @@ int impar(char v1[]) {
     return total;
 }
 
-//Função para printar se o caracter digitado é minusculo e menor que a letra m.
+//FunÃ§Ã£o para printar se o caracter digitado Ã© minusculo e menor que a letra m.
 void printarmenorm(char v1[]){
     for(int i = 0; i < strlen(v1); i++ )
     {
@@ -115,9 +115,9 @@ void printarmenorm(char v1[]){
             printf("A letra: [%c] eh minuscula e menor que 'm'\n", v1[i]);
         }
     }
-}//Fim da função
+}//Fim da funÃ§Ã£o
 
-//Função para printar se o caracter digitado é maiusculo e menor que a letra M.
+//FunÃ§Ã£o para printar se o caracter digitado Ã© maiusculo e menor que a letra M.
 void printarmenorM(char v1[]){
     for(int i = 0; i < strlen(v1); i++ )
     {
@@ -128,7 +128,7 @@ void printarmenorM(char v1[]){
     }
 }
 
-//Função para printar letras que são maiusculas e maiores que m.
+//FunÃ§Ã£o para printar letras que sÃ£o maiusculas e maiores que m.
 void printarmaiorm(char v1[]){
     for(int i = 0; i < strlen(v1); i++ )
     {
@@ -140,7 +140,7 @@ void printarmaiorm(char v1[]){
 }
 //Fim
 
-//Função para printar letra maiuscula e maior que M
+//FunÃ§Ã£o para printar letra maiuscula e maior que M
 void printarmaiorM(char v1[]){
     for(int i = 0; i < strlen(v1); i++ )
     {
@@ -151,7 +151,7 @@ void printarmaiorM(char v1[]){
     }
 }
 //Fim
-//Função para verificar se não é letra ou digito
+//FunÃ§Ã£o para verificar se nÃ£o Ã© letra ou digito
 void verchar(char v1[]){
     for(int i = 0; i < strlen(v1); i++){
         if( ( 32 < v1[i]) && (v1[i] < 48) || (57 < v1[i] && (v1[i]) < 65) || (90 < v1[i]) && (v1[i] < 97) || (122 < v1[i]) && (v1[i] < 127))
@@ -161,7 +161,7 @@ void verchar(char v1[]){
     }
 
 }
-//Função para verificar se é Letra ou digito
+//FunÃ§Ã£o para verificar se Ã© Letra ou digito
 void alfanum(char v1[]) {
     for(int i = 0; i < strlen(v1); i++)
     {
@@ -175,38 +175,38 @@ void printar(char v1[]) {
     for (int i = 0; i < strlen(v1); i++) {
         char c = v1[i];
 
-        // Verificar se é minúscula e menor que 'm'
+        // Verificar se Ã© minÃºscula e menor que 'm'
         if (c > 96 && c < 109) {
             printf("A letra: [%c] eh minuscula e menor que 'm'\n", c);
         }
 
-        // Verificar se é maiúscula e menor que 'M'
+        // Verificar se Ã© maiÃºscula e menor que 'M'
         if (c > 64 && c < 77) {
             printf("A letra: [%c] eh maiuscula e menor que 'M'\n", c);
         }
 
-        // Verificar se é minúscula e maior que 'm'
+        // Verificar se Ã© minÃºscula e maior que 'm'
         if (c > 109 && c < 123) {
             printf("A letra: [%c] eh minuscula e maior que 'm'\n", c);
         }
 
-        // Verificar se é maiúscula e maior que 'M'
+        // Verificar se Ã© maiÃºscula e maior que 'M'
         if (c > 77 && c < 91) {
             printf("A letra: [%c] eh maiuscula e maior que 'M'\n", c);
         }
 
-        // Verificar se não é letra ou dígito
+        // Verificar se nÃ£o Ã© letra ou dÃ­gito
         if ((c > 32 && c < 48) || (c > 57 && c < 65) || (c > 90 && c < 97) || (c > 122 && c < 127)) {
             printf("O caracter: [%c] nao eh uma letra ou digito\n", c);
         }
 
-        // Verificar se é alfanumérico
+        // Verificar se Ã© alfanumÃ©rico
         if ((c > 47 && c < 58) || (c > 64 && c < 91) || (c > 96 && c < 123)) {
             printf("(%c) eh simbolo alfanumerico\n", c);
         }
     }
 }
-//Função para separar em outra cadeia
+//FunÃ§Ã£o para separar em outra cadeia
 void separarDigitos(const char *v1, char *v2) {
     int j = 0;
     for (int i = 0; i < strlen(v1); i++) {
@@ -215,6 +215,27 @@ void separarDigitos(const char *v1, char *v2) {
         }
     }
     v2[j] = '\0';
+}
+
+void f0420(char v1[]) {
+    int cadeia, count=0;
+    printf("Digite a quantidade de cadeias de caracteres: ");
+    scanf("%d", &cadeia);
+    getchar();
+    printf("Digite a cadeia de caracteres: ");
+    for (int i = 0; i < cadeia; i++) {
+        fgets(caracter, sizeof(caracter), stdin);
+        caracter[strcspn(caracter, "\n")] = 0;
+        for (int j = 0; j < strlen(caracter); j++) {
+            if (isalnum(caracter[j])) {
+                count++;
+            }
+        }
+        printf("A cadeia '%s' contÃ©m %d sÃ­mbolos alfanumericos.\n", caracter, count);
+        
+    }
+    printf("Total acumulado de sÃ­mbolos alfanumÃ©ricos: %d\n", count);
+    getchar();
 }
 
 void metodo04E2(const char *cadeia1, const char *cadeia2)
@@ -246,11 +267,11 @@ void metodo04E2(const char *cadeia1, const char *cadeia2)
   }
 }
 
-// Função para o exercício 0411
+// FunÃ§Ã£o para o exercÃ­cio 0411
 // - ler a quantidade de valores reais;
 // - ler dois valores reais para definir um intervalo fechado;
 // - ler tantos valores reais quanto a quantidade, um de cada vez e
-// - contar quantos desses valores estão dentro do intervalo, e quantos estão fora dele
+// - contar quantos desses valores estÃ£o dentro do intervalo, e quantos estÃ£o fora dele
 
 void ex0411()
 {
@@ -289,11 +310,11 @@ void ex0411()
     getchar();
 } // fim exercicio0411
 
-// Função para o exercício 0412
-// - ler uma sequência de caracteres do teclado;
-// - contar e mostrar a quantidade de letras minúsculas menores que 'm'.
-// DICA: Definir uma função para determinar se um caractere é letra maiúscula.
-// Exemplo: sequência = AaKkLmM0*Nx
+// FunÃ§Ã£o para o exercÃ­cio 0412
+// - ler uma sequÃªncia de caracteres do teclado;
+// - contar e mostrar a quantidade de letras minÃºsculas menores que 'm'.
+// DICA: Definir uma funÃ§Ã£o para determinar se um caractere Ã© letra maiÃºscula.
+// Exemplo: sequÃªncia = AaKkLmM0*Nx
 void ex0412() {
     // identificacao
     printf( "\nExercicio 0412:\n\n" );
@@ -319,17 +340,17 @@ void ex0412() {
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
     return 0;
-}// Fim da função ex0412
+}// Fim da funÃ§Ã£o ex0412
 
-// Função para o exercício 0413
-// - ler uma sequência de caracteres do teclado;
-// - mostrar a quantidade de letras minúsculas menores que 'm',
-// - definir e usar uma função para receber uma cadeia de caracteres como parâmetro e contar a quantidade desejada.
-// Exemplo: sequência = AaKkLmM0*Nx
+// FunÃ§Ã£o para o exercÃ­cio 0413
+// - ler uma sequÃªncia de caracteres do teclado;
+// - mostrar a quantidade de letras minÃºsculas menores que 'm',
+// - definir e usar uma funÃ§Ã£o para receber uma cadeia de caracteres como parÃ¢metro e contar a quantidade desejada.
+// Exemplo: sequÃªncia = AaKkLmM0*Nx
 void ex0413() {
 // identificacao
     printf( "\nExercicio 0413:\n\n" );
-    // variáveis
+    // variÃ¡veis
     char cadeia[80];
     // programa
     printf( "Digite uma palavra: " );
@@ -337,7 +358,7 @@ void ex0413() {
     getchar();
     printf( "\n" );
     contarm(cadeia);
-    // Testar se o caractere é minusculo e menor que m
+    // Testar se o caractere Ã© minusculo e menor que m
     printarmenorm(cadeia);
     printf("O total de letras minusculas menores que 'm' eh: %d ", contarm(cadeia));
     // encerrar
@@ -345,18 +366,18 @@ void ex0413() {
     getchar();
     return 0;
 
-}// Fim da função ex0413
+}// Fim da funÃ§Ã£o ex0413
 
-// Função para o exercício 0414
-// - ler uma sequência de caracteres do teclado;
-// - mostrar as letras minúsculas menores que 'm',
-// - definir e usar uma função para receber uma cadeia de caracteres como parâmetro e separar em outra cadeia de caracteres os símbolos desejados.
-// DICA: Usar concatenação para juntar a uma cadeia inicialmente vazia cada símbolo encontrado que satisfizer a condição.
-// Exemplo: sequência = AaKkLmM0*Nx
+// FunÃ§Ã£o para o exercÃ­cio 0414
+// - ler uma sequÃªncia de caracteres do teclado;
+// - mostrar as letras minÃºsculas menores que 'm',
+// - definir e usar uma funÃ§Ã£o para receber uma cadeia de caracteres como parÃ¢metro e separar em outra cadeia de caracteres os sÃ­mbolos desejados.
+// DICA: Usar concatenaÃ§Ã£o para juntar a uma cadeia inicialmente vazia cada sÃ­mbolo encontrado que satisfizer a condiÃ§Ã£o.
+// Exemplo: sequÃªncia = AaKkLmM0*Nx
 void ex0414() {
 // identificacao
     printf( "\nExercicio 0414:\n\n" );
-    // variáveis
+    // variÃ¡veis
     char cadeia[80], cadeia2[80];
     // programa
     printf( "Digite uma palavra: " );
@@ -369,12 +390,12 @@ void ex0414() {
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
 
-}// Fim da função ex0414
+}// Fim da funÃ§Ã£o ex0414
 
-// Função para o exercício 0415
-// - ler uma sequência de caracteres do teclado;
-// - mostrar a quantidade de letras (tanto maiúsculas, quanto minúsculas) menores que 'M' e 'm' contadas por uma função definida para receber uma cadeia de caracteres como parâmetro.
-// Exemplo: sequência = AaKkLmM0*Nx
+// FunÃ§Ã£o para o exercÃ­cio 0415
+// - ler uma sequÃªncia de caracteres do teclado;
+// - mostrar a quantidade de letras (tanto maiÃºsculas, quanto minÃºsculas) menores que 'M' e 'm' contadas por uma funÃ§Ã£o definida para receber uma cadeia de caracteres como parÃ¢metro.
+// Exemplo: sequÃªncia = AaKkLmM0*Nx
 void ex0415() {
 // identificacao
     printf( "\nExercicio 0415:\n\n" );
@@ -392,13 +413,13 @@ void ex0415() {
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
 
-}// Fim da função ex0415
+}// Fim da funÃ§Ã£o ex0415
 
-// Função para o exercício 0416
-// - ler uma sequência de caracteres do teclado;
-// - mostrar as letras (tanto maiúsculas, quanto minúsculas) maiores que 'M' e 'm'
- //separadas por uma função definida para receber uma cadeia de caracteres como parâmetro.
-//Exemplo: sequência = AaKkLmM0*Nx
+// FunÃ§Ã£o para o exercÃ­cio 0416
+// - ler uma sequÃªncia de caracteres do teclado;
+// - mostrar as letras (tanto maiÃºsculas, quanto minÃºsculas) maiores que 'M' e 'm'
+ //separadas por uma funÃ§Ã£o definida para receber uma cadeia de caracteres como parÃ¢metro.
+//Exemplo: sequÃªncia = AaKkLmM0*Nx
 
 void ex0416() {
 // identificacao
@@ -417,14 +438,14 @@ void ex0416() {
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
 
-}// Fim da função ex0416
+}// Fim da funÃ§Ã£o ex0416
 
-// Função para o exercício 0417
-// - ler uma sequência de caracteres do teclado;
-// - mostrar a quantidade de dígitos ímpares em uma cadeia de caracteres contados por uma função
- //definida para receber uma cadeia de caracteres como parâmetro.
- //DICA: Considerar o valor inteiro do código equivalente (type casting) para teste.
-//Exemplo: sequência = A1b2C3d4E5f6
+// FunÃ§Ã£o para o exercÃ­cio 0417
+// - ler uma sequÃªncia de caracteres do teclado;
+// - mostrar a quantidade de dÃ­gitos Ã­mpares em uma cadeia de caracteres contados por uma funÃ§Ã£o
+ //definida para receber uma cadeia de caracteres como parÃ¢metro.
+ //DICA: Considerar o valor inteiro do cÃ³digo equivalente (type casting) para teste.
+//Exemplo: sequÃªncia = A1b2C3d4E5f6
 void ex0417(void) {
 // identificacao
     printf( "\nExercicio 0417:\n\n" );
@@ -440,12 +461,12 @@ void ex0417(void) {
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
 
-}// Fim da função ex0417
-// Função para o exercício 0418
-// - ler uma sequência de caracteres do teclado;
-// - mostrar todos os símbolos não alfanuméricos (letras e dígitos) em uma cadeia de caracteres
- //separados por meio de uma função.
-// Exemplo: sequência = (A1b2+C3d4)*E5f6
+}// Fim da funÃ§Ã£o ex0417
+// FunÃ§Ã£o para o exercÃ­cio 0418
+// - ler uma sequÃªncia de caracteres do teclado;
+// - mostrar todos os sÃ­mbolos nÃ£o alfanumÃ©ricos (letras e dÃ­gitos) em uma cadeia de caracteres
+ //separados por meio de uma funÃ§Ã£o.
+// Exemplo: sequÃªncia = (A1b2+C3d4)*E5f6
 void ex0418() {
 // identificacao
     printf( "\nExercicio 0418:\n\n" );
@@ -459,13 +480,13 @@ void ex0418() {
     verchar(cadeia);
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
-}// Fim da função ex0418
+}// Fim da funÃ§Ã£o ex0418
 
-// Função para o exercício 0419
-// - ler uma sequência de caracteres do teclado;
-// - mostrar todos os símbolos alfanuméricos (letras e dígitos) em uma cadeia de caracteres
- //separados por meio de uma função.
-//Exemplo: sequência = (A1b2+C3d4)*E5f6
+// FunÃ§Ã£o para o exercÃ­cio 0419
+// - ler uma sequÃªncia de caracteres do teclado;
+// - mostrar todos os sÃ­mbolos alfanumÃ©ricos (letras e dÃ­gitos) em uma cadeia de caracteres
+ //separados por meio de uma funÃ§Ã£o.
+//Exemplo: sequÃªncia = (A1b2+C3d4)*E5f6
 void ex0419() {
     // identificacao
     printf( "\nExercicio 0419:\n\n" );
@@ -480,27 +501,37 @@ void ex0419() {
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
 
-}// Fim da função ex0419
+}// Fim da funÃ§Ã£o ex0419
 
-// Função para o exercício 0420
+// FunÃ§Ã£o para o exercÃ­cio 0420
 // - ler certa quantidade de cadeias de caracteres do teclado, uma por vez;
-// - mostrar e contar a quantidade de símbolos alfanuméricos (letras e dígitos) em cada palavra,
- //por meio de uma função, e calcular o total acumulado de todas as palavras.
-//Exemplo: sequências = { (A1b2+C3d4)*E5f6, [P&&Q]||[R&&!S], (a<b&&b<c) }
+// - mostrar e contar a quantidade de sÃ­mbolos alfanumÃ©ricos (letras e dÃ­gitos) em cada palavra,
+ //por meio de uma funÃ§Ã£o, e calcular o total acumulado de todas as palavras.
+//Exemplo: sequÃªncias = { (A1b2+C3d4)*E5f6, [P&&Q]||[R&&!S], (a<b&&b<c) }
 
 void ex0420() {
 // identificacao
     printf( "\nExercicio 0420:\n\n" );
+  // variavel
+    char cadeia[80];
+    // programa
+    printf( "Digite uma palavra: " );
+    scanf( "%s" , cadeia);
+    getchar();
+    printf( "\n" );
+    f0420(cadeia);
+    printf( "\nAperte ENTER para continuar!\n" );
+    getchar();
 
 
-}// Fim da função ex0420
+}// Fim da funÃ§Ã£o ex0420
 
-// Função para o exercício 04E1
+// FunÃ§Ã£o para o exercÃ­cio 04E1
 // - ler certa quantidade de cadeias de caracteres do teclado;
-// - contar a quantidade de símbolos alfanuméricos, incluindo espaços em branco, em cada palavra,
-// e calcular o total de todas as palavras, por meio de uma função.
-//OBS.: Para a leitura incluir espaços em branco, usar IO_readln( ) ou fgets( ).
-// Exemplo: sequência = (A1b2 + C3d4) * E5f6
+// - contar a quantidade de sÃ­mbolos alfanumÃ©ricos, incluindo espaÃ§os em branco, em cada palavra,
+// e calcular o total de todas as palavras, por meio de uma funÃ§Ã£o.
+//OBS.: Para a leitura incluir espaÃ§os em branco, usar IO_readln( ) ou fgets( ).
+// Exemplo: sequÃªncia = (A1b2 + C3d4) * E5f6
 
 void ex04E1()
 {
@@ -508,10 +539,10 @@ void ex04E1()
     printf( "\nExercicio 04E1:\n\n" );
 
 } // fim exercicio04E1
-// Função para o exercício 04E2
+// FunÃ§Ã£o para o exercÃ­cio 04E2
 // - ler duas cadeias de caracteres do teclado;
-// - calcular qual das duas sequências possui a maior quantidade de dígitos,por meio de uma função.
-// Exemplo: sequência = { A1b2, C3d4E5 }
+// - calcular qual das duas sequÃªncias possui a maior quantidade de dÃ­gitos,por meio de uma funÃ§Ã£o.
+// Exemplo: sequÃªncia = { A1b2, C3d4E5 }
 void ex04E2()
 {
     // identificacao
@@ -529,20 +560,20 @@ void ex04E2()
     metodo04E2(cadeia1, cadeia2);
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
-} // fim função 04E2
+} // fim funÃ§Ã£o 04E2
 
-// Função principal
+// FunÃ§Ã£o principal
 int main(void) {
     int opcao;
 
     do {
-        menuOpcoes(); // Chama a função que exibe as opções
+        menuOpcoes(); // Chama a funÃ§Ã£o que exibe as opÃ§Ãµes
 
         printf("\nOpcao = ");
         scanf("%d", &opcao);
         getchar(); // Limpar o buffer de entrada
 
-        // Executar a opção escolhida
+        // Executar a opÃ§Ã£o escolhida
         switch (opcao) {
             case 0: break;
             case 1: ex0411(); break;
@@ -568,4 +599,4 @@ int main(void) {
     getchar();
 
     return 0;
-} // Fim da função principal
+} // Fim da funÃ§Ã£o principal
