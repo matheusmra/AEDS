@@ -88,11 +88,10 @@ void ex0513() {
 }// Fim da fun��o ex0413
 
 // Fun��o para o exerc�cio 0414
-// - ler uma sequ�ncia de caracteres do teclado;
-// - mostrar as letras min�sculas menores que 'm',
-// - definir e usar uma fun��o para receber uma cadeia de caracteres como par�metro e separar em outra cadeia de caracteres os s�mbolos desejados.
-// DICA: Usar concatena��o para juntar a uma cadeia inicialmente vazia cada s�mbolo encontrado que satisfizer a condi��o.
-// Exemplo: sequ�ncia = AaKkLmM0*Nx
+Incluir função e método (0514) para:
+para ler uma quantidade inteira do teclado e, mediante um procedimento,
+testar a função para gerar valores crescentes nos denominadores
+(sequência dos inversos) múltiplos de 4.
 void ex0514() {
 // identificacao
     printf( "\nExercicio 0514:\n\n" );
