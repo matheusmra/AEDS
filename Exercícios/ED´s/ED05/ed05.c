@@ -137,10 +137,12 @@ void ex0515() {
 }// Fim da fun��o ex0415
 
 // Fun��o para o exerc�cio 0416
-// - ler uma sequ�ncia de caracteres do teclado;
-// - mostrar as letras (tanto mai�sculas, quanto min�sculas) maiores que 'M' e 'm'
- //separadas por uma fun��o definida para receber uma cadeia de caracteres como par�metro.
-//Exemplo: sequ�ncia = AaKkLmM0*Nx
+Incluir função e método (0516) para
+calcular a soma dos primeiros valores positivos começando no valor 4,
+múltiplos de 4 e não múltiplos de 5.
+Testar essa função para quantidades diferentes e mostrar os resultados em outro método.
+Exemplo: n = 5 => 4 + 8 + 12 + 16 + 24
+
 
 void ex0516() {
 // identificacao
