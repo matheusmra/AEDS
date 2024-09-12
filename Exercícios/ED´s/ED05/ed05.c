@@ -230,10 +230,11 @@ void ex0519() {
 }// Fim da fun��o ex0419
 
 // Fun��o para o exerc�cio 0420
-// - ler certa quantidade de cadeias de caracteres do teclado, uma por vez;
-// - mostrar e contar a quantidade de s�mbolos alfanum�ricos (letras e d�gitos) em cada palavra,
- //por meio de uma fun��o, e calcular o total acumulado de todas as palavras.
-//Exemplo: sequ�ncias = { (A1b2+C3d4)*E5f6, [P&&Q]||[R&&!S], (a<b&&b<c) }
+Incluir função e método (Exemplo0520) para
+calcular a soma dos inversos (1/x) das adições de números naturais terminando no valor 4.
+Testar essa função para quantidades diferentes de valores
+e mostrar os resultados em outro método.
+Exemplo: n = 5 => 1/14 + 1/10 + 1/7 + 1/5 + 1/4
 
 void ex0520() {
 // identificacao
@@ -256,9 +257,10 @@ void ex05E1()
 
 } // fim exercicio04E1
 // Fun��o para o exerc�cio 04E2
-// - ler duas cadeias de caracteres do teclado;
-// - calcular qual das duas sequ�ncias possui a maior quantidade de d�gitos,por meio de uma fun��o.
-// Exemplo: sequ�ncia = { A1b2, C3d4E5 }
+Incluir função e método (Exemplo05E1) para
+ler um número inteiro do teclado (n) e,
+mediante o uso da função, calcular e mostrar o fatorial desse valor em outro método:
+n! = n * (n-1) * (n-2) * ... * 3 * 2 * 1 se n>0
 void ex05E2()
 {
     // identificacao
