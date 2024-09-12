@@ -164,11 +164,12 @@ void ex0516() {
 }// Fim da fun��o ex0416
 
 // Fun��o para o exerc�cio 0417
-// - ler uma sequ�ncia de caracteres do teclado;
-// - mostrar a quantidade de d�gitos �mpares em uma cadeia de caracteres contados por uma fun��o
- //definida para receber uma cadeia de caracteres como par�metro.
- //DICA: Considerar o valor inteiro do c�digo equivalente (type casting) para teste.
-//Exemplo: sequ�ncia = A1b2C3d4E5f6
+Incluir função e método (0517) para
+calcular a soma dos inversos (1/x) dos primeiros valores positivos,
+começando no valor 3, múltiplos de 3 e não múltiplos de 5.
+Testar essa função para quantidades diferentes e
+mostrar os resultados em outro método.
+Exemplo: n = 5 => 1/3 + 1/6 + 1/9 + 1/12 + 1/18
 void ex0517(void) {
 // identificacao
     printf( "\nExercicio 0517:\n\n" );
