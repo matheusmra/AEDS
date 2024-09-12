@@ -97,9 +97,9 @@ void ex0513() {
 // - definir e usar uma fun��o para receber uma cadeia de caracteres como par�metro e separar em outra cadeia de caracteres os s�mbolos desejados.
 // DICA: Usar concatena��o para juntar a uma cadeia inicialmente vazia cada s�mbolo encontrado que satisfizer a condi��o.
 // Exemplo: sequ�ncia = AaKkLmM0*Nx
-void ex0414() {
+void ex0514() {
 // identificacao
-    printf( "\nExercicio 0414:\n\n" );
+    printf( "\nExercicio 0514:\n\n" );
     // vari�veis
     char cadeia[80], cadeia2[80];
     // programa
@@ -119,9 +119,9 @@ void ex0414() {
 // - ler uma sequ�ncia de caracteres do teclado;
 // - mostrar a quantidade de letras (tanto mai�sculas, quanto min�sculas) menores que 'M' e 'm' contadas por uma fun��o definida para receber uma cadeia de caracteres como par�metro.
 // Exemplo: sequ�ncia = AaKkLmM0*Nx
-void ex0415() {
+void ex0515() {
 // identificacao
-    printf( "\nExercicio 0415:\n\n" );
+    printf( "\nExercicio 0515:\n\n" );
     // variavel
     char cadeia[80];
     // programa
@@ -144,9 +144,9 @@ void ex0415() {
  //separadas por uma fun��o definida para receber uma cadeia de caracteres como par�metro.
 //Exemplo: sequ�ncia = AaKkLmM0*Nx
 
-void ex0416() {
+void ex0516() {
 // identificacao
-    printf( "\nExercicio 0416:\n\n" );
+    printf( "\nExercicio 0516:\n\n" );
     // variavel
     char cadeia[80];
     // programa
@@ -169,9 +169,9 @@ void ex0416() {
  //definida para receber uma cadeia de caracteres como par�metro.
  //DICA: Considerar o valor inteiro do c�digo equivalente (type casting) para teste.
 //Exemplo: sequ�ncia = A1b2C3d4E5f6
-void ex0417(void) {
+void ex0517(void) {
 // identificacao
-    printf( "\nExercicio 0417:\n\n" );
+    printf( "\nExercicio 0517:\n\n" );
     // variavel
     char cadeia[80];
     // programa
@@ -190,9 +190,9 @@ void ex0417(void) {
 // - mostrar todos os s�mbolos n�o alfanum�ricos (letras e d�gitos) em uma cadeia de caracteres
  //separados por meio de uma fun��o.
 // Exemplo: sequ�ncia = (A1b2+C3d4)*E5f6
-void ex0418() {
+void ex0518() {
 // identificacao
-    printf( "\nExercicio 0418:\n\n" );
+    printf( "\nExercicio 0518:\n\n" );
     // variavel
     char cadeia[80];
     // programa
@@ -210,9 +210,9 @@ void ex0418() {
 // - mostrar todos os s�mbolos alfanum�ricos (letras e d�gitos) em uma cadeia de caracteres
  //separados por meio de uma fun��o.
 //Exemplo: sequ�ncia = (A1b2+C3d4)*E5f6
-void ex0419() {
+void ex0519() {
     // identificacao
-    printf( "\nExercicio 0419:\n\n" );
+    printf( "\nExercicio 0519:\n\n" );
   // variavel
     char cadeia[80];
     // programa
@@ -232,9 +232,9 @@ void ex0419() {
  //por meio de uma fun��o, e calcular o total acumulado de todas as palavras.
 //Exemplo: sequ�ncias = { (A1b2+C3d4)*E5f6, [P&&Q]||[R&&!S], (a<b&&b<c) }
 
-void ex0420() {
+void ex0520() {
 // identificacao
-    printf( "\nExercicio 0420:\n\n" );
+    printf( "\nExercicio 0520:\n\n" );
 
 
 }// Fim da fun��o ex0420
@@ -246,7 +246,7 @@ void ex0420() {
 //OBS.: Para a leitura incluir espa�os em branco, usar IO_readln( ) ou fgets( ).
 // Exemplo: sequ�ncia = (A1b2 + C3d4) * E5f6
 
-void ex04E1()
+void ex05E1()
 {
     // identificacao
     printf( "\nExercicio 04E1:\n\n" );
@@ -256,7 +256,7 @@ void ex04E1()
 // - ler duas cadeias de caracteres do teclado;
 // - calcular qual das duas sequ�ncias possui a maior quantidade de d�gitos,por meio de uma fun��o.
 // Exemplo: sequ�ncia = { A1b2, C3d4E5 }
-void ex04E2()
+void ex05E2()
 {
     // identificacao
     printf( "\nExercicio 04E2:\n\n" );
@@ -289,18 +289,18 @@ int main(void) {
         // Executar a op��o escolhida
         switch (opcao) {
             case 0: break;
-            case 1: ex0411(); break;
-            case 2: ex0412(); break;
-            case 3: ex0413(); break;
-            case 4: ex0414(); break;
-            case 5: ex0415(); break;
-            case 6: ex0416(); break;
-            case 7: ex0417(); break;
-            case 8: ex0418(); break;
-            case 9: ex0419(); break;
-            case 10: ex0420(); break;
-            case 11: ex04E1(); break;
-            case 12: ex04E2(); break;
+            case 1: ex0511(); break;
+            case 2: ex0512(); break;
+            case 3: ex0513(); break;
+            case 4: ex0514(); break;
+            case 5: ex0515(); break;
+            case 6: ex0516(); break;
+            case 7: ex0517(); break;
+            case 8: ex0518(); break;
+            case 9: ex0519(); break;
+            case 10: ex0520(); break;
+            case 11: ex05E1(); break;
+            case 12: ex05E2(); break;
             default:
                 printf("\nERRO: OPCAO INVALIDA\n\n");
                 break;
