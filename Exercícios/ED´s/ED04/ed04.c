@@ -224,18 +224,37 @@ void f0420(char v1[]) {
     getchar();
     printf("Digite a cadeia de caracteres: ");
     for (int i = 0; i < cadeia; i++) {
-        fgets(caracter, sizeof(caracter), stdin);
-        caracter[strcspn(caracter, "\n")] = 0;
-        for (int j = 0; j < strlen(caracter); j++) {
-            if (isalnum(caracter[j])) {
+        fgets(v1, sizeof(v1), stdin);
+        v1[strcspn(v1, "\n")] = 0;
+        for (int j = 0; j < strlen(v1); j++) {
+            if (isalnum(v1[j])) {
                 count++;
             }
         }
-        printf("A cadeia '%s' contém %d símbolos alfanumericos.\n", caracter, count);
-        
+        printf("A cadeia '%s' contem %d simbolos alfanumericos.\n", v1, count);
+
     }
-    printf("Total acumulado de símbolos alfanuméricos: %d\n", count);
+    printf("Total acumulado de símbolos alfanumericos: %d\n", count);
+}
+
+void metodo04E1(char v1[]) {
+    int n, total= 0, count=0;
+    printf("Digite a quantidade de cadeias de caracteres: ");
+    scanf("%d", &n);
     getchar();
+    printf("Digite a cadeia de caracteres: ");
+    for (int i = 0; i < n; i++) {
+        fgets(v1, sizeof(v1), stdin);
+        v1[strcspn(v1, "\n")] = 0;
+        for (int j = 0; j < strlen(v1); j++) {
+            if (isalnum(v1[j]) || isspace(v1[j])) {
+                count++;
+            }
+        }
+
+        printf("A cadeia '%s' contem %d simbolos alfanumericos e espaços.\n", v1, count);
+    }
+    printf("Total acumulado de simbolos alfanumericos e espaços: %d\n", count);
 }
 
 void metodo04E2(const char *cadeia1, const char *cadeia2)
@@ -364,8 +383,6 @@ void ex0413() {
     // encerrar
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
-    return 0;
-
 }// Fim da função ex0413
 
 // Função para o exercício 0414
@@ -515,10 +532,6 @@ void ex0420() {
   // variavel
     char cadeia[80];
     // programa
-    printf( "Digite uma palavra: " );
-    scanf( "%s" , cadeia);
-    getchar();
-    printf( "\n" );
     f0420(cadeia);
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
@@ -537,6 +550,10 @@ void ex04E1()
 {
     // identificacao
     printf( "\nExercicio 04E1:\n\n" );
+    char cadeia[80];
+    metodo04E1(cadeia);
+    printf( "\nAperte ENTER para continuar!\n" );
+    getchar();
 
 } // fim exercicio04E1
 // Função para o exercício 04E2
