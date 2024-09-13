@@ -38,13 +38,27 @@ void menuOpcoes() {
 // Incluir função e método (0511) para:
 // para ler uma quantidade inteira (n) do teclado e, mediante um procedimento,
 // testar a função para gerar valores múltiplos de 4 em ordem crescente.
+void fun0511(int v1){
+    int controle = 0;
+    for (int i = 0; i < v1; i++) {
+        controle = controle + 4;
+        printf("\nO numero: (%d) eh multiplo de quatro.", controle);
+    }
+    printf("\n");
 
+
+}
 void ex0511()
 {
     // identificacao
      printf("\nExercicio 0511:\n\n");
-
+    //programa
+    int n = 0;
+    printf("\nDigite o numero de termos:");
+    scanf("%d", &n);
+    fun0511(n);
     // encerrar
+    getchar();
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
 } // fim exercicio0511
@@ -69,17 +83,6 @@ void ex0512() {
 void ex0513() {
 // identificacao
     printf( "\nExercicio 0513:\n\n" );
-    // vari�veis
-    char cadeia[80];
-    // programa
-    printf( "Digite uma palavra: " );
-    scanf( "%s" , cadeia);
-    getchar();
-    printf( "\n" );
-    contarm(cadeia);
-    // Testar se o caractere � minusculo e menor que m
-    printarmenorm(cadeia);
-    printf("O total de letras minusculas menores que 'm' eh: %d ", contarm(cadeia));
     // encerrar
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
@@ -95,15 +98,6 @@ void ex0513() {
 void ex0514() {
 // identificacao
     printf( "\nExercicio 0514:\n\n" );
-    // vari�veis
-    char cadeia[80], cadeia2[80];
-    // programa
-    printf( "Digite uma palavra: " );
-    scanf( "%s" , cadeia);
-    getchar();
-    printf( "\n" );
-    separarDigitos(cadeia, cadeia2);
-    printf("Digitos separados: %s\n", cadeia2);
     // encerrar
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
@@ -120,17 +114,7 @@ void ex0514() {
 void ex0515() {
 // identificacao
     printf( "\nExercicio 0515:\n\n" );
-    // variavel
-    char cadeia[80];
-    // programa
-    printf( "Digite uma palavra: " );
-    scanf( "%s" , cadeia);
-    getchar();
-    printf( "\n" );
-    contarM(cadeia);
-    contarm(cadeia);
-    printarmenorm(cadeia);
-    printarmenorM(cadeia);
+
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
 
@@ -147,17 +131,7 @@ void ex0515() {
 void ex0516() {
 // identificacao
     printf( "\nExercicio 0516:\n\n" );
-    // variavel
-    char cadeia[80];
-    // programa
-    printf( "Digite uma palavra: " );
-    scanf( "%s" , cadeia);
-    getchar();
-    printf( "\n" );
-    contarmaiorM(cadeia);
-    contarmaiorm(cadeia);
-    printarmaiorm(cadeia);
-    printarmaiorM(cadeia);
+
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
 
@@ -173,15 +147,7 @@ void ex0516() {
 void ex0517(void) {
 // identificacao
     printf( "\nExercicio 0517:\n\n" );
-    // variavel
-    char cadeia[80];
-    // programa
-    printf( "Digite uma palavra: " );
-    scanf( "%s" , cadeia);
-    getchar();
-    printf( "\n" );
-    impar(cadeia);
-    printf("O total de numeros impares na cadeia eh: %d", impar(cadeia));
+
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
 
@@ -195,14 +161,7 @@ void ex0517(void) {
 void ex0518() {
 // identificacao
     printf( "\nExercicio 0518:\n\n" );
-    // variavel
-    char cadeia[80];
-    // programa
-    printf( "Digite uma palavra: " );
-    scanf( "%s" , cadeia);
-    getchar();
-    printf( "\n" );
-    verchar(cadeia);
+
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
 }// Fim da fun��o ex0418
@@ -216,14 +175,7 @@ void ex0518() {
 void ex0519() {
     // identificacao
     printf( "\nExercicio 0519:\n\n" );
-  // variavel
-    char cadeia[80];
-    // programa
-    printf( "Digite uma palavra: " );
-    scanf( "%s" , cadeia);
-    getchar();
-    printf( "\n" );
-    alfanum(cadeia);
+
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
 
@@ -259,22 +211,12 @@ void ex05E1()
 // Incluir função e método (Exemplo05E2) para
 // ler uma quantidade inteira do teclado (n) e,
 // mediante o uso da função, calcular e mostrar o resultado em outro método de
-// f ( n ) = (1+3/2!) * (1+5/4!) * (1+7/8!) * 
+// f ( n ) = (1+3/2!) * (1+5/4!) * (1+7/8!) *
 void ex05E2()
 {
     // identificacao
     printf( "\nExercicio 04E2:\n\n" );
- // variavel
-    char cadeia1[80], cadeia2[80];
-    // programa
-    printf( "Digite a primeira cadeia: " );
-    scanf( "%s" , cadeia1);
-    getchar();
-    printf( "\n" );
-    printf( "Digite a segunda cadeia: " );
-    scanf( "%s" , cadeia2);
-    getchar();
-    metodo04E2(cadeia1, cadeia2);
+
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
 } // fim fun��o 04E2
