@@ -177,12 +177,28 @@ void ex0515() {
 // Testar essa função para quantidades diferentes e mostrar os resultados em outro método.
 // Exemplo: n = 5 => 4 + 8 + 12 + 16 + 24
 
+int fun0516(int v1) {
+    int soma = 0;
+    int x = 4;
+
+    while (v1 >= 1) {
+        if ((v1 % 4 == 0) && (v1 % 5 != 0)) {
+            soma += x;
+            v1--;
+        }
+        x++;
+    }
+    printf("%d", soma);
+}
 
 void ex0516() {
-// identificacao
-    printf( "\nExercicio 0516:\n\n" );
-
-    printf( "\nAperte ENTER para continuar!\n" );
+    printf("\nExercicio 0516:\n\n");
+    int n = 0;
+    printf("Digite o numero de termos: ");
+    scanf("%d", &n);
+    fun0516(n);
+    getchar();
+    printf("\nAperte ENTER para continuar!\n");
     getchar();
 
 }// Fim da fun��o ex0416
