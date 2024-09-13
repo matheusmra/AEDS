@@ -124,14 +124,30 @@ void ex0513() {
 
 }// Fim da fun��o ex0413
 
-// Fun��o para o exerc�cio 0414
+// Fun��o para o exerc�cio 0514
 // Incluir função e método (0514) para:
 // para ler uma quantidade inteira do teclado e, mediante um procedimento,
 // testar a função para gerar valores crescentes nos denominadores
 // (sequência dos inversos) múltiplos de 4.
+void fun0514(int v1) {
+int controle = 0, n = 1;
+    for (int i = 0; i < v1; i++) {
+        controle = controle + 4;
+        printf("\nO numero: (%d/%d) eh multiplo de quatro.",n,controle);
+    }
+    printf("\n");
+
+
+
+}
 void ex0514() {
 // identificacao
     printf( "\nExercicio 0514:\n\n" );
+    int n = 0;
+    printf("Digite o numero de termos:");
+    scanf("%d",&n);
+    fun0514(n);
+    getchar();
     // encerrar
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
