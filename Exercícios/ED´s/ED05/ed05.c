@@ -179,24 +179,24 @@ void ex0515() {
 
 int fun0516(int v1) {
     int soma = 0;
-    int x = 4;
 
     while (v1 >= 1) {
         if ((v1 % 4 == 0) && (v1 % 5 != 0)) {
-            soma += x;
+            soma = soma+4;
             v1--;
         }
-        x++;
     }
-    printf("%d", soma);
+    return(soma);
 }
 
 void ex0516() {
     printf("\nExercicio 0516:\n\n");
-    int n = 0;
+    int n = 0, total = 0;
     printf("Digite o numero de termos: ");
     scanf("%d", &n);
-    fun0516(n);
+    printf("Teste");
+    total = fun0516(n);
+    printf("%d", total);
     getchar();
     printf("\nAperte ENTER para continuar!\n");
     getchar();
@@ -266,12 +266,28 @@ void ex0520() {
 // ler um número inteiro do teclado (n) e,
 // mediante o uso da função, calcular e mostrar o fatorial desse valor em outro método:
 // n! = n * (n-1) * (n-2) * ... * 3 * 2 * 1 se n>0
+int fun05E1(int v1){
+    if( v1 < 0 )
+        return 0;
+    else if( v1 == 0 || v1 == 1)
+        return 1;
+    else
+        return v1 * fun05E1(v1-1);
+}
 
 void ex05E1()
 {
     // identificacao
     printf( "\nExercicio 04E1:\n\n" );
-
+    // programa
+    int n = 0;
+    printf("Digite o numero a ser fatorado:");
+    scanf("%d", &n);
+    fun05E1(n);
+    printf("Fatorial = %d", fun05E1(n));
+    getchar();
+    printf("ENCERRAR");
+    getchar();
 } // fim exercicio04E1
 // Fun��o para o exerc�cio 04E2
 // Incluir função e método (Exemplo05E2) para
