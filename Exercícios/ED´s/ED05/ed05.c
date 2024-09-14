@@ -253,12 +253,30 @@ void ex0519() {
 // Testar essa função para quantidades diferentes de valores
 // e mostrar os resultados em outro método.
 // Exemplo: n = 5 => 1/14 + 1/10 + 1/7 + 1/5 + 1/4
+void fun0520(int v1) {
+int controle = 4, n = 1;
+controle = controle * v1;
+    for (int i = 1; i <= v1; i++) {
+        controle = controle - 4;
+        printf("\nO numero: (%d/%d) eh multiplo de quatro.",n,controle);
+    }
+    printf("\n");
+
+
+
+}
 
 void ex0520() {
 // identificacao
     printf( "\nExercicio 0520:\n\n" );
-
-
+    int n = 0;
+    printf("Digite o numero de termos:");
+    scanf("%d",&n);
+    fun0520(n);
+    getchar();
+    // encerrar
+    printf( "\nAperte ENTER para continuar!\n" );
+    getchar();
 }// Fim da fun��o ex0420
 
 // Fun��o para o exerc�cio 04E1
@@ -286,7 +304,7 @@ void ex05E1()
     fun05E1(n);
     printf("Fatorial = %d", fun05E1(n));
     getchar();
-    printf("ENCERRAR");
+    printf("\nAperte ENTER para continuar!\n");
     getchar();
 } // fim exercicio04E1
 // Fun��o para o exerc�cio 04E2
