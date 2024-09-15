@@ -97,11 +97,9 @@ void ex0512() {
 //  para ler uma quantidade inteira do teclado e, mediante um procedimento,
 //  testar a função para gerar potências de 3 em ordem decrescente.
 void fun0513(int v1){
-    int p   = v1;
-    int i   = 0;
-    int num = 0;
+    int p   = v1, num = 0;
 
-    for( i = p; i > 0; i = i - 1 )
+    for(int i = p; i > 0; i = i - 1 )
     {
         num = pow(3, p);
         printf("\nO numero (%d) eh uma potencia de tres.", num);
