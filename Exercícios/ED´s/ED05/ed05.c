@@ -252,9 +252,7 @@ void ex0517()
 // Exemplo: n = 5 => 4 + 5 + 7 + 10 + 14
 int met0518(int v1)
 {
-    int soma = 0;
-    int num  = 4;
-    int x    = 1;
+    int soma = 0, num = 4, x = 1;
 
     while( v1 > 0 )
     {
