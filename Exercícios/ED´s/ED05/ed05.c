@@ -315,9 +315,7 @@ void ex0519() {
 // e mostrar os resultados em outro método.
 // Exemplo: n = 5 => 1/14 + 1/10 + 1/7 + 1/5 + 1/4
 double fun0520(int v1) {
-    double soma = 0.0;
-    double num  = 4.0;
-    double x    = 1;
+    double soma = 0.0, num = 4.0, x = 1;
     for(int i = 1; i <= v1; i = i + 1)
     {
         soma = soma + (1.0/num);
