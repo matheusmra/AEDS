@@ -179,8 +179,7 @@ void ex0515() {
 // Exemplo: n = 5 => 4 + 8 + 12 + 16 + 24
 
 int fun0516(int v1) {
-    int soma = 0;
-    int x    = 4;
+    int soma = 0, x = 4;
 
     while (v1 >= 1) {
         if ((x % 4 == 0) && (x % 5 != 0)) {
