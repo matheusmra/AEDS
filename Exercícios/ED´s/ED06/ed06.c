@@ -166,27 +166,12 @@ void ex0616() {
 // Testar essa função para quantidades diferentes e
 // mostrar os resultados em outro método.
 // Exemplo: n = 5 => 1/3 + 1/6 + 1/9 + 1/12 + 1/18
-double met0517(int v1)
-{
-    double soma = 0;
-    int    x    = 3;
 
-    while (1 <= v1)
-    {
-        if( (x % 3 == 0) && (x % 5 != 0) )
-        {
-            soma = soma + (1.0/x);
-            v1 = v1- 1;
-        }
-        x = x + 1;
-    }
-    return ( soma );
-}
 
-void ex0517()
+void ex0617()
 {
     // identificacao
-    printf("\nExercicio 0517:\n\n");
+    printf("\nExercicio 0617:\n\n");
 
     // programa
     int n = 0;
@@ -205,21 +190,8 @@ void ex0517()
 // Testar essa função para quantidades diferentes de valores e
 // mostrar os resultados em outro método.
 // Exemplo: n = 5 => 4 + 5 + 7 + 10 + 14
-int met0518(int v1)
-{
-    int soma = 0, num = 4, x = 1;
 
-    while( v1 > 0 )
-    {
-
-        soma = soma + num;
-        num = num + x;
-        x = x + 1;
-        v1 = v1 - 1;
-    }
-    return ( soma );
-}
-void ex0518() {
+void ex0618() {
 // identificacao
     printf( "\nExercicio 0518:\n\n" );
     int n = 0;
@@ -237,20 +209,8 @@ void ex0518() {
 // Testar essa função para quantidades diferentes de valores e
 // e mostrar os resultados em outro método.
 // Exemplo: n = 5 => 16 + 25 + 36 + 49 + 64
-int met0519(int v1)
-{
-    int soma = 0, num = 4, x = 1;
-    while( v1 > 0 )
-    {
 
-        soma = soma + pow(num, 2);
-        num = num + x;
-        x = x + 1;
-        v1 = v1 - 1;
-    }
-    return ( soma );
-}
-void ex0519() {
+void ex0619() {
     // identificacao
     printf( "\nExercicio 0519:\n\n" );
     int n = 0;
@@ -269,19 +229,9 @@ void ex0519() {
 // Testar essa função para quantidades diferentes de valores
 // e mostrar os resultados em outro método.
 // Exemplo: n = 5 => 1/14 + 1/10 + 1/7 + 1/5 + 1/4
-double fun0520(int v1) {
-    double soma = 0.0, num = 4.0, x = 1;
-    for(int i = 1; i <= v1; i = i + 1)
-    {
-        soma = soma + (1.0/num);
-        num = num + x;
-        x = x + 1;
-    }
 
-    return ( soma );
-}
 
-void ex0520() {
+void ex0620() {
 // identificacao
     printf( "\nExercicio 0520:\n\n" );
     int n = 0;
@@ -299,25 +249,13 @@ void ex0520() {
 // ler um número inteiro do teclado (n) e,
 // mediante o uso da função, calcular e mostrar o fatorial desse valor em outro método:
 // n! = n * (n-1) * (n-2) * ... * 3 * 2 * 1 se n>0
-int fun05E1(int v1){
-    if( v1 < 0 )
-        return 0;
-    else if( v1 == 0 || v1 == 1)
-        return 1;
-    else
-        return v1 * fun05E1(v1-1);
-}
 
-void ex05E1()
+void ex06E1()
 {
     // identificacao
     printf( "\nExercicio 04E1:\n\n" );
     // programa
-    int n = 0;
-    printf("Digite o numero a ser fatorado:");
-    scanf("%d", &n);
-    fun05E1(n);
-    printf("Fatorial = %d", fun05E1(n));
+
     getchar();
     printf("\nAperte ENTER para continuar!\n");
     getchar();
@@ -327,7 +265,7 @@ void ex05E1()
 // ler uma quantidade inteira do teclado (n) e,
 // mediante o uso da função, calcular e mostrar o resultado em outro método de
 // f ( n ) = (1+3/2!) * (1+5/4!) * (1+7/8!) *
-void ex05E2()
+void ex06E2()
 {
     // identificacao
     printf( "\nExercicio 04E2:\n\n" );
