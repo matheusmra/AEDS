@@ -188,14 +188,13 @@ void ex0618() {
     getchar();
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
-}// Fim da fun��o ex0418
+}// Fim da fun��o ex0618
 
-// Fun��o para o exerc�cio 0519
+// Fun��o para o exerc�cio 0619
 // Incluir função e método (0519) para
-// calcular a soma dos quadrados da adição dos números naturais começando no valor 4.
-// Testar essa função para quantidades diferentes de valores e
-// e mostrar os resultados em outro método.
-// Exemplo: n = 5 => 16 + 25 + 36 + 49 + 64
+// calcular a quantidade de maiúsculas maiores que 'M' em uma cadeia de caracteres.
+// Testar essa função para cadeias de diferentes tamanhos.
+// Exemplo: sequência = "P4LaVr@1"
 
 void ex0619() {
     // identificacao
