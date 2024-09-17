@@ -153,16 +153,13 @@ void ex0616() {
     printf("\nAperte ENTER para continuar!\n");
     getchar(); // Para esperar o usuário pressionar ENTER
 }
-// Fim da fun��o ex0416
+// Fim da fun��o ex0616
 
-// Fun��o para o exerc�cio 0417
-// Incluir função e método (0517) para
-// calcular a soma dos inversos (1/x) dos primeiros valores positivos,
-// começando no valor 3, múltiplos de 3 e não múltiplos de 5.
-// Testar essa função para quantidades diferentes e
-// mostrar os resultados em outro método.
-// Exemplo: n = 5 => 1/3 + 1/6 + 1/9 + 1/12 + 1/18
-
+// Fun��o para o exerc�cio 0617
+// Incluir função e método (0617) para
+// ler uma cadeia de caracteres e chamar procedimento recursivo para
+// mostrar cada símbolo separadamente, um por linha.
+// Exemplo: sequência = "abcde"
 
 void ex0617()
 {
@@ -175,13 +172,14 @@ void ex0617()
     // encerrar
     printf("\n%s\n", "Aperte ENTER para continuar!");
     getchar();
-} // fim exercicio0517// Fim da fun��o ex0417
-// Fun��o para o exerc�cio 0518
-// Incluir função e método (0518) para
-// calcular a soma da adição dos primeiros números naturais começando no valor 4.
-// Testar essa função para quantidades diferentes de valores e
-// mostrar os resultados em outro método.
-// Exemplo: n = 5 => 4 + 5 + 7 + 10 + 14
+} // fim exercicio0617
+
+// Fun��o para o exerc�cio 0618
+// Incluir função e método (0618) para
+// contar os dígitos com valores ímpares em uma cadeia de caracteres.
+// Testar essa função para cadeias de diferentes tamanhos.
+// Exemplo: sequência = "P4LaVr@1"
+
 
 void ex0618() {
 // identificacao
