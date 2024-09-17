@@ -39,25 +39,24 @@ void menuOpcoes() {
 // Incluir função e método (0511) para:
 // para ler uma quantidade inteira (n) do teclado e, mediante um procedimento,
 // testar a função para gerar valores múltiplos de 4 em ordem crescente.
-void fun0511(int v1){
-    int controle = 0;
-    for (int i = 0; i < v1; i++) {
-        controle = controle + 4;
-        printf("\nO numero: (%d) eh multiplo de quatro.", controle);
+void fun0611(int v1, int v2){
+    if(v2 <= v1){
+        printf("%d", v2);
+        fun0611(v1, v2+4);
+
     }
-    printf("\n");
 
 
 }
-void ex0511()
+void ex0611()
 {
     // identificacao
-     printf("\nExercicio 0511:\n\n");
+     printf("\nExercicio 0611:\n\n");
     //programa
     int n = 0;
     printf("\nDigite o numero de termos:");
     scanf("%d", &n);
-    fun0511(n);
+    fun0611(n, 4);
     // encerrar
     getchar();
     printf( "\nAperte ENTER para continuar!\n" );
@@ -392,18 +391,18 @@ int main(void) {
         // Executar a op��o escolhida
         switch (opcao) {
             case 0: break;
-            case 1: ex0511(); break;
-            case 2: ex0512(); break;
-            case 3: ex0513(); break;
-            case 4: ex0514(); break;
-            case 5: ex0515(); break;
-            case 6: ex0516(); break;
-            case 7: ex0517(); break;
-            case 8: ex0518(); break;
-            case 9: ex0519(); break;
-            case 10: ex0520(); break;
-            case 11: ex05E1(); break;
-            case 12: ex05E2(); break;
+            case 1: ex0611(); break;
+            case 2: ex0612(); break;
+            case 3: ex0613(); break;
+            case 4: ex0614(); break;
+            case 5: ex0615(); break;
+            case 6: ex0616(); break;
+            case 7: ex0617(); break;
+            case 8: ex0618(); break;
+            case 9: ex0619(); break;
+            case 10: ex0620(); break;
+            case 11: ex06E1(); break;
+            case 12: ex06E2(); break;
             default:
                 printf("\nERRO: OPCAO INVALIDA\n\n");
                 break;
