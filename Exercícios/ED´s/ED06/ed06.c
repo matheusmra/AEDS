@@ -39,8 +39,13 @@ void menuOpcoes() {
 // Incluir função e método (0511) para:
 // para ler uma quantidade inteira (n) do teclado e, mediante um procedimento,
 // testar a função para gerar valores múltiplos de 4 em ordem crescente.
-int fun0611(int v1, v2) {
-
+void fun0611(int v1, int v2) {
+    if (v2 <= 0) {
+        return;
+    } else {
+        printf("\n%d", v1);
+        fun0611(v1 + 4, v2 - 1);
+    }
 }
 void ex0611()
 {
