@@ -208,11 +208,10 @@ void ex0619() {
 
 // Fun��o para o exerc�cio 0420
 // Incluir função e método (Exemplo0520) para
-// calcular a soma dos inversos (1/x) das adições de números naturais terminando no valor 4.
-// Testar essa função para quantidades diferentes de valores
-// e mostrar os resultados em outro método.
-// Exemplo: n = 5 => 1/14 + 1/10 + 1/7 + 1/5 + 1/4
-
+// calcular certo termo par da série de Fibonacci começando em 1.
+// Testar essa função para quantidades diferentes.
+// DICA: Separar o cálculo do termo e o teste para verificar se é par.
+// Exemplo: valor = 3 => 2+8+34
 
 void ex0620() {
 // identificacao
