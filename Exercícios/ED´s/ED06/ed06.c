@@ -132,7 +132,7 @@ void ex0614() {
 
 void ex0615() {
 // identificacao
-    printf( "\nExercicio 0515:\n\n" );
+    printf( "\nExercicio 0615:\n\n" );
 
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
@@ -146,21 +146,9 @@ void ex0615() {
 // Testar essa função para quantidades diferentes e mostrar os resultados em outro método.
 // Exemplo: n = 5 => 4 + 8 + 12 + 16 + 24
 
-int fun0516(int v1) {
-    int soma = 0, x = 4;
 
-    while (v1 >= 1) {
-        if ((x % 4 == 0) && (x % 5 != 0)) {
-            soma = soma+x;
-            v1--;
-        }
-        x = x + 1;
-    }
-    return(soma);
-}
-
-void ex0516() {
-    printf("\nExercicio 0516:\n\n");
+void ex0616() {
+    printf("\nExercicio 0616:\n\n");
     int n = 0;
     printf("Digite o numero de termos: ");
     scanf("%d", &n);
