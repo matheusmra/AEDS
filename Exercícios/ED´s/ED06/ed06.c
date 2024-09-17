@@ -105,13 +105,13 @@ void ex0613() {
     getchar();
     return 0;
 
-}// Fim da fun��o ex0413
+}// Fim da fun��o ex0613
 
-// Fun��o para o exerc�cio 0514
-// Incluir função e método (0514) para:
-// para ler uma quantidade inteira do teclado e, mediante um procedimento,
-// testar a função para gerar valores crescentes nos denominadores
-// (sequência dos inversos) múltiplos de 4.
+// Fun��o para o exerc�cio 0614
+// Incluir função e método (0614) para:
+// ler um valor inteiro do teclado e chamar procedimento recursivo para
+// mostrar essa quantidade em valores da sequência de inversos dos múltiplos de 4, terminando em 1.
+// Exemplo: valor = 5 => { 1/16, 1/12, 1/8, 1/4, 1/1 }
 
 void ex0614() {
 // identificacao
