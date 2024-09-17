@@ -68,9 +68,9 @@ void ex0611()
 // para ler uma quantidade inteira do teclado e, mediante um procedimento,
 // testar a função para gerar valores múltiplos de 3 e 4 em ordem crescente.
 
-void ex0512() {
+void ex0612() {
     // identificacao
-    printf( "\nExercicio 0512:\n\n" );
+    printf( "\nExercicio 0612:\n\n" );
     // programa
     int n = 0;
     printf("\nDigite o numero de termos:");
@@ -86,20 +86,10 @@ void ex0512() {
 //  Incluir função e método (0513) para:
 //  para ler uma quantidade inteira do teclado e, mediante um procedimento,
 //  testar a função para gerar potências de 3 em ordem decrescente.
-void fun0513(int v1){
-    int p   = v1, num = 0;
 
-    for(int i = p; i > 0; i = i - 1 )
-    {
-        num = pow(3, p);
-        printf("\nO numero (%d) eh uma potencia de tres.", num);
-        p = p - 1;
-    }
-    printf("\n");
-}
-void ex0513() {
+void ex0613() {
 // identificacao
-    printf( "\nExercicio 0513:\n\n" );
+    printf( "\nExercicio 0613:\n\n" );
     // encerrar
     int n = 0;
     printf("Digite o numero de termos:");
@@ -117,17 +107,7 @@ void ex0513() {
 // para ler uma quantidade inteira do teclado e, mediante um procedimento,
 // testar a função para gerar valores crescentes nos denominadores
 // (sequência dos inversos) múltiplos de 4.
-void fun0514(int v1) {
-int controle = 0, n = 1;
-    for (int i = 0; i < v1; i++) {
-        controle = controle + 4;
-        printf("\nO numero: (%d/%d) eh multiplo de quatro.",n,controle);
-    }
-    printf("\n");
 
-
-
-}
 void ex0514() {
 // identificacao
     printf( "\nExercicio 0514:\n\n" );
