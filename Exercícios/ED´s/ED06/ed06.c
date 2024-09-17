@@ -108,9 +108,9 @@ void ex0613() {
 // testar a função para gerar valores crescentes nos denominadores
 // (sequência dos inversos) múltiplos de 4.
 
-void ex0514() {
+void ex0614() {
 // identificacao
-    printf( "\nExercicio 0514:\n\n" );
+    printf( "\nExercicio 0614:\n\n" );
     int n = 0;
     printf("Digite o numero de termos:");
     scanf("%d",&n);
@@ -130,7 +130,7 @@ void ex0514() {
 // da sequência: 1 1/x1 1/x3 1/x5 ...
 // DICA: Usar da biblioteca <math.h> a função pow ( x, y ) para calcular a potência
 
-void ex0515() {
+void ex0615() {
 // identificacao
     printf( "\nExercicio 0515:\n\n" );
 
