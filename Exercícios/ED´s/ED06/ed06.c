@@ -67,16 +67,7 @@ void ex0611()
 // Incluir função e método (0512) para:
 // para ler uma quantidade inteira do teclado e, mediante um procedimento,
 // testar a função para gerar valores múltiplos de 3 e 4 em ordem crescente.
-void fun0512(int v1){
-    int controle = 0;
-    for (int i = 0; i < v1; i++) {
-        controle = controle + 12;
-        printf("\nO numero: (%d) eh multiplo de tres e quatro.", controle);
-    }
-    printf("\n");
 
-
-}
 void ex0512() {
     // identificacao
     printf( "\nExercicio 0512:\n\n" );
