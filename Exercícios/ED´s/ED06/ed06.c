@@ -39,13 +39,7 @@ void menuOpcoes() {
 // Incluir função e método (0511) para:
 // para ler uma quantidade inteira (n) do teclado e, mediante um procedimento,
 // testar a função para gerar valores múltiplos de 4 em ordem crescente.
-void fun0611(int v1, int v2){
-    if(v2 <= v1){
-        printf("%d", v2);
-        fun0611(v1, v2+4);
-
-    }
-
+int fun0611(int v1, v2) {
 
 }
 void ex0611()
@@ -56,7 +50,7 @@ void ex0611()
     int n = 0;
     printf("\nDigite o numero de termos:");
     scanf("%d", &n);
-    fun0611(n, 4);
+    fun0611(4, n);
     // encerrar
     getchar();
     printf( "\nAperte ENTER para continuar!\n" );
@@ -72,10 +66,7 @@ void ex0612() {
     // identificacao
     printf( "\nExercicio 0612:\n\n" );
     // programa
-    int n = 0;
-    printf("\nDigite o numero de termos:");
-    scanf("%d", &n);
-    fun0512(n);
+
     getchar();
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
@@ -91,10 +82,7 @@ void ex0613() {
 // identificacao
     printf( "\nExercicio 0613:\n\n" );
     // encerrar
-    int n = 0;
-    printf("Digite o numero de termos:");
-    scanf("%d", &n);
-    fun0513(n);
+
     getchar();
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
@@ -111,10 +99,7 @@ void ex0613() {
 void ex0614() {
 // identificacao
     printf( "\nExercicio 0614:\n\n" );
-    int n = 0;
-    printf("Digite o numero de termos:");
-    scanf("%d",&n);
-    fun0514(n);
+
     getchar();
     // encerrar
     printf( "\nAperte ENTER para continuar!\n" );
@@ -149,10 +134,7 @@ void ex0615() {
 
 void ex0616() {
     printf("\nExercicio 0616:\n\n");
-    int n = 0;
-    printf("Digite o numero de termos: ");
-    scanf("%d", &n);
-    printf("\nA soma dos multiplos de 4 que nao sao multiplos de 5: %d\n", fun0516(n));
+
     getchar();
     printf("\nAperte ENTER para continuar!\n");
     getchar(); // Para esperar o usuário pressionar ENTER
@@ -174,11 +156,7 @@ void ex0617()
     printf("\nExercicio 0617:\n\n");
 
     // programa
-    int n = 0;
-    printf( "\nDigite uma quantidade: " );
-    scanf("%d", &n);
 
-    printf( "\n%s%lf\n", "Soma = ", met0517(n) );
 
     // encerrar
     printf("\n%s\n", "Aperte ENTER para continuar!");
@@ -194,10 +172,7 @@ void ex0617()
 void ex0618() {
 // identificacao
     printf( "\nExercicio 0518:\n\n" );
-    int n = 0;
-    printf("\nDigite um numero:");
-    scanf("%d", &n);
-    printf("\nA soma eh igual a: %d", met0518(n));
+
     getchar();
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
@@ -213,10 +188,7 @@ void ex0618() {
 void ex0619() {
     // identificacao
     printf( "\nExercicio 0519:\n\n" );
-    int n = 0;
-    printf("\nDigite um numero:");
-    scanf("%d", &n);
-    printf("\nA soma eh igual a: %d", met0519(n));
+
     getchar();
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
@@ -234,10 +206,6 @@ void ex0619() {
 void ex0620() {
 // identificacao
     printf( "\nExercicio 0520:\n\n" );
-    int n = 0;
-    printf("Digite o numero de termos:");
-    scanf("%d",&n);
-    printf("\nSoma igual a: %d", fun0520(n));
     getchar();
     // encerrar
     printf( "\nAperte ENTER para continuar!\n" );
@@ -268,7 +236,7 @@ void ex06E1()
 void ex06E2()
 {
     // identificacao
-    printf( "\nExercicio 04E2:\n\n" );
+    printf( "\nExercicio 06E2:\n\n" );
 
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
