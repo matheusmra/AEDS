@@ -122,15 +122,14 @@ void ex0614() {
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
 
-}// Fim da fun��o ex0414
+}// Fim da fun��o ex0614
 
-// Fun��o para o exerc�cio 0415
-// Incluir função e método (0515) para:
-// para ler um valor real real (x) do teclado;
-// para ler uma quantidade inteira do teclado e, mediante um procedimento,
-// testar a função para gerar valores ímpares crescentes nos denominadores
-// da sequência: 1 1/x1 1/x3 1/x5 ...
-// DICA: Usar da biblioteca <math.h> a função pow ( x, y ) para calcular a potência
+// Fun��o para o exerc�cio 0615
+// Incluir função e método (0615) para:
+// calcular a soma de valores gerados pela adição dos primeiros valores pares positivos ao valor 4.
+// Testar essa função para quantidades diferentes.
+// Exemplo: valor = 5 => 4 + 6 + 10 + 16 + 24
+
 
 void ex0615() {
 // identificacao
