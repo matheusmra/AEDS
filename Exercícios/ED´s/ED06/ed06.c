@@ -36,7 +36,7 @@ void menuOpcoes() {
 
 
 
-// Incluir função e método (0511) para:
+// Incluir função e método (0611) para:
 // para ler uma quantidade inteira (n) do teclado e, mediante um procedimento,
 // testar a função para gerar valores múltiplos de 4 em ordem crescente.
 void fun0611(int v1, int v2) {
@@ -53,35 +53,47 @@ void ex0611()
      printf("\nExercicio 0611:\n\n");
     //programa
     int n = 0;
-    printf("\nDigite o numero de termos:");
+    printf("\nDigite o numero de vezes:");
     scanf("%d", &n);
     fun0611(4, n);
     // encerrar
     getchar();
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
-} // fim exercicio0511
+} // fim exercicio0611
 
-// Fun��o para o exerc�cio 0512
-// Incluir função e método (0512) para:
-// para ler uma quantidade inteira do teclado e, mediante um procedimento,
-// testar a função para gerar valores múltiplos de 3 e 4 em ordem crescente.
-
+// Fun��o para o exerc�cio 0612
+// Incluir função e método (0612) para:
+// ler um valor inteiro do teclado e chamar procedimento recursivo para
+// mostrar essa quantidade em múltiplos de 4, em ordem decrescente, encerrando no valor 4.
+void fun0612(int v1, int v2) {
+    if (v1 >= 4){
+        printf("\n%d", v1);
+        fun0612(v1 - 4, v2 - 1);
+    }else{
+    return;
+    }
+}
 void ex0612() {
     // identificacao
     printf( "\nExercicio 0612:\n\n" );
     // programa
-
+    int n = 0;
+    printf("\nDigite o numero de vezes:");
+    scanf("%d", &n);
+    fun0612(n * 4, n);
     getchar();
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
     return 0;
-}// Fim da fun��o ex0512
+}// Fim da fun��o ex0612
 
-// Fun��o para o exerc�cio 0513
-//  Incluir função e método (0513) para:
-//  para ler uma quantidade inteira do teclado e, mediante um procedimento,
-//  testar a função para gerar potências de 3 em ordem decrescente.
+// Fun��o para o exerc�cio 0613
+//  Incluir função e método (0613) para:
+// ler um valor inteiro do teclado e chamar procedimento recursivo para
+// mostrar essa quantidade em valores da sequência de inversos dos múltiplos de 4, começando em 1.
+// DICA: Separar o primeiro do restante.
+// Exemplo: valor = 5 => { 1/1, 1/4, 1/8, 1/12, 1/16. }
 
 void ex0613() {
 // identificacao
