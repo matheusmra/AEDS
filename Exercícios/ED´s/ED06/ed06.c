@@ -191,7 +191,7 @@ void ex0618() {
 }// Fim da fun��o ex0618
 
 // Fun��o para o exerc�cio 0619
-// Incluir função e método (0519) para
+// Incluir função e método (0619) para
 // calcular a quantidade de maiúsculas maiores que 'M' em uma cadeia de caracteres.
 // Testar essa função para cadeias de diferentes tamanhos.
 // Exemplo: sequência = "P4LaVr@1"
@@ -204,10 +204,10 @@ void ex0619() {
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
 
-}// Fim da fun��o ex0419
+}// Fim da fun��o ex0619
 
-// Fun��o para o exerc�cio 0420
-// Incluir função e método (Exemplo0520) para
+// Fun��o para o exerc�cio 0620
+// Incluir função e método (Exemplo0620) para
 // calcular certo termo par da série de Fibonacci começando em 1.
 // Testar essa função para quantidades diferentes.
 // DICA: Separar o cálculo do termo e o teste para verificar se é par.
@@ -220,18 +220,18 @@ void ex0620() {
     // encerrar
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
-}// Fim da fun��o ex0420
+}// Fim da fun��o ex0620
 
-// Fun��o para o exerc�cio 04E1
-// Incluir função e método (Exemplo05E1) para
-// ler um número inteiro do teclado (n) e,
-// mediante o uso da função, calcular e mostrar o fatorial desse valor em outro método:
-// n! = n * (n-1) * (n-2) * ... * 3 * 2 * 1 se n>0
+// Fun��o para o exerc�cio 06E1
+// Incluir função e método (Exemplo06E1) para
+// calcular o valor da função definida abaixo,
+// lidos os valores de (x) e (n) do teclado:
+// f ( x, n ) = 1 + x2 + x4 + x6 + x8 + ...
 
 void ex06E1()
 {
     // identificacao
-    printf( "\nExercicio 04E1:\n\n" );
+    printf( "\nExercicio 06E1:\n\n" );
     // programa
 
     getchar();
