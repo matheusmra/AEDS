@@ -138,15 +138,13 @@ void ex0615() {
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
 
-}// Fim da fun��o ex0415
+}// Fim da fun��o ex0615
 
-// Fun��o para o exerc�cio 0416
-// Incluir função e método (0516) para
-// calcular a soma dos primeiros valores positivos começando no valor 4,
-// múltiplos de 4 e não múltiplos de 5.
-// Testar essa função para quantidades diferentes e mostrar os resultados em outro método.
-// Exemplo: n = 5 => 4 + 8 + 12 + 16 + 24
-
+// Fun��o para o exerc�cio 0616
+// Incluir função e método (0616) para
+// calcular a soma dos inversos (1/x) dos primeiros valores pares positivos múltiplos do valor 4.
+// Testar essa função para quantidades diferentes.
+// Exemplo: valor = 5 => 1/4 + 1/6 + 1/10 + 1/16 + 1/24
 
 void ex0616() {
     printf("\nExercicio 0616:\n\n");
