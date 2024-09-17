@@ -237,12 +237,11 @@ void ex06E1()
     getchar();
     printf("\nAperte ENTER para continuar!\n");
     getchar();
-} // fim exercicio04E1
-// Fun��o para o exerc�cio 04E2
-// Incluir função e método (Exemplo05E2) para
-// ler uma quantidade inteira do teclado (n) e,
-// mediante o uso da função, calcular e mostrar o resultado em outro método de
-// f ( n ) = (1+3/2!) * (1+5/4!) * (1+7/8!) *
+} // fim exercicio06E1
+// Fun��o para o exerc�cio 06E2
+// Incluir função e método (Exemplo06E2) para
+// para calcular o valor indicado abaixo,
+// lido o número de termos (n) do teclado: e = 1 + 2/3! + 5/7! + 12/15! + 27/31! + ..
 void ex06E2()
 {
     // identificacao
