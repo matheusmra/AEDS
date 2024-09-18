@@ -191,7 +191,7 @@ void ex0616() {
 // mostrar cada símbolo separadamente, um por linha.
 // Exemplo: sequência = "abcde"
 
-void fun0617(char v1, int v2){
+void fun0617(char *v1, int v2){
     if(v1 && v2 >= 0){
         fun0617(v1,v2-1);
         printf("\n%c", v1[v2]);
@@ -202,7 +202,7 @@ void ex0617(){
     // identificacao
     printf("\nExercicio 0617:\n\n");
     // programa
-    char cadeia[TAM_STRING];
+    char *cadeia[TAM_STRING];
     int tamanho = 0;
     // programa
     printf( "Digite uma palavra: " );
@@ -221,13 +221,36 @@ void ex0617(){
 // contar os dígitos com valores ímpares em uma cadeia de caracteres.
 // Testar essa função para cadeias de diferentes tamanhos.
 // Exemplo: sequência = "P4LaVr@1"
-
-
+int fun0618(char *v1, int v2) {
+    int total = 0;
+    if(v1 && v2 >= 0){
+        total = fun0618(v1, v2 - 1);
+        if(v1[v2] > 47 && v1[v2] < 58){
+            if( v1[v2] % 2 != 0)
+            {
+                total = total + 1;
+            }
+        }
+    }
+    return (total);
+}
 void ex0618() {
 // identificacao
     printf( "\nExercicio 0618:\n\n" );
-
+    char *cadeia[TAM_STRING];
+    int tamanho = 0, controle = 0;
+    // programa
+    printf( "Digite uma palavra: " );
+    scanf( "%s" , cadeia);
     getchar();
+    tamanho = strlen(cadeia);
+    fun0618(cadeia, tamanho);
+    controle = fun0618(cadeia,tamanho);
+    if(controle > 0){
+        printf("O total de digitos com valores impares eh: %d", controle);
+    }else{
+        printf("A cadeia nao possui digitos impares.");
+        }
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
 }// Fim da fun��o ex0618
@@ -239,10 +262,22 @@ void ex0618() {
 // Exemplo: sequência = "P4LaVr@1"
 
 void ex0619() {
-    // identificacao
-    printf( "\nExercicio 0519:\n\n" );
-
+    //identificação
+    printf( "\nExercicio 0618:\n\n" );
+    char *cadeia[TAM_STRING];
+    int tamanho = 0, controle = 0;
+    // programa
+    printf( "Digite uma palavra: " );
+    scanf( "%s" , cadeia);
     getchar();
+    tamanho = strlen(cadeia);
+    fun0618(cadeia, tamanho);
+    controle = fun0618(cadeia,tamanho);
+    if(controle > 0){
+        printf("O total de digitos com valores impares eh: %d", controle);
+    }else{
+        printf("A cadeia nao possui digitos impares.");
+        }
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
 
