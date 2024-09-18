@@ -260,7 +260,16 @@ void ex0618() {
 // calcular a quantidade de maiúsculas maiores que 'M' em uma cadeia de caracteres.
 // Testar essa função para cadeias de diferentes tamanhos.
 // Exemplo: sequência = "P4LaVr@1"
-
+int fun0619(char *v1, int v2) {
+    int total = 0;
+    if (v1 && v2 >= 0) {
+        total = fun0619(v1, v2 - 1);
+        if (v1[v2] > 77 && v1[v2] < 91) {
+            total = total + 1;
+        }
+    }
+    return total;
+}
 void ex0619() {
     //identificação
     printf( "\nExercicio 0619:\n\n" );
@@ -274,9 +283,9 @@ void ex0619() {
     fun0619(cadeia, tamanho);
     controle = fun0619(cadeia,tamanho);
     if(controle > 0){
-        printf("O total de digitos com valores impares eh: %d", controle);
+        printf("O total de maiusculas maiores que 'M' eh : %d", controle);
     }else{
-        printf("A cadeia nao possui digitos impares.");
+        printf("A cadeia nao possui caracteres maiores que 'M'.");
         }
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
