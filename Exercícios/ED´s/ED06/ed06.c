@@ -94,15 +94,14 @@ void ex0612() {
 // mostrar essa quantidade em valores da sequência de inversos dos múltiplos de 4, começando em 1.
 // DICA: Separar o primeiro do restante.
 // Exemplo: valor = 5 => { 1/1, 1/4, 1/8, 1/12, 1/16. }
-void met0613(int v1, int v2)
-{
-    if(v2 >= 1)
-    {
+void met0613(int v1, int v2) {
+    if(v2 >= 1) {
         printf("\n1/%d ", v1);
-        if(v1 == 1)
+        if(v1 == 1) {
             met0613( v1 + 3, v2 - 1 );
-        else
+        }else{
             met0613( v1 + 4, v2 - 1 );
+        }
     }
 }
 
@@ -126,24 +125,27 @@ void ex0613() {
 // ler um valor inteiro do teclado e chamar procedimento recursivo para
 // mostrar essa quantidade em valores da sequência de inversos dos múltiplos de 4, terminando em 1.
 // Exemplo: valor = 5 => { 1/16, 1/12, 1/8, 1/4, 1/1 }
-void met0614(int v1, int v2)
-{
-    if(v2 >= 1)
-    {
+void met0614(int v1, int v2) {
+    if(v2 >= 1) {
         printf("\n1/%d ", v1);
-        if(v1 == 4)
+        if(v1 == 4){
             met0614( v1 - 3, v2 - 1 );
-        else
+        }else{
             met0614( v1 - 4, v2 - 1 );
+        }
     }
 }
 void ex0614() {
 // identificacao
     printf( "\nExercicio 0614:\n\n" );
-    int n = 0;
+    int n = 0, controle = 0;
     printf("Digite o numero de vezes:");
     scanf("%d", &n);
-    met0614(16, n);
+    // Obs: Na primeira versão, eu passava 16 como parametro, logo quando eu digitava um número maior que 5 ele realizava substrações negativas
+    // para resolver esse problema, criei a variavel controle que vai ser passada como parametro.
+    // Para que o valor esperado seja passado, multipliquei 4 pelo número de vezes menos 1. !(Foi necessário remover um do numero de vezes uma vez que já temos 1 quatro)
+    controle = 4 * (n-1);
+    met0614(controle, n);
     getchar();
     // encerrar
     printf( "\nAperte ENTER para continuar!\n" );
