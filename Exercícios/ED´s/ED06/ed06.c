@@ -16,6 +16,7 @@
 #include <string.h>
 #include <ctype.h>
 #include <math.h>
+#define TAM_STRING 80
 // Fun��o para mostrar o menu de op��es
 void menuOpcoes() {
     printf("\nEscolha alguma das opcoes a seguir:\n\n");
@@ -190,13 +191,25 @@ void ex0616() {
 // mostrar cada símbolo separadamente, um por linha.
 // Exemplo: sequência = "abcde"
 
-void ex0617()
-{
+void fun0617(char v1, int v2){
+    if(v1 && v2 >= 0){
+        fun0617(v1,v2-1);
+        printf("\n%c", v1[v2]);
+    }
+    }
+
+void ex0617(){
     // identificacao
     printf("\nExercicio 0617:\n\n");
-
     // programa
-
+    char cadeia[TAM_STRING];
+    int tamanho = 0;
+    // programa
+    printf( "Digite uma palavra: " );
+    scanf( "%s" , cadeia);
+    getchar();
+    tamanho = strlen(cadeia);
+    fun0617(cadeia, tamanho);
 
     // encerrar
     printf("\n%s\n", "Aperte ENTER para continuar!");
