@@ -263,7 +263,7 @@ void ex0618() {
 
 void ex0619() {
     //identificação
-    printf( "\nExercicio 0618:\n\n" );
+    printf( "\nExercicio 0619:\n\n" );
     char *cadeia[TAM_STRING];
     int tamanho = 0, controle = 0;
     // programa
@@ -271,8 +271,8 @@ void ex0619() {
     scanf( "%s" , cadeia);
     getchar();
     tamanho = strlen(cadeia);
-    fun0618(cadeia, tamanho);
-    controle = fun0618(cadeia,tamanho);
+    fun0619(cadeia, tamanho);
+    controle = fun0619(cadeia,tamanho);
     if(controle > 0){
         printf("O total de digitos com valores impares eh: %d", controle);
     }else{
