@@ -301,7 +301,7 @@ void ex0619() {
 
 void ex0620() {
 // identificacao
-    printf( "\nExercicio 0520:\n\n" );
+    printf( "\nExercicio 0620:\n\n" );
     getchar();
     // encerrar
     printf( "\nAperte ENTER para continuar!\n" );
