@@ -164,7 +164,7 @@ int fun0615(int v1, int v2, int v3){
     int total = 0;
     if(v3 >= 1){
         total = v1 + fun0615(v1 + v2,v2 + 2,v3 - 1);
-        //Caso queira ver a soma: printf("\n Total: %d | V1: %d | V3: %d, total, v1, v2);
+        //Caso queira conferir as somas: printf("\n Total: %d | V1: %d | V3: %d, total, v1, v2);
     }
     return (total);
 }
