@@ -190,10 +190,11 @@ void ex0615() {
 // Testar essa função para quantidades diferentes.
 // Exemplo: valor = 5 => 1/4 + 1/6 + 1/10 + 1/16 + 1/24
 
+// REVISAR ANTES DA PROVA (TIVE DIFICULDADE)
 double fun0616(double v1, double v2, int v3){
     double soma = 0.0;
     if(v3 > 0){
-            soma = v1/v2 + fun0616(v1, v2 + 4, v3 - 1);
+        soma = v1/v2 + fun0616(v1, v2 + 4, v3 - 1);
     }
     return ( soma );
 }
@@ -341,12 +342,27 @@ void ex0620() {
 // lidos os valores de (x) e (n) do teclado:
 // f ( x, n ) = 1 + x2 + x4 + x6 + x8 + ...
 
+double fun06E1(double v1, int v2, int v3){
+    if(v3 > v2){
+        return 0.0;
+    }
+        double total = pow(v1, 2*v3);
+        return total + fun06E1(v1, v2, v3+1);
+}
+
 void ex06E1()
 {
     // identificacao
     printf( "\nExercicio 06E1:\n\n" );
     // programa
-
+    int n = 0;
+    double x = 0.0, total = 0.0;
+    printf("\nDigite o valor de x:");
+    scanf("%lf", &x);
+    printf("\nDigite o numero de vezes:");
+    scanf("%d", &n);
+    total = 1.0 + fun06E1(x, n, 1);
+    printf("\nO total eh: %.2f", total);
     getchar();
     printf("\nAperte ENTER para continuar!\n");
     getchar();
