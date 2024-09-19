@@ -342,12 +342,15 @@ void ex0620() {
 // lidos os valores de (x) e (n) do teclado:
 // f ( x, n ) = 1 + x2 + x4 + x6 + x8 + ...
 
+//PROBLEMA: O calculo correto só é realizado dessa maneira (Solução do COPILOT)
+// Solução trocar o if, antes tinha feito para o código só ser executado se a variável v2 fosse maior que a v3.
 double fun06E1(double v1, int v2, int v3){
     if(v3 > v2){
         return 0.0;
     }
         double total = pow(v1, 2*v3);
         return total + fun06E1(v1, v2, v3+1);
+
 }
 
 void ex06E1()
