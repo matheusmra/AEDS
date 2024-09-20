@@ -138,25 +138,11 @@ void ex0716() {
 // mostrar cada símbolo separadamente, um por linha.
 // Exemplo: sequência = "abcde"
 
-void fun0617(char *v1, int v2){
-    if(v1 && v2 >= 0){
-        fun0617(v1,v2-1);
-        printf("\n%c", v1[v2]);
-    }
-}
-
-void ex0617(){
+void ex0717(){
     // identificacao
-    printf("\nExercicio 0617:\n\n");
+    printf("\nExercicio 0717:\n\n");
     // programa
-    char *cadeia[TAM_STRING];
-    int tamanho = 0;
-    // programa
-    printf( "Digite uma palavra: " );
-    scanf( "%s" , cadeia);
     getchar();
-    tamanho = strlen(cadeia);
-    fun0617(cadeia, tamanho);
 
     // encerrar
     printf("\n%s\n", "Aperte ENTER para continuar!");
