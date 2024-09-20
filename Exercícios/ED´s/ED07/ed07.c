@@ -154,36 +154,11 @@ void ex0717(){
 // contar os dígitos com valores ímpares em uma cadeia de caracteres.
 // Testar essa função para cadeias de diferentes tamanhos.
 // Exemplo: sequência = "P4LaVr@1"
-int fun0618(char *v1, int v2) {
-    int total = 0;
-    if(v1 && v2 >= 0){
-        total = fun0618(v1, v2 - 1);
-        if(v1[v2] > 47 && v1[v2] < 58){
-            if( v1[v2] % 2 != 0)
-            {
-                total = total + 1;
-            }
-        }
-    }
-    return (total);
-}
-void ex0618() {
+
+void ex0718() {
 // identificacao
-    printf( "\nExercicio 0618:\n\n" );
-    char *cadeia[TAM_STRING];
-    int tamanho = 0, controle = 0;
-    // programa
-    printf( "Digite uma palavra: " );
-    scanf( "%s" , cadeia);
-    getchar();
-    tamanho = strlen(cadeia);
-    fun0618(cadeia, tamanho);
-    controle = fun0618(cadeia,tamanho);
-    if(controle > 0){
-        printf("O total de digitos com valores impares eh: %d", controle);
-    }else{
-        printf("A cadeia nao possui digitos impares.");
-        }
+    printf( "\nExercicio 0718:\n\n" );
+
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
 }// Fim da fun��o ex0618
