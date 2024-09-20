@@ -201,28 +201,12 @@ void ex0720() {
 
 //PROBLEMA: O calculo correto só é realizado dessa maneira (Solução do COPILOT)
 // Solução trocar o if, antes tinha feito para o código só ser executado se a variável v2 fosse maior que a v3.
-double fun06E1(double v1, int v2, int v3){
-    if(v3 > v2){
-        return 0.0;
-    }
-        double total = pow(v1, 2*v3);
-        return total + fun06E1(v1, v2, v3+1);
 
-}
-
-void ex06E1()
+void ex07E1()
 {
     // identificacao
-    printf( "\nExercicio 06E1:\n\n" );
-    // programa
-    int n = 0;
-    double x = 0.0, total = 0.0;
-    printf("\nDigite o valor de x:");
-    scanf("%lf", &x);
-    printf("\nDigite o numero de vezes:");
-    scanf("%d", &n);
-    total = 1.0 + fun06E1(x, n, 1);
-    printf("\nO total eh: %.2f", total);
+    printf( "\nExercicio 07E1:\n\n" );
+
     getchar();
     printf("\nAperte ENTER para continuar!\n");
     getchar();
