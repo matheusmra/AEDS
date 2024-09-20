@@ -109,24 +109,9 @@ void ex0714() {
 // Testar essa função para quantidades diferentes.
 // Exemplo: valor = 5 => 4 + 6 + 10 + 16 + 24
 
-int fun0615(int v1, int v2, int v3){
-    int total = 0;
-    if(v3 >= 1){
-        total = v1 + fun0615(v1 + v2,v2 + 2,v3 - 1);
-        //Caso queira conferir as somas: printf("\n Total: %d | V1: %d | V3: %d, total, v1, v2);
-    }
-    return (total);
-}
-
-
-void ex0615() {
+void ex0715() {
 // identificacao
-    printf( "\nExercicio 0615:\n\n" );
-    int n = 0, total = 0;
-    printf("\nDigite o numero de vezes:");
-    scanf("%d", &n);
-    total = fun0615(4,2,n);
-    printf("\nO total das adicoes eh: %d", total);
+    printf( "\nExercicio 0715:\n\n" );
     getchar();
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
