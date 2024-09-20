@@ -215,10 +215,10 @@ void ex07E1()
 // Incluir função e método (Exemplo06E2) para
 // para calcular o valor indicado abaixo,
 // lido o número de termos (n) do teclado: e = 1 + 2/3! + 5/7! + 12/15! + 27/31! + ..
-void ex06E2()
+void ex07E2()
 {
     // identificacao
-    printf( "\nExercicio 06E2:\n\n" );
+    printf( "\nExercicio 07E2:\n\n" );
 
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
