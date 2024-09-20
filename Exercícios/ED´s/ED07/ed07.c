@@ -184,9 +184,9 @@ void ex0719() {
 // DICA: Separar o cálculo do termo e o teste para verificar se é par.
 // Exemplo: valor = 3 => 2+8+34
 
-void ex0620() {
+void ex0720() {
 // identificacao
-    printf( "\nExercicio 0620:\n\n" );
+    printf( "\nExercicio 0720:\n\n" );
     getchar();
     // encerrar
     printf( "\nAperte ENTER para continuar!\n" );
