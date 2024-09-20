@@ -238,18 +238,18 @@ int main(void) {
         // Executar a op��o escolhida
         switch (opcao) {
             case 0: break;
-            case 1: ex0611(); break;
-            case 2: ex0612(); break;
-            case 3: ex0613(); break;
-            case 4: ex0614(); break;
-            case 5: ex0615(); break;
-            case 6: ex0616(); break;
-            case 7: ex0617(); break;
-            case 8: ex0618(); break;
-            case 9: ex0619(); break;
-            case 10: ex0620(); break;
-            case 11: ex06E1(); break;
-            case 12: ex06E2(); break;
+            case 1: ex0711(); break;
+            case 2: ex0712(); break;
+            case 3: ex0713(); break;
+            case 4: ex0714(); break;
+            case 5: ex0715(); break;
+            case 6: ex0716(); break;
+            case 7: ex0717(); break;
+            case 8: ex0718(); break;
+            case 9: ex0719(); break;
+            case 10: ex0720(); break;
+            case 11: ex07E1(); break;
+            case 12: ex07E2(); break;
             default:
                 printf("\nERRO: OPCAO INVALIDA\n\n");
                 break;
