@@ -168,33 +168,10 @@ void ex0718() {
 // calcular a quantidade de maiúsculas maiores que 'M' em uma cadeia de caracteres.
 // Testar essa função para cadeias de diferentes tamanhos.
 // Exemplo: sequência = "P4LaVr@1"
-int fun0619(char *v1, int v2) {
-    int total = 0;
-    if (v1 && v2 >= 0) {
-        total = fun0619(v1, v2 - 1);
-        if (v1[v2] > 77 && v1[v2] < 91) {
-            total = total + 1;
-        }
-    }
-    return total;
-}
-void ex0619() {
+
+void ex0719() {
     //identificação
-    printf( "\nExercicio 0619:\n\n" );
-    char *cadeia[TAM_STRING];
-    int tamanho = 0, controle = 0;
-    // programa
-    printf( "Digite uma palavra: " );
-    scanf( "%s" , cadeia);
-    getchar();
-    tamanho = strlen(cadeia);
-    fun0619(cadeia, tamanho);
-    controle = fun0619(cadeia,tamanho);
-    if(controle > 0){
-        printf("O total de maiusculas maiores que 'M' eh : %d", controle);
-    }else{
-        printf("A cadeia nao possui caracteres maiores que 'M'.");
-        }
+    printf( "\nExercicio 0719:\n\n" );
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
 
