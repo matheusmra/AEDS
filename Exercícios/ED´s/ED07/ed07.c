@@ -57,22 +57,12 @@ void ex0711()
 // Incluir função e método (0612) para:
 // ler um valor inteiro do teclado e chamar procedimento recursivo para
 // mostrar essa quantidade em múltiplos de 4, em ordem decrescente, encerrando no valor 4.
-void fun0612(int v1, int v2) {
-    if (v1 >= 4){
-        printf("\n%d", v1);
-        fun0612(v1 - 4, v2 - 1);
-    }else{
-    return;
-    }
-}
-void ex0612() {
+
+void ex0712() {
     // identificacao
-    printf( "\nExercicio 0612:\n\n" );
+    printf( "\nExercicio 0712:\n\n" );
     // programa
-    int n = 0;
-    printf("\nDigite o numero de vezes:");
-    scanf("%d", &n);
-    fun0612(n * 4, n);
+
     getchar();
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
