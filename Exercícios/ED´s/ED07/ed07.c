@@ -75,25 +75,11 @@ void ex0712() {
 // mostrar essa quantidade em valores da sequência de inversos dos múltiplos de 4, começando em 1.
 // DICA: Separar o primeiro do restante.
 // Exemplo: valor = 5 => { 1/1, 1/4, 1/8, 1/12, 1/16. }
-void met0613(int v1, int v2) {
-    if(v2 >= 1) {
-        printf("\n1/%d ", v1);
-        if(v1 == 1) {
-            met0613( v1 + 3, v2 - 1 );
-        }else{
-            met0613( v1 + 4, v2 - 1 );
-        }
-    }
-}
 
-void ex0613() {
+void ex0713() {
 // identificacao
-    printf( "\nExercicio 0613:\n\n" );
+    printf( "\nExercicio 0713:\n\n" );
     // encerrar
-    int n = 0;
-    printf("Digite o numero de vezes:");
-    scanf("%d", &n);
-    met0613(1, n);
     getchar();
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
