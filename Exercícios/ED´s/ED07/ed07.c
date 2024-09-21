@@ -113,13 +113,13 @@ void ex0715() {
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
 
-}// Fim da fun��o ex0615
+}// Fim da fun��o ex0715
 
-// Fun��o para o exerc�cio 0616
-// Incluir função e método (0616) para
-// calcular a soma dos inversos (1/x) dos primeiros valores pares positivos múltiplos do valor 4.
+// Fun��o para o exerc�cio 0716
+// ler um valor inteiro do teclado para representar certa quantidade de valores
+// a serem somados dentre os primeiros gravados no exercício anterior.
 // Testar essa função para quantidades diferentes.
-// Exemplo: valor = 5 => 1/4 + 1/6 + 1/10 + 1/16 + 1/24
+// Gravar em outro arquivo ("RESULTADO06.TXT") cada quantidade e seu resultado.
 
 void ex0716() {
     printf("\nExercicio 0716:\n\n");
