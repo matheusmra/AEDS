@@ -98,7 +98,7 @@ void ex0714() {
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
 
-}// Fim da fun��o ex0614
+}// Fim da fun��o ex0714
 
 // Fun��o para o exerc�cio 0615
 // Incluir função e método (0615) para:
