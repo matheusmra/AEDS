@@ -185,16 +185,11 @@ void ex0720() {
     // encerrar
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
-}// Fim da fun��o ex0620
+}// Fim da fun��o ex0720
 
-// Fun��o para o exerc�cio 06E1
-// Incluir função e método (Exemplo06E1) para
-// calcular o valor da função definida abaixo,
-// lidos os valores de (x) e (n) do teclado:
-// f ( x, n ) = 1 + x2 + x4 + x6 + x8 + ...
-
-//PROBLEMA: O calculo correto só é realizado dessa maneira (Solução do COPILOT)
-// Solução trocar o if, antes tinha feito para o código só ser executado se a variável v2 fosse maior que a v3.
+// Fun��o para o exerc�cio 07E1
+// programa ler um valor inteiro do teclado, e
+// gravar em arquivo os seus divisores pares em ordem decrescente.
 
 void ex07E1()
 {
@@ -204,11 +199,10 @@ void ex07E1()
     getchar();
     printf("\nAperte ENTER para continuar!\n");
     getchar();
-} // fim exercicio06E1
-// Fun��o para o exerc�cio 06E2
-// Incluir função e método (Exemplo06E2) para
-// para calcular o valor indicado abaixo,
-// lido o número de termos (n) do teclado: e = 1 + 2/3! + 5/7! + 12/15! + 27/31! + ..
+} // fim exercicio07E1
+// Fun��o para o exerc�cio 07E2
+// ver palavras de um arquivo, uma por linha, e
+// contar quantas começam com a letra 'd' (ou 'D').
 void ex07E2()
 {
     // identificacao
