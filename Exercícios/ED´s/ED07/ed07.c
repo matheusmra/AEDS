@@ -100,11 +100,11 @@ void ex0714() {
 
 }// Fim da fun��o ex0714
 
-// Fun��o para o exerc�cio 0615
-// Incluir função e método (0615) para:
-// calcular a soma de valores gerados pela adição dos primeiros valores pares positivos ao valor 4.
-// Testar essa função para quantidades diferentes.
-// Exemplo: valor = 5 => 4 + 6 + 10 + 16 + 24
+// Fun��o para o exerc�cio 0715
+// ler um valor inteiro do teclado (n) e outro valor real (x),
+// gravar essa quantidade (n) em valores reais da sequência: 1 1/x2 1/x4 1/x6...
+// DICA: Usar pow ( x, y ) da biblioteca <math.h> para calcular a potência.
+// Exemplo: n = 5 => { 1, 1/x2, 1/x4, 1/x6, 1/x8}
 
 void ex0715() {
 // identificacao
