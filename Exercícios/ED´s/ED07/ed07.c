@@ -144,13 +144,13 @@ void ex0717(){
     // encerrar
     printf("\n%s\n", "Aperte ENTER para continuar!");
     getchar();
-} // fim exercicio0617
+} // fim exercicio0717
 
-// Fun��o para o exerc�cio 0618
-// Incluir função e método (0618) para
-// contar os dígitos com valores ímpares em uma cadeia de caracteres.
-// Testar essa função para cadeias de diferentes tamanhos.
-// Exemplo: sequência = "P4LaVr@1"
+// Fun��o para o exerc�cio 0718
+// ler um valor inteiro do teclado, e até atingir essa quantidade, um valor por vez,
+// gravar o valor correspondente aos primeiros termos pares da série de Fibonacci.
+// Gravar em outro arquivo ("RESULTADO08.TXT") cada quantidade e seu resultado.
+// Exemplo: n = 5 => { 2, 8, 34, 144, 610 }
 
 void ex0718() {
 // identificacao
