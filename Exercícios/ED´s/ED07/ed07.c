@@ -158,14 +158,12 @@ void ex0718() {
 
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
-}// Fim da fun��o ex0618
-
-// Fun��o para o exerc�cio 0619
-// Incluir função e método (0619) para
-// calcular a quantidade de maiúsculas maiores que 'M' em uma cadeia de caracteres.
-// Testar essa função para cadeias de diferentes tamanhos.
-// Exemplo: sequência = "P4LaVr@1"
-
+}// Fim da fun��o ex0718
+// Fun��o para o exerc�cio 0719
+// para calcular a quantidade de minúsculas em cadeia de caracteres de um arquivo texto.
+// Gravar em outro arquivo ("RESULTADO09.TXT") cada cadeia de caracteres e seus resultados.
+// Testar essa função com cadeias de tamanhos diferentes.
+// Exemplo: PaReDe de TiJoLoS AmaRElOs
 void ex0719() {
     //identificação
     printf( "\nExercicio 0719:\n\n" );
