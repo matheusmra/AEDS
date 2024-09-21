@@ -51,12 +51,12 @@ void ex0711()
     getchar();
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
-} // fim exercicio0611
+} // fim exercicio0711
 
-// Fun��o para o exerc�cio 0612
-// Incluir função e método (0612) para:
-// ler um valor inteiro do teclado e chamar procedimento recursivo para
-// mostrar essa quantidade em múltiplos de 4, em ordem decrescente, encerrando no valor 4.
+// Fun��o para o exerc�cio 0712
+// ler um valor inteiro do teclado e
+// gravar essa quantidade em múltiplos de 6, pares, em ordem decrescente encerrando em 36.
+// Exemplo: n = 5 => { 60, 54, 48, 42, 36 }
 
 void ex0712() {
     // identificacao
