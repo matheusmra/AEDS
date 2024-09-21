@@ -90,7 +90,6 @@ void ex0713() {
 // gravar essa quantidade em valores decrescentes da sequência: ... 1/256 1/64 1/16 1/4 1.
 // Exemplo: n = 5 => { 1/256, 1/64, 1/16, 1/4, 1 }
 
-
 void ex0714() {
 // identificacao
     printf( "\nExercicio 0714:\n\n" );
