@@ -37,10 +37,10 @@ void menuOpcoes() {
 
 
 
-// Incluir função e método (0611) para:
-// para ler uma quantidade inteira (n) do teclado e, mediante um procedimento,
-// testar a função para gerar valores múltiplos de 4 em ordem crescente.
-
+// Incluir função e método (0711) para:
+// ler um valor inteiro do teclado e
+// gravar essa quantidade em múltiplos de 3, ímpares, em ordem crescente, começando em 3.
+// Exemplo: n = 5 => { 3, 9, 15, 21, 27 }
 void ex0711()
 {
     // identificacao

@@ -327,14 +327,38 @@ void ex0619() {
 // DICA: Separar o cálculo do termo e o teste para verificar se é par.
 // Exemplo: valor = 3 => 2+8+34
 
+int fibonacci(int n) {
+    if (n == 1 || n == 2) {
+        return 1;
+    } else {
+        return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+}
+
+int fun0620(int x, int y, int n, int soma) {
+    if (x <= n) {
+        int z = fibonacci(y);
+        if (z % 2 == 0) {
+            soma += z;
+        }
+        return fun0620(x + 1, y + 1, n, soma);
+    } else {
+        return soma;
+    }
+}
+
 void ex0620() {
-// identificacao
-    printf( "\nExercicio 0620:\n\n" );
+    printf("\nExercicio 0620:\n\n");
+    int n = 0, controle = 0;
+    printf("Digite o numero de vezes: ");
+    scanf("%d", &n);
+    controle = fun0620(1, 1, n, 0); // Inicializamos a soma como 0
+    printf("Total = %d\n", controle);
+    // Encerrar
+    printf("Aperte ENTER para continuar!\n");
     getchar();
-    // encerrar
-    printf( "\nAperte ENTER para continuar!\n" );
-    getchar();
-}// Fim da fun��o ex0620
+}
+// Fim da fun��o ex0620
 
 // Fun��o para o exerc�cio 06E1
 // Incluir função e método (Exemplo06E1) para
