@@ -83,13 +83,13 @@ void ex0713() {
     getchar();
     return 0;
 
-}// Fim da fun��o ex0613
+}// Fim da fun��o ex0713
 
-// Fun��o para o exerc�cio 0614
-// Incluir função e método (0614) para:
-// ler um valor inteiro do teclado e chamar procedimento recursivo para
-// mostrar essa quantidade em valores da sequência de inversos dos múltiplos de 4, terminando em 1.
-// Exemplo: valor = 5 => { 1/16, 1/12, 1/8, 1/4, 1/1 }
+// Fun��o para o exerc�cio 0714
+// ler um valor inteiro do teclado e
+// gravar essa quantidade em valores decrescentes da sequência: ... 1/256 1/64 1/16 1/4 1.
+// Exemplo: n = 5 => { 1/256, 1/64, 1/16, 1/4, 1 }
+
 
 void ex0714() {
 // identificacao
