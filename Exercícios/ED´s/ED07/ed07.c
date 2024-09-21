@@ -127,13 +127,13 @@ void ex0716() {
     printf("\nAperte ENTER para continuar!\n");
     getchar(); // Para esperar o usuário pressionar ENTER
 }
-// Fim da fun��o ex0616
+// Fim da fun��o ex0716
 
-// Fun��o para o exerc�cio 0617
-// Incluir função e método (0617) para
-// ler uma cadeia de caracteres e chamar procedimento recursivo para
-// mostrar cada símbolo separadamente, um por linha.
-// Exemplo: sequência = "abcde"
+// Fun��o para o exerc�cio 0717
+// ler um valor inteiro do teclado, e até essa quantidade, um valor por vez,
+// calcular a soma dos inversos das potências do exercício 04.
+// Gravar em outro arquivo ("RESULTADO07.TXT") cada quantidade e seu resultado.
+// Exemplo: n = 5 => { 1/256 + 1/64 + 1/16 + 1/4 + 1 }
 
 void ex0717(){
     // identificacao
