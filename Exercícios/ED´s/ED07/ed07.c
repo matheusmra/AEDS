@@ -69,12 +69,11 @@ void ex0712() {
     return 0;
 }// Fim da fun��o ex0712
 
-// Fun��o para o exerc�cio 0613
-//  Incluir função e método (0613) para:
-// ler um valor inteiro do teclado e chamar procedimento recursivo para
-// mostrar essa quantidade em valores da sequência de inversos dos múltiplos de 4, começando em 1.
-// DICA: Separar o primeiro do restante.
-// Exemplo: valor = 5 => { 1/1, 1/4, 1/8, 1/12, 1/16. }
+// Fun��o para o exerc�cio 0713
+// ler um valor inteiro do teclado e
+// gravar essa quantidade em valores da sequência: 1 4 16 64 256 ...
+// Exemplo: n = 5 => { 1, 4, 16, 64, 256 }
+
 
 void ex0713() {
 // identificacao
