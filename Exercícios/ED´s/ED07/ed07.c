@@ -74,7 +74,6 @@ void ex0712() {
 // gravar essa quantidade em valores da sequência: 1 4 16 64 256 ...
 // Exemplo: n = 5 => { 1, 4, 16, 64, 256 }
 
-
 void ex0713() {
 // identificacao
     printf( "\nExercicio 0713:\n\n" );
