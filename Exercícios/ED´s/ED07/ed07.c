@@ -170,14 +170,13 @@ void ex0719() {
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
 
-}// Fim da fun��o ex0619
+}// Fim da fun��o ex0719
 
-// Fun��o para o exerc�cio 0620
-// Incluir função e método (Exemplo0620) para
-// calcular certo termo par da série de Fibonacci começando em 1.
-// Testar essa função para quantidades diferentes.
-// DICA: Separar o cálculo do termo e o teste para verificar se é par.
-// Exemplo: valor = 3 => 2+8+34
+// Fun��o para o exerc�cio 0720
+// para contar dígitos menores ou iguais a 4 em uma cadeia de caracteres.
+// Gravar em outro arquivo ("RESULTADO10.TXT") cada cadeia de caracteres e seu resultado.
+// Testar essa função para cadeias de tamanhos diferentes.
+// Exemplo: P4R3D3 de T1J0L05 4maR3105
 
 void ex0720() {
 // identificacao
