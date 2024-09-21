@@ -67,7 +67,7 @@ void ex0712() {
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
     return 0;
-}// Fim da fun��o ex0612
+}// Fim da fun��o ex0712
 
 // Fun��o para o exerc�cio 0613
 //  Incluir função e método (0613) para:
