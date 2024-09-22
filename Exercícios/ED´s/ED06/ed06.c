@@ -328,22 +328,17 @@ void ex0619() {
 // Exemplo: valor = 3 => 2+8+34
 
 int fibo(int v1) {
-    int a = 1, b = 1, c;
-    for (int i = 3; i <= v1; i++) {
-        c = a + b;
-        a = b;
-        b = c;
-    }
-    return b;
+    if (v1 == 1 || v1 == 2)
+        return 1;
+    else
+        return fibo(v1 - 1) + fibo(v1 - 2);
 }
 
 int fun0620(int v1) {
-    int soma = 0, termo = 0;
-    for (int i = 1; i <= v1; i++){
-        termo = fibo(i);
-        if(termo % 2 == 0){
-            soma += termo;
-        }
+    int soma = 0;
+    for (int i = 1; i <= v1; i++) {
+        int termo = fibo(i);
+        soma += termo;
     }
     return soma;
 }
