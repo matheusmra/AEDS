@@ -327,20 +327,27 @@ void ex0619() {
 // DICA: Separar o cálculo do termo e o teste para verificar se é par.
 // Exemplo: valor = 3 => 2+8+34
 
-int fibo(int v1) {
-    if (v1 == 1 || v1 == 2)
-        return 1;
-    else
-        return fibo(v1 - 1) + fibo(v1 - 2);
+int fibo(int v1){
+    int a = 1, b = 1, c;
+    for (int i = 1; i <= v1; i++){
+        c = a + b;
+        a = b;
+        b = c;
+    }
+    return b;
 }
 
 int fun0620(int v1) {
-    int soma = 0;
-    for (int i = 1; i <= v1; i++) {
-        int termo = fibo(i);
-        soma += termo;
+    int total = 0, termo = 0;
+    for (int i = 1; i <= v1; i++){
+        termo = fibo(i);
+        //O PROBLEMA TA AQUI//
+        if(termo % 2 == 0){
+            total += termo;
+        }
+        //------/
     }
-    return soma;
+    return total;
 }
 
 void ex0620() {
