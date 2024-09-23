@@ -199,6 +199,8 @@ void ex0716() {
 // Gravar em outro arquivo ("RESULTADO07.TXT") cada quantidade e seu resultado.
 // Exemplo: n = 5 => { 1/256 + 1/64 + 1/16 + 1/4 + 1 }
 
+
+
 void ex0717(){
     // identificacao
     printf("\nExercicio 0717:\n\n");
