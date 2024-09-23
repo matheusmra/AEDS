@@ -141,20 +141,21 @@ int aux0714(int v1, int v2) {
 }
 
 void fun0714(int v1, int v2) {
-    if (v2 == 0) {
+    if(v2 == 0){
         return;
-    } else {
+    }else{
         printf("\n(1/%d) eh divisor de quatro", v1);
         fun0714(v1 / 4, v2 - 1);
     }
 }
+
 void ex0714() {
 // identificacao
     printf( "\nExercicio 0714:\n\n" );
     int n = 0, max = 0;
     printf("\nDigite o numero de vezes:");
     scanf("%d", &n);
-    max = aux0714(1, n);
+    max = (aux0714(1, n))/4;
     fun0714(max,n);
     // encerrar
     getchar();
