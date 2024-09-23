@@ -130,11 +130,34 @@ void ex0713() {
 // gravar essa quantidade em valores decrescentes da sequência: ... 1/256 1/64 1/16 1/4 1.
 // Exemplo: n = 5 => { 1/256, 1/64, 1/16, 1/4, 1 }
 
+int aux0714(int v1, int v2) {
+    int total;
+    if (v2 == 0) {
+        return; // Retorna o valor final
+    }else {
+        total = aux0714(v1 * 4, v2 - 1);
+    }
+    return total;
+}
+
+void fun0714(int v1, int v2) {
+    if (v2 == 0) {
+        return;
+    } else {
+        printf("\n(1/%d) eh divisor de quatro", v1);
+        fun0714(v1 / 4, v2 - 1);
+    }
+}
 void ex0714() {
 // identificacao
     printf( "\nExercicio 0714:\n\n" );
-    getchar();
+    int n = 0, max = 0;
+    printf("\nDigite o numero de vezes:");
+    scanf("%d", &n);
+    max = aux0714(1, n);
+    fun0714(max,n);
     // encerrar
+    getchar();
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
 
