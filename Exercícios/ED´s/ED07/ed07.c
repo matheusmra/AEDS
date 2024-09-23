@@ -102,9 +102,21 @@ void ex0712() {
 // gravar essa quantidade em valores da sequência: 1 4 16 64 256 ...
 // Exemplo: n = 5 => { 1, 4, 16, 64, 256 }
 
+void fun0713(int v1, int v2) {
+    if(v2 == 0){
+        return; // Evita que a função se chame infinitamente
+    }else{
+        printf("\n(%d) eh multiplo de quatro", v1);
+        fun0713(v1 * 4, v2 - 1);
+    }
+}
 void ex0713() {
 // identificacao
     printf( "\nExercicio 0713:\n\n" );
+    int n = 0;
+    printf("\nDigite o numero de vezes:");
+    scanf("%d", &n);
+    fun0713(1, n);
     // encerrar
     getchar();
     printf( "\nAperte ENTER para continuar!\n" );
