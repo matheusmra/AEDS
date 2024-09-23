@@ -41,12 +41,26 @@ void menuOpcoes() {
 // ler um valor inteiro do teclado e
 // gravar essa quantidade em múltiplos de 3, ímpares, em ordem crescente, começando em 3.
 // Exemplo: n = 5 => { 3, 9, 15, 21, 27 }
+void fun0711(int v1, int v2) {
+    if(v2 == 0){
+        return; // Evita que a função se chame infinitamente
+    }if(v1 % 2 != 0){
+        printf("\n(%d) eh multiplo de tres", v1);
+        fun0711(v1 + 3, v2 - 1);
+    }else{
+        fun0711(v1 + 3, v2);
+    }
+}
+
 void ex0711()
 {
     // identificacao
      printf("\nExercicio 0711:\n\n");
     //programa
-
+    int n = 0;
+    printf("\nDigite o numero de vezes:");
+    scanf("%d", &n);
+    fun0711(3, n);
     // encerrar
     getchar();
     printf( "\nAperte ENTER para continuar!\n" );
