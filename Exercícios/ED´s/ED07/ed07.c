@@ -169,10 +169,23 @@ void ex0714() {
 // gravar essa quantidade (n) em valores reais da sequência: 1 1/x2 1/x4 1/x6...
 // DICA: Usar pow ( x, y ) da biblioteca <math.h> para calcular a potência.
 // Exemplo: n = 5 => { 1, 1/x2, 1/x4, 1/x6, 1/x8}
+void pot0715(int v1, int v2) {
+    if(v2 == 0){
+        return; // Evita que a função se chame infinitamente
+    }else{
+        pot0715(v1 * 2, v2 - 1);
+    }
+}
 
 void ex0715() {
 // identificacao
     printf( "\nExercicio 0715:\n\n" );
+    printf("\nDigite o numero de vezes:");
+    int n = 0;
+    scanf("%d", &n);
+    printf("\nDigite um numero real:");
+    double real = 0.0;
+    scanf("%lf", &real);
     getchar();
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
