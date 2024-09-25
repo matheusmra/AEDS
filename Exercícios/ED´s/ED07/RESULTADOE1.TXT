@@ -1,0 +1,4 @@
+Número digitado: 6
+Divisores pares em ordem decrescente:
+6
+2

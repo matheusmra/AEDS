@@ -243,12 +243,36 @@ void ex0718() {
 // Gravar em outro arquivo ("RESULTADO09.TXT") cada cadeia de caracteres e seus resultados.
 // Testar essa função com cadeias de tamanhos diferentes.
 // Exemplo: PaReDe de TiJoLoS AmaRElOs
+int fun0719(const char *cadeia){
+    int contador = 0;
+    while(*cadeia){
+        if(islower(*cadeia)) {
+            contador++;
+        }
+        cadeia++;
+    }
+    return contador;
+}
+
 void ex0719() {
-    //identificação
-    printf( "\nExercicio 0719:\n\n" );
+// identificacao
+    printf( "\nExercicio 0720:\n\n" );
+    char string[100];
+    fgets(string, sizeof(string), stdin);
+    int resultado = fun0719(string);
+
+    FILE *arquivo = fopen("RESULTADO09.TXT", "w");
+    if (arquivo) {
+        fprintf(arquivo, "Cadeia de caracteres: %s\n", string);
+        fprintf(arquivo, "Quantidade de letras minusculas: %d\n", resultado);
+        fclose(arquivo);
+        printf("Resultado gravado em RESULTADO09.TXT.\n");
+    } else {
+        printf("Erro ao abrir o arquivo para escrita.\n");
+    }
+    // encerrar
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
-
 }// Fim da fun��o ex0719
 
 // Fun��o para o exerc�cio 0720
@@ -256,11 +280,36 @@ void ex0719() {
 // Gravar em outro arquivo ("RESULTADO10.TXT") cada cadeia de caracteres e seu resultado.
 // Testar essa função para cadeias de tamanhos diferentes.
 // Exemplo: P4R3D3 de T1J0L05 4maR3105
+int fun0720(const char *cadeia){
+    int contador = 0;
+    while(*cadeia){
+        if(isdigit(*cadeia)) {
+            int digito = *cadeia - '0';
+            if (digito <= 4) {
+                contador++;
+            }
+        }
+        cadeia++;
+    }
+    return contador;
+}
 
 void ex0720() {
 // identificacao
     printf( "\nExercicio 0720:\n\n" );
-    getchar();
+    char string[100];
+    fgets(string, sizeof(string), stdin);
+    int resultado = fun0720(string);
+
+    FILE *arquivo = fopen("RESULTADO10.TXT", "w");
+    if (arquivo) {
+        fprintf(arquivo, "Cadeia de caracteres: %s\n", string);
+        fprintf(arquivo, "Quantidade de dígitos menores ou iguais a 4: %d\n", resultado);
+        fclose(arquivo);
+        printf("Resultado gravado em RESULTADO10.TXT.\n");
+    } else {
+        printf("Erro ao abrir o arquivo para escrita.\n");
+    }
     // encerrar
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
@@ -270,15 +319,39 @@ void ex0720() {
 // programa ler um valor inteiro do teclado, e
 // gravar em arquivo os seus divisores pares em ordem decrescente.
 
-void ex07E1()
-{
-    // identificacao
-    printf( "\nExercicio 07E1:\n\n" );
+void fun07E1(int v1) {
+    FILE *arquivo = fopen("RESULTADOE1.TXT", "w");
+    if (arquivo) {
+        fprintf(arquivo, "Número digitado: %d\n", v1);
+        fprintf(arquivo, "Divisores pares em ordem decrescente:\n");
 
-    getchar();
+        // Encontrar e gravar os divisores pares
+        for (int i = v1; i >= 1; i--) {
+            if (v1 % i == 0 && i % 2 == 0) {
+                fprintf(arquivo, "%d\n", i);
+            }
+        }
+
+        fclose(arquivo);
+        printf("Resultado gravado em RESULTADOE1.TXT.\n");
+    } else {
+        printf("Erro ao abrir o arquivo para escrita.\n");
+    }
+}
+
+void ex07E1() {
+    printf("\nExercicio 07E1:\n\n");
+    int n;
+    printf("Digite um numero: ");
+    scanf("%d", &n);
+    fun07E1(n);
+    // Encerrar
     printf("\nAperte ENTER para continuar!\n");
-    getchar();
-} // fim exercicio07E1
+    getchar(); // Para consumir o ENTER após a leitura do número
+    getchar(); // Para aguardar o ENTER antes de encerrar
+
+    return 0;
+}// fim exercicio07E1
 // Fun��o para o exerc�cio 07E2
 // ver palavras de um arquivo, uma por linha, e
 // contar quantas começam com a letra 'd' (ou 'D').
