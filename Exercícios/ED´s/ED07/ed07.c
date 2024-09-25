@@ -324,14 +324,11 @@ void fun07E1(int v1) {
     if (arquivo) {
         fprintf(arquivo, "Número digitado: %d\n", v1);
         fprintf(arquivo, "Divisores pares em ordem decrescente:\n");
-
-        // Encontrar e gravar os divisores pares
-        for (int i = v1; i >= 1; i--) {
+        for(int i = v1; i >= 1; i--) {
             if (v1 % i == 0 && i % 2 == 0) {
                 fprintf(arquivo, "%d\n", i);
             }
         }
-
         fclose(arquivo);
         printf("Resultado gravado em RESULTADOE1.TXT.\n");
     } else {
@@ -347,8 +344,8 @@ void ex07E1() {
     fun07E1(n);
     // Encerrar
     printf("\nAperte ENTER para continuar!\n");
-    getchar(); // Para consumir o ENTER após a leitura do número
-    getchar(); // Para aguardar o ENTER antes de encerrar
+    getchar();
+    getchar();
 
     return 0;
 }// fim exercicio07E1
