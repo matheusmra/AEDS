@@ -300,7 +300,7 @@ int fun0719(const char *cadeia){
 
 void ex0719() {
 // identificacao
-    printf( "\nExercicio 0720:\n\n" );
+    printf( "\nExercicio 0719:\n\n" );
     char string[100];
     fgets(string, sizeof(string), stdin);
     int resultado = fun0719(string);
