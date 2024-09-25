@@ -1,3 +1,3 @@
-Cadeia de caracteres: PaReDe de TiJoLoS AmaRElOs
+Cadeia de caracteres: P4R3D3 de T1J0L05 4maR3105
 
-Quantidade de letras minusculas: 0
+Quantidade de dígitos menores ou iguais a 4: 10

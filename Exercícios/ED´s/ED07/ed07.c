@@ -220,7 +220,6 @@ void ex0716() {
     } else {
         printf("Erro ao criar o arquivo.\n");
     }
-
     getchar();
     printf("\nAperte ENTER para continuar!\n");
     getchar();
@@ -232,7 +231,6 @@ void ex0716() {
 // calcular a soma dos inversos das potências do exercício 04.
 // Gravar em outro arquivo ("RESULTADO07.TXT") cada quantidade e seu resultado.
 // Exemplo: n = 5 => { 1/256 + 1/64 + 1/16 + 1/4 + 1 }
-
 
 void ex0717(){
     // identificacao
