@@ -213,13 +213,12 @@ void ex0716() {
 // Exemplo: n = 5 => { 1/256 + 1/64 + 1/16 + 1/4 + 1 }
 
 
-
 void ex0717(){
     // identificacao
     printf("\nExercicio 0717:\n\n");
     // programa
-    getchar();
 
+    getchar();
     // encerrar
     printf("\n%s\n", "Aperte ENTER para continuar!");
     getchar();
@@ -230,13 +229,39 @@ void ex0717(){
 // gravar o valor correspondente aos primeiros termos pares da série de Fibonacci.
 // Gravar em outro arquivo ("RESULTADO08.TXT") cada quantidade e seu resultado.
 // Exemplo: n = 5 => { 2, 8, 34, 144, 610 }
+int fibonacci(int n) {
+    if (n <= 1)
+        return n;
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
 
 void ex0718() {
-// identificacao
-    printf( "\nExercicio 0718:\n\n" );
-
-    printf( "\nAperte ENTER para continuar!\n" );
+    // Identificação
+    printf("\nExercicio 0718:\n\n");
+    int n = 0;
+    int controle = 0;
+    printf("Digite a quantidade de termos: ");
+    scanf("%d", &n);
+    FILE *arquivo = fopen("RESULTADO08.TXT", "w");
+    if(arquivo){
+    fprintf(arquivo, "Os primeiros %d termos pares da série de Fibonacci:\n", n);
+    for(int i = 1; controle < n; i++){
+        int termo = fibonacci(i);
+        if (termo % 2 == 0){
+            controle++;
+            fprintf(arquivo, "%d ", termo);
+        }
+    }
+    fprintf(arquivo, "\n");
+    fclose(arquivo);
+    printf("Valores gravados no arquivo \"RESULTADO08.TXT\".\n");
+    }else{
+        printf("\nErro ao gravar");
+    }
+    getchar(); // Para capturar a nova linha deixada pelo scanf
+    printf("\nAperte ENTER para continuar!\n");
     getchar();
+
 }// Fim da fun��o ex0718
 // Fun��o para o exerc�cio 0719
 // para calcular a quantidade de minúsculas em cadeia de caracteres de um arquivo texto.
@@ -260,7 +285,6 @@ void ex0719() {
     char string[100];
     fgets(string, sizeof(string), stdin);
     int resultado = fun0719(string);
-
     FILE *arquivo = fopen("RESULTADO09.TXT", "w");
     if (arquivo) {
         fprintf(arquivo, "Cadeia de caracteres: %s\n", string);
