@@ -200,9 +200,30 @@ void ex0715() {
 
 void ex0716() {
     printf("\nExercicio 0716:\n\n");
+    int n = 0;
+    printf("Digite a quantidade de termos: ");
+    scanf("%d", &n);
+    int array[n];
+    int soma = 0;
+    FILE *arquivo = fopen("RESULTADO06.TXT", "w");
+    if (arquivo != NULL) {
+        fprintf(arquivo, "Quantidade de termos: %d\n", n);
+    for (int i = 0; i < n; i++) {
+        printf("Digite o valor do array[%d]: ", i);
+        scanf("%d", &array[i]);
+        fprintf(arquivo, "\nTermo digitado: %d\n", array[i]);
+        soma += array[i];
+        fprintf(arquivo, "\nSoma do termo[%d] + termo[%d]: (%d)\n",array[i], array[i-1], soma);
+        }
+        fclose(arquivo);
+        printf("Resultados gravados no arquivo RESULTADO06.TXT.\n");
+    } else {
+        printf("Erro ao criar o arquivo.\n");
+    }
+
     getchar();
     printf("\nAperte ENTER para continuar!\n");
-    getchar(); // Para esperar o usuário pressionar ENTER
+    getchar();
 }
 // Fim da fun��o ex0716
 
@@ -243,7 +264,7 @@ void ex0718() {
     printf("Digite a quantidade de termos: ");
     scanf("%d", &n);
     FILE *arquivo = fopen("RESULTADO08.TXT", "w");
-    if(arquivo){
+    if(arquivo != NULL){
     fprintf(arquivo, "Os primeiros %d termos pares da série de Fibonacci:\n", n);
     for(int i = 1; controle < n; i++){
         int termo = fibonacci(i);
@@ -286,7 +307,7 @@ void ex0719() {
     fgets(string, sizeof(string), stdin);
     int resultado = fun0719(string);
     FILE *arquivo = fopen("RESULTADO09.TXT", "w");
-    if (arquivo) {
+    if (arquivo != NULL) {
         fprintf(arquivo, "Cadeia de caracteres: %s\n", string);
         fprintf(arquivo, "Quantidade de letras minusculas: %d\n", resultado);
         fclose(arquivo);
@@ -326,12 +347,12 @@ void ex0720() {
     int resultado = fun0720(string);
 
     FILE *arquivo = fopen("RESULTADO10.TXT", "w");
-    if (arquivo) {
+    if(arquivo != NULL){
         fprintf(arquivo, "Cadeia de caracteres: %s\n", string);
         fprintf(arquivo, "Quantidade de dígitos menores ou iguais a 4: %d\n", resultado);
         fclose(arquivo);
         printf("Resultado gravado em RESULTADO10.TXT.\n");
-    } else {
+    }else{
         printf("Erro ao abrir o arquivo para escrita.\n");
     }
     // encerrar
@@ -345,7 +366,7 @@ void ex0720() {
 
 void fun07E1(int v1) {
     FILE *arquivo = fopen("RESULTADOE1.TXT", "w");
-    if (arquivo) {
+    if (arquivo != NULL) {
         fprintf(arquivo, "Número digitado: %d\n", v1);
         fprintf(arquivo, "Divisores pares em ordem decrescente:\n");
         for(int i = v1; i >= 1; i--) {
