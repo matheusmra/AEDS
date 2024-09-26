@@ -273,7 +273,7 @@ void ex0718() {
     }
     fprintf(arquivo, "\n");
     fclose(arquivo);
-    printf("Valores gravados no arquivo \"RESULTADO08.TXT\".\n");
+    printf("Valores gravados no arquivo RESULTADO08.TXT. \n");
     }else{
         printf("\nErro ao gravar");
     }
