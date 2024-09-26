@@ -263,12 +263,12 @@ void ex0718() {
     scanf("%d", &n);
     FILE *arquivo = fopen("RESULTADO08.TXT", "w");
     if(arquivo != NULL){
-    fprintf(arquivo, "Os primeiros %d termos pares da série de Fibonacci:\n", n);
+    fprintf(arquivo, "Os primeiros (%d) termos pares da série de Fibonacci:\n", n);
     for(int i = 1; controle < n; i++){
         int termo = fibonacci(i);
         if (termo % 2 == 0){
             controle++;
-            fprintf(arquivo, "%d ", termo);
+            fprintf(arquivo, "\n%d ", termo);
         }
     }
     fprintf(arquivo, "\n");

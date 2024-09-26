@@ -1,2 +1,7 @@
-Os primeiros 5 termos pares da série de Fibonacci:
-2 8 34 144 610 
+Os primeiros (5) termos pares da série de Fibonacci:
+
+2 
+8 
+34 
+144 
+610 
