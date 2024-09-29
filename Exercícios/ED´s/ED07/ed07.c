@@ -232,16 +232,51 @@ void ex0716() {
 // Gravar em outro arquivo ("RESULTADO07.TXT") cada quantidade e seu resultado.
 // Exemplo: n = 5 => { 1/256 + 1/64 + 1/16 + 1/4 + 1 }
 
-void ex0717(){
-    // identificacao
+#include <stdio.h>
+#include <stdlib.h>
+
+int aux0717(int v1, int v2) {
+    if (v2 == 0) {
+        return v1; // Return v1 when v2 is 0 to return the final value
+    } else {
+        return aux0717(v1 * 4, v2 - 1); // Correctly return the result of the recursive call
+    }
+}
+
+void fun0717(int v1, int v2, FILE *arquivo) {
+    if (v2 == 0) {
+        return;
+    } else {
+        fprintf(arquivo, "(1/%d) eh divisor de quatro\n", v1); // Write to file
+        fun0717(v1 / 4, v2 - 1, arquivo); // Recursive call with updated arguments
+    }
+}
+
+
+void ex0717() {
+    // Identificacao
     printf("\nExercicio 0717:\n\n");
-    // programa
+    int n = 0, max = 0;
+
+    printf("\nDigite o numero de vezes: ");
+    scanf("%d", &n);
+
+    FILE *arquivo = fopen("RESULTADO07.TXT", "w");
+    if (arquivo != NULL) {
+        max = (aux0717(1, n))/4;
+        fun0717(max, n, arquivo);
+        fclose(arquivo);
+        printf("Valores gravados no arquivo RESULTADO07.TXT. \n");
+    } else {
+        printf("Erro ao abrir o arquivo!\n");
+    }
 
     getchar();
-    // encerrar
-    printf("\n%s\n", "Aperte ENTER para continuar!");
+    printf("\nAperte ENTER para continuar!\n");
     getchar();
-} // fim exercicio0717
+}
+
+
 
 // Fun��o para o exerc�cio 0718
 // ler um valor inteiro do teclado, e até atingir essa quantidade, um valor por vez,
