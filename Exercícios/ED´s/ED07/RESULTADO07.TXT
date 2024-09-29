@@ -1,0 +1,5 @@
+(1/256) eh divisor de quatro
+(1/64) eh divisor de quatro
+(1/16) eh divisor de quatro
+(1/4) eh divisor de quatro
+(1/1) eh divisor de quatro
