@@ -61,18 +61,8 @@ void ex0811()
 // ler um valor inteiro do teclado e
 // gravar essa quantidade em múltiplos de 6, pares, em ordem decrescente encerrando em 36.
 // Exemplo: n = 5 => { 60, 54, 48, 42, 36 }
-void fun0712(int v1, int v2) {
-    if(v2 == 0){
-        return; // Evita que a função se chame infinitamente
-    }if(v1 % 2 == 0){
-        printf("\n(%d) eh multiplo de tres", v1);
-        fun0712(v1 - 3, v2 - 1);
-    }else{
-        fun0712(v1 - 3, v2);
-    }
-}
 
-void ex0712() {
+void ex0812() {
     // identificacao
     printf( "\nExercicio 0712:\n\n" );
     // programa
