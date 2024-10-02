@@ -1,13 +1,13 @@
 /*
- Estudo Dirigido 06 - v0.0. - 17 / 09 / 2024
+ Estudo Dirigido 08 - v0.0. - 02 / 10 / 2024
  Author: Matheus de Almeida Moreira
 
  Para compilar em terminal (janela de comandos):
- Linux : gcc -o ed07 ed07.c
- Windows: gcc -o ed07 ed07.c
+ Linux : gcc -o ed08 ed08.c
+ Windows: gcc -o ed08 ed08.c
  Para executar em terminal (janela de comandos):
- Linux : ./ed07
- Windows: ed07
+ Linux : ./ed08
+ Windows: ed08
 */
 
 // dependencias
