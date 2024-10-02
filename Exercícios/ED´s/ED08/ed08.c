@@ -52,9 +52,9 @@ void ex0811()
     getchar();
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
-} // fim exercicio0711
+} // fim exercicio0811
 
-// Fun��o para o exerc�cio 0712
+// Fun��o para o exerc�cio 0812
 // ler um valor inteiro do teclado e
 // gravar essa quantidade em múltiplos de 6, pares, em ordem decrescente encerrando em 36.
 // Exemplo: n = 5 => { 60, 54, 48, 42, 36 }
@@ -74,7 +74,7 @@ void ex0812() {
     return 0;
 }// Fim da fun��o ex0712
 
-// Fun��o para o exerc�cio 0713
+// Fun��o para o exerc�cio 0813
 // ler um valor inteiro do teclado e
 // gravar essa quantidade em valores da sequência: 1 4 16 64 256 ...
 // Exemplo: n = 5 => { 1, 4, 16, 64, 256 }
@@ -93,9 +93,9 @@ void ex0813() {
     getchar();
     return 0;
 
-}// Fim da fun��o ex0713
+}// Fim da fun��o ex0813
 
-// Fun��o para o exerc�cio 0714
+// Fun��o para o exerc�cio 0814
 // ler um valor inteiro do teclado e
 // gravar essa quantidade em valores decrescentes da sequência: ... 1/256 1/64 1/16 1/4 1.
 // Exemplo: n = 5 => { 1/256, 1/64, 1/16, 1/4, 1 }
@@ -115,9 +115,9 @@ void ex0814() {
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
 
-}// Fim da fun��o ex0714
+}// Fim da fun��o ex0814
 
-// Fun��o para o exerc�cio 0715
+// Fun��o para o exerc�cio 0815
 // ler um valor inteiro do teclado (n) e outro valor real (x),
 // gravar essa quantidade (n) em valores reais da sequência: 1 1/x2 1/x4 1/x6...
 // DICA: Usar pow ( x, y ) da biblioteca <math.h> para calcular a potência.
@@ -137,9 +137,9 @@ void ex0815() {
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
 
-}// Fim da fun��o ex0715
+}// Fim da fun��o ex0815
 
-// Fun��o para o exerc�cio 0716
+// Fun��o para o exerc�cio 0816
 // ler um valor inteiro do teclado para representar certa quantidade de valores
 // a serem somados dentre os primeiros gravados no exercício anterior.
 // Testar essa função para quantidades diferentes.
@@ -171,9 +171,9 @@ void ex0816() {
     printf("\nAperte ENTER para continuar!\n");
     getchar();
 }
-// Fim da fun��o ex0716
+// Fim da fun��o ex0816
 
-// Fun��o para o exerc�cio 0717
+// Fun��o para o exerc�cio 0817
 // ler um valor inteiro do teclado, e até essa quantidade, um valor por vez,
 // calcular a soma dos inversos das potências do exercício 04.
 // Gravar em outro arquivo ("RESULTADO07.TXT") cada quantidade e seu resultado.
@@ -206,7 +206,7 @@ void ex0817() {
 
 
 
-// Fun��o para o exerc�cio 0718
+// Fun��o para o exerc�cio 0818
 // ler um valor inteiro do teclado, e até atingir essa quantidade, um valor por vez,
 // gravar o valor correspondente aos primeiros termos pares da série de Fibonacci.
 // Gravar em outro arquivo ("RESULTADO08.TXT") cada quantidade e seu resultado.
@@ -240,8 +240,8 @@ void ex0818() {
     printf("\nAperte ENTER para continuar!\n");
     getchar();
 
-}// Fim da fun��o ex0718
-// Fun��o para o exerc�cio 0719
+}// Fim da fun��o ex0818
+// Fun��o para o exerc�cio 0819
 // para calcular a quantidade de minúsculas em cadeia de caracteres de um arquivo texto.
 // Gravar em outro arquivo ("RESULTADO09.TXT") cada cadeia de caracteres e seus resultados.
 // Testar essa função com cadeias de tamanhos diferentes.
@@ -266,9 +266,9 @@ void ex0819() {
     // encerrar
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
-}// Fim da fun��o ex0719
+}// Fim da fun��o ex0819
 
-// Fun��o para o exerc�cio 0720
+// Fun��o para o exerc�cio 0820
 // para contar dígitos menores ou iguais a 4 em uma cadeia de caracteres.
 // Gravar em outro arquivo ("RESULTADO10.TXT") cada cadeia de caracteres e seu resultado.
 // Testar essa função para cadeias de tamanhos diferentes.
@@ -294,9 +294,9 @@ void ex0820() {
     // encerrar
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
-}// Fim da fun��o ex0720
+}// Fim da fun��o ex0820
 
-// Fun��o para o exerc�cio 07E1
+// Fun��o para o exerc�cio 08E1
 // programa ler um valor inteiro do teclado, e
 // gravar em arquivo os seus divisores pares em ordem decrescente.
 
@@ -313,8 +313,8 @@ void ex08E1() {
     getchar();
 
     return 0;
-}// fim exercicio07E1
-// Fun��o para o exerc�cio 07E2
+}// fim exercicio08E1
+// Fun��o para o exerc�cio 08E2
 // ver palavras de um arquivo, uma por linha, e
 // contar quantas começam com a letra 'd' (ou 'D').
 void ex08E2()
@@ -324,7 +324,7 @@ void ex08E2()
 
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
-} // fim fun��o 04E2
+} // fim fun��o 08E2
 
 // Fun��o principal
 int main(void) {
@@ -340,18 +340,18 @@ int main(void) {
         // Executar a op��o escolhida
         switch (opcao) {
             case 0: break;
-            case 1: ex0711(); break;
-            case 2: ex0712(); break;
-            case 3: ex0713(); break;
-            case 4: ex0714(); break;
-            case 5: ex0715(); break;
-            case 6: ex0716(); break;
-            case 7: ex0717(); break;
-            case 8: ex0718(); break;
-            case 9: ex0719(); break;
-            case 10: ex0720(); break;
-            case 11: ex07E1(); break;
-            case 12: ex07E2(); break;
+            case 1: ex0811(); break;
+            case 2: ex0812(); break;
+            case 3: ex0813(); break;
+            case 4: ex0814(); break;
+            case 5: ex0815(); break;
+            case 6: ex0816(); break;
+            case 7: ex0817(); break;
+            case 8: ex0818(); break;
+            case 9: ex0819(); break;
+            case 10: ex0820(); break;
+            case 11: ex08E1(); break;
+            case 12: ex08E2(); break;
             default:
                 printf("\nERRO: OPCAO INVALIDA\n\n");
                 break;
