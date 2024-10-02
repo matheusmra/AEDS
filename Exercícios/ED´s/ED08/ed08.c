@@ -42,7 +42,7 @@ void menuOpcoes() {
 // gravar essa quantidade em múltiplos de 3, ímpares, em ordem crescente, começando em 3.
 // Exemplo: n = 5 => { 3, 9, 15, 21, 27 }
 
-void ex0711()
+void ex0811()
 {
     // identificacao
      printf("\nExercicio 0711:\n\n");
