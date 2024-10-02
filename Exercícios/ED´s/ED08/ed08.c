@@ -82,15 +82,8 @@ void ex0812() {
 // gravar essa quantidade em valores da sequência: 1 4 16 64 256 ...
 // Exemplo: n = 5 => { 1, 4, 16, 64, 256 }
 
-void fun0713(int v1, int v2) {
-    if(v2 == 0){
-        return; // Evita que a função se chame infinitamente
-    }else{
-        printf("\n(%d) eh multiplo de quatro", v1);
-        fun0713(v1 * 4, v2 - 1);
-    }
-}
-void ex0713() {
+
+void ex0813() {
 // identificacao
     printf( "\nExercicio 0713:\n\n" );
     int n = 0;
@@ -110,26 +103,9 @@ void ex0713() {
 // gravar essa quantidade em valores decrescentes da sequência: ... 1/256 1/64 1/16 1/4 1.
 // Exemplo: n = 5 => { 1/256, 1/64, 1/16, 1/4, 1 }
 
-int aux0714(int v1, int v2) {
-    int total;
-    if (v2 == 0) {
-        return; // Retorna o valor final
-    }else {
-        total = aux0714(v1 * 4, v2 - 1);
-    }
-    return total;
-}
 
-void fun0714(int v1, int v2) {
-    if(v2 == 0){
-        return;
-    }else{
-        printf("\n(1/%d) eh divisor de quatro", v1);
-        fun0714(v1 / 4, v2 - 1);
-    }
-}
 
-void ex0714() {
+void ex0814() {
 // identificacao
     printf( "\nExercicio 0714:\n\n" );
     int n = 0, max = 0;
@@ -149,15 +125,9 @@ void ex0714() {
 // gravar essa quantidade (n) em valores reais da sequência: 1 1/x2 1/x4 1/x6...
 // DICA: Usar pow ( x, y ) da biblioteca <math.h> para calcular a potência.
 // Exemplo: n = 5 => { 1, 1/x2, 1/x4, 1/x6, 1/x8}
-void pot0715(int v1, int v2) {
-    if(v2 == 0){
-        return; // Evita que a função se chame infinitamente
-    }else{
-        pot0715(v1 * 2, v2 - 1);
-    }
-}
 
-void ex0715() {
+
+void ex0815() {
 // identificacao
     printf( "\nExercicio 0715:\n\n" );
     printf("\nDigite o numero de vezes:");
@@ -178,7 +148,7 @@ void ex0715() {
 // Testar essa função para quantidades diferentes.
 // Gravar em outro arquivo ("RESULTADO06.TXT") cada quantidade e seu resultado.
 
-void ex0716() {
+void ex0816() {
     printf("\nExercicio 0716:\n\n");
     int n = 0;
     printf("Digite a quantidade de termos: ");
@@ -212,28 +182,9 @@ void ex0716() {
 // Gravar em outro arquivo ("RESULTADO07.TXT") cada quantidade e seu resultado.
 // Exemplo: n = 5 => { 1/256 + 1/64 + 1/16 + 1/4 + 1 }
 
-#include <stdio.h>
-#include <stdlib.h>
-
-int aux0717(int v1, int v2) {
-    if (v2 == 0) {
-        return v1; // Return v1 when v2 is 0 to return the final value
-    } else {
-        return aux0717(v1 * 4, v2 - 1); // Correctly return the result of the recursive call
-    }
-}
-
-void fun0717(int v1, int v2, FILE *arquivo) {
-    if (v2 == 0) {
-        return;
-    } else {
-        fprintf(arquivo, "(1/%d) eh divisor de quatro\n", v1); // Write to file
-        fun0717(v1 / 4, v2 - 1, arquivo); // Recursive call with updated arguments
-    }
-}
 
 
-void ex0717() {
+void ex0817() {
     // Identificacao
     printf("\nExercicio 0717:\n\n");
     int n = 0, max = 0;
@@ -263,13 +214,9 @@ void ex0717() {
 // gravar o valor correspondente aos primeiros termos pares da série de Fibonacci.
 // Gravar em outro arquivo ("RESULTADO08.TXT") cada quantidade e seu resultado.
 // Exemplo: n = 5 => { 2, 8, 34, 144, 610 }
-int fibonacci(int n) {
-    if (n <= 1)
-        return n;
-    return fibonacci(n - 1) + fibonacci(n - 2);
-}
 
-void ex0718() {
+
+void ex0818() {
     // Identificação
     printf("\nExercicio 0718:\n\n");
     int n = 0;
@@ -302,18 +249,9 @@ void ex0718() {
 // Gravar em outro arquivo ("RESULTADO09.TXT") cada cadeia de caracteres e seus resultados.
 // Testar essa função com cadeias de tamanhos diferentes.
 // Exemplo: PaReDe de TiJoLoS AmaRElOs
-int fun0719(const char *cadeia){
-    int contador = 0;
-    while(*cadeia){
-        if(islower(*cadeia)) {
-            contador++;
-        }
-        cadeia++;
-    }
-    return contador;
-}
 
-void ex0719() {
+
+void ex0819() {
 // identificacao
     printf( "\nExercicio 0719:\n\n" );
     char string[100];
@@ -338,21 +276,9 @@ void ex0719() {
 // Gravar em outro arquivo ("RESULTADO10.TXT") cada cadeia de caracteres e seu resultado.
 // Testar essa função para cadeias de tamanhos diferentes.
 // Exemplo: P4R3D3 de T1J0L05 4maR3105
-int fun0720(const char *cadeia){
-    int contador = 0;
-    while(*cadeia){
-        if(isdigit(*cadeia)) {
-            int digito = *cadeia - '0';
-            if (digito <= 4) {
-                contador++;
-            }
-        }
-        cadeia++;
-    }
-    return contador;
-}
 
-void ex0720() {
+
+void ex0820() {
 // identificacao
     printf( "\nExercicio 0720:\n\n" );
     char string[100];
@@ -377,24 +303,8 @@ void ex0720() {
 // programa ler um valor inteiro do teclado, e
 // gravar em arquivo os seus divisores pares em ordem decrescente.
 
-void fun07E1(int v1) {
-    FILE *arquivo = fopen("RESULTADOE1.TXT", "w");
-    if (arquivo != NULL) {
-        fprintf(arquivo, "Número digitado: %d\n", v1);
-        fprintf(arquivo, "Divisores pares em ordem decrescente:\n");
-        for(int i = v1; i >= 1; i--) {
-            if (v1 % i == 0 && i % 2 == 0) {
-                fprintf(arquivo, "%d\n", i);
-            }
-        }
-        fclose(arquivo);
-        printf("Resultado gravado em RESULTADOE1.TXT.\n");
-    } else {
-        printf("Erro ao abrir o arquivo para escrita.\n");
-    }
-}
 
-void ex07E1() {
+void ex08E1() {
     printf("\nExercicio 07E1:\n\n");
     int n;
     printf("Digite um numero: ");
@@ -410,7 +320,7 @@ void ex07E1() {
 // Fun��o para o exerc�cio 07E2
 // ver palavras de um arquivo, uma por linha, e
 // contar quantas começam com a letra 'd' (ou 'D').
-void ex07E2()
+void ex08E2()
 {
     // identificacao
     printf( "\nExercicio 07E2:\n\n" );
