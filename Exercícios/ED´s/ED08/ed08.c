@@ -37,20 +37,17 @@ void menuOpcoes() {
 
 
 
-// Incluir função e método (0711) para:
-// ler um valor inteiro do teclado e
-// gravar essa quantidade em múltiplos de 3, ímpares, em ordem crescente, começando em 3.
-// Exemplo: n = 5 => { 3, 9, 15, 21, 27 }
+// Incluir função e método (0811) para:
+// ler o tamanho de um arranjo para inteiros do teclado,
+// bem como todos os seus elementos, garantindo que só tenha valores positivos e ímpares.
+// Verificar se o tamanho (ou dimensão) não é nulo ou negativo.
+// Para testar, ler diferentes quantidades de dados.
 
 void ex0811()
 {
     // identificacao
-     printf("\nExercicio 0711:\n\n");
+     printf("\nExercicio 0811:\n\n");
     //programa
-    int n = 0;
-    printf("\nDigite o numero de vezes:");
-    scanf("%d", &n);
-    fun0711(3, n);
     // encerrar
     getchar();
     printf( "\nAperte ENTER para continuar!\n" );
