@@ -72,7 +72,7 @@ void ex0812() {
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
     return 0;
-}// Fim da fun��o ex0712
+}// Fim da fun��o ex0812
 
 // Fun��o para o exerc�cio 0813
 // ler um valor inteiro do teclado e
