@@ -21,18 +21,18 @@
 void menuOpcoes() {
     printf("\nEscolha alguma das opcoes a seguir:\n\n");
     printf("  0 - Encerrar programa\n");
-    printf("  1 - Exercicio 0711\n");
-    printf("  2 - Exercicio 0712\n");
-    printf("  3 - Exercicio 0713\n");
-    printf("  4 - Exercicio 0714\n");
-    printf("  5 - Exercicio 0715\n");
-    printf("  6 - Exercicio 0716\n");
-    printf("  7 - Exercicio 0717\n");
-    printf("  8 - Exercicio 0718\n");
-    printf("  9 - Exercicio 0719\n");
-    printf(" 10 - Exercicio 0720\n");
-    printf(" 11 - Exercicio 07E1\n");
-    printf(" 12 - Exercicio 07E2\n");
+    printf("  1 - Exercicio 0811\n");
+    printf("  2 - Exercicio 0812\n");
+    printf("  3 - Exercicio 0813\n");
+    printf("  4 - Exercicio 0814\n");
+    printf("  5 - Exercicio 0815\n");
+    printf("  6 - Exercicio 0816\n");
+    printf("  7 - Exercicio 0817\n");
+    printf("  8 - Exercicio 0818\n");
+    printf("  9 - Exercicio 0819\n");
+    printf(" 10 - Exercicio 0820\n");
+    printf(" 11 - Exercicio 08E1\n");
+    printf(" 12 - Exercicio 08E2\n");
 } // fim menuOpcoes()
 
 
