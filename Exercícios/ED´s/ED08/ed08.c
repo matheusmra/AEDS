@@ -42,12 +42,35 @@ void menuOpcoes() {
 // bem como todos os seus elementos, garantindo que só tenha valores positivos e ímpares.
 // Verificar se o tamanho (ou dimensão) não é nulo ou negativo.
 // Para testar, ler diferentes quantidades de dados.
+void fun0811(int arranjo[], int tamanho){
+    for(int i = 0; i < tamanho; i++){
+        do{
+
+            scanf("%d", &arranjo[i]);
+        }
+        while (arranjo[i] <= 0 || arranjo[i] % 2 == 0); // Garante que seja positivo e ímpar
+    }
+}
 
 void ex0811()
 {
     // identificacao
      printf("\nExercicio 0811:\n\n");
-    //programa
+    //
+    int tamanho = 0;
+    scanf("%d", &tamanho);
+    if(tamanho > 0){
+        int arranjo[tamanho];
+        fun0811(arranjo,tamanho);
+    for(int i = 0; i < tamanho; i++){
+        printf("\nElemento %d = %d", i, arranjo[i]);
+
+        }
+
+    }else{
+        printf("\nO valor do tamanho deve ser positivo");
+    }
+
     // encerrar
     getchar();
     printf( "\nAperte ENTER para continuar!\n" );
@@ -63,12 +86,7 @@ void ex0811()
 void ex0812() {
     // identificacao
     printf( "\nExercicio 0712:\n\n" );
-    // programa
-    int n = 0, controle = 0;
-    printf("\nDigite o numero de vezes:");
-    scanf("%d", &n);
-    controle = 36+(6*(n-1));
-    fun0712(controle, n);
+
     getchar();
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
@@ -92,10 +110,7 @@ void ex0812() {
 void ex0813() {
 // identificacao
     printf( "\nExercicio 0713:\n\n" );
-    int n = 0;
-    printf("\nDigite o numero de vezes:");
-    scanf("%d", &n);
-    fun0713(1, n);
+
     // encerrar
     getchar();
     printf( "\nAperte ENTER para continuar!\n" );
@@ -118,11 +133,7 @@ void ex0813() {
 void ex0814() {
 // identificacao
     printf( "\nExercicio 0714:\n\n" );
-    int n = 0, max = 0;
-    printf("\nDigite o numero de vezes:");
-    scanf("%d", &n);
-    max = (aux0714(1, n))/4;
-    fun0714(max,n);
+
     // encerrar
     getchar();
     printf( "\nAperte ENTER para continuar!\n" );
@@ -142,12 +153,7 @@ void ex0814() {
 void ex0815() {
 // identificacao
     printf( "\nExercicio 0715:\n\n" );
-    printf("\nDigite o numero de vezes:");
-    int n = 0;
-    scanf("%d", &n);
-    printf("\nDigite um numero real:");
-    double real = 0.0;
-    scanf("%lf", &real);
+
     getchar();
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
@@ -166,26 +172,7 @@ void ex0815() {
 
 void ex0816() {
     printf("\nExercicio 0716:\n\n");
-    int n = 0;
-    printf("Digite a quantidade de termos: ");
-    scanf("%d", &n);
-    int array[n];
-    int soma = 0;
-    FILE *arquivo = fopen("RESULTADO06.TXT", "w");
-    if (arquivo != NULL) {
-        fprintf(arquivo, "Quantidade de termos: %d\n", n);
-    for (int i = 0; i < n; i++) {
-        printf("Digite o valor do array[%d]: ", i);
-        scanf("%d", &array[i]);
-        fprintf(arquivo, "\nTermo digitado: %d\n", array[i]);
-        soma += array[i];
-        fprintf(arquivo, "\nSoma do termo[%d] + termo[%d]: (%d)\n",array[i], array[i-1], soma);
-        }
-        fclose(arquivo);
-        printf("Resultados gravados no arquivo RESULTADO06.TXT.\n");
-    } else {
-        printf("Erro ao criar o arquivo.\n");
-    }
+
     getchar();
     printf("\nAperte ENTER para continuar!\n");
     getchar();
@@ -203,20 +190,7 @@ void ex0816() {
 void ex0817() {
     // Identificacao
     printf("\nExercicio 0717:\n\n");
-    int n = 0, max = 0;
 
-    printf("\nDigite o numero de vezes: ");
-    scanf("%d", &n);
-
-    FILE *arquivo = fopen("RESULTADO07.TXT", "w");
-    if (arquivo != NULL) {
-        max = (aux0717(1, n))/4;
-        fun0717(max, n, arquivo);
-        fclose(arquivo);
-        printf("Valores gravados no arquivo RESULTADO07.TXT. \n");
-    } else {
-        printf("Erro ao abrir o arquivo!\n");
-    }
 
     getchar();
     printf("\nAperte ENTER para continuar!\n");
@@ -241,26 +215,7 @@ void ex0817() {
 void ex0818() {
     // Identificação
     printf("\nExercicio 0718:\n\n");
-    int n = 0;
-    int controle = 0;
-    printf("Digite a quantidade de termos: ");
-    scanf("%d", &n);
-    FILE *arquivo = fopen("RESULTADO08.TXT", "w");
-    if(arquivo != NULL){
-    fprintf(arquivo, "Os primeiros (%d) termos pares da série de Fibonacci:\n", n);
-    for(int i = 1; controle < n; i++){
-        int termo = fibonacci(i);
-        if (termo % 2 == 0){
-            controle++;
-            fprintf(arquivo, "\n%d ", termo);
-        }
-    }
-    fprintf(arquivo, "\n");
-    fclose(arquivo);
-    printf("Valores gravados no arquivo RESULTADO08.TXT. \n");
-    }else{
-        printf("\nErro ao gravar");
-    }
+
     getchar(); // Para capturar a nova linha deixada pelo scanf
     printf("\nAperte ENTER para continuar!\n");
     getchar();
@@ -281,18 +236,7 @@ void ex0818() {
 void ex0819() {
 // identificacao
     printf( "\nExercicio 0719:\n\n" );
-    char string[100];
-    fgets(string, sizeof(string), stdin);
-    int resultado = fun0719(string);
-    FILE *arquivo = fopen("RESULTADO09.TXT", "w");
-    if (arquivo != NULL) {
-        fprintf(arquivo, "Cadeia de caracteres: %s\n", string);
-        fprintf(arquivo, "Quantidade de letras minusculas: %d\n", resultado);
-        fclose(arquivo);
-        printf("Resultado gravado em RESULTADO09.TXT.\n");
-    } else {
-        printf("Erro ao abrir o arquivo para escrita.\n");
-    }
+
     // encerrar
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
@@ -315,19 +259,7 @@ void ex0819() {
 void ex0820() {
 // identificacao
     printf( "\nExercicio 0720:\n\n" );
-    char string[100];
-    fgets(string, sizeof(string), stdin);
-    int resultado = fun0720(string);
 
-    FILE *arquivo = fopen("RESULTADO10.TXT", "w");
-    if(arquivo != NULL){
-        fprintf(arquivo, "Cadeia de caracteres: %s\n", string);
-        fprintf(arquivo, "Quantidade de dígitos menores ou iguais a 4: %d\n", resultado);
-        fclose(arquivo);
-        printf("Resultado gravado em RESULTADO10.TXT.\n");
-    }else{
-        printf("Erro ao abrir o arquivo para escrita.\n");
-    }
     // encerrar
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
@@ -345,10 +277,7 @@ void ex0820() {
 
 void ex08E1() {
     printf("\nExercicio 07E1:\n\n");
-    int n;
-    printf("Digite um numero: ");
-    scanf("%d", &n);
-    fun07E1(n);
+
     // Encerrar
     printf("\nAperte ENTER para continuar!\n");
     getchar();
@@ -357,8 +286,12 @@ void ex08E1() {
     return 0;
 }// fim exercicio08E1
 // Fun��o para o exerc�cio 08E2
-// ver palavras de um arquivo, uma por linha, e
-// contar quantas começam com a letra 'd' (ou 'D').
+// ler um arquivo ( "PALAVRAS.TXT" ),
+// e mediante uma função retornar as dez primeiras palavras
+// que não comecem ou terminem com a letra 'd' (ou 'D'), se houver.
+// As palavras encontradas deverão ser exibidas na tela,
+// após retorno.
+// DICA: Supor que a quantidade de palavras não ultrapassará 100
 void ex08E2()
 {
     // identificacao
