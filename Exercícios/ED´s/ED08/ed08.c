@@ -16,7 +16,8 @@
 #include <string.h>
 #include <ctype.h>
 #include <math.h>
-#define TAM_STRING 80
+#define MAX_PALAVRAS 100
+#define TAM_MAX_PALAVRA 50
 // Fun��o para mostrar o menu de op��es
 void menuOpcoes() {
     printf("\nEscolha alguma das opcoes a seguir:\n\n");
@@ -83,10 +84,43 @@ void ex0811()
 // O arranjo e o nome do arquivo serão dados como parâmetros.
 // Guardar, em arquivo primeiro o tamanho, depois os elementos, um dado por linha.
 // Para testar, ler diferentes nomes e quantidade de dados.
+void fun0812(const char *nomeArquivo) {
+    FILE *arquivo = fopen(nomeArquivo, "r");
+    if (arquivo == NULL) {
+        printf("Erro ao abrir o arquivo.\n");
+        return;
+    }
+    int tamanho = 0;
+    fscanf(arquivo, "%d", &tamanho);
+    int arranjo[tamanho];
+    for(int i = 0; i < tamanho; i++){
+        fscanf(arquivo, "%d", &arranjo[i]);
+        if (arranjo[i] <= 0 || arranjo[i] % 2 == 0) {
+            arranjo[i] = 0;
+        }
+    }
+    fclose(arquivo);
+    FILE *novoArquivo = fopen("novoex0812.txt", "w");
+    if(novoArquivo == NULL){
+        printf("Erro ao criar o arquivo de saída.\n");
+        return;
+    }
+    fprintf(novoArquivo, "%d\n", tamanho);
+    for(int i = 0; i < tamanho; i++){
+        if(arranjo[i] != 0){
+            fprintf(novoArquivo, "Elemento [%d] = %d\n",i, arranjo[i]);
+        }
+    }
+    fclose(novoArquivo);
+    printf("Dados salvos no arquivo 'novoex0812.txt'.\n");
+}
+
+
 void ex0812() {
     // identificacao
-    printf( "\nExercicio 0712:\n\n" );
-
+    printf( "\nExercicio 0812:\n\n" );
+    const char *nomeArquivo = "ex0812.txt";
+    fun0812(nomeArquivo);
     getchar();
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
@@ -186,12 +220,38 @@ void ex0816() {
 // se existe algum valor que seja maior que o seguinte.
 // Não usar break !
 
+void fun0817(int arr[], int tamanho) {
+    int crescente = 1;
+    int decrescente = 1;
+
+    for (int i = 0; i < tamanho - 1; i++) {
+        if (arr[i] > arr[i + 1]) {
+            crescente = 0;
+        }
+        if (arr[i] < arr[i + 1]) {
+            decrescente = 0;
+        }
+    }
+
+    if (crescente) {
+        printf("O arranjo esta ordenado em ordem crescente.\n");
+    } else if (decrescente) {
+        printf("O arranjo esta ordenado em ordem decrescente.\n");
+    } else {
+        printf("O arranjo nao esta ordenado em nenhuma das duas ordens.\n");
+    }
+}
 
 void ex0817() {
     // Identificacao
-    printf("\nExercicio 0717:\n\n");
-
-
+    printf("\nExercicio 0817:\n\n");
+    int tamanho = 0;
+    scanf("%d", &tamanho);
+    int arranjo[tamanho];
+    for(int i = 0; i < tamanho; i++){
+        scanf("%d", &arranjo[i]);
+    }
+    fun0817(arranjo,tamanho);
     getchar();
     printf("\nAperte ENTER para continuar!\n");
     getchar();
@@ -292,11 +352,34 @@ void ex08E1() {
 // As palavras encontradas deverão ser exibidas na tela,
 // após retorno.
 // DICA: Supor que a quantidade de palavras não ultrapassará 100
+int aux08E2(char *palavra) {
+    int tam = strlen(palavra);
+    return (palavra[0] != 'd' && palavra[0] != 'D' && palavra[tam - 1] != 'd' && palavra[tam - 1] != 'D');
+}
+
+void fun08E2(char *nomeArquivo) {
+    FILE *arquivo = fopen(nomeArquivo, "r");
+    if (arquivo == NULL) {
+        printf("Erro ao abrir o arquivo.\n");
+        return;
+    }
+    char palavras[MAX_PALAVRAS][TAM_MAX_PALAVRA];
+    int totalPalavras = 0;
+    while (totalPalavras < MAX_PALAVRAS && fscanf(arquivo, "%s", palavras[totalPalavras]) != EOF) {
+        if (aux08E2(palavras[totalPalavras])) {
+            printf("%s\n", palavras[totalPalavras]);
+            totalPalavras++;
+        }
+    }
+    fclose(arquivo);
+}
+
 void ex08E2()
 {
     // identificacao
     printf( "\nExercicio 07E2:\n\n" );
-
+    char nomeArquivo[] = "PALAVRAS.TXT";
+    fun08E2(nomeArquivo);
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
 } // fim fun��o 08E2
