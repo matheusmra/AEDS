@@ -183,11 +183,57 @@ void ex0814() {
 // Exemplo: arranjo = lerArquivo ( n, "DADOS.TXT" );
 // maior = acharMaiorParDivisivelPorTres ( n, arranjo );
 
+void aux0815(int* n, const char* nomeArquivo, int arranjo[]) {
+    FILE* arquivo = fopen(nomeArquivo, "r");
+    if (!arquivo) {
+        printf("Erro ao abrir o arquivo");
+        return;
+    }
+
+    fscanf(arquivo, "%d", n);
+    for (int i = 0; i < *n; i++) {
+        fscanf(arquivo, "%d", &arranjo[i]);
+    }
+    fclose(arquivo);
+}
+
+int fun0815(int n, int arranjo[]) {
+    int maior = 0;
+    for (int i = 0; i < n; i++) {
+        if (arranjo[i] % 2 == 0 && arranjo[i] % 3 == 0) {
+            maior = arranjo[i];
+            break;
+        }
+    }
+    if(maior == -1){
+        return -1;
+    }
+    for(int i = 0; i < n; i++){
+        if (arranjo[i] % 2 == 0 && arranjo[i] % 3 == 0) {
+            if (arranjo[i] > maior) {
+                maior = arranjo[i];
+            }
+        }
+    }
+    return maior;
+}
 
 void ex0815() {
 // identificacao
     printf( "\nExercicio 0715:\n\n" );
-
+    int n = 0;
+    int arranjo[MAX_PALAVRAS];
+    aux0815(&n, "DADOS.TXT", arranjo);
+    if (n <= 0) {
+        printf("Erro ao ler dados ou nenhum dado encontrado.\n");
+        return 1;
+    }
+    int maior = fun0815(n, arranjo);
+    if (maior != -1) {
+        printf("O maior valor par e multiplo de 3 eh: %d\n", maior);
+    } else {
+        printf("Não há valores pares multiplos de 3 no arranjo.\n");
+    }
     getchar();
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
@@ -352,21 +398,21 @@ void ex08E1() {
 // As palavras encontradas deverão ser exibidas na tela,
 // após retorno.
 // DICA: Supor que a quantidade de palavras não ultrapassará 100
-int aux08E2(char *palavra) {
+int aux08E2(char *palavra){
     int tam = strlen(palavra);
     return (palavra[0] != 'd' && palavra[0] != 'D' && palavra[tam - 1] != 'd' && palavra[tam - 1] != 'D');
 }
 
-void fun08E2(char *nomeArquivo) {
+void fun08E2(char *nomeArquivo){
     FILE *arquivo = fopen(nomeArquivo, "r");
-    if (arquivo == NULL) {
+    if (arquivo == NULL){
         printf("Erro ao abrir o arquivo.\n");
         return;
     }
     char palavras[MAX_PALAVRAS][TAM_MAX_PALAVRA];
     int totalPalavras = 0;
-    while (totalPalavras < MAX_PALAVRAS && fscanf(arquivo, "%s", palavras[totalPalavras]) != EOF) {
-        if (aux08E2(palavras[totalPalavras])) {
+    while (totalPalavras < MAX_PALAVRAS && fscanf(arquivo, "%s", palavras[totalPalavras]) != EOF){
+        if (aux08E2(palavras[totalPalavras])){
             printf("%s\n", palavras[totalPalavras]);
             totalPalavras++;
         }
@@ -374,8 +420,7 @@ void fun08E2(char *nomeArquivo) {
     fclose(arquivo);
 }
 
-void ex08E2()
-{
+void ex08E2(){
     // identificacao
     printf( "\nExercicio 07E2:\n\n" );
     char nomeArquivo[] = "PALAVRAS.TXT";
