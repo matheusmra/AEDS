@@ -55,10 +55,11 @@ void ex0811()
 } // fim exercicio0811
 
 // Fun��o para o exerc�cio 0812
-// ler um valor inteiro do teclado e
-// gravar essa quantidade em múltiplos de 6, pares, em ordem decrescente encerrando em 36.
-// Exemplo: n = 5 => { 60, 54, 48, 42, 36 }
-
+// ler um arranjo com inteiros de arquivo.
+// Valores negativos e também os pares deverão ser descartados.
+// O arranjo e o nome do arquivo serão dados como parâmetros.
+// Guardar, em arquivo primeiro o tamanho, depois os elementos, um dado por linha.
+// Para testar, ler diferentes nomes e quantidade de dados.
 void ex0812() {
     // identificacao
     printf( "\nExercicio 0712:\n\n" );
@@ -75,9 +76,17 @@ void ex0812() {
 }// Fim da fun��o ex0812
 
 // Fun��o para o exerc�cio 0813
-// ler um valor inteiro do teclado e
-// gravar essa quantidade em valores da sequência: 1 4 16 64 256 ...
-// Exemplo: n = 5 => { 1, 4, 16, 64, 256 }
+// gerar um valor inteiro aleatoriamente dentro de um intervalo,
+// cujos limites de início e de fim serão recebidos como parâmetros;
+// Para para testar, ler os limites do intervalo do teclado;
+// ler a quantidade de elementos ( N ) a serem gerados;
+// gerar essa quantidade ( N ) de valores aleatórios
+// dentro do intervalo e armazená-los em arranjo;
+// gravá-los, um por linha, em um arquivo ("DADOS.TXT").
+// A primeira linha do arquivo deverá informar a quantidade
+// de números aleatórios ( N ) que serão gravados em seguida.
+// DICA: Usar a função rand( ), mas tentar limitar valores muito grandes (usar mod=%).
+// Exemplo: valor = gerarInt ( inferior, superior );
 
 
 void ex0813() {
@@ -96,9 +105,13 @@ void ex0813() {
 }// Fim da fun��o ex0813
 
 // Fun��o para o exerc�cio 0814
-// ler um valor inteiro do teclado e
-// gravar essa quantidade em valores decrescentes da sequência: ... 1/256 1/64 1/16 1/4 1.
-// Exemplo: n = 5 => { 1/256, 1/64, 1/16, 1/4, 1 }
+// procurar o menor valor ímpar em um arranjo.
+// Para testar, receber um nome de arquivo como parâmetro e
+// aplicar a função sobre o arranjo com os valores lidos;
+// DICA: Procurar o primeiro valor par da tabela como referência inicial
+// para o menor valor ímpar existente, se houver.
+// Exemplo: arranjo = lerArquivo ( n, "DADOS.TXT" );
+// menor = acharMenorImpar ( n, arranjo );
 
 
 
@@ -118,10 +131,12 @@ void ex0814() {
 }// Fim da fun��o ex0814
 
 // Fun��o para o exerc�cio 0815
-// ler um valor inteiro do teclado (n) e outro valor real (x),
-// gravar essa quantidade (n) em valores reais da sequência: 1 1/x2 1/x4 1/x6...
-// DICA: Usar pow ( x, y ) da biblioteca <math.h> para calcular a potência.
-// Exemplo: n = 5 => { 1, 1/x2, 1/x4, 1/x6, 1/x8}
+// procurar o maior valor par e múltiplo de 3 em um arranjo.
+// Para testar, receber um nome de arquivo como parâmetro e
+// aplicar a função sobre o arranjo com os valores lidos;
+// DICA: Usar o primeiro valor par múltiplo de 3 na tabela, se houver, como referência inicial.
+// Exemplo: arranjo = lerArquivo ( n, "DADOS.TXT" );
+// maior = acharMaiorParDivisivelPorTres ( n, arranjo );
 
 
 void ex0815() {
@@ -140,10 +155,14 @@ void ex0815() {
 }// Fim da fun��o ex0815
 
 // Fun��o para o exerc�cio 0816
-// ler um valor inteiro do teclado para representar certa quantidade de valores
-// a serem somados dentre os primeiros gravados no exercício anterior.
-// Testar essa função para quantidades diferentes.
-// Gravar em outro arquivo ("RESULTADO06.TXT") cada quantidade e seu resultado.
+// para determinar a média valores em um arranjo.
+// Para testar, ler o arquivo ("DADOS.TXT")
+// armazenar os dados em um arranjo;
+// separar em dois outros arquivos,
+// os valores menores ou iguais à média, e os maiores que ela.
+// Exemplo: arranjo = lerArquivo ( n, "DADOS.TXT" );
+// media = acharMedia ( n, arranjo );
+// DICA: Considerar a possiblidade de que a quantidade de dados possa ser igual a zero.
 
 void ex0816() {
     printf("\nExercicio 0716:\n\n");
@@ -174,11 +193,11 @@ void ex0816() {
 // Fim da fun��o ex0816
 
 // Fun��o para o exerc�cio 0817
-// ler um valor inteiro do teclado, e até essa quantidade, um valor por vez,
-// calcular a soma dos inversos das potências do exercício 04.
-// Gravar em outro arquivo ("RESULTADO07.TXT") cada quantidade e seu resultado.
-// Exemplo: n = 5 => { 1/256 + 1/64 + 1/16 + 1/4 + 1 }
-
+// receber como parâmetro um arranjo
+// e dizer se está ordenado, ou não, em ordem decrescente.
+// DICA: Testar se não está desordenado, ou seja,
+// se existe algum valor que seja maior que o seguinte.
+// Não usar break !
 
 
 void ex0817() {
@@ -207,10 +226,16 @@ void ex0817() {
 
 
 // Fun��o para o exerc�cio 0818
-// ler um valor inteiro do teclado, e até atingir essa quantidade, um valor por vez,
-// gravar o valor correspondente aos primeiros termos pares da série de Fibonacci.
-// Gravar em outro arquivo ("RESULTADO08.TXT") cada quantidade e seu resultado.
-// Exemplo: n = 5 => { 2, 8, 34, 144, 610 }
+// procurar por determinado valor em arranjo e
+// dizer se esse valor pode ser nele encontrado,
+// indicada a posição inicial para se começar a procura.
+// Para testar, ler o arquivo ("DADOS.TXT"),
+// e armazenar os dados em arranjo;
+// ler do teclado um valor inteiro para ser procurado;
+// determinar se o valor procurado existe no arranjo,
+// a partir da posição indicada.
+// Exemplo: arranjo = lerArquivo ( n, "DADOS.TXT" );
+// existe = acharValor ( procurado, 0, n, arranjo );
 
 
 void ex0818() {
@@ -242,11 +267,16 @@ void ex0818() {
 
 }// Fim da fun��o ex0818
 // Fun��o para o exerc�cio 0819
-// para calcular a quantidade de minúsculas em cadeia de caracteres de um arquivo texto.
-// Gravar em outro arquivo ("RESULTADO09.TXT") cada cadeia de caracteres e seus resultados.
-// Testar essa função com cadeias de tamanhos diferentes.
-// Exemplo: PaReDe de TiJoLoS AmaRElOs
-
+// procurar por determinado valor em arranjo e
+// dizer onde se encontra esse valor,
+// indicada a posição inicial para começar a procura.
+// Para testar, ler o arquivo ("DADOS.TXT"),
+// e armazenar os dados em arranjo;
+// ler do teclado um valor inteiro para ser procurado;
+// determinar onde o valor procurado estiver no arranjo,
+// se houver.
+// Exemplo: arranjo = lerArquivo ( n, "DADOS.TXT" );
+// onde = acharPosicao ( procurado, 0, n, arranjo );
 
 void ex0819() {
 // identificacao
@@ -269,10 +299,17 @@ void ex0819() {
 }// Fim da fun��o ex0819
 
 // Fun��o para o exerc�cio 0820
-// para contar dígitos menores ou iguais a 4 em uma cadeia de caracteres.
-// Gravar em outro arquivo ("RESULTADO10.TXT") cada cadeia de caracteres e seu resultado.
-// Testar essa função para cadeias de tamanhos diferentes.
-// Exemplo: P4R3D3 de T1J0L05 4maR3105
+// procurar por determinado valor em arranjo e
+// dizer quantas vezes esse valor pode ser encontrado,
+// indicada a posição inicial para começar a procura.
+// Para testar, ler o arquivo ("DADOS.TXT"),
+// e armazenar os dados em arranjo;
+// ler do teclado um valor inteiro para ser procurado;
+// determinar quantas vezes o valor procurado aparece no arranjo,
+// se ocorrer.
+// Exemplo: arranjo = lerArquivo ( n, "DADOS.TXT" );
+// vezes = acharQuantos ( procurado, 0, n, arranjo );
+
 
 
 void ex0820() {
@@ -297,8 +334,13 @@ void ex0820() {
 }// Fim da fun��o ex0820
 
 // Fun��o para o exerc�cio 08E1
-// programa ler um valor inteiro do teclado, e
-// gravar em arquivo os seus divisores pares em ordem decrescente.
+// ler um valor inteiro do teclado,
+// e mediante funções para calcular e retornar a quantidade
+// e seus divisores ímpares guardados em arranjo,
+// o qual deverá ser mostrado na tela após o retorno,
+// bem como gravado em arquivo ( "DIVISORES.TXT" ).
+// DICA: Supor que a quantidade de divisores
+// será, no máximo, igual ao próprio número
 
 
 void ex08E1() {
