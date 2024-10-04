@@ -49,7 +49,7 @@ void fun0811(int arranjo[], int tamanho){
 
             scanf("%d", &arranjo[i]);
         }
-        while (arranjo[i] <= 0 || arranjo[i] % 2 == 0); // Garante que seja positivo e ímpar
+        while (arranjo[i] <= 0 || arranjo[i] % 2 == 0);
     }
 }
 
@@ -112,7 +112,6 @@ void fun0812(const char *nomeArquivo) {
         }
     }
     fclose(novoArquivo);
-    printf("Dados salvos no arquivo 'novoex0812.txt'.\n");
 }
 
 
@@ -121,6 +120,7 @@ void ex0812() {
     printf( "\nExercicio 0812:\n\n" );
     const char *nomeArquivo = "ex0812.txt";
     fun0812(nomeArquivo);
+    printf("Numeros salvos em novoex0812.TXT com sucesso!\n");
     getchar();
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
@@ -140,11 +140,39 @@ void ex0812() {
 // DICA: Usar a função rand( ), mas tentar limitar valores muito grandes (usar mod=%).
 // Exemplo: valor = gerarInt ( inferior, superior );
 
+int fun0813(int inferior, int superior) {
+    return (rand() % (superior - inferior + 1)) + inferior;
+}
+
+void aux0813(const char *nomeArquivo, int n, int *arranjo){
+    FILE *file = fopen(nomeArquivo, "w");
+    if(file == NULL){
+        perror("Erro ao abrir o arquivo");
+    }
+    fprintf(file, "%d\n", n);
+
+    for (int i = 0; i < n; i++) {
+        fprintf(file, "%d\n", arranjo[i]);
+    }
+    fclose(file);
+}
 
 void ex0813() {
 // identificacao
     printf( "\nExercicio 0713:\n\n" );
-
+    int inferior = 0, superior = 0, n = 0;
+    printf("Limite inferior = ");
+    scanf("%d", &inferior);
+    printf("Limite superior = ");
+    scanf("%d", &superior);
+    printf("Elementos a serem gerados = ");
+    scanf("%d", &n);
+    int arranjo[n];
+    for(int i = 0; i < n; i++){
+        arranjo[i] = fun0813(inferior, superior);
+    }
+    aux0813("DADOS.TXT", n, arranjo);
+    printf("Numeros gerados e gravados em DADOS.TXT com sucesso!\n");
     // encerrar
     getchar();
     printf( "\nAperte ENTER para continuar!\n" );
@@ -162,12 +190,34 @@ void ex0813() {
 // Exemplo: arranjo = lerArquivo ( n, "DADOS.TXT" );
 // menor = acharMenorImpar ( n, arranjo );
 
-
+int fun0814(int n, int *arranjo){
+    int menorImpar = 0;
+    int encontrouImpar = 0;
+    for(int i = 0; i < n; i++){
+        if(arranjo[i] % 2 != 0){
+            if (!encontrouImpar || arranjo[i] < menorImpar) {
+                menorImpar = arranjo[i];
+                encontrouImpar = 1;
+            }
+        }
+    }
+    return (encontrouImpar) ? menorImpar : -1;
+}
 
 void ex0814() {
 // identificacao
     printf( "\nExercicio 0714:\n\n" );
-
+    int arranjo[MAX_PALAVRAS]; // Definindo um tamanho máximo para o arranjo
+    int n = lerArquivo(arranjo, "DADOS.TXT");
+    if(n == 0){
+        printf("Nenhum dado encontrado.\n");
+    }
+    int menor = fun0814(n, arranjo);
+    if(menor != -1){
+        printf("O menor valor impar no arranjo eh: (%d)\n", menor);
+    }else{
+        printf("Nenhum valor impar encontrado no arranjo.\n");
+    }
     // encerrar
     getchar();
     printf( "\nAperte ENTER para continuar!\n" );
@@ -256,7 +306,7 @@ int lerArquivo(int *arranjo, const char *nomeArquivo){
         printf("Erro ao abrir o arquivo");
     }
     int n = 0;
-    while (fscanf(file, "%d", &arranjo[n]) != EOF && n < MAX_PALAVRAS){
+    while(fscanf(file, "%d", &arranjo[n]) != EOF && n < MAX_PALAVRAS){
         n++;
     }
     fclose(file);
@@ -536,11 +586,10 @@ void fun08E2(char *nomeArquivo){
     FILE *arquivo = fopen(nomeArquivo, "r");
     if (arquivo == NULL){
         printf("Erro ao abrir o arquivo.\n");
-        return;
     }
     char palavras[MAX_PALAVRAS][TAM_MAX_PALAVRA];
     int totalPalavras = 0;
-    while (totalPalavras < MAX_PALAVRAS && fscanf(arquivo, "%s", palavras[totalPalavras]) != EOF){
+    while(totalPalavras < MAX_PALAVRAS && fscanf(arquivo, "%s", palavras[totalPalavras]) != EOF){
         if (aux08E2(palavras[totalPalavras])){
             printf("%s\n", palavras[totalPalavras]);
             totalPalavras++;
