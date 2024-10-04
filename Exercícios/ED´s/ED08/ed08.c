@@ -250,10 +250,60 @@ void ex0815() {
 // media = acharMedia ( n, arranjo );
 // DICA: Considerar a possiblidade de que a quantidade de dados possa ser igual a zero.
 
-void ex0816() {
-    printf("\nExercicio 0716:\n\n");
+int lerArquivo(int *arranjo, const char *nomeArquivo){
+    FILE *file = fopen(nomeArquivo, "r");
+    if (file == NULL) {
+        printf("Erro ao abrir o arquivo");
+    }
+    int n = 0;
+    while (fscanf(file, "%d", &arranjo[n]) != EOF && n < MAX_PALAVRAS){
+        n++;
+    }
+    fclose(file);
+    return n;
+}
 
-    getchar();
+double fun0816(int n, int *arranjo) {
+    if(n == 0){
+    return 0.0;
+    }
+    double soma = 0.0;
+    for (int i = 0; i < n; i++) {
+        soma += arranjo[i];
+    }
+    return soma / n;
+}
+
+void escreverArquivos(int n, int *arranjo, double media) {
+    FILE *menoresArq = fopen("MENOR_IGUAL_MEDIA.TXT", "w");
+    FILE *maioresArq = fopen("MAIOR_MEDIA.TXT", "w");
+
+    if(menoresArq == NULL || maioresArq == NULL){
+        perror("Erro ao abrir os arquivos de saída");
+        return;
+    }
+
+    for(int i = 0; i < n; i++){
+        if(arranjo[i] <= media){
+            fprintf(menoresArq, "%d\n", arranjo[i]);
+        }else{
+            fprintf(maioresArq, "%d\n", arranjo[i]);
+        }
+    }
+    fclose(menoresArq);
+    fclose(maioresArq);
+}
+
+void ex0816() {
+    printf("\nExercicio 0816:\n\n");
+    int arranjo[MAX_PALAVRAS];
+    int n = lerArquivo(arranjo, "DADOS.TXT");
+    if(n == 0){
+        printf("Nenhum dado encontrado.\n");
+    }
+    double media = fun0816(n, arranjo);
+    printf("A media eh: %.2f\n", media);
+    escreverArquivos(n, arranjo, media);
     printf("\nAperte ENTER para continuar!\n");
     getchar();
 }
@@ -266,24 +316,22 @@ void ex0816() {
 // se existe algum valor que seja maior que o seguinte.
 // Não usar break !
 
-void fun0817(int arr[], int tamanho) {
+void fun0817(int arr[], int tamanho){
     int crescente = 1;
     int decrescente = 1;
-
-    for (int i = 0; i < tamanho - 1; i++) {
-        if (arr[i] > arr[i + 1]) {
+    for(int i = 0; i < tamanho - 1; i++){
+        if(arr[i] > arr[i + 1]){
             crescente = 0;
         }
-        if (arr[i] < arr[i + 1]) {
+        if(arr[i] < arr[i + 1]){
             decrescente = 0;
         }
     }
-
-    if (crescente) {
+    if(crescente){
         printf("O arranjo esta ordenado em ordem crescente.\n");
-    } else if (decrescente) {
+    }else if(decrescente){
         printf("O arranjo esta ordenado em ordem decrescente.\n");
-    } else {
+    }else{
         printf("O arranjo nao esta ordenado em nenhuma das duas ordens.\n");
     }
 }
@@ -317,12 +365,39 @@ void ex0817() {
 // Exemplo: arranjo = lerArquivo ( n, "DADOS.TXT" );
 // existe = acharValor ( procurado, 0, n, arranjo );
 
+int fun0818(int procurado, int posicaoInicial, int n, int *arranjo) {
+    for(int i = posicaoInicial; i < n; i++){
+        if(arranjo[i] == procurado){
+            return i;
+        }
+    }
+    return -1;
+}
 
 void ex0818() {
     // Identificação
-    printf("\nExercicio 0718:\n\n");
-
-    getchar(); // Para capturar a nova linha deixada pelo scanf
+    printf("\nExercicio 0818:\n\n");
+    int arranjo[MAX_PALAVRAS];
+    int n = lerArquivo(arranjo, "DADOS.TXT");
+    if(n == 0){
+        printf("Nenhum dado encontrado.\n");
+    }
+    int procurado = 0;
+    printf("\nProcurado =");
+    scanf("%d", &procurado);
+    int posicaoInicial = 0;
+    printf("\nPosicao =");
+    scanf("%d", &posicaoInicial);
+    if (posicaoInicial < 0 || posicaoInicial >= n) {
+        printf("Posicao inicial inválida.\n");
+    }
+    int resultado = fun0818(procurado, posicaoInicial, n, arranjo);
+    if(resultado != -1){
+        printf("O valor (%d) foi encontrado na posicao (%d) do arranjo.\n", procurado, resultado);
+    }else{
+        printf("O valor (%d) nao foi encontrado na posicao: (%d) do arranjo.\n", procurado, posicaoInicial);
+    }
+    getchar();
     printf("\nAperte ENTER para continuar!\n");
     getchar();
 
@@ -339,11 +414,38 @@ void ex0818() {
 // Exemplo: arranjo = lerArquivo ( n, "DADOS.TXT" );
 // onde = acharPosicao ( procurado, 0, n, arranjo );
 
+void fun0819(int procurado, int posicaoInicial, int n, int *arranjo) {
+    int encontrado = 0;
+    for (int i = posicaoInicial; i < n; i++) {
+        if (arranjo[i] == procurado) {
+            printf("O valor (%d) foi encontrado na posicao (%d).\n", procurado, i);
+            encontrado = 1;
+        }
+    }if(encontrado == 0){
+        printf("O valor (%d) nao existe no arranjo", procurado);
+    }
+}
+
 void ex0819() {
 // identificacao
     printf( "\nExercicio 0719:\n\n" );
-
-    // encerrar
+    int arranjo[MAX_PALAVRAS];
+    int n = lerArquivo(arranjo, "DADOS.TXT");
+    if(n == 0){
+        printf("Nenhum dado encontrado.\n");
+    }
+    int procurado = 0;
+    printf("Procurado = ");
+    scanf("%d", &procurado);
+    int posicaoInicial = 0;
+    printf("Posicao inicial = ");
+    scanf("%d", &posicaoInicial);
+    if(posicaoInicial < 0 || posicaoInicial >= n) {
+        printf("Posicao inicial invalida.\n");
+        return 1;
+    }
+    fun0819(procurado, posicaoInicial, n, arranjo);
+    getchar();
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
 }// Fim da fun��o ex0819
@@ -360,13 +462,40 @@ void ex0819() {
 // Exemplo: arranjo = lerArquivo ( n, "DADOS.TXT" );
 // vezes = acharQuantos ( procurado, 0, n, arranjo );
 
-
+int fun0820(int procurado, int posicaoInicial, int n, int *arranjo) {
+    int encontrado = 0;
+    int total = 0;
+    for(int i = posicaoInicial; i < n; i++){
+        if(arranjo[i] == procurado){
+            total++;
+            encontrado = 1;
+        }
+    }if(encontrado == 0){
+        printf("O valor (%d) nao existe no arranjo", procurado);
+    }
+    return total;
+}
 
 void ex0820() {
 // identificacao
-    printf( "\nExercicio 0720:\n\n" );
-
-    // encerrar
+    printf( "\nExercicio 0820:\n\n" );
+    int arranjo[MAX_PALAVRAS];
+    int n = lerArquivo(arranjo, "DADOS.TXT");
+    if(n == 0){
+        printf("Nenhum dado encontrado.\n");
+    }
+    int procurado = 0;
+    printf("Procurado = ");
+    scanf("%d", &procurado);
+    int posicaoInicial = 0;
+    printf("Posicao inicial = ");
+    scanf("%d", &posicaoInicial);
+    if(posicaoInicial < 0 || posicaoInicial >= n){
+        printf("Posicao inicial invalida.\n");
+    }
+    printf("Total de vezes que o numero (%d) aparece no arranjo = %d\n", procurado, fun0820(procurado, posicaoInicial, n, arranjo));
+    fun0819(procurado, posicaoInicial, n, arranjo);
+    getchar();
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
 }// Fim da fun��o ex0820
