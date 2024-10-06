@@ -1,0 +1,2 @@
+Divisores impares de 19:
+1 19 
