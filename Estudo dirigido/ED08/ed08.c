@@ -140,18 +140,18 @@ void ex0812() {
 // DICA: Usar a função rand( ), mas tentar limitar valores muito grandes (usar mod=%).
 // Exemplo: valor = gerarInt ( inferior, superior );
 
-int fun0813(int inferior, int superior) {
+int fun0813(int inferior, int superior){
     return (rand() % (superior - inferior + 1)) + inferior;
 }
 
-void aux0813(const char *nomeArquivo, int n, int *arranjo){
+void aux0813(char *nomeArquivo, int n, int *arranjo){
     FILE *file = fopen(nomeArquivo, "w");
     if(file == NULL){
         perror("Erro ao abrir o arquivo");
     }
     fprintf(file, "%d\n", n);
 
-    for (int i = 0; i < n; i++) {
+    for(int i = 0; i < n; i++){
         fprintf(file, "%d\n", arranjo[i]);
     }
     fclose(file);
@@ -207,7 +207,7 @@ int fun0814(int n, int *arranjo){
 void ex0814() {
 // identificacao
     printf( "\nExercicio 0714:\n\n" );
-    int arranjo[MAX_PALAVRAS]; // Definindo um tamanho máximo para o arranjo
+    int arranjo[MAX_PALAVRAS];
     int n = lerArquivo(arranjo, "DADOS.TXT");
     if(n == 0){
         printf("Nenhum dado encontrado.\n");
@@ -559,10 +559,48 @@ void ex0820() {
 // DICA: Supor que a quantidade de divisores
 // será, no máximo, igual ao próprio número
 
+int fun08E1(int numero, int *divisores){
+    int total = 0;
+    for (int i = 1; i <= numero; i++){
+        if(numero % i == 0 && i % 2 != 0){
+            divisores[total] = i;
+            total++;
+        }
+    }
+    return total;
+}
+
+void aux08E1(char *nomeArquivo, int numero, int *divisores, int total){
+    FILE *file = fopen(nomeArquivo, "w");
+    if (file == NULL) {
+        printf("Erro ao abrir o arquivo para gravar.\n");
+    }
+    fprintf(file, "Divisores impares de %d:\n", numero);
+    for(int i = 0; i < total; i++){
+        fprintf(file, "%d ", divisores[i]);
+    }
+    fprintf(file, "\n");
+    fclose(file);
+}
+
+
 
 void ex08E1() {
-    printf("\nExercicio 07E1:\n\n");
-
+    printf("\nExercicio 08E1:\n\n");
+    int numero = 0;
+    int divisores[MAX_PALAVRAS];
+    scanf("%d", &numero);
+    if(numero <= 0){
+        printf("Por favor, insira um numero inteiro positivo.");
+    }
+    int total = fun08E1(numero, divisores);
+    printf("Divisores impares de (%d):\n", numero);
+    for(int i = 0; i < total; i++){
+        printf("%d ", divisores[i]);
+    }
+    printf("\n");
+    aux08E1("DIVISORES.TXT", numero, divisores, total);
+    printf("\nDivisores gravados em DIVISORES.TXT com sucesso!\n");
     // Encerrar
     printf("\nAperte ENTER para continuar!\n");
     getchar();
