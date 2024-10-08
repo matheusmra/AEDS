@@ -44,17 +44,44 @@ void menuOpcoes() {
  //readPositiveDoubleMatrix ( 3, 3, positiveMatrix );
  //printDoubleMatrix ( 3, 3, positiveMatrix )
 
-void ex0911()
-{
-    // identificacao
-    printf( "\nExercicio 0911:\n\n" );
 
-    // programa
+void readPositiveDoubleMatrix(int linha, int coluna, double positiveMatrix[linha][coluna]) {
+    printf("Digite os elementos da matriz (%d x %d):\n", linha, coluna);
+    for(int i = 0; i < linha; i++){
+        for(int j = 0; j < coluna; j++){
+            scanf("%lf", &positiveMatrix[i][j]);
+        }
+    }
+}
 
-    // encerrar
-    printf( "\nAperte ENTER para continuar!\n" );
+void printDoubleMatrix(int linha, int coluna, double positiveMatrix[linha][coluna]) {
+    printf("Matriz resultante:\n");
+    for(int i = 0; i < linha; i++){
+        for(int j = 0; j < coluna; j++){
+            printf("%.2lf ", positiveMatrix[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+int ex0911() {
+    int linha = 0, coluna = 0;
+    printf("Digite o numero de linhas da matriz: ");
+    scanf("%d", &linha);
+    printf("Digite o numero de colunas da matriz: ");
+    scanf("%d", &coluna);
+    if(linha <= 0 || coluna <= 0){
+        printf("As dimensoes da matriz devem ser positivas.");
+    }
+    double positiveMatrix[linha][coluna];
+    readPositiveDoubleMatrix(linha, coluna, positiveMatrix);
+    printDoubleMatrix(linha, coluna, positiveMatrix);
     getchar();
-} // fim exercicio0911
+
+    printf("\nAperte ENTER para continuar!\n");
+    getchar();
+}
+// fim exercicio0911
 
 // Função para o exercício 0912
 // gravar uma matriz real em arquivo.
@@ -64,14 +91,56 @@ void ex0911()
 // Exemplo: double positiveMatrix [10][10];
  //readPositiveMatrix DoubleMatrix ( 3, 3, positiveMatrix );
  //fprintDoubleMatrix ( "MATRIX_01.TXT", 3, 3, positiveMatrix )
-void ex0912() {
-    // identificacao
-    printf( "\nExercicio 0912:\n\n" );
 
-    // programa
+void fprintDoubleMatrix(char *nomeArquivo, int linha, int coluna, double positiveMatrix[linha][coluna]) {
+    FILE *file = fopen(nomeArquivo, "w");
+    if(file == NULL){
+        printf("Erro ao abrir o arquivo");
+    }
+    fprintf(file, "Matriz resultante:\n");
+    for(int i = 0; i < linha; i++){
+        for(int j = 0; j < coluna; j++){
+            fprintf(file, "%.2lf ", positiveMatrix[i][j]);
+        }
+        fprintf(file, "\n");
+    }
+    printf("\nResultado gravado com sucesso em MATRIX_01.TXT");
+    fclose(file);
+}
 
-    // encerrar
-    printf( "\nAperte ENTER para continuar!\n" );
+void readPositiveDoubleMatrixFromFile(char *nomeArquivo, int linha, int coluna, double positiveMatrix[linha][coluna]) {
+    FILE *file = fopen(nomeArquivo, "r");
+    if (file == NULL) {
+        printf("Erro ao abrir o arquivo para leitura.\n");
+        return;
+    }
+    printf("\nLendo a matriz do arquivo...\n");
+    for(int i = 0; i < linha; i++){
+        for (int j = 0; j < coluna; j++){
+            fscanf(file, "%lf", &positiveMatrix[i][j]);
+        }
+    }
+
+    fclose(file);
+}
+
+int ex0912() {
+    int linha = 0, coluna = 0;
+    printf("Digite o numero de linhas da matriz: ");
+    scanf("%d", &linha);
+    printf("Digite o numero de colunas da matriz: ");
+    scanf("%d", &coluna);
+    if(linha <= 0 || coluna <= 0){
+        printf("As dimensoes da matriz devem ser positivas.");
+    }
+    double positiveMatrix[linha][coluna];
+    readPositiveDoubleMatrix(linha, coluna, positiveMatrix);
+    fprintDoubleMatrix("MATRIX_01.TXT", linha, coluna, positiveMatrix);
+    readPositiveDoubleMatrixFromFile("MATRIX_01.TXT", linha, coluna, positiveMatrix);
+    printDoubleMatrix(linha, coluna, positiveMatrix);
+    getchar();
+
+    printf("\nAperte ENTER para continuar!\n");
     getchar();
 }// Fim da função ex0912
 
