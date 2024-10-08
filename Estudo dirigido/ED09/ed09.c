@@ -156,7 +156,7 @@ int ex0912() {
         return;
     }
     printf("Valores na diagonal principal:\n");
-    for (int i = 0; i < n; i++) {
+    for(int i = 0; i < n; i++){
         printf("\n%.2lf ", positiveMatrix[i][i]);
     }
     printf("\n");
@@ -185,13 +185,32 @@ void ex0913() {
 // Exemplo: double positiveMatrix [10][10];
  //readPositiveDoubleMatrix ( 3, 3, positiveMatrix );
  //printSDiagonalDoubleMatrix ( 3, 3, positiveMatrix );
+
+void printSDiagonalDoubleMatrix(int n, double positiveMatrix[n][n]) {
+    if(n <= 0){
+        printf("A matriz deve ser quadrada (n x n) e n > 0.\n");
+        return;
+    }
+    printf("Valores na diagonal principal:\n");
+    for(int i = 0; i < n; i++){
+        printf("\n%.2lf ", positiveMatrix[i][n - 1 - i]);
+    }
+    printf("\n");
+}
+
 void ex0914() {
 // identificacao
     printf( "\nExercicio 0914:\n\n" );
-
     // programa
-
-
+    int n = 0;
+    scanf("%d", &n);
+    if(n <= 0){
+        printf("A matrix deve ser maior que 0");
+    }
+    double positiveMatrix[n][n];
+    readPositiveDoubleMatrix(n, n, positiveMatrix);
+    printSDiagonalDoubleMatrix(n, positiveMatrix);
+    getchar();
     // encerrar
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
@@ -202,13 +221,35 @@ void ex0914() {
 // Exemplo: double positiveMatrix [10][10];
  //readPositiveDoubleMatrix ( 3, 3, positiveMatrix );
  //printLDTriangleDoubleMatrix ( 3, 3, positiveMatrix );
+
+void printLDTriangleDoubleMatrix(int n, double positiveMatrix[n][n]) {
+    if (n <= 0) {
+        printf("A matriz deve ser quadrada (n x n) e n > 0.\n");
+        return;
+    }
+    printf("Valores abaixo e na diagonal principal:\n");
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j <= i; j++){
+            printf("%.2lf ", positiveMatrix[i][j]);
+        }
+        printf("\n");
+    }
+}
+
 void ex0915() {
 // identificacao
     printf( "\nExercicio 0915:\n\n" );
-
     // programa
-
+    int n = 0;
+    scanf("%d", &n);
+    if(n <= 0){
+        printf("A matrix deve ser maior que 0");
+    }
+    double positiveMatrix[n][n];
+    readPositiveDoubleMatrix(n, n, positiveMatrix);
+    printLDTriangleDoubleMatrix(n, positiveMatrix);
     // encerrar
+    getchar();
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
 }// Fim da função ex0915
