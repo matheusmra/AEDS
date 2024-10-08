@@ -356,7 +356,7 @@ void printSLUTriangleDoubleMatrix(int n, double positiveMatrix[n][n]) {
             if(j >= n - i - 1){
                 printf("%.2lf ", positiveMatrix[i][j]);
             }else{
-                printf("       "); // Espaço para manter a formatação
+                printf("       ");
             }
         }
         printf("\n");
