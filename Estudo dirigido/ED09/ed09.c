@@ -149,13 +149,33 @@ int ex0912() {
 // Exemplo: double positiveMatrix [10][10];
  //readPositiveMatrix DoubleMatrix ( 3, 3, positiveMatrix );
  //printDiagonalDoubleMatrix ( 3, 3, positiveMatrix );
+
+ void printDiagonalDoubleMatrix(int n, double positiveMatrix[n][n]) {
+    if(n <= 0){
+        printf("A matriz deve ser quadrada (n x n) e n > 0.\n");
+        return;
+    }
+    printf("Valores na diagonal principal:\n");
+    for (int i = 0; i < n; i++) {
+        printf("\n%.2lf ", positiveMatrix[i][i]);
+    }
+    printf("\n");
+}
+
 void ex0913() {
 // identificacao
     printf( "\nExercicio 0913:\n\n" );
-
     // programa
-
+    int n = 0;
+    scanf("%d", &n);
+    if(n <= 0){
+        printf("A matrix deve ser maior que 0");
+    }
+    double positiveMatrix[n][n];
+    readPositiveDoubleMatrix(n, n, positiveMatrix);
+    printDiagonalDoubleMatrix(n, positiveMatrix);
     // encerrar
+    getchar();
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
 }// Fim da função ex0913
