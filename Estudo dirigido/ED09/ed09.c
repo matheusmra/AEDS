@@ -15,6 +15,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
+#include <stdbool.h>
 // Tamanho max string
 const int TAM_STR = 80;
 // Função para mostrar o menu de opções
@@ -58,7 +59,7 @@ void printDoubleMatrix(int linha, int coluna, double positiveMatrix[linha][colun
     printf("Matriz resultante:\n");
     for(int i = 0; i < linha; i++){
         for(int j = 0; j < coluna; j++){
-            printf("%.2lf ", positiveMatrix[i][j]);
+            printf("%.2lf\t", positiveMatrix[i][j]);
         }
         printf("\n");
     }
@@ -260,15 +261,39 @@ void ex0915() {
  // readPositiveDoubleMatrix ( 3, 3, positiveMatrix );
  // printLUTriangleDoubleMatrix ( 3, 3, positiveMatrix );
 
+void printLUTriangleDoubleMatrix(int n, double positiveMatrix[n][n]) {
+    if (n <= 0) {
+        printf("A matriz deve ser quadrada (n x n) e n > 0.\n");
+        return;
+    }
+    printf("Valores acima e na diagonal principal:\n");
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < n; j++){
+            if(j >= i){
+                printf("%.2lf ", positiveMatrix[i][j]);
+            }else{
+                printf("       ");
+            }
+        }
+        printf("\n");
+    }
+}
+
 
 void ex0916() {
 // identificacao
     printf( "\nExercicio 0916:\n\n" );
-
     // programa
-
-
+    int n = 0;
+    scanf("%d", &n);
+    if(n <= 0){
+        printf("A matrix deve ser maior que 0");
+    }
+    double positiveMatrix[n][n];
+    readPositiveDoubleMatrix(n, n, positiveMatrix);
+    printLUTriangleDoubleMatrix(n, positiveMatrix);
     // encerrar
+    getchar();
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
 }// Fim da função ex0916
@@ -279,11 +304,38 @@ void ex0916() {
  // readPositiveDoubleMatrix ( 3, 3, positiveMatrix );
  // printSLDTriangleDoubleMatrix ( 3, 3, positiveMatrix );
 
+void printSLDTriangleDoubleMatrix(int n, double positiveMatrix[n][n]) {
+    if (n <= 0) {
+        printf("A matriz deve ser quadrada (n x n) e n > 0.\n");
+        return;
+    }
+    printf("Valores abaixo e na diagonal secundaria:\n");
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < n; j++){
+            if(j >= n - i - 1){
+                printf("%.2lf ", positiveMatrix[i][j]);
+            }else{
+                printf("       ");
+            }
+        }
+        printf("\n");
+    }
+}
+
+
 void ex0917() {
 // identificacao
     printf( "\nExercicio 0917:\n\n" );
-
+    int n = 0;
+    scanf("%d", &n);
+    if(n <= 0){
+        printf("A matrix deve ser maior que 0");
+    }
+    double positiveMatrix[n][n];
+    readPositiveDoubleMatrix(n, n, positiveMatrix);
+    printSLDTriangleDoubleMatrix(n, positiveMatrix);
     // encerrar
+    getchar();
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
 }// Fim da função ex0917
@@ -292,10 +344,39 @@ void ex0917() {
 // Exemplo: double positiveMatrix [10][10];
  // readPositiveDoubleMatrix ( 3, 3, positiveMatrix );
  // printSLUTriangleDoubleMatrix ( 3, 3, positiveMatrix );
+
+void printSLUTriangleDoubleMatrix(int n, double positiveMatrix[n][n]) {
+    if(n <= 0){
+        printf("A matriz deve ser quadrada (n x n) e n > 0.\n");
+        return;
+    }
+    printf("Valores acima e na diagonal secundaria:\n");
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < n; j++){
+            if(j >= n - i - 1){
+                printf("%.2lf ", positiveMatrix[i][j]);
+            }else{
+                printf("       "); // Espaço para manter a formatação
+            }
+        }
+        printf("\n");
+    }
+}
+
+
 void ex0918() {
 // identificacao
     printf( "\nExercicio 0918:\n\n" );
-
+    int n = 0;
+    scanf("%d", &n);
+    if(n <= 0){
+        printf("A matrix deve ser maior que 0");
+    }
+    double positiveMatrix[n][n];
+    readPositiveDoubleMatrix(n, n, positiveMatrix);
+    printSLUTriangleDoubleMatrix(n, positiveMatrix);
+    // encerrar
+    getchar();
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
 }// Fim da função ex0918
@@ -307,12 +388,40 @@ void ex0918() {
 //  bool result = allZerosLTriangleDoubleMatrix ( 3, 3, positiveMatrix );
 
 
+bool allZerosLTriangleDoubleMatrix(int n, double positiveMatrix[n][n]) {
+    if(n <= 0){
+        printf("A matriz deve ser quadrada (n x n) e n > 0.\n");
+        return false;
+    }
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < i; j++){
+            if(positiveMatrix[i][j] != 0.0){
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
 void ex0919() {
     // identificacao
     printf( "\nExercicio 0919:\n\n" );
-
-
+    int n = 0;
+    scanf("%d", &n);
+    if(n <= 0){
+        printf("A matrix deve ser maior que 0");
+    }
+    double positiveMatrix[n][n];
+    readPositiveDoubleMatrix(n, n, positiveMatrix);
+    printLDTriangleDoubleMatrix(n, positiveMatrix);
+    bool result = allZerosLTriangleDoubleMatrix(n, positiveMatrix);
+    if(result){
+        printf("\nTodos os valores abaixo da diagonal principal sao igual a 0");
+    }else{
+        printf("\nExistem valores diferentes de zero");
+    }
     // encerrar
+    getchar();
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
 }// Fim da função ex0919
@@ -323,12 +432,41 @@ void ex0919() {
  // readPositiveDoubleMatrix ( 3, 3, positiveMatrix );
  // bool result = allZerosUTriangleDoubleMatrix ( 3, 3, positiveMatrix );
 
+bool allZerosUTriangleDoubleMatrix(int n, double positiveMatrix[n][n]) {
+    if (n <= 0) {
+        printf("A matriz deve ser quadrada (n x n) e n > 0.\n");
+        return false;
+    }
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < n; j++){
+            if(j > i && positiveMatrix[i][j] != 0.0){
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
 
 void ex0920() {
 // identificacao
     printf( "\nExercicio 0920:\n\n" );
-
+    int n = 0;
+    scanf("%d", &n);
+    if(n <= 0){
+        printf("A matrix deve ser maior que 0");
+    }
+    double positiveMatrix[n][n];
+    readPositiveDoubleMatrix(n, n, positiveMatrix);
+    printLUTriangleDoubleMatrix(n, positiveMatrix);
+    bool result = allZerosUTriangleDoubleMatrix(n, positiveMatrix);
+    if(result){
+        printf("\nTodos os valores acima da diagonal principal sao igual a 0.");
+    }else{
+        printf("\nExistem valores diferentes de zero");
+    }
     // encerrar
+    getchar();
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
 }// Fim da função ex0320
