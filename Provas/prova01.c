@@ -110,6 +110,25 @@ int f_04(int a, int b){
     }
     return (a);
 }
+void opcoes04 (){
+    printf("\na) 12");
+    printf("\nb) 8");
+    printf("\nc) 6");
+    printf("\nd) 4");
+}
+void testar04(char v1){
+    if(v1 == 'a' || v1 == 'A'){
+    printf("A) 12 != %d\n", f_04(54,24));
+    }else if(v1 == 'b' || v1 == 'B'){
+    printf("B) 8 != %d\n", f_04(54,24));
+    }else if(v1 == 'c' || v1 == 'C'){
+    printf("C) 6 = %d\n", f_04(54,24));
+    }else if(v1 == 'd' || v1 == 'D'){
+    printf("D) 4 != %d\n", f_04(54,24));
+    }else{
+        printf("\nOP invalida");
+    }
+}
 
 void p04() {
 // identificacao
