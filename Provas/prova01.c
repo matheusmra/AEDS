@@ -88,11 +88,36 @@ int f_03(char *text){
     return (a);
 }
 
+void opcoes03 (){
+    printf("\na) 7");
+    printf("\nb) 14");
+    printf("\nc) 18");
+    printf("\nd) 21");
+}
+
+void testar03(char v1, char text[]){
+    if(v1 == 'a' || v1 == 'A'){
+    printf("A) 7 != %d\n", f_03(text));
+    }else if(v1 == 'b' || v1 == 'B'){
+    printf("B) 14 != %d\n", f_03(text));
+    }else if(v1 == 'c' || v1 == 'C'){
+    printf("C) 18 != %d\n", f_03(text));
+    }else if(v1 == 'd' || v1 == 'D'){
+    printf("D) 21 == %d\n", f_03(text));
+    }else{
+        printf("\nOP invalida");
+    }
+}
+
 void p03() {
 // identificacao
     printf( "\nExercicio 03:\n\n" );
+    opcoes03();
     char text[] = "123456";
-    printf("%d\n", f_03(text));
+    char v1 = 'a';
+    printf("\nEscolha a letra:");
+    scanf("%c", &v1);
+    testar03(v1,text);
     // encerrar
     getchar();
     printf( "\nAperte ENTER para continuar!\n" );
