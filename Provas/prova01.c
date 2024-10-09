@@ -127,7 +127,7 @@ void testar03(char v1, char text[]){
     }else if(v1 == 'c' || v1 == 'C'){
     printf("C) 18 != %d\n   (INCORRETA)", f_03(text));
     }else if(v1 == 'd' || v1 == 'D'){
-    printf("D) 21 == %d\n", f_03(text));
+    printf("D) 21 == %d\n   (CORRETA)", f_03(text));
     }else{
         printf("\nOP invalida");
     }
