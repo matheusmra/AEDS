@@ -94,7 +94,11 @@ void opcoes02(){
 void p02() {
 // identificacao
     printf( "\nExercicio 02:\n\n" );
-    printf("%d\n", f_02a(567890));
+    opcoes02();
+    char v1 = 'a';
+    scanf("%c", &v1);
+    testar02(v1);
+    getchar();
     printf("\nAperte ENTER para continuar!\n");
     getchar();
 }
