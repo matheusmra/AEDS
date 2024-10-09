@@ -133,7 +133,12 @@ void testar04(char v1){
 void p04() {
 // identificacao
     printf( "\nExercicio 04:\n\n" );
-    printf("%d\n", f_04(54,24));
+    opcoes04();
+    char v1 = 'a';
+    printf("\nEscolha a letra:");
+    scanf("%c", &v1);
+    testar04(v1);
+    getchar();
     // encerrar
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
