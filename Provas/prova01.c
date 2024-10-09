@@ -169,7 +169,7 @@ void testar04(char v1){
     if(v1 == 'a' || v1 == 'A'){
     printf("A) 12 != %d\n", f_04(54,24));
     }else if(v1 == 'b' || v1 == 'B'){
-    printf("B) 8 != %d\n", f_04(54,24));
+    printf("B) 8 != %d\n   (INCORRETA)", f_04(54,24));
     }else if(v1 == 'c' || v1 == 'C'){
     printf("C) 6 = %d\n", f_04(54,24));
     }else if(v1 == 'd' || v1 == 'D'){
