@@ -67,7 +67,31 @@ int f_02a (int x) {
     return (y + z);
 }
 
-int p02() {
+void testar02(char v1){
+    if(v1 == 'a' || v1 == 'A'){
+    printf("A) 17 == %d\n   (CORRETA)", f_02a(567890));
+    }else if(v1 == 'b' || v1 == 'B'){
+    printf("B) 31 != %d\n   (ERRADA)", f_02a(567890));
+    }else if(v1 == 'c' || v1 == 'C'){
+    printf("C) 48 != %d\n   (ERRADA)", f_02a(567890));
+    }else if(v1 == 'd' || v1 == 'D'){
+    printf("D) 63 != %d\n   (ERRADA)", f_02a(567890));
+    }else{
+        printf("\nOP invalida");
+    }
+}
+
+void opcoes02(){
+    printf("A) 17");
+    printf("\nB) 31");
+    printf("\nC) 48");
+    printf("\nD) 63\n");
+
+}
+
+
+
+void p02() {
 // identificacao
     printf( "\nExercicio 02:\n\n" );
     printf("%d\n", f_02a(567890));
@@ -149,7 +173,7 @@ void testar04(char v1){
     }else if(v1 == 'c' || v1 == 'C'){
     printf("C) 6 = %d\n", f_04(54,24));
     }else if(v1 == 'd' || v1 == 'D'){
-    printf("D) 4 != %d\n", f_04(54,24));
+    printf("D) 4 != %d\n   (INCORRETA)", f_04(54,24));
     }else{
         printf("\nOP invalida");
     }
@@ -200,13 +224,13 @@ void p05() {
     printf("\nEscolha a letra:");
     scanf("%c", &v1);
     if(v1 == 'a' || v1 == 'A'){
-    printf("A = %d\n", f_05(a));
+    printf("A = %d\n   (INCORRETA)", f_05(a));
     }else if(v1 == 'b' || v1 == 'B'){
-    printf("B = %d\n", f_05(b));
+    printf("B = %d\n   (INCORRETA)", f_05(b));
     }else if(v1 == 'c' || v1 == 'C'){
-    printf("C = %d\n", f_05(c));
+    printf("C = %d\n   (INCORRETA)", f_05(c));
     }else if(v1 == 'd' || v1 == 'D'){
-    printf("D = %d\n", f_05(d));
+    printf("D = %d\n   (CORRETA)", f_05(d));
     }else{
         printf("\nOP invalida");
     }
