@@ -47,7 +47,9 @@ void question01(char v1){
 int p01() {
 // identificacao
     printf( "\nExercicio 01:\n\n" );
-    char v1 = 'd';
+    opcoes01();
+    char v1 = 'a';
+    scanf("%c", &v1);
     question01(v1);
     getchar();
     printf("\nAperte ENTER para continuar!\n");
