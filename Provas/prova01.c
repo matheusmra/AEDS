@@ -123,7 +123,7 @@ void testar03(char v1, char text[]){
     if(v1 == 'a' || v1 == 'A'){
     printf("A) 7 != %d\n   (INCORRETA)", f_03(text));
     }else if(v1 == 'b' || v1 == 'B'){
-    printf("B) 14 != %d\n", f_03(text));
+    printf("B) 14 != %d\n   (INCORRETA)", f_03(text));
     }else if(v1 == 'c' || v1 == 'C'){
     printf("C) 18 != %d\n", f_03(text));
     }else if(v1 == 'd' || v1 == 'D'){
