@@ -252,6 +252,28 @@ void p05() {
     getchar();
 }
 
+bool bissexto(int ano){
+    bool resposta = false;
+    int controle1 = ano, controle2 = ano, controle3 = ano;
+    while(controle1 > 0){
+        controle1 = controle1 - 400;
+    }
+    while(controle2 > 0){
+        controle2 = controle2 - 100;
+    }
+    while(controle3 > 0){
+        controle3 = controle3 - 4;
+    }
+    if(controle1 == 0){
+        resposta = true;
+    }else if(controle2 != 0){
+        resposta = false;
+    }else if(controle3 == 0){
+        resposta = true;
+    }
+    return(resposta);
+}
+
 
 void p06() {
 // identificacao
