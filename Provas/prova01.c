@@ -294,16 +294,42 @@ void p06() {
 }
 
 
+int sum(int num) {
+    int soma = 0;
+    while (num > 0) {
+        soma += num % 10;
+        num /= 10;
+    }
+    return soma;
+}
 
+bool amigos() {
+    bool resposta = false;
+    for (int x = 10; x <= 99; x++) {
+        for (int y = x + 1; y <= 99; y++) {
+            if (sum(x * x) == y && sum(y * y) == x) {
+                resposta = true;
+                // printf("Quadrados amigos encontrados: %d e %d\n", x, y);
+            }
+        }
+    }
+    return resposta;
+}
 
 void p07() {
-// identificacao
-    printf( "\nExercicio 07:\n\n" );
-    // encerrar
+    printf("\nExercicio 07:\n\n");
+    if (amigos()) {
+        printf("Existem dois numeros que sao quadrados amigos.\n");
+    } else {
+        printf("Nao existem numeros que sao quadrados amigos no intervalo [10-99].\n");
+    }
+
+    // Encerrar
     getchar();
-    printf( "\nAperte ENTER para continuar!\n" );
+    printf("\nAperte ENTER para continuar!\n");
     getchar();
-}// Fim da função ex0917
+}
+
 
 
 char minhasolucao(char v1[], char v2[]){
@@ -328,6 +354,27 @@ char minhasolucao(char v1[], char v2[]){
 
 }
 
+char solucaoupdate(char v1[]){
+    int total = 0;
+    for(int i = 0; i <(strlen(v1)/2); i++){
+        if(v1[i]=='g' || v1[i]=='j' || v1[i]=='p' || v1[i]=='q' || v1[i]=='v'){
+            total++;
+        }
+    }
+    return total;
+
+}
+
+void printar(int total1, int total2, char v1[], char v2[]){
+    if(total1>total2){
+        printf("%c", v1);
+    }else if(total2 > total1){
+        printf("%c", v2);
+    }else{
+        printf("Ambas as cadeias possuem o mesmo numero");
+    }
+}
+
 void opcoes08(){
     printf("\n1) Codigo original");
     printf("\n2) Codigo atualizado");
@@ -336,12 +383,21 @@ void opcoes08(){
 
 void escolha(int n){
     char v1[TAM_STR], v2[TAM_STR];
+    int total1 = 0, total2 = 0;
     if(n==1){
         printf("\nDigite a primeira cadeia:\n");
         scanf("%s", &v1);
         printf("\nDigite a segunda cadeia:\n");
         scanf("%s", &v2);
         minhasolucao(v1,v2);
+    }else if(n == 2){
+        printf("\nDigite a primeira cadeia:\n");
+        scanf("%s", &v1);
+        printf("\nDigite a segunda cadeia:\n");
+        scanf("%s", &v2);
+        total1 = solucaoupdate(v1);
+        total2 = solucaoupdate(v2);
+        printar(total1,total2,v1,v2);
     }
 }
 
