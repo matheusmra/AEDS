@@ -276,12 +276,52 @@ void p07() {
 }// Fim da função ex0917
 
 
+char minhasolucao(char v1[], char v2[]){
+    int t1 = 0, t2 = 0;
+    for(int i = 0; i <(strlen(v1)/2); i++){
+        if(v1[i]=='g' || v1[i]=='j' || v1[i]=='p' || v1[i]=='q' || v1[i]=='v'){
+            t1++;
+        }
+    }
+    for(int i = 0; i <(strlen(v2)/2); i++){
+        if(v2[i]=='g' || v2[i]=='j' || v2[i]=='p' || v2[i]=='q' || v2[i]=='v'){
+            t2++;
+        }
+    }
+    if(t1>t2){
+        printf("%c", v1);
+    }else if(t2 > t1){
+        printf("%c", v2);
+    }else{
+        printf("Ambas as cadeias possuem o mesmo numero");
+    }
 
+}
+
+void opcoes08(){
+    printf("\n1) Codigo original");
+    printf("\n2) Codigo atualizado");
+    printf("\nEscolha qual codigo voce quer testar:\n");
+}
+
+void escolha(int n){
+    char v1[TAM_STR], v2[TAM_STR];
+    if(n==1){
+        printf("\nDigite a primeira cadeia:\n");
+        scanf("%s", &v1);
+        printf("\nDigite a segunda cadeia:\n");
+        scanf("%s", &v2);
+        minhasolucao(v1,v2);
+    }
+}
 
 void p08() {
 // identificacao
+    int n = 0;
     printf( "\nExercicio 08:\n\n" );
-    // encerrar
+    opcoes08();
+    scanf("%d", &n);
+    escolha(n);
     getchar();
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
