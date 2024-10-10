@@ -277,7 +277,7 @@ bool bissexto(int ano){
 
 void p06() {
 // identificacao
-    printf( "\nExercicio 06:\n\n" );
+    printf( "\nExercicio 06:\n" );
     // programa
     // encerrar
     getchar();
