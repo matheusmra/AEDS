@@ -279,6 +279,14 @@ void p06() {
 // identificacao
     printf( "\nExercicio 06:\n" );
     // programa
+    int ano = 0;
+    printf("\nDigite o ano:\n");
+    scanf("%d", &ano);
+    if (bissexto(ano)) {
+        printf("%d eh um ano bissexto.\n", ano);
+    } else {
+        printf("%d nao eh um ano bissexto.\n", ano);
+    }
     // encerrar
     getchar();
     printf( "\nAperte ENTER para continuar!\n" );
