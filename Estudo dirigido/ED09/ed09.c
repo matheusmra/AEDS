@@ -481,16 +481,47 @@ void ex0920() {
 // 1 3 2 5 8 3 7 11 15
 // 2 4 3 6 9 4 8 12 1
 
-void ex09E1()
-{
-    // identificacao
-    printf( "\nExercicio 09E1:\n\n" );
 
-    // encerrar
-    printf( "\nAperte ENTER para continuar!\n" );
+void preencherMatriz(int matriz[][TAM_STR], int n) {
+    int valor = 1;
+    for(int j = 0; j < n; j++){
+        for(int i = 0; i < n; i++){
+            matriz[i][j] = valor;
+            valor++;
+        }
+    }
+}
+
+void salvarMatrizEmArquivo(int matriz[][TAM_STR], int n) {
+    FILE* arquivo = fopen("extra01.txt", "w");
+    if(arquivo == NULL){
+        printf("Erro ao abrir o arquivo.\n");
+    }
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < n; j++){
+            fprintf(arquivo, "%d\t", matriz[i][j]);
+        }
+        fprintf(arquivo, "\n");
+    }
+    fclose(arquivo);
+    printf("Matriz salva no arquivo \"extra01.txt\".\n");
+}
+
+void ex09E1() {
+    int n;
+    printf("Digite o tamanho da matriz (n): ");
+    scanf("%d", &n);
+    if(n <= 0 || n > TAM_STR){
+        printf("Tamanho inválido. Use um valor entre 1 e %d.\n", TAM_STR);
+    }
+    int positiveMatrix[TAM_STR][TAM_STR];
+    preencherMatriz(positiveMatrix, n);
+    salvarMatrizEmArquivo(positiveMatrix, n);
+    printf("\nAperte ENTER para continuar!\n");
     getchar();
     getchar();
-} // fim exercicio09E1
+}
+// fim exercicio09E1
 // Função para o exercício 09E2
 // ler do teclado as quantidades de linhas e colunas de uma matriz,
 // e montar uma matriz com a característica abaixo,
@@ -500,13 +531,46 @@ void ex09E1()
 // 9 8 7 12 11 10 9
 // 4 3 6 5 4 8 7 6 5
 // 2 1 3 2 1 4 3 2 1
+
+void preencherMatrizInversa(int matriz[][TAM_STR], int n) {
+    int valor = n*n;
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < n; j++){
+            matriz[i][j] = valor;
+            valor--;
+        }
+    }
+}
+
+void salvarMatrizInversaEmArquivo(int matriz[][TAM_STR], int n) {
+    FILE* arquivo = fopen("extra02", "w");
+    if(arquivo == NULL){
+        printf("Erro ao abrir o arquivo.\n");
+    }
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < n; j++){
+            fprintf(arquivo, "%d\t", matriz[i][j]);
+        }
+        fprintf(arquivo, "\n");
+    }
+    fclose(arquivo);
+    printf("Matriz salva no arquivo \"extra02.txt\".\n");
+}
+
 void ex09E2()
 {
     // identificacao
     printf( "\nExercicio 09E2:\n\n" );
-
-    // encerrar
-    printf( "\nAperte ENTER para continuar!\n" );
+    int n;
+    printf("Digite o tamanho da matriz (n): ");
+    scanf("%d", &n);
+    if(n <= 0 || n > TAM_STR){
+        printf("Tamanho inválido. Use um valor entre 1 e %d.\n", TAM_STR);
+    }
+    int positiveMatrix[TAM_STR][TAM_STR];
+    preencherMatrizInversa(positiveMatrix, n);
+    salvarMatrizInversaEmArquivo(positiveMatrix, n);
+    printf("\nAperte ENTER para continuar!\n");
     getchar();
     getchar();
 } // fim função 03E2
