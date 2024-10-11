@@ -433,7 +433,7 @@ void ex0919() {
  // bool result = allZerosUTriangleDoubleMatrix ( 3, 3, positiveMatrix );
 
 bool allZerosUTriangleDoubleMatrix(int n, double positiveMatrix[n][n]) {
-    if (n <= 0) {
+    if(n <= 0){
         printf("A matriz deve ser quadrada (n x n) e n > 0.\n");
         return false;
     }
