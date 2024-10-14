@@ -95,45 +95,30 @@ void ex1013() {
     getchar();
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
-}// Fim da função ex0913
+}// Fim da função ex1013
 
-// Função para o exercício 0914
-// mostrar somente os valores na diagonal secundária de uma matriz real, se for quadrada.
-// Exemplo: double positiveMatrix [10][10];
- //readPositiveDoubleMatrix ( 3, 3, positiveMatrix );
- //printSDiagonalDoubleMatrix ( 3, 3, positiveMatrix );
+// Função para o exercício 1014
+// operar a soma de dois arranjos, com os elementos do segundo multiplicados por uma constante.
+// Para testar, receber dados de arquivos e
+// aplicar a função sobre os arranjos com os valores lidos;
+// DICA: Verificar se os tamanhos são compatíveis.
+// Exemplo: arranjo1 = readArrayFromFile ( "DADOS1.TXT" );
+// arranjo2 = readArrayFromFile ( "DADOS2.TXT" );
+// soma = arrayAdd ( arranjo1, 1, arranjo2 );
 
-void printSDiagonalDoubleMatrix(int n, double positiveMatrix[n][n]) {
-    if(n <= 0){
-        printf("A matriz deve ser quadrada (n x n) e n > 0.\n");
-        return;
-    }
-    printf("Valores na diagonal principal:\n");
-    for(int i = 0; i < n; i++){
-        printf("\n%.2lf ", positiveMatrix[i][n - 1 - i]);
-    }
-    printf("\n");
-}
 
-void ex0914() {
+
+void ex1014() {
 // identificacao
-    printf( "\nExercicio 0914:\n\n" );
+    printf( "\nExercicio 1014:\n\n" );
     // programa
-    int n = 0;
-    scanf("%d", &n);
-    if(n <= 0){
-        printf("A matrix deve ser maior que 0");
-    }
-    double positiveMatrix[n][n];
-    readPositiveDoubleMatrix(n, n, positiveMatrix);
-    printSDiagonalDoubleMatrix(n, positiveMatrix);
     getchar();
     // encerrar
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
-}// Fim da função ex0914
+}// Fim da função ex1014
 
-// Função para o exercício 0915
+// Função para o exercício 1015
 // mostrar somente os valores abaixo e na diagonal principal de uma matriz real, se for quadrada.
 // Exemplo: double positiveMatrix [10][10];
  //readPositiveDoubleMatrix ( 3, 3, positiveMatrix );
