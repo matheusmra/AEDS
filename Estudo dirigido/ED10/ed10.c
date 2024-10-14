@@ -16,6 +16,7 @@
 #include <string.h>
 #include <ctype.h>
 #include <stdbool.h>
+#include <time.h>
 // Tamanho max string
 const int TAM_STR = 80;
 // Função para mostrar o menu de opções
@@ -45,14 +46,43 @@ void menuOpcoes() {
 // dentro do intervalo e armazená-los em arranjo;
 // gravá-los, um por linha, em um arquivo ("DADOS.TXT").
 // A primeira linha do arquivo deverá informar a quantidade
-/ de números aleatórios ( N ) que serão gravados em seguida.
+// de números aleatórios ( N ) que serão gravados em seguida.
 // DICA: Usar a função rand( ), mas tentar limitar valores muito grandes.
 // Exemplo: valor = RandomIntGenerate ( inferior, superior );
+int RandomIntGenerate(int inferior, int superior) {
+    return rand() % (superior - inferior + 1) + inferior;
+}
 
+void gravarEmArquivo(const char* nomeArquivo, int* arranjo, int n) {
+    FILE *arquivo = fopen(nomeArquivo, "w");
+    if (arquivo == NULL){
+        printf("Erro ao abrir o arquivo.\n");
+    }
+
+    fprintf(arquivo, "%d\n", n);
+    for(int i = 0; i < n; i++){
+        fprintf(arquivo, "%d\n", arranjo[i]);
+    }
+    fclose(arquivo);
+    printf("Numeros gerados e gravados no arquivo \"%s\".\n", nomeArquivo);
+}
 
 int ex1011() {
 // identificacao
     printf( "\nExercicio 1011:\n\n" );
+    int inferior = 0, superior = 0, n = 0;
+    srand(time(NULL));
+    printf("Inferior =");
+    scanf("%d", &inferior);
+    printf("\nSuperior =");
+    scanf("%d", &superior);
+    printf("\nQuantidade =");
+    scanf("%d", &n);
+    int arranjo[n];
+    for(int i = 0; i < n; i++){
+        arranjo[i] = RandomIntGenerate(inferior, superior);
+    }
+    gravarEmArquivo("DADOS.TXT", arranjo, n);
     getchar();
     printf("\nAperte ENTER para continuar!\n");
     getchar();
