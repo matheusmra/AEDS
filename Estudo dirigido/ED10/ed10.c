@@ -193,194 +193,72 @@ void ex1018() {
 }// Fim da função ex1018
 
 // Função para o exercício 0919
-// testar se não são todos zeros os valores abaixo da diagonal principal de uma matriz real quadrada.
-// Exemplo: double positiveMatrix [10][10];
- // readPositiveDoubleMatrix ( 3, 3, positiveMatrix );
-//  bool result = allZerosLTriangleDoubleMatrix ( 3, 3, positiveMatrix );
+// operar a soma de duas matrizes, com os elementos da segunda multiplicados por uma constante.
+// Para testar, receber dados de arquivos e
+// aplicar a função sobre as matrizes com os valores lidos.
+// DICA: Verificar se os tamanhos são compatíveis.
+// Exemplo: matriz1 = readMatrixFromFile ( "DADOS1.TXT" );
+// matriz2 = readMatrixFromFile ( "DADOS2.TXT" );
+// soma = matrixAdd ( matriz1, -1, matriz2 );
 
-
-bool allZerosLTriangleDoubleMatrix(int n, double positiveMatrix[n][n]) {
-    if(n <= 0){
-        printf("A matriz deve ser quadrada (n x n) e n > 0.\n");
-        return false;
-    }
-    for(int i = 0; i < n; i++){
-        for(int j = 0; j < i; j++){
-            if(positiveMatrix[i][j] != 0.0){
-                return false;
-            }
-        }
-    }
-    return true;
-}
-
-void ex0919() {
+void ex1019() {
     // identificacao
-    printf( "\nExercicio 0919:\n\n" );
-    int n = 0;
-    scanf("%d", &n);
-    if(n <= 0){
-        printf("A matrix deve ser maior que 0");
-    }
-    double positiveMatrix[n][n];
-    readPositiveDoubleMatrix(n, n, positiveMatrix);
-    printLDTriangleDoubleMatrix(n, positiveMatrix);
-    bool result = allZerosLTriangleDoubleMatrix(n, positiveMatrix);
-    if(result){
-        printf("\nTodos os valores abaixo da diagonal principal sao igual a 0");
-    }else{
-        printf("\nExistem valores diferentes de zero");
-    }
+    printf( "\nExercicio 1019:\n\n" );
     // encerrar
     getchar();
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
 }// Fim da função ex0919
 
-// Função para o exercício 0920
-// testar se são zeros os valores acima da diagonal principal de uma matriz real quadrada.
-//Exemplo: double positiveMatrix [10][10];
- // readPositiveDoubleMatrix ( 3, 3, positiveMatrix );
- // bool result = allZerosUTriangleDoubleMatrix ( 3, 3, positiveMatrix );
+// Função para o exercício 1020
+// obter o produto de duas matrizes.
+// Para testar, receber dados de arquivos e
+// aplicar a função sobre as matrizes com os valores lidos.
+// DICA: Verificar se os tamanhos são compatíveis.
+// Exemplo: matriz1 = readMatrixFromFile ( "DADOS1.TXT" );
+// matriz2 = readMatrixFromFile ( "DADOS2.TXT" );
+// soma = matrixProduct ( matriz1, matriz2 );
 
-bool allZerosUTriangleDoubleMatrix(int n, double positiveMatrix[n][n]) {
-    if(n <= 0){
-        printf("A matriz deve ser quadrada (n x n) e n > 0.\n");
-        return false;
-    }
-    for(int i = 0; i < n; i++){
-        for(int j = 0; j < n; j++){
-            if(j > i && positiveMatrix[i][j] != 0.0){
-                return false;
-            }
-        }
-    }
-    return true;
-}
-
-
-void ex0920() {
+void ex1020() {
 // identificacao
-    printf( "\nExercicio 0920:\n\n" );
-    int n = 0;
-    scanf("%d", &n);
-    if(n <= 0){
-        printf("A matrix deve ser maior que 0");
-    }
-    double positiveMatrix[n][n];
-    readPositiveDoubleMatrix(n, n, positiveMatrix);
-    printLUTriangleDoubleMatrix(n, positiveMatrix);
-    bool result = allZerosUTriangleDoubleMatrix(n, positiveMatrix);
-    if(result){
-        printf("\nTodos os valores acima da diagonal principal sao igual a 0.");
-    }else{
-        printf("\nExistem valores diferentes de zero");
-    }
+    printf( "\nExercicio 1020:\n\n" );
+
     // encerrar
     getchar();
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
 }// Fim da função ex0320
 
-// Função para o exercício 09E1
-// ler do teclado as quantidades de linhas e colunas de uma matriz,
-// e montar uma matriz com a característica abaixo,
-// a qual deverá ser gravada em arquivo, após o retorno.
-// Exemplos:
-// 1 5 9 13
-// 1 4 7 2 6 10 14
-// 1 3 2 5 8 3 7 11 15
-// 2 4 3 6 9 4 8 12 1
+// Função para o exercício 10E1
+// colocar um arranjo em ordem decrescente, pelo método de trocas de posição.
+// Para testar, receber um nome de arquivo como parâmetro e
+// aplicar a função sobre o arranjo com os valores lidos.
+// Exemplo: arranjo1 = readArrayFromFile ( "DADOS1.TXT" );
+// ordenado = sortArrayDown ( arranjo );
 
 
-void preencherMatriz(int matriz[][TAM_STR], int n) {
-    int valor = 1;
-    for(int j = 0; j < n; j++){
-        for(int i = 0; i < n; i++){
-            matriz[i][j] = valor;
-            valor++;
-        }
-    }
-}
 
-void salvarMatrizEmArquivo(int matriz[][TAM_STR], int n) {
-    FILE* arquivo = fopen("extra01.txt", "w");
-    if(arquivo == NULL){
-        printf("Erro ao abrir o arquivo.\n");
-    }
-    for(int i = 0; i < n; i++){
-        for(int j = 0; j < n; j++){
-            fprintf(arquivo, "%d\t", matriz[i][j]);
-        }
-        fprintf(arquivo, "\n");
-    }
-    fclose(arquivo);
-    printf("Matriz salva no arquivo \"extra01.txt\".\n");
-}
-
-void ex09E1() {
-    int n;
-    printf("Digite o tamanho da matriz (n): ");
-    scanf("%d", &n);
-    if(n <= 0 || n > TAM_STR){
-        printf("Tamanho inválido. Use um valor entre 1 e %d.\n", TAM_STR);
-    }
-    int positiveMatrix[TAM_STR][TAM_STR];
-    preencherMatriz(positiveMatrix, n);
-    salvarMatrizEmArquivo(positiveMatrix, n);
+void ex10E1() {
+    printf( "\nExercicio 10E1:\n\n" );
     printf("\nAperte ENTER para continuar!\n");
     getchar();
     getchar();
 }
 // fim exercicio09E1
-// Função para o exercício 09E2
-// ler do teclado as quantidades de linhas e colunas de uma matriz,
-// e montar uma matriz com a característica abaixo,
-// a qual deverá ser gravada em arquivo, após o retorno.
-// Exemplos:
-// 16 15 14 13
-// 9 8 7 12 11 10 9
-// 4 3 6 5 4 8 7 6 5
-// 2 1 3 2 1 4 3 2 1
+// Função para o exercício 10E2
+// testar se o produto de duas matrizes é igual à matriz identidade.
+// Para testar, receber dados de arquivos e
+// aplicar a função sobre as matrizes com os valores lidos;
+//DICA: Verificar se os tamanhos são compatíveis.
+//Exemplo: matriz1 = readMatrixFromFile ( "DADOS1.TXT" );
+//matriz2 = readMatrixFromFile ( "DADOS2.TXT" );
+//resposta = identityMatrix ( matrixProduct (matriz1, matriz2) );
 
-void preencherMatrizInversa(int matriz[][TAM_STR], int n) {
-    int valor = n*n;
-    for(int i = 0; i < n; i++){
-        for(int j = 0; j < n; j++){
-            matriz[i][j] = valor;
-            valor--;
-        }
-    }
-}
 
-void salvarMatrizInversaEmArquivo(int matriz[][TAM_STR], int n) {
-    FILE* arquivo = fopen("extra02", "w");
-    if(arquivo == NULL){
-        printf("Erro ao abrir o arquivo.\n");
-    }
-    for(int i = 0; i < n; i++){
-        for(int j = 0; j < n; j++){
-            fprintf(arquivo, "%d\t", matriz[i][j]);
-        }
-        fprintf(arquivo, "\n");
-    }
-    fclose(arquivo);
-    printf("Matriz salva no arquivo \"extra02.txt\".\n");
-}
-
-void ex09E2()
+void ex10E2()
 {
     // identificacao
-    printf( "\nExercicio 09E2:\n\n" );
-    int n;
-    printf("Digite o tamanho da matriz (n): ");
-    scanf("%d", &n);
-    if(n <= 0 || n > TAM_STR){
-        printf("Tamanho inválido. Use um valor entre 1 e %d.\n", TAM_STR);
-    }
-    int positiveMatrix[TAM_STR][TAM_STR];
-    preencherMatrizInversa(positiveMatrix, n);
-    salvarMatrizInversaEmArquivo(positiveMatrix, n);
+    printf( "\nExercicio 10E2:\n\n" );
     printf("\nAperte ENTER para continuar!\n");
     getchar();
     getchar();
@@ -400,18 +278,18 @@ int main(void) {
         // Executar a opção escolhida
         switch (opcao) {
             case 0: break;
-            case 1: ex0911(); break;
-            case 2: ex0912(); break;
-            case 3: ex0913(); break;
-            case 4: ex0914(); break;
-            case 5: ex0915(); break;
-            case 6: ex0916(); break;
-            case 7: ex0917(); break;
-            case 8: ex0918(); break;
-            case 9: ex0919(); break;
-            case 10: ex0920(); break;
-            case 11: ex09E1(); break;
-            case 12: ex09E2(); break;
+            case 1: ex1011(); break;
+            case 2: ex1012(); break;
+            case 3: ex1013(); break;
+            case 4: ex1014(); break;
+            case 5: ex1015(); break;
+            case 6: ex1016(); break;
+            case 7: ex1017(); break;
+            case 8: ex1018(); break;
+            case 9: ex1019(); break;
+            case 10: ex1020(); break;
+            case 11: ex10E1(); break;
+            case 12: ex10E2(); break;
             default:
                 printf("\nERRO: OPCAO INVALIDA\n\n");
                 break;
