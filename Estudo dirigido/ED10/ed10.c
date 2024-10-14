@@ -59,66 +59,22 @@ int ex1011() {
 }
 // fim exercicio1011
 
-// Função para o exercício 0912
-// gravar uma matriz real em arquivo.
-// A matriz e o nome do arquivo serão dados como parâmetros.
-// Para testar, usar a leitura da matriz do problema anterior.
-// Usar outro método para ler e recuperar a matriz do arquivo, antes de mostrá-la na tela.
-// Exemplo: double positiveMatrix [10][10];
- //readPositiveMatrix DoubleMatrix ( 3, 3, positiveMatrix );
- //fprintDoubleMatrix ( "MATRIX_01.TXT", 3, 3, positiveMatrix )
+// Função para o exercício 1012
+// procurar certo valor inteiro em um arranjo.
+// Para testar, receber um nome de arquivo como parâmetro e
+// aplicar a função sobre o arranjo com os valores lidos.
+// Exemplo: arranjo = readArrayFromFile ( "DADOS.TXT" );
+// resposta = arraySearch ( valor, arranjo );
 
-void fprintDoubleMatrix(char *nomeArquivo, int linha, int coluna, double positiveMatrix[linha][coluna]) {
-    FILE *file = fopen(nomeArquivo, "w");
-    if(file == NULL){
-        printf("Erro ao abrir o arquivo");
-    }
-    fprintf(file, "Matriz resultante:\n");
-    for(int i = 0; i < linha; i++){
-        for(int j = 0; j < coluna; j++){
-            fprintf(file, "%.2lf ", positiveMatrix[i][j]);
-        }
-        fprintf(file, "\n");
-    }
-    printf("\nResultado gravado com sucesso em MATRIX_01.TXT");
-    fclose(file);
-}
 
-void readPositiveDoubleMatrixFromFile(char *nomeArquivo, int linha, int coluna, double positiveMatrix[linha][coluna]) {
-    FILE *file = fopen(nomeArquivo, "r");
-    if (file == NULL) {
-        printf("Erro ao abrir o arquivo para leitura.\n");
-        return;
-    }
-    printf("\nLendo a matriz do arquivo...\n");
-    for(int i = 0; i < linha; i++){
-        for (int j = 0; j < coluna; j++){
-            fscanf(file, "%lf", &positiveMatrix[i][j]);
-        }
-    }
 
-    fclose(file);
-}
-
-int ex0912() {
-    int linha = 0, coluna = 0;
-    printf("Digite o numero de linhas da matriz: ");
-    scanf("%d", &linha);
-    printf("Digite o numero de colunas da matriz: ");
-    scanf("%d", &coluna);
-    if(linha <= 0 || coluna <= 0){
-        printf("As dimensoes da matriz devem ser positivas.");
-    }
-    double positiveMatrix[linha][coluna];
-    readPositiveDoubleMatrix(linha, coluna, positiveMatrix);
-    fprintDoubleMatrix("MATRIX_01.TXT", linha, coluna, positiveMatrix);
-    readPositiveDoubleMatrixFromFile("MATRIX_01.TXT", linha, coluna, positiveMatrix);
-    printDoubleMatrix(linha, coluna, positiveMatrix);
+int ex1012() {
+// identificacao
+    printf( "\nExercicio 1012:\n\n" );
     getchar();
-
     printf("\nAperte ENTER para continuar!\n");
     getchar();
-}// Fim da função ex0912
+}// Fim da função ex1012
 
 // Função para o exercício 0913
 // mostrar somente os valores na diagonal principal de uma matriz real, se for quadrada.
