@@ -76,36 +76,21 @@ int ex1012() {
     getchar();
 }// Fim da função ex1012
 
-// Função para o exercício 0913
-// mostrar somente os valores na diagonal principal de uma matriz real, se for quadrada.
-// Exemplo: double positiveMatrix [10][10];
- //readPositiveMatrix DoubleMatrix ( 3, 3, positiveMatrix );
- //printDiagonalDoubleMatrix ( 3, 3, positiveMatrix );
+// Função para o exercício 1013
+// operar a comparação de dois arranjos.
+// Para testar, receber dados de arquivos e
+// aplicar a função sobre os arranjos com os valores lidos.
+// DICA: Verificar se, e somente se, os tamanhos forem iguais.
+// Exemplo: arranjo1 = readArrayFromFile ( "DADOS1.TXT" );
+// arranjo2 = readArrayFromFile ( "DADOS2.TXT" );
+// resposta = arrayCompare ( arranjo1, arranjo2 );
 
- void printDiagonalDoubleMatrix(int n, double positiveMatrix[n][n]) {
-    if(n <= 0){
-        printf("A matriz deve ser quadrada (n x n) e n > 0.\n");
-        return;
-    }
-    printf("Valores na diagonal principal:\n");
-    for(int i = 0; i < n; i++){
-        printf("\n%.2lf ", positiveMatrix[i][i]);
-    }
-    printf("\n");
-}
 
-void ex0913() {
+
+void ex1013() {
 // identificacao
-    printf( "\nExercicio 0913:\n\n" );
+    printf( "\nExercicio 1013:\n\n" );
     // programa
-    int n = 0;
-    scanf("%d", &n);
-    if(n <= 0){
-        printf("A matrix deve ser maior que 0");
-    }
-    double positiveMatrix[n][n];
-    readPositiveDoubleMatrix(n, n, positiveMatrix);
-    printDiagonalDoubleMatrix(n, positiveMatrix);
     // encerrar
     getchar();
     printf( "\nAperte ENTER para continuar!\n" );
