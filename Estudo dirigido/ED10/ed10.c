@@ -119,37 +119,16 @@ void ex1014() {
 }// Fim da função ex1014
 
 // Função para o exercício 1015
-// mostrar somente os valores abaixo e na diagonal principal de uma matriz real, se for quadrada.
-// Exemplo: double positiveMatrix [10][10];
- //readPositiveDoubleMatrix ( 3, 3, positiveMatrix );
- //printLDTriangleDoubleMatrix ( 3, 3, positiveMatrix );
+// dizer se um arranjo está em ordem crescente.
+// Para testar, receber um nome de arquivo como parâmetro e
+// aplicar a função sobre o arranjo com os valores lidos.
+// Exemplo: arranjo1 = readArrayFromFile ( "DADOS1.TXT" );
+// resposta = isArrayCrescent ( arranjo );
 
-void printLDTriangleDoubleMatrix(int n, double positiveMatrix[n][n]) {
-    if (n <= 0) {
-        printf("A matriz deve ser quadrada (n x n) e n > 0.\n");
-        return;
-    }
-    printf("Valores abaixo e na diagonal principal:\n");
-    for(int i = 0; i < n; i++){
-        for(int j = 0; j <= i; j++){
-            printf("%.2lf ", positiveMatrix[i][j]);
-        }
-        printf("\n");
-    }
-}
-
-void ex0915() {
+void ex1015() {
 // identificacao
-    printf( "\nExercicio 0915:\n\n" );
+    printf( "\nExercicio 1015:\n\n" );
     // programa
-    int n = 0;
-    scanf("%d", &n);
-    if(n <= 0){
-        printf("A matrix deve ser maior que 0");
-    }
-    double positiveMatrix[n][n];
-    readPositiveDoubleMatrix(n, n, positiveMatrix);
-    printLDTriangleDoubleMatrix(n, positiveMatrix);
     // encerrar
     getchar();
     printf( "\nAperte ENTER para continuar!\n" );
