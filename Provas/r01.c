@@ -110,13 +110,40 @@ int ex1() {
 //x = { -293, -107, 153, 199, 811 }
 //resposta = primo ( valor );
 
+int ehPrimo(int numero) {
+    if (numero <= 1) {
+        return 0;
+    }
+    for (int i = 2; i <= numero / 2; i++) {
+        if (numero % i == 0) {
+            return 0;
+        }
+    }
+    return 1;
+}
+
+void resultado(int arr[], int n){
+    for (int i = 0; i < n; i++) {
+        int resposta = ehPrimo(arr[i]);
+        if (resposta == 1) {
+            printf("O valor (%d) eh primo.\n", arr[i]);
+        } else {
+            printf("O valor (%d) nao eh primo.\n", arr[i]);
+        }
+    }
+}
 
 
 int ex2() {
 // identificacao
     printf( "\nExercicio 02:\n\n" );
-    getchar();
+    int n = 0;
+    scanf("%d", &n);
+    int arr[n];
+    lerArray(arr,n);
+    resultado(arr,n);
     printf("\nAperte ENTER para continuar!\n");
+    getchar();
     getchar();
 }// Fim da função ex1012
 
@@ -134,12 +161,65 @@ int ex2() {
 //"for(x=0;x<y&&y>=0;x=x+1)"
 //resposta = testar_simbolo ( valor );
 
+int operador_logico(char c) {
+    return (c == '&' || c == '|' || c == '!');
+}
+
+
+int operador_aritmetico(char c) {
+    return (c == '+' || c == '-' || c == '*' || c == '/' || c == '%');
+}
+
+
+int operador_relacional(char c) {
+    return (c == '>' || c == '<' || c == '=');
+}
+
+
+int separador(char c) {
+    return (c == ' ' || c == '.' || c == ',' || c == ';' || c == ':' || c == '_');
+}
+
+int maiuscula(char c){
+    return (c >= 'A' && c <= 'Z');
+}
+
+int minuscula(char c){
+    return (c >= 'a' && c <= 'z');
+}
+
+int digito(char c){
+    return (c >= '0' && c <= '9');
+}
+
+
+const char* testar_simbolo(char c) {
+    switch (1) {
+        case 1:
+            if (operador_logico(c)) return "Operador Logico";
+        case 2:
+            if (operador_aritmetico(c)) return "Operador Aritmetico";
+        case 3:
+            if (operador_relacional(c)) return "Operador Relacional";
+        case 4:
+            if (separador(c)) return "Separador";
+        default:
+            return "Outro Simbolo";
+    }
+}
+
 
 
 void ex3() {
 // identificacao
     printf( "\nExercicio 03:\n\n" );
     // programa
+    char cadeia[TAM_STR];
+    scanf("%s", &cadeia);
+    for(int i = 0; i < strlen(cadeia); i++){
+        char* resposta = testar_simbolo(cadeia[i]);
+        printf("O simbolo (%c) eh: %s\n", cadeia[i], resposta);
+    }
     // encerrar
     getchar();
     printf( "\nAperte ENTER para continuar!\n" );
@@ -159,13 +239,61 @@ void ex3() {
 //"for(X=0;X<y&&y>=0;X=X+1)"
 //resposta = testar_tipo ( valor );
 
+const char* testar_tipo(char c, int* totallogico, int* totalari, int* totalrela, int* totalsep, int* totalmaiu, int* totalminu, int* totaldi) {
+    if (operador_logico(c)) {
+        (*totallogico)++;
+        return "Operador Logico";
+    }
+    if (operador_aritmetico(c)) {
+        (*totalari)++;
+        return "Operador Aritmetico";
+    }
+    if (operador_relacional(c)) {
+        (*totalrela)++;
+        return "Operador Relacional";
+    }
+    if (separador(c)) {
+        (*totalsep)++;
+        return "Separador";
+    }
+    if (maiuscula(c)) {
+        (*totalmaiu)++;
+        return "Maiuscula";
+    }
+    if (minuscula(c)) {
+        (*totalminu)++;
+        return "Minuscula";
+    }
+    if (digito(c)) {
+        (*totaldi)++;
+        return "Digito";
+    }
+}
+
+void exibirResultados(int totallogico, int totalari, int totalrela, int totalsep, int totalmaiu, int totalminu, int totaldi){
+    printf("Operadores Logicos: %d\n", totallogico);
+    printf("Operadores Aritmeticos: %d\n", totalari);
+    printf("Operadores Relacionais: %d\n", totalrela);
+    printf("Separadores: %d\n", totalsep);
+    printf("Maiusculas: %d\n", totalmaiu);
+    printf("Minusculas: %d\n", totalminu);
+    printf("Digitos: %d\n", totaldi);
+}
+
 void ex4() {
 // identificacao
     printf( "\nExercicio 04:\n\n" );
     // programa
-    getchar();
+    char cadeia[TAM_STR];
+    int totallogico = 0, totalari = 0, totalrela = 0, totalsep = 0, totalmaiu = 0, totalminu = 0, totaldi = 0;
+    scanf("%s", &cadeia);
+    for(int i = 0; i < strlen(cadeia); i++){
+        const char* resultado = testar_tipo(cadeia[i], &totallogico, &totalari, &totalrela, &totalsep,&totalmaiu, &totalminu, &totaldi);
+    }
+    exibirResultados(totallogico,totalari,totalrela, totalsep, totalmaiu,  totalminu,totaldi);
     // encerrar
     printf( "\nAperte ENTER para continuar!\n" );
+    getchar();
     getchar();
 }// Fim da função ex1014
 
@@ -209,7 +337,7 @@ void ex5() {
 //resposta = soma_cubos ( a, b );
 
 
-void ex06() {
+void ex6() {
 // identificacao
     printf( "\nExercicio 06:\n\n" );
     // programa
