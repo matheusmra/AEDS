@@ -154,42 +154,18 @@ void ex1016() {
     getchar();
 }// Fim da função ex1016
 
-// Função para o exercício 0917
-// mostrar somente os valores abaixo e na diagonal secundária de uma matriz real, se for quadrada.
-// Exemplo: double positiveMatrix [10][10];
- // readPositiveDoubleMatrix ( 3, 3, positiveMatrix );
- // printSLDTriangleDoubleMatrix ( 3, 3, positiveMatrix );
-
-void printSLDTriangleDoubleMatrix(int n, double positiveMatrix[n][n]) {
-    if (n <= 0) {
-        printf("A matriz deve ser quadrada (n x n) e n > 0.\n");
-        return;
-    }
-    printf("Valores abaixo e na diagonal secundaria:\n");
-    for(int i = 0; i < n; i++){
-        for(int j = 0; j < n; j++){
-            if(j >= n - i - 1){
-                printf("%.2lf ", positiveMatrix[i][j]);
-            }else{
-                printf("       ");
-            }
-        }
-        printf("\n");
-    }
-}
+// Função para o exercício 1017
+// testar se uma matriz só contém valores iguais a zero.
+// Para testar, receber dados de arquivos e
+// aplicar a função sobre as matrizes com os valores lidos.
+// DICA: Verificar se os tamanhos são compatíveis.
+// Exemplo: matriz1 = readMatrixFromFile ( "DADOS1.TXT" );
+// resposta = matrixZero ( matriz1 );
 
 
-void ex0917() {
+void ex1017() {
 // identificacao
-    printf( "\nExercicio 0917:\n\n" );
-    int n = 0;
-    scanf("%d", &n);
-    if(n <= 0){
-        printf("A matrix deve ser maior que 0");
-    }
-    double positiveMatrix[n][n];
-    readPositiveDoubleMatrix(n, n, positiveMatrix);
-    printSLDTriangleDoubleMatrix(n, positiveMatrix);
+    printf( "\nExercicio 1017:\n\n" );
     // encerrar
     getchar();
     printf( "\nAperte ENTER para continuar!\n" );
