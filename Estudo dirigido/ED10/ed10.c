@@ -171,47 +171,26 @@ void ex1017() {
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
 }// Fim da função ex0917
-// Função para o exercício 0918
-//mostrar somente os valores acima e na diagonal secundária de uma matriz real, se for quadrada.
-// Exemplo: double positiveMatrix [10][10];
- // readPositiveDoubleMatrix ( 3, 3, positiveMatrix );
- // printSLUTriangleDoubleMatrix ( 3, 3, positiveMatrix );
 
-void printSLUTriangleDoubleMatrix(int n, double positiveMatrix[n][n]) {
-    if(n <= 0){
-        printf("A matriz deve ser quadrada (n x n) e n > 0.\n");
-        return;
-    }
-    printf("Valores acima e na diagonal secundaria:\n");
-    for(int i = 0; i < n; i++){
-        for(int j = 0; j < n; j++){
-            if(j >= n - i - 1){
-                printf("%.2lf ", positiveMatrix[i][j]);
-            }else{
-                printf("       ");
-            }
-        }
-        printf("\n");
-    }
-}
+// Função para o exercício 1018
+// testar a igualdade de duas matrizes.
+// Para testar, receber dados de arquivos e
+// aplicar a função sobre as matrizes com os valores lidos.
+// DICA: Verificar se os tamanhos são compatíveis.
+// Exemplo: matriz1 = readMatrixFromFile ( "DADOS1.TXT" );
+// matriz2 = readMatrixFromFile ( "DADOS2.TXT" );
+// resposta = matrixCompare ( matriz1, matriz2 );
 
 
-void ex0918() {
+
+void ex1018() {
 // identificacao
-    printf( "\nExercicio 0918:\n\n" );
-    int n = 0;
-    scanf("%d", &n);
-    if(n <= 0){
-        printf("A matrix deve ser maior que 0");
-    }
-    double positiveMatrix[n][n];
-    readPositiveDoubleMatrix(n, n, positiveMatrix);
-    printSLUTriangleDoubleMatrix(n, positiveMatrix);
+    printf( "\nExercicio 1018:\n\n" );
     // encerrar
     getchar();
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
-}// Fim da função ex0918
+}// Fim da função ex1018
 
 // Função para o exercício 0919
 // testar se não são todos zeros os valores abaixo da diagonal principal de uma matriz real quadrada.
