@@ -310,13 +310,118 @@ void ex4() {
 //x = { -15.25, -12.50, 0.0, 6.75, 20.50, 50.0, 70.25, 85.25, 92.50, 98.75 }
 //resposta1 = no_intervalo ( inferior, superior, valor );
 
+// Função para calcular a menor dentre três valores
+double menor(double a, double b, double c){
+    double menor = a;
+    if(b < menor){
+        menor = b;
+    }
+    if(c < menor){
+        menor = c;
+    }
+    return menor;
+}
+
+// Função para calcular a soma dos valores menores que -27.25
+double soma_Menores(double x[], int n){
+    double somaMenores = 0.0;
+    for(int i = 0; i < n; i++){
+        if(x[i] < -27.25) {
+            somaMenores += x[i];
+        }
+    }
+    return somaMenores;
+}
+
+// Função para contar os valores menores que -27.25
+int count_Menores(double x[], int n){
+    int countMenores = 0;
+    for(int i = 0; i < n; i++){
+        if(x[i] < -27.25){
+            countMenores++;
+        }
+    }
+    return countMenores;
+}
+
+// Função para calcular a soma dos valores entre -27.25 e 91.25
+double soma_Media(double x[], int n){
+    double somaMedia = 0.0;
+    for(int i = 0; i < n; i++) {
+        if(x[i] >= -27.25 && x[i] <= 91.25){
+            somaMedia += x[i];
+        }
+    }
+    return somaMedia;
+}
+
+// Função para contar os valores entre -27.25 e 91.25
+int count_Media(double x[], int n){
+    int countMedia = 0;
+    for(int i = 0; i < n; i++){
+        if(x[i] >= -27.25 && x[i] <= 91.25){
+            countMedia++;
+        }
+    }
+    return countMedia;
+}
+
+// Função para calcular a soma dos valores maiores que 91.25
+double soma_Maiores(double x[], int n){
+    double somaMaiores = 0.0;
+    for(int i = 0; i < n; i++){
+        if(x[i] > 91.25) {
+            somaMaiores += x[i];
+        }
+    }
+    return somaMaiores;
+}
+
+// Função para contar os valores maiores que 91.25
+int count_Maiores(double x[], int n){
+    int countMaiores = 0;
+    for(int i = 0; i < n; i++){
+        if(x[i] > 91.25) {
+            countMaiores++;
+        }
+    }
+    return countMaiores;
+}
+// Função para mostrar os resultados
+void resultados(double mediaMenores, double mediaMedia, double mediaMaiores, double menorMedia){
+    printf("Media dos valores menores que -27.25: %.2lf\n", mediaMenores);
+    printf("Media dos valores entre -27.25 e 91.25: %.2lf\n", mediaMedia);
+    printf("Media dos valores maiores que 91.25: %.2lf\n", mediaMaiores);
+    printf("A menor media eh: %.2lf\n", menorMedia);
+}
+
+// Função principal
 void ex5() {
-// identificacao
-    printf( "\nExercicio 05:\n\n" );
-    // programa
-    // encerrar
+    // Identificação
+    printf("\nExercicio 05:\n\n");
+    // Programa
+    int n = 0;
+    printf("N = ");
+    scanf("%d", &n);
+    double x[n];
+    for(int i = 0; i < n; i++){
+        printf("\nx[%d] = ", i);
+        scanf("%lf", &x[i]);
+    }
+    int countMenores = count_Menores(x, n);
+    int countMedia = count_Media(x, n);
+    int countMaiores = count_Maiores(x, n);
+    double somaMenores = soma_Menores(x, n);
+    double somaMedia = soma_Media(x, n);
+    double somaMaiores = soma_Maiores(x, n);
+    double mediaMenores = countMenores ? somaMenores / countMenores : 0;
+    double mediaMedia = countMedia ? somaMedia / countMedia : 0;
+    double mediaMaiores = countMaiores ? somaMaiores / countMaiores : 0;
+    double menorMedia = menor(mediaMenores, mediaMedia, mediaMaiores);
+    resultados(mediaMenores, mediaMedia, mediaMaiores, menorMedia);
+    // Encerrar
     getchar();
-    printf( "\nAperte ENTER para continuar!\n" );
+    printf("\nAperte ENTER para continuar!\n");
     getchar();
 }// Fim da função ex0915
 
@@ -391,11 +496,43 @@ void ex7() {
 //resposta3 = maior ( x, y, z );
 //resposta4 = menor ( x, y, z );
 
+int n_sucessor(double a, double b) {
+    return (a < b);
+}
+
+
+int n_crescente(double x, double y, double z) {
+    return (n_sucessor(x, y) && n_sucessor(y, z));
+}
+
+int n_decrescente(double x, double y, double z) {
+    return (n_sucessor(z, y) && n_sucessor(y, x));
+}
+
+void n_testarRespostas(int resposta1, int resposta2){
+    if(resposta1){
+        printf("Os numeros estao em ordem crescente.\n");
+    }else if(resposta2) {
+        printf("Os numeros estao em ordem decrescente.\n");
+    }else{
+        printf("Os numeros nao estao em ordem crescente nem decrescente.\n");
+    }
+}
 
 
 void ex8() {
 // identificacao
     printf( "\nExercicio 08:\n\n" );
+    double x = 0.0, y = 0.0, z = 0.0;
+    printf("X = ");
+    scanf(" %lf", &x);
+    printf("Y = ");
+    scanf(" %lf", &y);
+    printf("Z = ");
+    scanf(" %lf", &z);
+    int resposta1 = n_crescente(x, y, z);
+    int resposta2 = n_decrescente(x, y, z);
+    n_testarRespostas(resposta1,resposta2);
     // encerrar
     getchar();
     printf( "\nAperte ENTER para continuar!\n" );
@@ -417,10 +554,42 @@ void ex8() {
 //resposta1 = crescente ( x, y, z );
 //resposta2 = decrescente ( x, y, z );
 //resposta3 = sucessor ( x, y );
+int sucessor(char a, char b) {
+    return (a < b);
+}
+
+
+int crescente(char x, char y, char z) {
+    return (sucessor(x, y) && sucessor(y, z));
+}
+
+int decrescente(char x, char y, char z) {
+    return (sucessor(z, y) && sucessor(y, x));
+}
+
+void testarRespostas(int resposta1, int resposta2){
+    if(resposta1){
+        printf("Os caracteres estao em ordem crescente.\n");
+    }else if(resposta2) {
+        printf("Os caracteres estao em ordem decrescente.\n");
+    }else{
+        printf("Os caracteres nao estao em ordem crescente nem decrescente.\n");
+    }
+}
 
 void ex9() {
     // identificacao
     printf( "\nExercicio 09:\n\n" );
+    char x = 'a' , y = 'b', z = 'c';
+    printf("X = ");
+    scanf(" %c", &x);
+    printf("Y = ");
+    scanf(" %c", &y);
+    printf("Z = ");
+    scanf(" %c", &z);
+    int resposta1 = crescente(x, y, z);
+    int resposta2 = decrescente(x, y, z);
+    testarRespostas(resposta1,resposta2);
     // encerrar
     getchar();
     printf( "\nAperte ENTER para continuar!\n" );
@@ -446,10 +615,56 @@ void ex9() {
 //printf ( "%s\n", diferentes );
 //} // end if
 
+int cadeia_crescente(char x[], char y[], char z[]){
+    return (strcmp(x, y) < 0 && strcmp(y, z) < 0);
+}
+
+// Função para verificar se as cadeias estão em ordem decrescente
+int cadeia_decrescente(char x[], char y[], char z[]){
+    return (strcmp(x, y) > 0 && strcmp(y, z) > 0);
+
+}
+void verificarCadeias(int respostaCrescente, int respostaDecrescente, char x[], char y[], char z[]){
+    if(respostaCrescente) {
+        printf("As cadeias estao em ordem crescente.\n");
+    } else if (respostaDecrescente) {
+        printf("As cadeias estao em ordem decrescente.\n");
+    } else {
+        char* menor = x;
+        char* maior = x;
+        if(strcmp(y, menor) < 0){
+            menor = y;
+        }
+        if(strcmp(z, menor) < 0){
+            menor = z;
+        }
+        if(strcmp(y, maior) > 0){
+            maior = y;
+        }
+        if(strcmp(z, maior) > 0){
+            maior = z;
+        }
+        printf("As cadeias nao estao em ordem crescente nem decrescente.\n");
+        printf("A menor cadeia eh: %s\n", menor);
+        printf("A maior cadeia eh: %s\n", maior);
+    }
+
+
+
+}
 void ex10() {
 // identificacao
     printf( "\nExercicio 10:\n\n" );
-
+    char x[TAM_STR], y[TAM_STR], z[TAM_STR];
+    printf("X = ");
+    scanf("%s", x);
+    printf("Y = ");
+    scanf("%s", y);
+    printf("Z = ");
+    scanf("%s", z);
+    int respostaCrescente = cadeia_crescente(x, y, z);
+    int respostaDecrescente = cadeia_decrescente(x,y,z);
+    verificarCadeias(respostaCrescente,respostaDecrescente,x,y,z);
     // encerrar
     getchar();
     printf( "\nAperte ENTER para continuar!\n" );
