@@ -470,10 +470,45 @@ void ex6() {
 //x = { -20, -10, 1, 10, 20, 30, 60, 70, 80, 0 }
 //resposta = no_intervalo ( a, b, valor );
 
+int no_intervalo(double a, double b, double valor){
+    return (valor > a && valor < b);
+}
+void resultados7(double a, double b, int dentro_intervalo, int total_fora, double percentual_acima, double percentual_abaixo){
+    printf("Valores dentro do intervalo ]%.2lf:%.2lf[: %d\n", a, b, dentro_intervalo);
+    printf("Valores fora do intervalo: %d\n", total_fora);
+    printf("Percentual acima do intervalo: %.2lf%%\n", percentual_acima);
+    printf("Percentual abaixo do intervalo: %.2lf%%\n", percentual_abaixo);
+}
+
 
 void ex7() {
 // identificacao
     printf( "\nExercicio 07:\n\n" );
+    double a = 0.0, b = 0.0, valor = 0;
+    int dentro_intervalo = 0,fora_acima = 0,fora_abaixo = 0,total_fora = 0,total_valores = 0;
+    printf("A= ");
+    scanf("%lf", &a);
+    printf("B= ");
+    scanf("%lf", &b);
+    printf("Digite os valores reais (digite 0 para terminar): \n");
+    while (1) {
+        scanf("%lf", &valor);
+        if (valor == 0) break;
+        total_valores++;
+        if(no_intervalo(a, b, valor)){
+            dentro_intervalo++;
+        }else{
+            total_fora++;
+            if(valor > b){
+                fora_acima++;
+            }else if (valor < a){
+                fora_abaixo++;
+            }
+        }
+    }
+    double percentual_acima = total_fora ? ((double)fora_acima / total_fora) * 100 : 0;
+    double percentual_abaixo = total_fora ? ((double)fora_abaixo / total_fora) * 100 : 0;
+    resultados7(a, b,dentro_intervalo,total_fora,percentual_acima, percentual_abaixo);
     // encerrar
     getchar();
     printf( "\nAperte ENTER para continuar!\n" );
