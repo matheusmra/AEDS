@@ -1,5 +1,5 @@
 /*
- Lista Recuperação 01 - v0.0. - 14 / 10 / 2024
+ Lista RecuperaÃ§Ã£o 01 - v0.0. - 17 / 10 / 2024
  Author: Matheus de Almeida Moreira
 
  Para compilar em terminal (janela de comandos):
@@ -18,7 +18,7 @@
 #include <stdbool.h>
 // Tamanho max string
 const int TAM_STR = 80;
-// Função para mostrar o menu de opções
+// FunÃ§Ã£o para mostrar o menu de opÃ§Ãµes
 void menuOpcoes() {
     printf("\nEscolha alguma das opcoes a seguir:\n\n");
     printf("  0 - Encerrar programa\n");
@@ -34,12 +34,12 @@ void menuOpcoes() {
     printf(" 10 - Exercicio 10\n");
 } // fim menuOpcoes()
 
-// Função para o exercício 1011
+// FunÃ§Ã£o para o exercÃ­cio 1011
 // - ler um valor inteiro (n) do teclado para indicar uma quantidade;
-//- ler outros tantos valores inteiros (x) do teclado, um por vez, até atingir a quantidade;
-// - dizer para cada valor lido se há mais divisores ímpares do que pares.
+//- ler outros tantos valores inteiros (x) do teclado, um por vez, atÃ© atingir a quantidade;
+// - dizer para cada valor lido se hÃ¡ mais divisores Ã­mpares do que pares.
 // DICA: Usar apenas alternativas simples.
-// O resultado NÃO deverá ser mostrado dentro da função.
+// O resultado NÃƒO deverÃ¡ ser mostrado dentro da funÃ§Ã£o.
 // Exemplos:
 // n = 5
 // x = { 22, 121, 440, 581, 814 }
@@ -96,15 +96,15 @@ int ex1() {
 }
 // fim exercicio1011
 
-// Função para o exercício 1012
+// FunÃ§Ã£o para o exercÃ­cio 1012
 //- ler um valor inteiro (n) do teclado para indicar uma quantidade;
-//- ler outros tantos valores inteiros (x) do teclado, um por vez, até atingir a quantidade;
-//- dizer para cada valor lido se é primo, ou não, verificado por função.
+//- ler outros tantos valores inteiros (x) do teclado, um por vez, atÃ© atingir a quantidade;
+//- dizer para cada valor lido se Ã© primo, ou nÃ£o, verificado por funÃ§Ã£o.
 //DICA: Usar alternativas dupla.
-//O resultado NÃO deverá ser mostrado dentro da função.
-//NÃO usar break ou continue.
+//O resultado NÃƒO deverÃ¡ ser mostrado dentro da funÃ§Ã£o.
+//NÃƒO usar break ou continue.
 //Usar apenas 01 retorno.
-//O resultado NÃO deverá ser mostrado dentro da função.
+//O resultado NÃƒO deverÃ¡ ser mostrado dentro da funÃ§Ã£o.
 //Exemplos:
 //n = 5
 //x = { -293, -107, 153, 199, 811 }
@@ -145,18 +145,18 @@ int ex2() {
     printf("\nAperte ENTER para continuar!\n");
     getchar();
     getchar();
-}// Fim da função ex1012
+}// Fim da funÃ§Ã£o ex1012
 
-// Função para o exercício 1013
+// FunÃ§Ã£o para o exercÃ­cio 1013
 //- ler uma cadeia de caracteres do teclado;
-//- dizer se cada símbolo é um operador lógico (&,|,!), aritmético (+,-,*,/,%), relacional (>,<,=),
-//separadores (espaço, ponto, vírgula, ponto-e-vírgula, dois-pontos, sublinha)
-//ou outro símbolo qualquer.
-//DICA: Definir e usar funções para identificar cada um desses tipos de símbolo.
-//O resultado NÃO deverá ser mostrado dentro da função.
+//- dizer se cada sÃ­mbolo Ã© um operador lÃ³gico (&,|,!), aritmÃ©tico (+,-,*,/,%), relacional (>,<,=),
+//separadores (espaÃ§o, ponto, vÃ­rgula, ponto-e-vÃ­rgula, dois-pontos, sublinha)
+//ou outro sÃ­mbolo qualquer.
+//DICA: Definir e usar funÃ§Ãµes para identificar cada um desses tipos de sÃ­mbolo.
+//O resultado NÃƒO deverÃ¡ ser mostrado dentro da funÃ§Ã£o.
 //Usar switch para escolhas.
 //Usar apenas 01 retorno.
-//O resultado NÃO deverá ser mostrado dentro da função.
+//O resultado NÃƒO deverÃ¡ ser mostrado dentro da funÃ§Ã£o.
 //Exemplos:
 //"for(x=0;x<y&&y>=0;x=x+1)"
 //resposta = testar_simbolo ( valor );
@@ -224,15 +224,15 @@ void ex3() {
     getchar();
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
-}// Fim da função ex1013
+}// Fim da funÃ§Ã£o ex1013
 
-// Função para o exercício 1014
+// FunÃ§Ã£o para o exercÃ­cio 1014
 //- ler um cadeia de caracteres (s) do teclado;
-//- testar cada símbolo na cadeia, um por vez,
-//e contar separadamente quantos desses são letras maiúsculas, minúsculas, dígitos e
-//operadores (lógicos, aritméticos e relacionais) e separadores.
-//DICA: Definir e reutilizar funções já definidas para identificar cada tipo de símbolo (ver acima).
-//Os resultados NÃO deverão ser mostrados dentro das funções.
+//- testar cada sÃ­mbolo na cadeia, um por vez,
+//e contar separadamente quantos desses sÃ£o letras maiÃºsculas, minÃºsculas, dÃ­gitos e
+//operadores (lÃ³gicos, aritmÃ©ticos e relacionais) e separadores.
+//DICA: Definir e reutilizar funÃ§Ãµes jÃ¡ definidas para identificar cada tipo de sÃ­mbolo (ver acima).
+//Os resultados NÃƒO deverÃ£o ser mostrados dentro das funÃ§Ãµes.
 //Usar switch para escolhas e somas.
 //Usar apenas 01 retorno.
 //Exemplos:
@@ -295,16 +295,16 @@ void ex4() {
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
     getchar();
-}// Fim da função ex1014
+}// Fim da funÃ§Ã£o ex1014
 
-// Função para o exercício 1015
+// FunÃ§Ã£o para o exercÃ­cio 1015
 //- ler um valor inteiro (n) do teclado;
 //- ler outros (n) valores reais (x) do teclado, um por vez;
-//- calcular e mostrar a média dos valores menores que -27.25;
-//a média dos que estão entre -27.2 e 91.25, inclusive esses;
-//e a média dos maiores que 91.25. Dizer qual a menor média de todas.
-//DICA: Definir e usar função para calcular o menor dentre três valores.
-//O resultado NÃO deverá ser mostrado dentro da função.
+//- calcular e mostrar a mÃ©dia dos valores menores que -27.25;
+//a mÃ©dia dos que estÃ£o entre -27.2 e 91.25, inclusive esses;
+//e a mÃ©dia dos maiores que 91.25. Dizer qual a menor mÃ©dia de todas.
+//DICA: Definir e usar funÃ§Ã£o para calcular o menor dentre trÃªs valores.
+//O resultado NÃƒO deverÃ¡ ser mostrado dentro da funÃ§Ã£o.
 //Exemplos:
 //n = 10
 //x = { -15.25, -12.50, 0.0, 6.75, 20.50, 50.0, 70.25, 85.25, 92.50, 98.75 }
@@ -318,18 +318,18 @@ void ex5() {
     getchar();
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
-}// Fim da função ex0915
+}// Fim da funÃ§Ã£o ex0915
 
-// Função para o exercício 0916
+// FunÃ§Ã£o para o exercÃ­cio 0916
 //- ler dois valores inteiros (a) e (b) do teclado,
 //- ler outros valores inteiros do teclado, um por vez,
-//até que o último valor seja igual a (-1).
+//atÃ© que o Ãºltimo valor seja igual a (-1).
 //- para cada valor lido que estiver no intervalo aberto ]a:b[;
-//calcular e mostrar a soma dos cubos dos inversos (1/x3) dos ímpares não múltiplos de 3.
-//DICA: Evitar divisão por zero mediante uso de alternativa dupla.
-//Definir e usar funções para testar o pertencimento ao intervalo,
+//calcular e mostrar a soma dos cubos dos inversos (1/x3) dos Ã­mpares nÃ£o mÃºltiplos de 3.
+//DICA: Evitar divisÃ£o por zero mediante uso de alternativa dupla.
+//Definir e usar funÃ§Ãµes para testar o pertencimento ao intervalo,
 //e para calcular a soma.
-//O resultado NÃO deverá ser mostrado dentro da função.
+//O resultado NÃƒO deverÃ¡ ser mostrado dentro da funÃ§Ã£o.
 //Exemplos:
 //a = 20
 //b = 60
@@ -345,20 +345,20 @@ void ex6() {
     getchar();
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
-}// Fim da função ex1016
+}// Fim da funÃ§Ã£o ex1016
 
-// Função para o exercício 1017
+// FunÃ§Ã£o para o exercÃ­cio 1017
 //- ler dois valores reais (a) e (b) do teclado,
 //- ler outros valores reais do teclado, um por vez,
-//até que o último valor seja igual a zero,
-//e não considerá-lo para os cálculos.
-//- contar quantos desses valores estão dentro ou fora
+//atÃ© que o Ãºltimo valor seja igual a zero,
+//e nÃ£o considerÃ¡-lo para os cÃ¡lculos.
+//- contar quantos desses valores estÃ£o dentro ou fora
 //do intervalo definido pelo intervalo aberto ]a:b[;
 //- para os valores fora do intervalo, calcular separadamente
 //as porcentagens dos que estiverem acima e abaixo do intervalo, nessa ordem.
-//DICA: Evitar divisão por zero mediante uso de alternativas duplas.
-//Reutilizar a função para testar o pertencimento (ou não) ao intervalo.
-//O resultado NÃO deverá ser mostrado dentro da função.
+//DICA: Evitar divisÃ£o por zero mediante uso de alternativas duplas.
+//Reutilizar a funÃ§Ã£o para testar o pertencimento (ou nÃ£o) ao intervalo.
+//O resultado NÃƒO deverÃ¡ ser mostrado dentro da funÃ§Ã£o.
 //Exemplos:
 //a = 20
 //b = 60
@@ -373,15 +373,15 @@ void ex7() {
     getchar();
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
-}// Fim da função ex0917
+}// Fim da funÃ§Ã£o ex0917
 
-// Função para o exercício 1018
-//- ler três valores reais (x,y,z) do teclado, um por vez;
-//- dizer se esses valores estão em ordem crescente,
+// FunÃ§Ã£o para o exercÃ­cio 1018
+//- ler trÃªs valores reais (x,y,z) do teclado, um por vez;
+//- dizer se esses valores estÃ£o em ordem crescente,
 //decrescente ou em nenhuma dessas ordens e, nesse caso, o menor e o maior.
-//DICA: Usar testes com maior número de comparações usando conectivos lógicos ( &&, || e ! ).
-//Definir funções para testar as ordens crescente e decrescente.
-//O resultado NÃO deverá ser mostrado dentro da função.
+//DICA: Usar testes com maior nÃºmero de comparaÃ§Ãµes usando conectivos lÃ³gicos ( &&, || e ! ).
+//Definir funÃ§Ãµes para testar as ordens crescente e decrescente.
+//O resultado NÃƒO deverÃ¡ ser mostrado dentro da funÃ§Ã£o.
 //Exemplos:
 //x = 10, y = 20, z = 30
 //x = 30, y = 20, z = 10
@@ -400,16 +400,16 @@ void ex8() {
     getchar();
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
-}// Fim da função ex1018
+}// Fim da funÃ§Ã£o ex1018
 
-// Função para o exercício 0919
-//- ler três caracteres (x,y,z) do teclado, um por vez;
-//- dizer se esses valores estão em ordem crescente,
+// FunÃ§Ã£o para o exercÃ­cio 0919
+//- ler trÃªs caracteres (x,y,z) do teclado, um por vez;
+//- dizer se esses valores estÃ£o em ordem crescente,
 //decrescente ou em nenhuma dessas ordens.
-//DICA: Usar uma função lógica para comparar os códigos inteiros de cada caractere,
-//e dizer se o segundo sucede o primeiro em ordem alfabética.
-//Definir funções para testar as ordens alfabéticas crescente e decrescente.
-//O resultado NÃO deverá ser mostrado dentro da função.
+//DICA: Usar uma funÃ§Ã£o lÃ³gica para comparar os cÃ³digos inteiros de cada caractere,
+//e dizer se o segundo sucede o primeiro em ordem alfabÃ©tica.
+//Definir funÃ§Ãµes para testar as ordens alfabÃ©ticas crescente e decrescente.
+//O resultado NÃƒO deverÃ¡ ser mostrado dentro da funÃ§Ã£o.
 //Exemplos:
 //x = '1', y = '2', z = '3'
 //x = '3', y = '2', z = '1'
@@ -425,25 +425,25 @@ void ex9() {
     getchar();
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
-}// Fim da função ex0919
+}// Fim da funÃ§Ã£o ex0919
 
-// Função para o exercício 1020
-//- ler três cadeias de caracteres (x,y,z) do teclado, uma por vez;
-//- dizer se essas cadeias estão em ordem alfabética decrescente,
+// FunÃ§Ã£o para o exercÃ­cio 1020
+//- ler trÃªs cadeias de caracteres (x,y,z) do teclado, uma por vez;
+//- dizer se essas cadeias estÃ£o em ordem alfabÃ©tica decrescente,
 //decrescente ou em nenhuma dessas ordens e, nesse caso, a menor e a maior.
 //DICA: Usar strcmp( ) da biblioteca <string.h> e comparar o resultado com zero.
-//A função para a comparação poderá retornar um dentre
+//A funÃ§Ã£o para a comparaÃ§Ã£o poderÃ¡ retornar um dentre
 //os seguintes resultados:
-//O resultado NÃO deverá ser mostrado dentro da função.
+//O resultado NÃƒO deverÃ¡ ser mostrado dentro da funÃ§Ã£o.
 //negativo, se a primeira cadeia preceder a segunda (resultado menor que zero);
 //nulo , se as cadeias forem iguais (resultado igual a zero);
 //positivo , se a primeira cadeia suceder a segunda (resultado maior que zero).
 //Exemplo:
-//char s1 [ ] = “abc”;
-//char s2 [ ] = “ABC”;
+//char s1 [ ] = Â“abcÂ”;
+//char s2 [ ] = Â“ABCÂ”;
 //if ( strcmp ( s1, s2 ) != 0 )
 //{
-//printf ( "%s\n", “diferentes” );
+//printf ( "%s\n", Â“diferentesÂ” );
 //} // end if
 
 void ex10() {
@@ -454,20 +454,20 @@ void ex10() {
     getchar();
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
-}// Fim da função ex0320
+}// Fim da funÃ§Ã£o ex0320
 
-// Função principal
+// FunÃ§Ã£o principal
 int main(void) {
     int opcao;
 
     do {
-        menuOpcoes(); // Chama a função que exibe as opções
+        menuOpcoes(); // Chama a funÃ§Ã£o que exibe as opÃ§Ãµes
 
         printf("\nOpcao = ");
         scanf("%d", &opcao);
         getchar(); // Limpar o buffer de entrada
 
-        // Executar a opção escolhida
+        // Executar a opÃ§Ã£o escolhida
         switch (opcao) {
             case 0: break;
             case 1: ex1(); break;
@@ -491,4 +491,4 @@ int main(void) {
     getchar();
 
     return 0;
-} // Fim da função principal
+} // Fim da funÃ§Ã£o principal
