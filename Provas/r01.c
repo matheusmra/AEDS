@@ -248,7 +248,7 @@ const char* testar_tipo(char c, int* totallogico, int* totalari, int* totalrela,
         (*totalari)++;
         return "Operador Aritmetico";
     }
-    if (operador_relacional(c)) {
+    if(operador_relacional(c)){
         (*totalrela)++;
         return "Operador Relacional";
     }
