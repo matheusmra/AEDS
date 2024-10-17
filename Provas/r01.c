@@ -240,11 +240,11 @@ void ex3() {
 //resposta = testar_tipo ( valor );
 
 const char* testar_tipo(char c, int* totallogico, int* totalari, int* totalrela, int* totalsep, int* totalmaiu, int* totalminu, int* totaldi) {
-    if (operador_logico(c)) {
+    if(operador_logico(c)){
         (*totallogico)++;
         return "Operador Logico";
     }
-    if (operador_aritmetico(c)) {
+    if(operador_aritmetico(c)){
         (*totalari)++;
         return "Operador Aritmetico";
     }
