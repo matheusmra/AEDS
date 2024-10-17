@@ -264,7 +264,7 @@ const char* testar_tipo(char c, int* totallogico, int* totalari, int* totalrela,
         (*totalminu)++;
         return "Minuscula";
     }
-    if (digito(c)) {
+    if digito(c)){
         (*totaldi)++;
         return "Digito";
     }
