@@ -256,7 +256,7 @@ const char* testar_tipo(char c, int* totallogico, int* totalari, int* totalrela,
         (*totalsep)++;
         return "Separador";
     }
-    if (maiuscula(c)) {
+    if(maiuscula(c)){
         (*totalmaiu)++;
         return "Maiuscula";
     }
