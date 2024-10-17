@@ -252,7 +252,7 @@ const char* testar_tipo(char c, int* totallogico, int* totalari, int* totalrela,
         (*totalrela)++;
         return "Operador Relacional";
     }
-    if (separador(c)) {
+    if(separador(c)){
         (*totalsep)++;
         return "Separador";
     }
