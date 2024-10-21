@@ -108,17 +108,7 @@ int ex1012() {
 // Exemplo: arranjo = readArrayFromFile ( "DADOS.TXT" );
 // menor = arranjo.searchFirstEvenx3 ( );
 
-int arrayCompare(intArray arranjo1, intArray arranjo2) {
-    if(arranjo1.length != arranjo2.length){
-        return 0;
-    }
-    for(int i = 0; i < arranjo1.length; i++){
-        if(arranjo1.data[i] != arranjo2.data[i]){
-            return 0;
-        }
-    }
-    return 1;
-}
+
 
 
 void ex1013() {
