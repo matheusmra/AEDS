@@ -449,12 +449,12 @@ void ex1019() {
 }// Fim da função ex0919
 
 // Função para o exercício 1020
-colocar valores em arranjo em ordem decrescente,
-mediante trocas de posições, até ficar totalmente ordenado.
-Para testar, ler o arquivo ("DADOS.TXT"),
-e armazenar os dados em arranjo.
-Exemplo: arranjo = readArrayFromFile ( "DADOS.TXT" );
-arranjo.sortDown ( );
+// colocar valores em arranjo em ordem decrescente,
+// mediante trocas de posições, até ficar totalmente ordenado.
+// Para testar, ler o arquivo ("DADOS.TXT"),
+// e armazenar os dados em arranjo.
+// Exemplo: arranjo = readArrayFromFile ( "DADOS.TXT" );
+// arranjo.sortDown ( );
 
 Matrix matrixProduct(Matrix matriz1, Matrix matriz2) {
     Matrix produto;
@@ -494,17 +494,7 @@ void ex1020() {
 // Incluir uma função/operador (11E1) para
 // dizer se dois arranjos são diferentes, pelo menos em uma posição.
 
-void sortArrayDown(intArray array){
-    for int i = 0; i < array.length - 1; i++){
-        for(int j = 0; j < array.length - i - 1; j++){
-            if(array.data[j] < array.data[j + 1]){
-                int temp = array.data[j];
-                array.data[j] = array.data[j + 1];
-                array.data[j + 1] = temp;
-            }
-        }
-    }
-}
+
 
 void ex10E1(){
     printf("\nExercicio 10E1:\n\n");
@@ -523,21 +513,7 @@ void ex10E1(){
 // calcular as diferenças entre dois arranjos, posição por posição,
 // caso tenham tamanhos iguais.
 
-int identityMatrix(Matrix matrix){
-    if (matrix.rows != matrix.cols){
-        return 0;
-    }
-    for(int i = 0; i < matrix.rows; i++){
-        for(int j = 0; j < matrix.cols; j++){
-            if(i == j && matrix.data[i][j] != 1){
-                return 0;
-            }else if(i != j && matrix.data[i][j] != 0){
-                return 0;
-            }
-        }
-    }
-    return 1;
-}
+
 
 void ex10E2(){
     // identificacao
