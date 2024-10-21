@@ -259,11 +259,11 @@ void ex1015() {
 }// Fim da função ex0915
 
 // Função para o exercício 0916
-verificar se todos os valores são positivos em um arranjo.
-Para testar, ler o arquivo ("DADOS.TXT")
-armazenar os dados em um arranjo.
-Exemplo: arranjo = readArrayFromFile ( "DADOS.TXT" );
-teste = arranjo.negatives ( );
+// verificar se todos os valores são positivos em um arranjo.
+// Para testar, ler o arquivo ("DADOS.TXT")
+// armazenar os dados em um arranjo.
+// Exemplo: arranjo = readArrayFromFile ( "DADOS.TXT" );
+// teste = arranjo.negatives ( );
 
 Matrix readMatrixFromFile(const char* filename) {
     FILE* file = fopen(filename, "r");
