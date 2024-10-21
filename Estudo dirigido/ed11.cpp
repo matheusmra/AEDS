@@ -173,14 +173,7 @@ void ex1014() {
 // Exemplo: arranjo = readArrayFromFile ( "DADOS.TXT" );
 // media = arranjo.averageInterval ( inicio, fim );
 
-int isArrayCrescent(intArray arranjo) {
-    for(int i = 0; i < arranjo.length - 1; i++){
-        if(arranjo.data[i] > arranjo.data[i + 1]){
-            return 0;
-        }
-    }
-    return 1;
-}
+
 
 void ex1015() {
 // identificacao
