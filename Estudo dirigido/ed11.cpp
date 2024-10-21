@@ -68,12 +68,12 @@ int ex1011() {
 // fim exercicio1011
 
 // Função para o exercício 1012
-procurar o maior valor par em um arranjo.
-Para testar, receber um nome de arquivo como parâmetro e
-aplicar a função sobre o arranjo com os valores lidos;
-DICA: Usar o primeiro valor par, se houver, como referência inicial.
-Exemplo: arranjo = readArrayFromFile ( "DADOS.TXT" );
-maior = arranjo.searchFirstOdd ( );
+// procurar o maior valor par em um arranjo.
+// Para testar, receber um nome de arquivo como parâmetro e
+// aplicar a função sobre o arranjo com os valores lidos;
+// DICA: Usar o primeiro valor par, se houver, como referência inicial.
+// Exemplo: arranjo = readArrayFromFile ( "DADOS.TXT" );
+// maior = arranjo.searchFirstOdd ( );
 
 intArray readArrayFromFile(const char* nomeArquivo) {
     FILE *arquivo = fopen(nomeArquivo, "rt");
@@ -135,12 +135,12 @@ int ex1012() {
 }// Fim da função ex1012
 
 // Função para o exercício 1013
-procurar o menor valor par múltiplo de 3 em um arranjo.
-Para testar, receber um nome de arquivo como parâmetro e
-aplicar a função sobre o arranjo com os valores lidos;
-DICA: Usar o primeiro valor par múltiplo de 3, se houver, como referência inicial.
-Exemplo: arranjo = readArrayFromFile ( "DADOS.TXT" );
-menor = arranjo.searchFirstEvenx3 ( );
+// procurar o menor valor par múltiplo de 3 em um arranjo.
+// Para testar, receber um nome de arquivo como parâmetro e
+// aplicar a função sobre o arranjo com os valores lidos;
+// DICA: Usar o primeiro valor par múltiplo de 3, se houver, como referência inicial.
+// Exemplo: arranjo = readArrayFromFile ( "DADOS.TXT" );
+// menor = arranjo.searchFirstEvenx3 ( );
 
 int arrayCompare(intArray arranjo1, intArray arranjo2) {
     if(arranjo1.length != arranjo2.length){
