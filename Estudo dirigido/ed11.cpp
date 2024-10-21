@@ -406,13 +406,13 @@ void ex1018() {
 }// Fim da função ex1018
 
 // Função para o exercício 0919
-escalar dados em arranjo, entre duas posições dadas,
-multiplicando cada valor por uma constante.
-Para testar, ler o arquivo ("DADOS.TXT"),
-e armazenar os dados em arranjo;
-ler do teclado um valor inteiro para indicar a constante.
-Exemplo: arranjo = readArrayFromFile ( "DADOS.TXT" );
-novo = arranjo.scalar( constante, inicio, fim );
+// escalar dados em arranjo, entre duas posições dadas,
+// multiplicando cada valor por uma constante.
+// Para testar, ler o arquivo ("DADOS.TXT"),
+// e armazenar os dados em arranjo;
+// ler do teclado um valor inteiro para indicar a constante.
+// Exemplo: arranjo = readArrayFromFile ( "DADOS.TXT" );
+// novo = arranjo.scalar( constante, inicio, fim );
 
 Matrix matrixAdd(Matrix matriz1, int constante, Matrix matriz2) {
     Matrix soma;
