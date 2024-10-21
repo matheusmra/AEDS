@@ -330,12 +330,12 @@ void ex1016() {
 }// Fim da função ex1016
 
 // Função para o exercício 1017
-dizer se está ordenado, ou não, em ordem decrescente.
-DICA: Testar se não está desordenado, ou seja,
-se existe algum valor que seja maior que o seguinte.
-Não usar break !
-Exemplo: arranjo = readArrayFromFile ( "DADOS.TXT" );
-teste = arranjo.isDecrescent ( );
+// dizer se está ordenado, ou não, em ordem decrescente.
+// DICA: Testar se não está desordenado, ou seja,
+// se existe algum valor que seja maior que o seguinte.
+// Não usar break !
+// Exemplo: arranjo = readArrayFromFile ( "DADOS.TXT" );
+// teste = arranjo.isDecrescent ( );
 
 int matrixZero(Matrix matrix){
     for(int i = 0; i < matrix.rows; i++){
