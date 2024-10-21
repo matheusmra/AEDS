@@ -176,11 +176,11 @@ void ex1013() {
 }// Fim da função ex1013
 
 // Função para o exercício 1014
-somar todos os valores em um arranjo entre duas posições dadas.
-Para testar, receber um nome de arquivo como parâmetro e
-aplicar a função sobre o arranjo com os valores lidos;
-Exemplo: arranjo = readArrayFromFile ( "DADOS.TXT" );
-soma = arranjo.addInterval ( inicio, fim );
+// somar todos os valores em um arranjo entre duas posições dadas.
+// Para testar, receber um nome de arquivo como parâmetro e
+// aplicar a função sobre o arranjo com os valores lidos;
+// Exemplo: arranjo = readArrayFromFile ( "DADOS.TXT" );
+// soma = arranjo.addInterval ( inicio, fim );
 
 intArray arrayAdd(intArray arranjo1, int constante, intArray arranjo2) {
     intArray somaArranjo;
@@ -225,11 +225,11 @@ void ex1014() {
 }// Fim da função ex1014
 
 // Função para o exercício 1015
-achar a média dos valores em um arranjo entre duas posições dadas.
-Para testar, receber um nome de arquivo como parâmetro e
-aplicar a função sobre o arranjo com os valores lidos;
-Exemplo: arranjo = readArrayFromFile ( "DADOS.TXT" );
-media = arranjo.averageInterval ( inicio, fim );
+// achar a média dos valores em um arranjo entre duas posições dadas.
+// Para testar, receber um nome de arquivo como parâmetro e
+// aplicar a função sobre o arranjo com os valores lidos;
+// Exemplo: arranjo = readArrayFromFile ( "DADOS.TXT" );
+// media = arranjo.averageInterval ( inicio, fim );
 
 int isArrayCrescent(intArray arranjo) {
     for(int i = 0; i < arranjo.length - 1; i++){
