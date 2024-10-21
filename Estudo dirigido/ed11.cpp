@@ -75,40 +75,6 @@ int ex1011() {
 // Exemplo: arranjo = readArrayFromFile ( "DADOS.TXT" );
 // maior = arranjo.searchFirstOdd ( );
 
-intArray readArrayFromFile(const char* nomeArquivo) {
-    FILE *arquivo = fopen(nomeArquivo, "rt");
-    static intArray array;
-    if(arquivo){
-        fscanf(arquivo, "%d", &array.length);
-        fgetc(arquivo);
-        if(array.length <= 0){
-            printf("\n%s\n", "ERRO: Tamanho invalido.");
-            array.length = 0;
-        }else{
-            array.data = (int*)malloc(array.length * sizeof(int));
-            if(array.data){
-                array.ix = 0;
-                while(!feof(arquivo) && array.ix < array.length){
-                    fscanf(arquivo, "%d", &(array.data[array.ix]));
-                    fgetc(arquivo);
-                    array.ix++;
-                }
-            }
-        }
-        fclose(arquivo);
-    }
-    return array;
-}
-
-int arraySearch(int valor, intArray array){
-    for (int i = 0; i < array.length; i++){
-        if (array.data[i] == valor) {
-            return i;
-        }
-    }
-    return -1;
-}
-
 
 int ex1012() {
     // Identificação
