@@ -491,8 +491,8 @@ void ex1020() {
 }// Fim da função ex0320
 
 // Função para o exercício 10E1
-Incluir uma função/operador (11E1) para
-dizer se dois arranjos são diferentes, pelo menos em uma posição.
+// Incluir uma função/operador (11E1) para
+// dizer se dois arranjos são diferentes, pelo menos em uma posição.
 
 void sortArrayDown(intArray array){
     for int i = 0; i < array.length - 1; i++){
