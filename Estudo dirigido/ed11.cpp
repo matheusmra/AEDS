@@ -200,51 +200,6 @@ void ex1015() {
 // Exemplo: arranjo = readArrayFromFile ( "DADOS.TXT" );
 // teste = arranjo.negatives ( );
 
-Matrix readMatrixFromFile(const char* filename) {
-    FILE* file = fopen(filename, "r");
-    Matrix matrix;
-    if (file == NULL){
-        printf("Erro ao abrir o arquivo %s\n", filename);
-        matrix.data = NULL;
-        matrix.rows = matrix.cols = 0;
-        return matrix;
-    }
-    fscanf(file, "%d %d", &matrix.rows, &matrix.cols);
-    matrix.data = (int**)malloc(matrix.rows * sizeof(int*));
-    for(int i = 0; i < matrix.rows; i++) {
-        matrix.data[i] = (int*)malloc(matrix.cols * sizeof(int));
-        for(int j = 0; j < matrix.cols; j++){
-            fscanf(file, "%d", &matrix.data[i][j]);
-        }
-    }
-    fclose(file);
-    return matrix;
-}
-
-
-Matrix matrixTranspose(Matrix matrix) {
-    Matrix transposed;
-    transposed.rows = matrix.cols;
-    transposed.cols = matrix.rows;
-    transposed.data = (int**)malloc(transposed.rows * sizeof(int*));
-    for(int i = 0; i < transposed.rows; i++){
-        transposed.data[i] = (int*)malloc(transposed.cols * sizeof(int));
-        for(int j = 0; j < transposed.cols; j++){
-            transposed.data[i][j] = matrix.data[j][i];
-        }
-    }
-    return transposed;
-}
-
-
-void printMatrix(Matrix matrix){
-    for(int i = 0; i < matrix.rows; i++){
-        for(int j = 0; j < matrix.cols; j++){
-            printf("%d ", matrix.data[i][j]);
-        }
-        printf("\n");
-    }
-}
 
 void ex1016() {
 // identificacao
