@@ -227,16 +227,6 @@ void ex1016() {
 // Exemplo: arranjo = readArrayFromFile ( "DADOS.TXT" );
 // teste = arranjo.isDecrescent ( );
 
-int matrixZero(Matrix matrix){
-    for(int i = 0; i < matrix.rows; i++){
-        for(int j = 0; j < matrix.cols; j++){
-            if(matrix.data[i][j] != 0){
-                return 0;
-            }
-        }
-    }
-    return 1;
-}
 
 void ex1017() {
 // identificacao
