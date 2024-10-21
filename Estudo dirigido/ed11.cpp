@@ -364,14 +364,14 @@ void ex1017() {
 }// Fim da função ex0917
 
 // Função para o exercício 1018
-dizer se determinado valor está presente em arranjo,
-entre duas posições indicadas.
-Para testar, ler o arquivo ("DADOS.TXT"),
-e armazenar os dados em arranjo;
-ler do teclado um valor inteiro para ser procurado;
-determinar se o valor procurado existe no arranjo.
-Exemplo: arranjo = readArrayFromFile ( "DADOS.TXT" );
-existe = arranjo.searchInterval ( procurado, inicio, fim );
+// dizer se determinado valor está presente em arranjo,
+// entre duas posições indicadas.
+// Para testar, ler o arquivo ("DADOS.TXT"),
+// e armazenar os dados em arranjo;
+// ler do teclado um valor inteiro para ser procurado;
+// determinar se o valor procurado existe no arranjo.
+// Exemplo: arranjo = readArrayFromFile ( "DADOS.TXT" );
+// existe = arranjo.searchInterval ( procurado, inicio, fim );
 
 int matrixCompare(Matrix matrix1, Matrix matrix2) {
     if(matrix1.rows != matrix2.rows || matrix1.cols != matrix2.cols){
