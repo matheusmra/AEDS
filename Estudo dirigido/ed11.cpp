@@ -138,21 +138,7 @@ void ex1013() {
 // Exemplo: arranjo = readArrayFromFile ( "DADOS.TXT" );
 // soma = arranjo.addInterval ( inicio, fim );
 
-intArray arrayAdd(intArray arranjo1, int constante, intArray arranjo2) {
-    intArray somaArranjo;
-    somaArranjo.length = arranjo1.length;
-    somaArranjo.data = (int*)malloc(somaArranjo.length * sizeof(int));
-    if(arranjo1.length != arranjo2.length){
-        printf("ERRO: Os tamanhos dos arranjos não são compatíveis.\n");
-        somaArranjo.length = 0;
-        return somaArranjo;
-    }
 
-    for(int i = 0; i < arranjo1.length; i++){
-        somaArranjo.data[i] = arranjo1.data[i] + constante * arranjo2.data[i];
-    }
-    return somaArranjo;
-}
 
 
 void ex1014() {
