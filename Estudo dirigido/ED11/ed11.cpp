@@ -186,15 +186,33 @@ void ex1113() {
 // Exemplo: arranjo = readArrayFromFile ( "DADOS.TXT" );
 // soma = arranjo.addInterval ( inicio, fim );
 
-
+int addInterval(intArray array, int inicio, int fim){
+    if (inicio < 0 || fim >= array.length || inicio > fim) {
+        cout << "Erro: intervalo invalido.\n";
+        return -1;
+    }
+    int soma = 0;
+    for (int i = inicio; i <= fim; i++){
+            soma += array.data[i];
+   }
+    return soma;
+}
 
 
 void ex1114() {
 // identificacao
     cout << "\nExercicio 1114:\n\n" ;
-    // programa
-    // encerrar
-    cout << "\nAperte ENTER para continuar!\n" ;
+    int inicio = 0, fim = 0;
+    intArray array = readArrayFromFile("DADOS.TXT");
+    cout << "Inicio =";
+    cin >> inicio;
+    cout << "\nFim =";
+    cin >> fim;
+    int soma = addInterval(array, inicio, fim);
+    if(soma != -1){
+    cout << "A soma do arranjo eh: " << soma;
+    }
+    cout << "\nAperte ENTER para continuar!\n";
     getchar();
 }// Fim da função ex1014
 
