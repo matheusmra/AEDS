@@ -155,14 +155,28 @@ int ex1112() {
 // Exemplo: arranjo = readArrayFromFile ( "DADOS.TXT" );
 // menor = arranjo.searchFirstEvenx3 ( );
 
-
+int searchFirstEvenx3(intArray array){
+    int menor = INT_MAX;
+    for (int i = 0; i < array.length; i++){
+        if (array.data[i] % 2 == 0 && array.data[i] % 3 == 0){
+        if (array.data[i] < menor) {
+            menor = array.data[i];
+        }
+    }
+   }
+    return menor;
+}
 
 
 void ex1113() {
 // identificacao
     cout << "\nExercicio 1113:\n\n" ;
-    cout << "\nAperte ENTER para continuar!\n" ;
-    getchar();
+    intArray array = readArrayFromFile("DADOS.TXT");
+    int resposta = searchFirstEvenx3(array);
+    cout << "O menor valor par e multiplo de tres encontrado no arranjo foi: " << resposta;
+    cout << "\nAperte ENTER para continuar!\n";
+    getchar(); // Pausa para esperar ENTER
+
 }// Fim da função ex1013
 
 // Função para o exercício 1014
