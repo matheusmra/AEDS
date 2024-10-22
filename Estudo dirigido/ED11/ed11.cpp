@@ -33,6 +33,12 @@ void menuOpcoes() {
    cout << "  11 - Exercicio 11E1\n";
    cout << "  12 - Exercicio 11E2\n";
 } // fim menuOpcoes()
+typedef struct s_intArray
+{
+    int  length;
+    int* data  ;
+    int  ix    ;
+} intArray;
 
 // Função para o exercício 1111
 // ler a quantidade de elementos ( N ) a serem gerados;
@@ -43,12 +49,41 @@ void menuOpcoes() {
 // de números aleatórios ( N ) que serão gravados em seguida.
 // DICA: Usar a função rand( ), mas tentar limitar valores muito grandes.
 // Exemplo: valor = arranjo.randomIntGenerate ( inferior, superior );
+int RandomIntGenerate(int inferior, int superior) {
+    return rand() % (superior - inferior + 1) + inferior;
+}
 
+void gravarEmArquivo(const char* nomeArquivo, int* arranjo, int n) {
+    FILE *arquivo = fopen(nomeArquivo, "w");
+    if(arquivo == NULL){
+        cout << "Erro ao abrir o arquivo.\n";
+    }
+    fprintf(arquivo, "%d\n", n);
+    for(int i = 0; i < n; i++){
+        fprintf(arquivo, "%d\n", arranjo[i]);
+    }
+    fclose(arquivo);
+    cout << "Numeros gerados e gravados no arquivo \"" << nomeArquivo << "\".\n";
 
+}
 
 int ex1111() {
 // identificacao
     cout << "\nExercicio 1111:\n\n";
+    int inferior = 0, superior = 0, n = 0;
+    srand(time(NULL));
+    cout << "Inferior =";
+    cin >> inferior;
+    cout << "\nSuperior =";
+    cin >> superior;
+    cout << "\nQuantidade =";
+    cin>> n;
+    int arranjo[n];
+    for(int i = 0; i < n; i++){
+        arranjo[i] = RandomIntGenerate(inferior, superior);
+    }
+    gravarEmArquivo("DADOS.TXT", arranjo, n);
+    getchar();
     cout << "\nAperte ENTER para continuar!\n";
     getchar();
 }
@@ -62,13 +97,52 @@ int ex1111() {
 // Exemplo: arranjo = readArrayFromFile ( "DADOS.TXT" );
 // maior = arranjo.searchFirstOdd ( );
 
+intArray readArrayFromFile(const char* nomeArquivo) {
+    FILE *arquivo = fopen(nomeArquivo, "rt");
+    static intArray array;
+    if(arquivo){
+        fscanf(arquivo, "%d", &array.length);
+        fgetc(arquivo);
+        if(array.length <= 0){
+            cout << "\n%s\n", "ERRO: Tamanho invalido.";
+            array.length = 0;
+        }else{
+            array.data = (int*)malloc(array.length * sizeof(int));
+            if(array.data){
+                array.ix = 0;
+                while(!feof(arquivo) && array.ix < array.length){
+                    fscanf(arquivo, "%d", &(array.data[array.ix]));
+                    fgetc(arquivo);
+                    array.ix++;
+                }
+            }
+        }
+        fclose(arquivo);
+    }
+    return array;
+}
+
+int searchFirstOdd(intArray array){
+    int maior = 0;
+    for (int i = 0; i < array.length; i++){
+        if (array.data[i] % 2 == 0){
+        if (array.data[i] > maior) {
+            maior = array.data[i];
+        }
+    }
+   }
+    return maior;
+}
+
 
 int ex1112() {
     // Identificação
     cout << "\nExercicio 1112:\n\n";
+    intArray array = readArrayFromFile("DADOS.TXT");
+    int resposta = searchFirstOdd(array);
+    cout << "O maior valor par encontrado no arranjo foi: " << resposta;
     cout << "\nAperte ENTER para continuar!\n";
     getchar(); // Pausa para esperar ENTER
-    getchar(); // Lê o ENTER
 
     return 0; // Encerra com sucesso
 }// Fim da função ex1012
