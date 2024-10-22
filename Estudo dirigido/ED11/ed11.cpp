@@ -38,6 +38,54 @@ typedef struct s_intArray
     int  length;
     int* data  ;
     int  ix    ;
+ ////addInterval/////
+int addInterval(int inicio, int fim){
+    if (inicio < 0 || fim >= length || inicio > fim) {
+        cout << "Erro: intervalo invalido.\n";
+        return -1;
+    }
+    int soma = 0;
+    for (int i = inicio; i <= fim; i++){
+            soma += data[i];
+    }
+        return soma;
+    }
+
+int searchFirstOdd(){
+    int maior = 0;
+    bool achou = false;
+    for (int i = 0; i < length; i++){
+        if (data[i] % 2 == 0){
+        if (data[i] > maior) {
+            maior = data[i];
+            achou = true;
+        }
+    }
+   }if(achou){
+        return maior;
+   }else{
+        return -1;
+   }
+}
+
+int searchFirstEvenx3(){
+    int menor = INT_MAX;
+    bool achou = false;
+    for (int i = 0; i < length; i++){
+        if (data[i] % 2 == 0 && data[i] % 3 == 0){
+        if (data[i] < menor) {
+            menor = data[i];
+            achou = true;
+        }
+    }
+   }
+   if(achou){
+        return menor;
+   }else{
+        return -1;
+   }
+}
+
 } intArray;
 
 // Função para o exercício 1111
@@ -122,25 +170,18 @@ intArray readArrayFromFile(const char* nomeArquivo) {
     return array;
 }
 
-int searchFirstOdd(intArray array){
-    int maior = 0;
-    for (int i = 0; i < array.length; i++){
-        if (array.data[i] % 2 == 0){
-        if (array.data[i] > maior) {
-            maior = array.data[i];
-        }
-    }
-   }
-    return maior;
-}
 
 
 int ex1112() {
     // Identificação
     cout << "\nExercicio 1112:\n\n";
     intArray array = readArrayFromFile("DADOS.TXT");
-    int resposta = searchFirstOdd(array);
+    int resposta = array.searchFirstOdd();
+    if(resposta != -1){
     cout << "O maior valor par encontrado no arranjo foi: " << resposta;
+    }else{
+    cout << "O arranjo nao possui valor par";
+    }
     cout << "\nAperte ENTER para continuar!\n";
     getchar(); // Pausa para esperar ENTER
 
@@ -155,25 +196,18 @@ int ex1112() {
 // Exemplo: arranjo = readArrayFromFile ( "DADOS.TXT" );
 // menor = arranjo.searchFirstEvenx3 ( );
 
-int searchFirstEvenx3(intArray array){
-    int menor = INT_MAX;
-    for (int i = 0; i < array.length; i++){
-        if (array.data[i] % 2 == 0 && array.data[i] % 3 == 0){
-        if (array.data[i] < menor) {
-            menor = array.data[i];
-        }
-    }
-   }
-    return menor;
-}
 
 
 void ex1113() {
 // identificacao
     cout << "\nExercicio 1113:\n\n" ;
     intArray array = readArrayFromFile("DADOS.TXT");
-    int resposta = searchFirstEvenx3(array);
+    int resposta = array.searchFirstEvenx3();
+    if(resposta != -1){
     cout << "O menor valor par e multiplo de tres encontrado no arranjo foi: " << resposta;
+    }else{
+    cout << "O arranjo nao possui nenhum valor par e multiplo de tres";
+    }
     cout << "\nAperte ENTER para continuar!\n";
     getchar(); // Pausa para esperar ENTER
 
@@ -186,19 +220,6 @@ void ex1113() {
 // Exemplo: arranjo = readArrayFromFile ( "DADOS.TXT" );
 // soma = arranjo.addInterval ( inicio, fim );
 
-int addInterval(intArray array, int inicio, int fim){
-    if (inicio < 0 || fim >= array.length || inicio > fim) {
-        cout << "Erro: intervalo invalido.\n";
-        return -1;
-    }
-    int soma = 0;
-    for (int i = inicio; i <= fim; i++){
-            soma += array.data[i];
-   }
-    return soma;
-}
-
-
 void ex1114() {
 // identificacao
     cout << "\nExercicio 1114:\n\n" ;
@@ -208,7 +229,7 @@ void ex1114() {
     cin >> inicio;
     cout << "\nFim =";
     cin >> fim;
-    int soma = addInterval(array, inicio, fim);
+    int soma = array.addInterval(inicio, fim);
     if(soma != -1){
     cout << "A soma do arranjo eh: " << soma;
     }
