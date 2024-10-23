@@ -33,11 +33,20 @@ void menuOpcoes() {
    cout << "  11 - Exercicio 11E1\n";
    cout << "  12 - Exercicio 11E2\n";
 } // fim menuOpcoes()
-typedef struct s_intArray
-{
+class IntArray{
+public:
     int  length;
     int* data  ;
     int  ix    ;
+    IntArray() : length(0), data(nullptr), ix(0) {}
+
+    // Construtor para inicializar com um comprimento específico
+    IntArray(int len) : length(len), ix(0) {
+        data = new int[length];
+    }
+    ~IntArray(){
+        delete[] data;
+    }
  ////addInterval/////
 int addInterval(int inicio, int fim){
     if (inicio < 0 || fim >= length || inicio > fim) {
@@ -86,7 +95,7 @@ int searchFirstEvenx3(){
    }
 }
 
-} intArray;
+};
 
 // Função para o exercício 1111
 // ler a quantidade de elementos ( N ) a serem gerados;
@@ -145,27 +154,32 @@ int ex1111() {
 // Exemplo: arranjo = readArrayFromFile ( "DADOS.TXT" );
 // maior = arranjo.searchFirstOdd ( );
 
-intArray readArrayFromFile(const char* nomeArquivo) {
-    FILE *arquivo = fopen(nomeArquivo, "rt");
-    static intArray array;
-    if(arquivo){
+IntArray readArrayFromFile(const char* nomeArquivo) {
+    FILE* arquivo = fopen(nomeArquivo, "rt");
+    IntArray array;
+    if (arquivo) {
         fscanf(arquivo, "%d", &array.length);
-        fgetc(arquivo);
-        if(array.length <= 0){
-            cout << "\n%s\n", "ERRO: Tamanho invalido.";
+        fgetc(arquivo);  // Consume newline or any other delimiter
+
+        if (array.length <= 0) {
+            cout << "ERRO: Tamanho invalido." << endl;
             array.length = 0;
-        }else{
-            array.data = (int*)malloc(array.length * sizeof(int));
-            if(array.data){
+        } else {
+            array.data = new int[array.length];
+            if (array.data) {
                 array.ix = 0;
-                while(!feof(arquivo) && array.ix < array.length){
-                    fscanf(arquivo, "%d", &(array.data[array.ix]));
-                    fgetc(arquivo);
+                while (array.ix < array.length && fscanf(arquivo, "%d", &array.data[array.ix]) == 1) {
+                    fgetc(arquivo);  // Consume any newline or delimiter
                     array.ix++;
                 }
+            } else {
+                cout << "ERRO: Falha na alocacao de memoria." << endl;
+                array.length = 0;
             }
         }
         fclose(arquivo);
+    } else {
+        cout << "ERRO: Falha ao abrir o arquivo." << endl;
     }
     return array;
 }
@@ -175,7 +189,7 @@ intArray readArrayFromFile(const char* nomeArquivo) {
 int ex1112() {
     // Identificação
     cout << "\nExercicio 1112:\n\n";
-    intArray array = readArrayFromFile("DADOS.TXT");
+    IntArray array = readArrayFromFile("DADOS.TXT");
     int resposta = array.searchFirstOdd();
     if(resposta != -1){
     cout << "O maior valor par encontrado no arranjo foi: " << resposta;
@@ -201,7 +215,7 @@ int ex1112() {
 void ex1113() {
 // identificacao
     cout << "\nExercicio 1113:\n\n" ;
-    intArray array = readArrayFromFile("DADOS.TXT");
+    IntArray array = readArrayFromFile("DADOS.TXT");
     int resposta = array.searchFirstEvenx3();
     if(resposta != -1){
     cout << "O menor valor par e multiplo de tres encontrado no arranjo foi: " << resposta;
@@ -224,7 +238,7 @@ void ex1114() {
 // identificacao
     cout << "\nExercicio 1114:\n\n" ;
     int inicio = 0, fim = 0;
-    intArray array = readArrayFromFile("DADOS.TXT");
+    IntArray array = readArrayFromFile("DADOS.TXT");
     cout << "Inicio =";
     cin >> inicio;
     cout << "\nFim =";
@@ -234,6 +248,7 @@ void ex1114() {
     cout << "A soma do arranjo eh: " << soma;
     }
     cout << "\nAperte ENTER para continuar!\n";
+    getchar();
     getchar();
 }// Fim da função ex1014
 
