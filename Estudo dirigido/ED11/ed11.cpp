@@ -35,15 +35,9 @@ void menuOpcoes() {
 } // fim menuOpcoes()
 class IntArray{
 public:
-    int  length;
-    int* data  ;
-    int  ix    ;
-    IntArray() : length(0), data(nullptr), ix(0) {}
-
-    // Construtor para inicializar com um comprimento específico
-    IntArray(int len) : length(len), ix(0) {
-        data = new int[length];
-    }
+    int  length = 0;
+    int* data = NULL ;
+    int  ix  = 0;
     ~IntArray(){
         delete[] data;
     }
@@ -58,7 +52,35 @@ int addInterval(int inicio, int fim){
             soma += data[i];
     }
         return soma;
+}
+
+int averageInterval(int inicio, int fim){
+    if (inicio < 0 || fim >= length || inicio > fim) {
+        cout << "Erro: intervalo invalido.\n";
+        return -1;
     }
+    int soma = 0;
+    int total = 0;
+    for (int i = inicio; i <= fim; i++){
+            soma += data[i];
+            total++;
+    }
+        return soma/total;
+}
+
+bool searchInterval(int procurado, int inicio, int fim){
+    if (inicio < 0 || fim >= length || inicio > fim) {
+        cout << "Erro: intervalo invalido.\n";
+        return -1;
+    }
+    for (int i = inicio; i <= fim; i++){
+            if(data[i] == procurado){
+                return true;
+            }else{
+                return false;
+            }
+    }
+}
 
 int searchFirstOdd(){
     int maior = 0;
@@ -94,6 +116,29 @@ int searchFirstEvenx3(){
         return -1;
    }
 }
+
+int negatives(){
+    bool achou = false;
+    for (int i = 0; i < length; i++){
+        if (data[i] < 0){
+            achou = true;
+        }
+    }
+   if(achou){
+        return -1;
+   }else{
+        return 1;
+   }
+}
+
+bool isDecrescent() {
+        for (int i = 0; i < length - 1; i++) {
+            if (data[i] < data[i + 1]) {
+                return false;
+            }
+        }
+        return true;
+    }
 
 };
 
@@ -263,9 +308,19 @@ void ex1114() {
 
 void ex1115() {
 // identificacao
-    cout << "\nExercicio 1115:\n\n";
-    // programa
-    cout <<  "\nAperte ENTER para continuar!\n" ;
+    cout << "\nExercicio 1115:\n\n" ;
+    int inicio = 0, fim = 0;
+    IntArray array = readArrayFromFile("DADOS.TXT");
+    cout << "Inicio =";
+    cin >> inicio;
+    cout << "\nFim =";
+    cin >> fim;
+    int media = array.averageInterval(inicio, fim);
+    if(media != -1){
+    cout << "A media do intervalo eh: " << media;
+    }
+    cout << "\nAperte ENTER para continuar!\n";
+    getchar();
     getchar();
 }// Fim da função ex0915
 
@@ -280,9 +335,15 @@ void ex1115() {
 void ex1116() {
 // identificacao
     cout << "\nExercicio 1116:\n\n" ;
-    // programa
-    cout <<"\nAperte ENTER para continuar!\n";
-    getchar();
+    IntArray array = readArrayFromFile("DADOS.TXT");
+    int resposta = array.negatives();
+    if(resposta != -1){
+    cout << "O Arranjo nao possui valores negativos ";
+    }else{
+    cout << "O arranjo possui valores negativos";
+    }
+    cout << "\nAperte ENTER para continuar!\n";
+    getchar(); // Pausa para esperar ENTER
 }// Fim da função ex1016
 
 // Função para o exercício 1017
@@ -297,8 +358,15 @@ void ex1116() {
 void ex1117() {
 // identificacao
     cout << "\nExercicio 1117:\n\n" ;
+    IntArray array = readArrayFromFile("DADOS.TXT");
+    bool teste = array.isDecrescent();
+    if(teste){
+    cout << "O Arranjo esta ordenado em ordem decrescente";
+    }else{
+    cout << "O arranjo nao esta ordenado em ordem decrescente";
+    }
     cout << "\nAperte ENTER para continuar!\n";
-    getchar();
+    getchar(); // Pausa para esperar ENTER
 }// Fim da função ex0917
 
 // Função para o exercício 1018
@@ -315,8 +383,23 @@ void ex1117() {
 
 void ex1118() {
 // identificacao
-    cout << "\nExercicio 1118:\n\n";
+    cout << "\nExercicio 1118:\n\n" ;
+    int inicio = 0, fim = 0, procurado = 0;
+    IntArray array = readArrayFromFile("DADOS.TXT");
+    cout << "Inicio =";
+    cin >> inicio;
+    cout << "\nFim =";
+    cin >> fim;
+    cout << "\nProcurado =";
+    cin >> procurado;
+    bool existe = array.searchInterval(procurado, inicio, fim);
+    if(existe){
+    cout << "O numero: " << procurado << " existe no intervalo " << inicio << " e " << fim;
+    }else{
+    cout << "Nao existe";
+    }
     cout << "\nAperte ENTER para continuar!\n";
+    getchar();
     getchar();
 }// Fim da função ex1018
 
