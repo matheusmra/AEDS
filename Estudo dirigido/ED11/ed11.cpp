@@ -161,6 +161,8 @@ void sortDown() {
             }
         }
     }
+
+
 };
 
 // Função para o exercício 1111
@@ -496,8 +498,7 @@ void ex1120() {
 
 void ex11E1(){
     cout << "\nExercicio 11E1:\n\n";
-    cout << "\nAperte ENTER para continuar!\n";
-    getchar();
+
 }
 // fim exercicio09E1
 // Função para o exercício 10E2
