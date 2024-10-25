@@ -140,6 +140,27 @@ bool isDecrescent() {
         return true;
     }
 
+void scalar(int constante, int inicio, int fim) {
+        if (inicio < 0 || fim >= length || inicio > fim) {
+            std::cout << "Erro: intervalo invalido.\n";
+            return;
+        }
+        for (int i = inicio; i <= fim; i++) {
+            data[i] *= constante;
+        }
+    }
+
+void sortDown() {
+        for (int i = 0; i < length - 1; i++) {
+            for (int j = 0; j < length - i - 1; j++) {
+                if (data[j] < data[j + 1]) {
+                    int temp = data[j];
+                    data[j] = data[j + 1];
+                    data[j + 1] = temp;
+                }
+            }
+        }
+    }
 };
 
 // Função para o exercício 1111
@@ -417,7 +438,25 @@ void ex1118() {
 void ex1119() {
     // identificacao
     cout << "\nExercicio 1119:\n\n";
+    IntArray array = readArrayFromFile("DADOS.TXT");
+    int constante = 0, inicio = 0, fim = 0;
+    cout << "Digite o valor da constante: ";
+    cin >> constante;
+    cout << "Digite o inicio do intervalo: ";
+    cin >> inicio;
+    cout << "Digite o fim do intervalo: ";
+    cin >> fim;
+    cout << "Arranjo original:\n";
+    for (int i = 0; i < array.length; ++i) {
+        cout << array.data[i] << " ";
+    }
+    array.scalar(constante, inicio, fim);
+    cout << "\nArranjo modificado:\n";
+    for (int i = 0; i < array.length; ++i) {
+        cout << array.data[i] << " ";
+    }
     cout << "\nAperte ENTER para continuar!\n";
+    getchar();
     getchar();
 }// Fim da função ex0919
 
@@ -434,7 +473,18 @@ void ex1119() {
 void ex1120() {
 // identificacao
     cout << "\nExercicio 1120:\n\n";
+    IntArray array = readArrayFromFile("DADOS.TXT");
+    cout << "Arranjo original:\n";
+    for (int i = 0; i < array.length; ++i) {
+        cout << array.data[i] << " ";
+    }
+    array.sortDown();
+    cout << "\nArranjo modificado:\n";
+    for (int i = 0; i < array.length; ++i) {
+        cout << array.data[i] << " ";
+    }
     cout << "\nAperte ENTER para continuar!\n";
+    getchar();
     getchar();
 }// Fim da função ex0320
 
