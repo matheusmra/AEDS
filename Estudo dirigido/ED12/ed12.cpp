@@ -13,6 +13,7 @@
 // dependencias
 #include <iostream>
 #include <ctime>
+#include <fstream>
 using namespace std;
 // Tamanho max string
 const int TAM_STR = 80;
@@ -20,145 +21,58 @@ const int TAM_STR = 80;
 void menuOpcoes() {
    cout << "\nEscolha alguma das opcoes a seguir:\n\n";
    cout << "  0 - Encerrar programa\n";
-   cout << "  1 - Exercicio 1111\n";
-   cout << "  2 - Exercicio 1112\n";
-   cout << "  3 - Exercicio 1113\n";
-   cout << "  4 - Exercicio 1114\n";
-   cout << "  5 - Exercicio 1115\n";
-   cout << "  6 - Exercicio 1116\n";
-   cout << "  7 - Exercicio 1117\n";
-   cout << "  8 - Exercicio 1118\n";
-   cout << "  9 - Exercicio 1119\n";
-   cout << "  10 - Exercicio 1120\n";
-   cout << "  11 - Exercicio 11E1\n";
-   cout << "  12 - Exercicio 11E2\n";
+   cout << "  1 - Exercicio 1211\n";
+   cout << "  2 - Exercicio 1212\n";
+   cout << "  3 - Exercicio 1213\n";
+   cout << "  4 - Exercicio 1214\n";
+   cout << "  5 - Exercicio 1215\n";
+   cout << "  6 - Exercicio 1216\n";
+   cout << "  7 - Exercicio 1217\n";
+   cout << "  8 - Exercicio 1218\n";
+   cout << "  9 - Exercicio 1219\n";
+   cout << "  10 - Exercicio 1220\n";
+   cout << "  11 - Exercicio 12E1\n";
+   cout << "  12 - Exercicio 12E2\n";
 } // fim menuOpcoes()
-class IntArray{
+class Matrix{
 public:
-    int  length = 0;
-    int* data = NULL ;
-    int  ix  = 0;
-    ~IntArray(){
+    int  rows = 0;
+    int  cols = 0;
+    int** data = NULL ;
+    Matrix(int m, int n) : rows(m), cols(n) {
+        this->rows = m;
+        this->cols = n;
+        data = new int*[this->rows];
+        for (int i = 0; i < this->rows; ++i) {
+            data[i] = new int[this->cols];
+        }
+    }
+    ~Matrix(){
         delete[] data;
     }
- ////addInterval/////
-int addInterval(int inicio, int fim){
-    if (inicio < 0 || fim >= length || inicio > fim) {
-        cout << "Erro: intervalo invalido.\n";
-        return -1;
-    }
-    int soma = 0;
-    for (int i = inicio; i <= fim; i++){
-            soma += data[i];
-    }
-        return soma;
-}
 
-int averageInterval(int inicio, int fim){
-    if (inicio < 0 || fim >= length || inicio > fim) {
-        cout << "Erro: intervalo invalido.\n";
-        return -1;
-    }
-    int soma = 0;
-    int total = 0;
-    for (int i = inicio; i <= fim; i++){
-            soma += data[i];
-            total++;
-    }
-        return soma/total;
-}
-
-bool searchInterval(int procurado, int inicio, int fim){
-    if (inicio < 0 || fim >= length || inicio > fim) {
-        cout << "Erro: intervalo invalido.\n";
-        return -1;
-    }
-    for (int i = inicio; i <= fim; i++){
-            if(data[i] == procurado){
-                return true;
-            }else{
-                return false;
-            }
+void randomIntGenerate(int inferior, int superior) {
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            data[i][j] = rand() % (superior - inferior + 1) + inferior;
+        }
     }
 }
 
-int searchFirstOdd(){
-    int maior = 0;
-    bool achou = false;
-    for (int i = 0; i < length; i++){
-        if (data[i] % 2 == 0){
-        if (data[i] > maior) {
-            maior = data[i];
-            achou = true;
-        }
-    }
-   }if(achou){
-        return maior;
-   }else{
-        return -1;
-   }
-}
-
-int searchFirstEvenx3(){
-    int menor = INT_MAX;
-    bool achou = false;
-    for (int i = 0; i < length; i++){
-        if (data[i] % 2 == 0 && data[i] % 3 == 0){
-        if (data[i] < menor) {
-            menor = data[i];
-            achou = true;
-        }
-    }
-   }
-   if(achou){
-        return menor;
-   }else{
-        return -1;
-   }
-}
-
-int negatives(){
-    bool achou = false;
-    for (int i = 0; i < length; i++){
-        if (data[i] < 0){
-            achou = true;
-        }
-    }
-   if(achou){
-        return -1;
-   }else{
-        return 1;
-   }
-}
-
-bool isDecrescent() {
-        for (int i = 0; i < length - 1; i++) {
-            if (data[i] < data[i + 1]) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-void scalar(int constante, int inicio, int fim) {
-        if (inicio < 0 || fim >= length || inicio > fim) {
-            std::cout << "Erro: intervalo invalido.\n";
-            return;
-        }
-        for (int i = inicio; i <= fim; i++) {
-            data[i] *= constante;
-        }
-    }
-
-void sortDown() {
-        for (int i = 0; i < length - 1; i++) {
-            for (int j = 0; j < length - i - 1; j++) {
-                if (data[j] < data[j + 1]) {
-                    int temp = data[j];
-                    data[j] = data[j + 1];
-                    data[j + 1] = temp;
+void writeToFile(const char* filename) {
+        std::ofstream file(filename);
+        if (file.is_open()) {
+            file << rows << " " << cols << "\n";
+            for (int i = 0; i < rows; ++i) {
+                for (int j = 0; j < cols; ++j) {
+                    file << data[i][j] << " ";
                 }
+                file << "\n";
             }
+            file.close();
+            cout << "Matriz gerada e gravada no arquivo \"" << filename << "\".\n";
+        } else {
+            cout << "Erro ao abrir o arquivo.\n";
         }
     }
 
@@ -174,40 +88,19 @@ void sortDown() {
 // de números aleatórios ( N ) que serão gravados em seguida.
 // DICA: Usar a função rand( ), mas tentar limitar valores muito grandes.
 // Exemplo: valor = arranjo.randomIntGenerate ( inferior, superior );
-int RandomIntGenerate(int inferior, int superior) {
-    return rand() % (superior - inferior + 1) + inferior;
-}
 
-void gravarEmArquivo(const char* nomeArquivo, int* arranjo, int n) {
-    FILE *arquivo = fopen(nomeArquivo, "w");
-    if(arquivo == NULL){
-        cout << "Erro ao abrir o arquivo.\n";
-    }
-    fprintf(arquivo, "%d\n", n);
-    for(int i = 0; i < n; i++){
-        fprintf(arquivo, "%d\n", arranjo[i]);
-    }
-    fclose(arquivo);
-    cout << "Numeros gerados e gravados no arquivo \"" << nomeArquivo << "\".\n";
-
-}
 
 int ex1211() {
 // identificacao
     cout << "\nExercicio 1211:\n\n";
-    int inferior = 0, superior = 0, n = 0;
-    srand(time(NULL));
-    cout << "Inferior =";
-    cin >> inferior;
-    cout << "\nSuperior =";
-    cin >> superior;
-    cout << "\nQuantidade =";
-    cin>> n;
-    int arranjo[n];
-    for(int i = 0; i < n; i++){
-        arranjo[i] = RandomIntGenerate(inferior, superior);
-    }
-    gravarEmArquivo("DADOS.TXT", arranjo, n);
+    int l = 0, c = 0;
+    cout << "Digite o numero de linhas:";
+    cin >> l;
+    cout << "Digite o numero de colunas";
+    cin >> c;
+    Matrix matrix(l,c);
+    matrix.randomIntGenerate(1,100);
+    matrix.writeToFile("DADOS.TXT");
     getchar();
     cout << "\nAperte ENTER para continuar!\n";
     getchar();
@@ -222,48 +115,13 @@ int ex1211() {
 // Exemplo: arranjo = readArrayFromFile ( "DADOS.TXT" );
 // maior = arranjo.searchFirstOdd ( );
 
-IntArray readArrayFromFile(const char* nomeArquivo) {
-    FILE* arquivo = fopen(nomeArquivo, "rt");
-    IntArray array;
-    if (arquivo) {
-        fscanf(arquivo, "%d", &array.length);
-        fgetc(arquivo);  // Consume newline or any other delimiter
-
-        if (array.length <= 0) {
-            cout << "ERRO: Tamanho invalido." << endl;
-            array.length = 0;
-        } else {
-            array.data = new int[array.length];
-            if (array.data) {
-                array.ix = 0;
-                while (array.ix < array.length && fscanf(arquivo, "%d", &array.data[array.ix]) == 1) {
-                    fgetc(arquivo);  // Consume any newline or delimiter
-                    array.ix++;
-                }
-            } else {
-                cout << "ERRO: Falha na alocacao de memoria." << endl;
-                array.length = 0;
-            }
-        }
-        fclose(arquivo);
-    } else {
-        cout << "ERRO: Falha ao abrir o arquivo." << endl;
-    }
-    return array;
-}
 
 
 
 int ex1212() {
     // Identificação
     cout << "\nExercicio 1212:\n\n";
-    IntArray array = readArrayFromFile("DADOS.TXT");
-    int resposta = array.searchFirstOdd();
-    if(resposta != -1){
-    cout << "O maior valor par encontrado no arranjo foi: " << resposta;
-    }else{
-    cout << "O arranjo nao possui valor par";
-    }
+
     cout << "\nAperte ENTER para continuar!\n";
     getchar(); // Pausa para esperar ENTER
 
@@ -283,13 +141,6 @@ int ex1212() {
 void ex1213() {
 // identificacao
     cout << "\nExercicio 1213:\n\n" ;
-    IntArray array = readArrayFromFile("DADOS.TXT");
-    int resposta = array.searchFirstEvenx3();
-    if(resposta != -1){
-    cout << "O menor valor par e multiplo de tres encontrado no arranjo foi: " << resposta;
-    }else{
-    cout << "O arranjo nao possui nenhum valor par e multiplo de tres";
-    }
     cout << "\nAperte ENTER para continuar!\n";
     getchar(); // Pausa para esperar ENTER
 
@@ -305,16 +156,7 @@ void ex1213() {
 void ex1214() {
 // identificacao
     cout << "\nExercicio 1214:\n\n" ;
-    int inicio = 0, fim = 0;
-    IntArray array = readArrayFromFile("DADOS.TXT");
-    cout << "Inicio =";
-    cin >> inicio;
-    cout << "\nFim =";
-    cin >> fim;
-    int soma = array.addInterval(inicio, fim);
-    if(soma != -1){
-    cout << "A soma do arranjo eh: " << soma;
-    }
+
     cout << "\nAperte ENTER para continuar!\n";
     getchar();
     getchar();
@@ -332,16 +174,7 @@ void ex1214() {
 void ex1215() {
 // identificacao
     cout << "\nExercicio 1215:\n\n" ;
-    int inicio = 0, fim = 0;
-    IntArray array = readArrayFromFile("DADOS.TXT");
-    cout << "Inicio =";
-    cin >> inicio;
-    cout << "\nFim =";
-    cin >> fim;
-    int media = array.averageInterval(inicio, fim);
-    if(media != -1){
-    cout << "A media do intervalo eh: " << media;
-    }
+
     cout << "\nAperte ENTER para continuar!\n";
     getchar();
     getchar();
@@ -358,13 +191,7 @@ void ex1215() {
 void ex1216() {
 // identificacao
     cout << "\nExercicio 1216:\n\n" ;
-    IntArray array = readArrayFromFile("DADOS.TXT");
-    int resposta = array.negatives();
-    if(resposta != -1){
-    cout << "O Arranjo nao possui valores negativos ";
-    }else{
-    cout << "O arranjo possui valores negativos";
-    }
+
     cout << "\nAperte ENTER para continuar!\n";
     getchar(); // Pausa para esperar ENTER
 }// Fim da função ex1016
@@ -381,13 +208,7 @@ void ex1216() {
 void ex1217() {
 // identificacao
     cout << "\nExercicio 1217:\n\n" ;
-    IntArray array = readArrayFromFile("DADOS.TXT");
-    bool teste = array.isDecrescent();
-    if(teste){
-    cout << "O Arranjo esta ordenado em ordem decrescente";
-    }else{
-    cout << "O arranjo nao esta ordenado em ordem decrescente";
-    }
+
     cout << "\nAperte ENTER para continuar!\n";
     getchar(); // Pausa para esperar ENTER
 }// Fim da função ex0917
@@ -407,20 +228,7 @@ void ex1217() {
 void ex1218() {
 // identificacao
     cout << "\nExercicio 1218:\n\n" ;
-    int inicio = 0, fim = 0, procurado = 0;
-    IntArray array = readArrayFromFile("DADOS.TXT");
-    cout << "Inicio =";
-    cin >> inicio;
-    cout << "\nFim =";
-    cin >> fim;
-    cout << "\nProcurado =";
-    cin >> procurado;
-    bool existe = array.searchInterval(procurado, inicio, fim);
-    if(existe){
-    cout << "O numero: " << procurado << " existe no intervalo " << inicio << " e " << fim;
-    }else{
-    cout << "Nao existe";
-    }
+
     cout << "\nAperte ENTER para continuar!\n";
     getchar();
     getchar();
@@ -440,23 +248,7 @@ void ex1218() {
 void ex1219() {
     // identificacao
     cout << "\nExercicio 1219:\n\n";
-    IntArray array = readArrayFromFile("DADOS.TXT");
-    int constante = 0, inicio = 0, fim = 0;
-    cout << "Digite o valor da constante: ";
-    cin >> constante;
-    cout << "Digite o inicio do intervalo: ";
-    cin >> inicio;
-    cout << "Digite o fim do intervalo: ";
-    cin >> fim;
-    cout << "Arranjo original:\n";
-    for (int i = 0; i < array.length; ++i) {
-        cout << array.data[i] << " ";
-    }
-    array.scalar(constante, inicio, fim);
-    cout << "\nArranjo modificado:\n";
-    for (int i = 0; i < array.length; ++i) {
-        cout << array.data[i] << " ";
-    }
+
     cout << "\nAperte ENTER para continuar!\n";
     getchar();
     getchar();
@@ -475,16 +267,7 @@ void ex1219() {
 void ex1220() {
 // identificacao
     cout << "\nExercicio 1120:\n\n";
-    IntArray array = readArrayFromFile("DADOS.TXT");
-    cout << "Arranjo original:\n";
-    for (int i = 0; i < array.length; ++i) {
-        cout << array.data[i] << " ";
-    }
-    array.sortDown();
-    cout << "\nArranjo modificado:\n";
-    for (int i = 0; i < array.length; ++i) {
-        cout << array.data[i] << " ";
-    }
+
     cout << "\nAperte ENTER para continuar!\n";
     getchar();
     getchar();
