@@ -46,6 +46,26 @@ void salvar(const char* NomeArquivo, int matriz[5][5]){
 
 }
 
+void ler(const char* NomeArquivo) {
+    int f_matriz[5][5];
+    FILE *f = fopen(NomeArquivo, "r");
+    if (f) {
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+                if (fscanf(f, "%d", &f_matriz[i][j]) != 1) {
+                    printf("Erro ao ler o arquivo\n");
+                    fclose(f);
+                    return;
+                }
+            }
+        }
+        imprimir_matriz(f_matriz);
+        fclose(f);
+    } else {
+        printf("Erro ao abrir o arquivo\n");
+    }
+}
+
 int main(){
     int matriz[5][5];
     preencher_matriz(matriz);
@@ -57,6 +77,7 @@ int main(){
     int media = media_linha(matriz,n);
     printf("\nA media dos elementos da linha (%d) eh %d", n, media);
     salvar("MATRIZ.TXT", matriz);
+    ler("MATRIZE.TXT");
 
 
 
