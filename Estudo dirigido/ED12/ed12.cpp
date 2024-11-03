@@ -197,9 +197,9 @@ int searchCol(int procurado){
 }
 
 bool isCrescent(){
-    for(int i = 0; i < rows; i++) {
-        for(int j = 0; j < cols - 1; j++) {
-            if(data[i][j] >= data[i][j + 1]) {
+    for(int i = 0; i < rows; i++){
+        for(int j = 0; j < cols - 1; j++){
+            if(data[i][j] >= data[i][j + 1]){
                 return false;
             }
         }
