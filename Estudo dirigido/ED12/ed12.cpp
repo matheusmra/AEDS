@@ -196,6 +196,17 @@ int searchCol(int procurado){
     return -1;
 }
 
+bool isCrescent(){
+    for(int i = 0; i < rows; i++) {
+        for(int j = 0; j < cols - 1; j++) {
+            if(data[i][j] >= data[i][j + 1]) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
 Matrix transpose() {
         Matrix transpose(cols, rows);
         for(int i = 0; i < rows; i++){
@@ -502,6 +513,7 @@ void ex12E1(){
     }else{
         cout << "A matriz nao eh crescente";
     }
+    close();
 }
 // fim exercicio09E1
 // Função para o exercício 10E2
