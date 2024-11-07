@@ -24,7 +24,6 @@ void close()
 {
     cout << "\nAperte ENTER para continuar!\n";
     getchar();
-    getchar();
 }
 void menuOpcoes()
 {
@@ -49,6 +48,21 @@ class Contato
 private:
     string nome;
     string tel;
+    bool isPhoneNumberValid(string tel)
+    {
+        if (tel.empty())
+        {
+            return false;
+        }
+        for (size_t i = 0; i < tel.size(); ++i)
+        {
+            if (!isdigit(tel[i]) && tel[i] != '-')
+            {
+                return false;
+            }
+        }
+        return true;
+    }
 public:
     void readName()
     {
@@ -76,11 +90,13 @@ public:
             cout << "Nome nao foi atribuido.\n";
         }
     }
-    void readPhone(){
+    void readPhone()
+    {
         string newphone;
         cout << "Telefone:" << endl;
         getline(cin, newphone);
-        if (!newphone.empty()){
+        if (!newphone.empty())
+        {
             tel = newphone;
         }
         else
@@ -88,16 +104,55 @@ public:
             cout << "Erro ao cadastrar telefone" << endl;
         }
     }
-    void showPhone(){
+
+    void showPhone()
+    {
         if (!tel.empty())
         {
             cout << "Telefone: " << tel << endl;
+            bool teste = isPhoneNumberValid(tel);
+            if(teste)
+            {
+                cout << "\nO numero eh valido!" << endl;
+            }
+            else
+            {
+                cout << "\nO numero digitado nao eh valido" << endl;
+            }
         }
         else
         {
             cout << "Telefone nao foi atribuido.\n";
         }
     }
+    void readFromFile(string nomearq)
+    {
+        ifstream file(nomearq);
+        if (file.is_open())
+        {
+            getline(file, nome);
+            getline(file, tel);
+            file.close();
+        }
+        else
+        {
+            cout << "Erro ao abrir o arquivo." << endl;
+        }
+    }
+
+    void exibirContato()
+    {
+        if (!nome.empty() && !tel.empty())
+        {
+            cout << "Nome: " << nome << endl;
+            cout << "Telefone: " << tel << endl;
+        }
+        else
+        {
+            cout << "Contato nao encontrado" << endl;
+        }
+    }
+
 };
 
 
@@ -133,7 +188,9 @@ void ex1313()
 {
 // identificacao
     cout << "\nExercicio 1313:\n\n" ;
-
+    Contato contato1;
+    contato1.readPhone();
+    contato1.showPhone();
     close();
 
 }
@@ -142,6 +199,9 @@ void ex1314()
 {
 // identificacao
     cout << "\nExercicio 1314:\n\n" ;
+    Contato contato1;
+    contato1.readFromFile("contato.txt");
+    contato1.exibirContato();
     close();
 }
 
