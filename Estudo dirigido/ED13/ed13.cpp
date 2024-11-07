@@ -152,6 +152,18 @@ public:
             cout << "Contato nao encontrado" << endl;
         }
     }
+    void writeToFile(string nomearq) {
+        ofstream file(nomearq);
+        if (file.is_open()) {
+            file << nome << endl;
+            file << tel << endl;
+            file << nome.size() << endl;
+            file << tel.size() << endl;
+            file.close();
+        } else {
+             cout << "Erro ao abrir o arquivo." << endl;
+        }
+    }
 
 };
 
@@ -211,6 +223,16 @@ void ex1315()
 {
 // identificacao
     cout << "\nExercicio 1315:\n\n" ;
+    Contato contato1;
+    contato1.readName();
+    contato1.readPhone();
+    contato1.writeToFile("dados.txt");
+
+    Contato contato2;
+    contato2.readFromFile("dados.txt");
+    cout << endl;
+    cout << "Dados do arquivo: dados.txt" <<endl;
+    contato2.exibirContato();
     close();
 }
 
