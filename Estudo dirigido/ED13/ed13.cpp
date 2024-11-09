@@ -48,6 +48,7 @@ class Contato
 private:
     string nome;
     string tel;
+    string tel2;
     bool isPhoneNumberValid(string tel)
     {
         if (tel.empty())
@@ -132,6 +133,7 @@ public:
         {
             getline(file, nome);
             getline(file, tel);
+            getline(file, tel2);
             file.close();
         }
         else
@@ -146,6 +148,11 @@ public:
         {
             cout << "Nome: " << nome << endl;
             cout << "Telefone: " << tel << endl;
+            if (!tel2.empty()) {
+            cout << "Telefone 2: " << tel2 << endl;
+        }else{
+            cout << "Telefone 2: Nao informado" << endl;
+        }
         }
         else
         {
@@ -157,11 +164,44 @@ public:
         if (file.is_open()) {
             file << nome << endl;
             file << tel << endl;
+            file << tel2 << endl;
             file << nome.size() << endl;
             file << tel.size() << endl;
             file.close();
         } else {
              cout << "Erro ao abrir o arquivo." << endl;
+        }
+    }
+
+    int phones() {
+        if(!tel2.empty() && !tel.empty()) {
+            return 2;
+        }else if(!tel2.empty() && tel.empty()) {
+            return 1;
+        }else if(tel2.empty() && !tel.empty()){
+            return 1;
+        }else{
+            return 0;
+        }
+    }
+
+    void setPhone2a() {
+        string newphone;
+        if (tel2.empty()) {
+            char resposta;
+            cout << "Deseja adicionar um segundo numero de telefone? (s/n): " << endl;
+            cin >> resposta;
+            cin.ignore();
+            if (resposta == 's' || resposta == 'S') {
+                cout << "Telefone 2: " << endl;
+                getline(cin, newphone);
+                tel2 = newphone;
+                cout << "Segundo telefone adicionado com sucesso!" << endl;
+            } else {
+                cout << "Operação cancelada." << endl;
+            }
+        } else {
+            cout << "O contato ja possui um segundo telefone: " << tel2 << endl;
         }
     }
 
@@ -249,6 +289,10 @@ void ex1317()
 {
 // identificacao
     cout << "\nExercicio 1317:\n\n" ;
+    Contato contato1;
+    contato1.readFromFile("dados.txt");
+    int n = contato1.phones();
+    cout << "O Contato possui: " << n << " numeros." << endl;
     close();
 }
 
@@ -258,6 +302,12 @@ void ex1318()
 {
 // identificacao
     cout << "\nExercicio 1318:\n\n" ;
+    Contato contato1;
+    contato1.readName();
+    contato1.readPhone();
+    contato1.exibirContato();
+    contato1.setPhone2a();
+    contato1.exibirContato();
     close();
 }
 
