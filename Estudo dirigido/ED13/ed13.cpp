@@ -49,6 +49,8 @@ private:
     string nome;
     string tel;
     string tel2;
+    string residencial;
+    string comercial;
     bool isPhoneNumberValid(string tel)
     {
         if (tel.empty())
@@ -205,6 +207,66 @@ public:
         }
     }
 
+        void setPhone2b() {
+        string newphone;
+        if (!tel2.empty()) {
+            cout << "Numero atual:" << tel2 << endl;
+            cout << "\n";
+            cout << "Escreva seu novo numero" << endl;
+            cin >> newphone;
+            cout << "\n";
+            cout << "Numero atualizado: " << newphone << endl;
+        } else {
+            cout << "Erro" << endl;
+        }
+    }
+        void setPhone2c() {
+        if (!tel2.empty()) {
+                tel2 = "";
+                cout << "Telefone deletado" << endl;
+        } else {
+            cout << "Erro" << endl;
+        }
+    }
+    void read_adress(){
+        string newadress1;
+        string newadress2;
+        cout << "Endereco comercial:" << endl;
+        getline(cin, newadress1);
+        if (!newadress1.empty())
+        {
+            comercial = newadress1;
+        }
+        else
+        {
+            cout << "Erro ao cadastrar endereco.\n";
+
+        }
+        cout << "\n";
+        cout << "Endereco Residencial:" << endl;
+        getline(cin, newadress2);
+        if (!newadress2.empty())
+        {
+            residencial = newadress2;
+        }
+        else
+        {
+            cout << "Erro ao cadastrar endereco.\n";
+
+        }
+
+    }
+    void show_newinfo(){
+        cout << "\n";
+        cout << "Nome: " << nome << endl;
+        cout << "Telefones: " << tel << tel2 << endl;
+        cout << "Endereco comercial:" << endl;
+        cout << comercial << endl;
+        cout << "Endereco Residencial:" << endl;
+        cout << residencial << endl;
+
+    }
+
 };
 
 
@@ -317,6 +379,15 @@ void ex1319()
 {
     // identificacao
     cout << "\nExercicio 1319:\n\n";
+    Contato contato1;
+    contato1.readName();
+    contato1.readPhone();
+    contato1.exibirContato();
+    cout << "\n";
+    contato1.setPhone2a();
+    cout << "\n";
+    contato1.setPhone2b();
+    getchar();
     close();
 }
 
@@ -326,6 +397,19 @@ void ex1320()
 {
 // identificacao
     cout << "\nExercicio 1320:\n\n";
+    Contato contato1;
+    contato1.readName();
+    contato1.readPhone();
+    contato1.exibirContato();
+    cout << "\n";
+    contato1.setPhone2a();
+    cout << "\n";
+    contato1.exibirContato();
+    cout << "\n";
+    contato1.setPhone2c();
+    cout << "\n";
+    contato1.exibirContato();
+    getchar();
     close();
 }
 
@@ -344,8 +428,11 @@ void ex13E2()
 {
     // identificacao
     cout << "\nExercicio 13E2:\n\n";
-    cout << "\nAperte ENTER para continuar!\n";
-    getchar();
+    Contato contato1;
+    contato1.readFromFile("dados.txt");
+    contato1.read_adress();
+    contato1.show_newinfo();
+    close();
 }
 
 // Fun��o principal
