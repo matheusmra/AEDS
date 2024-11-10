@@ -150,85 +150,116 @@ public:
         {
             cout << "Nome: " << nome << endl;
             cout << "Telefone: " << tel << endl;
-            if (!tel2.empty()) {
-            cout << "Telefone 2: " << tel2 << endl;
-        }else{
-            cout << "Telefone 2: Nao informado" << endl;
-        }
+            if (!tel2.empty())
+            {
+                cout << "Telefone 2: " << tel2 << endl;
+            }
+            else
+            {
+                cout << "Telefone 2: Nao informado" << endl;
+            }
         }
         else
         {
             cout << "Contato nao encontrado" << endl;
         }
     }
-    void writeToFile(string nomearq) {
+    void writeToFile(string nomearq)
+    {
         ofstream file(nomearq);
-        if (file.is_open()) {
+        if (file.is_open())
+        {
             file << nome << endl;
             file << tel << endl;
             file << tel2 << endl;
             file << nome.size() << endl;
             file << tel.size() << endl;
             file.close();
-        } else {
-             cout << "Erro ao abrir o arquivo." << endl;
+        }
+        else
+        {
+            cout << "Erro ao abrir o arquivo." << endl;
         }
     }
 
-    int phones() {
-        if(!tel2.empty() && !tel.empty()) {
+    int phones()
+    {
+        if(!tel2.empty() && !tel.empty())
+        {
             return 2;
-        }else if(!tel2.empty() && tel.empty()) {
+        }
+        else if(!tel2.empty() && tel.empty())
+        {
             return 1;
-        }else if(tel2.empty() && !tel.empty()){
+        }
+        else if(tel2.empty() && !tel.empty())
+        {
             return 1;
-        }else{
+        }
+        else
+        {
             return 0;
         }
     }
 
-    void setPhone2a() {
+    void setPhone2a()
+    {
         string newphone;
-        if (tel2.empty()) {
+        if (tel2.empty())
+        {
             char resposta;
             cout << "Deseja adicionar um segundo numero de telefone? (s/n): " << endl;
             cin >> resposta;
             cin.ignore();
-            if (resposta == 's' || resposta == 'S') {
+            if (resposta == 's' || resposta == 'S')
+            {
                 cout << "Telefone 2: " << endl;
                 getline(cin, newphone);
                 tel2 = newphone;
                 cout << "Segundo telefone adicionado com sucesso!" << endl;
-            } else {
+            }
+            else
+            {
                 cout << "Operação cancelada." << endl;
             }
-        } else {
+        }
+        else
+        {
             cout << "O contato ja possui um segundo telefone: " << tel2 << endl;
         }
     }
 
-        void setPhone2b() {
+    void setPhone2b()
+    {
         string newphone;
-        if (!tel2.empty()) {
+        if (!tel2.empty())
+        {
             cout << "Numero atual:" << tel2 << endl;
             cout << "\n";
             cout << "Escreva seu novo numero" << endl;
             cin >> newphone;
             cout << "\n";
             cout << "Numero atualizado: " << newphone << endl;
-        } else {
+        }
+        else
+        {
             cout << "Erro" << endl;
         }
     }
-        void setPhone2c() {
-        if (!tel2.empty()) {
-                tel2 = "";
-                cout << "Telefone deletado" << endl;
-        } else {
+    void setPhone2c()
+    {
+        if (!tel2.empty())
+        {
+            tel2 = "";
+            cout << "Telefone deletado" << endl;
+        }
+        else
+        {
             cout << "Erro" << endl;
         }
     }
-    void read_adress(){
+    void read_adress()
+    {
         string newadress1;
         string newadress2;
         cout << "Endereco comercial:" << endl;
@@ -256,7 +287,8 @@ public:
         }
 
     }
-    void show_newinfo(){
+    void show_newinfo()
+    {
         cout << "\n";
         cout << "Nome: " << nome << endl;
         cout << "Telefones: " << tel << tel2 << endl;
@@ -343,6 +375,9 @@ void ex1316()
 {
 // identificacao
     cout << "\nExercicio 1316:\n\n" ;
+    Contato contato1;
+    contato1.readFromFile("dados.txt");
+    contato1.exibirContato();
     close();
 }
 
