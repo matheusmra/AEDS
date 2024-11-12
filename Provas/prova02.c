@@ -19,7 +19,8 @@
 // Tamanho max string
 const int TAM_STR = 80;
 // Função para mostrar o menu de opções
-void menuOpcoes() {
+void menuOpcoes()
+{
     printf("\nEscolha alguma das opcoes a seguir:\n\n");
     printf("  0 - Encerrar programa\n");
     printf("  1 - Questao 01\n");
@@ -31,8 +32,10 @@ void menuOpcoes() {
     printf("  7 - Questao 07\n");
     printf("  8 - Questao 08\n");
 }
-void question01(int n, char text[]){
-    for(int x = n/2; x < n; x++){
+void question01(int n, char text[])
+{
+    for(int x = n/2; x < n; x++)
+    {
         text[n+1]=text[x];
         text[x] = text[n-x];
         text[n-x] = text[n+1];
@@ -40,14 +43,16 @@ void question01(int n, char text[]){
     }
 
 }
-void opcoes01(){
+void opcoes01()
+{
     printf("A) patso");
     printf("\nB) patos");
     printf("\nC) posta");
     printf("\nD) potsa");
 }
 
-int p01() {
+int p01()
+{
 // identificacao
     printf( "\nExercicio 01:\n\n" );
     opcoes01();
@@ -59,25 +64,30 @@ int p01() {
     getchar();
 }
 
-void p_02(int v, int m, int n, int a[]){
+void p_02(int v, int m, int n, int a[])
+{
     int z = 0;
-    for(int x = 1; x <=v; x++){
-    for(int y = n - 1; y >= 1; y--){
-        z=a[y];
-        a[y] = a[y-1];
-         a[y-1] = z;
-    }
+    for(int x = 1; x <=v; x++)
+    {
+        for(int y = n - 1; y >= 1; y--)
+        {
+            z=a[y];
+            a[y] = a[y-1];
+            a[y-1] = z;
+        }
     }
     printf("\nAlternativa correta: (C) = ");
-    for(int i = 0; i < 10; i++){
-    printf(" %d", a[i]);
+    for(int i = 0; i < 10; i++)
+    {
+        printf(" %d", a[i]);
     }
 
 
 
 }
 
-void opcoes02(){
+void opcoes02()
+{
     printf("A) p:(n), q:(x>m+1)");
     printf("\nB) p:(n), q:(x>m-1)");
     printf("\nC) p:(n-1), q:(x>m)");
@@ -87,7 +97,8 @@ void opcoes02(){
 
 
 
-void p02() {
+void p02()
+{
 // identificacao
     printf( "\nExercicio 02:\n\n" );
     opcoes02();
@@ -97,11 +108,15 @@ void p02() {
     getchar();
 }
 
-int f_03(int n, int m[][n]){
+int f_03(int n, int m[][n])
+{
     int z = 0;
-    for(int x = 0; x <n; x++){
-        for(int y =0; y < n; y++){
-            if(x-y<0 && x+1<n-y){
+    for(int x = 0; x <n; x++)
+    {
+        for(int y =0; y < n; y++)
+        {
+            if(x-y<0 && x+1<n-y)
+            {
                 z = z+m[x][y];
             }
         }
@@ -109,7 +124,8 @@ int f_03(int n, int m[][n]){
     return (z);
 }
 
-void opcoes03 (){
+void opcoes03 ()
+{
     printf("\na) 9");
     printf("\nb) 13");
     printf("\nc) 15");
@@ -117,7 +133,8 @@ void opcoes03 (){
 }
 
 
-void p03() {
+void p03()
+{
 // identificacao
     printf( "\nExercicio 03:\n\n" );
     opcoes03();
@@ -127,9 +144,11 @@ void p03() {
     getchar();
 }
 
-int f_04(int m, char * text1, int n, char * text2){
+int f_04(int m, char * text1, int n, char * text2)
+{
     int result = 0;
-    if(text1 && text1[m] != '\0' && text2 && text2[n] != '\0'){
+    if(text1 && text1[m] != '\0' && text2 && text2[n] != '\0')
+    {
         if(text1[m] != text2[n])
             result = 0 + f_04 (m+1, text1,n,text2);
         else
@@ -137,7 +156,8 @@ int f_04(int m, char * text1, int n, char * text2){
     }
     return result;
 }
-void opcoes04 (){
+void opcoes04 ()
+{
     printf("\na) 5");
     printf("\nb) 4");
     printf("\nc) 3");
@@ -145,7 +165,8 @@ void opcoes04 (){
 }
 
 
-void p04() {
+void p04()
+{
 // identificacao
     printf( "\nExercicio 04:\n\n" );
     opcoes04();
@@ -157,38 +178,44 @@ void p04() {
     getchar();
 }
 
-void opcoes05 (){
+void opcoes05 ()
+{
     printf("\na) (3,15/16)");
     printf("\nb) (3,31/32)");
     printf("\nc) (3,63/64)");
     printf("\nd) (3,124/128)");
 }
 
-struct s_Fraction{
+struct s_Fraction
+{
     int x, y, z;
 };
-struct s_Fraction f_05(double a){
+struct s_Fraction f_05(double a)
+{
     struct s_Fraction f = {0,0,0};
     int y = 2;
-    if(a > 0){
+    if(a > 0)
+    {
         f.x = (int)a;
         a = (a-f.x);
     }
     f.y = (int)(a*128);
     f.z = 128;
     while(y <= 64)
-    if(f.y%y==0 && f.z%y==0){
-        f.y=f.y/y;
-        f.z=f.z/y;
-    }
-    else
-        y = y*2;
+        if(f.y%y==0 && f.z%y==0)
+        {
+            f.y=f.y/y;
+            f.z=f.z/y;
+        }
+        else
+            y = y*2;
     return (f);
 
 
 };
 
-void p05() {
+void p05()
+{
     // Identificação
     printf("\nExercicio 05:\n\n");
     opcoes05();
@@ -199,39 +226,52 @@ void p05() {
     getchar();
 }
 
-bool bissexto(int ano){
+bool bissexto(int ano)
+{
     bool resposta = false;
     int controle1 = ano, controle2 = ano, controle3 = ano;
-    while(controle1 > 0){
+    while(controle1 > 0)
+    {
         controle1 = controle1 - 400;
     }
-    while(controle2 > 0){
+    while(controle2 > 0)
+    {
         controle2 = controle2 - 100;
     }
-    while(controle3 > 0){
+    while(controle3 > 0)
+    {
         controle3 = controle3 - 4;
     }
-    if(controle1 == 0){
+    if(controle1 == 0)
+    {
         resposta = true;
-    }else if(controle2 != 0){
+    }
+    else if(controle2 != 0)
+    {
         resposta = false;
-    }else if(controle3 == 0){
+    }
+    else if(controle3 == 0)
+    {
         resposta = true;
     }
     return(resposta);
 }
 
 
-void p06() {
+void p06()
+{
 // identificacao
     printf( "\nExercicio 06:\n" );
     // programa
     int ano = 0;
     printf("\nDigite o ano:\n");
     scanf("%d", &ano);
-    if (bissexto(ano)) {
+    if (bissexto(ano))
+    {
         printf("%d eh um ano bissexto.\n", ano);
-    } else {
+    }
+    else
+    {
         printf("%d nao eh um ano bissexto.\n", ano);
     }
     // encerrar
@@ -241,49 +281,62 @@ void p06() {
 }
 
 
-int sum(int num) {
+int sum(int num)
+{
     int soma = 0;
-    while (num > 0) {
+    while (num > 0)
+    {
         soma += num % 10;
         num /= 10;
     }
     return soma;
 }
 
-int f_07(const char *name){
+int f_07(const char *name)
+{
     FILE *f = fopen(name, "r");
-        if(f!=NULL){
-            int rows = 0, cols = 0;
-                fscanf(f,"%d", &rows);
-                fscanf(f,"%d", &cols);
-            int maior = 0; int menor = 1000, maiori = 0, maiorj = 0, menori = 0, menorj =0;
-            int matriz[rows][cols];
-            for(int i = 0; i < rows; i++){
-                for(int j = 0; j < cols; j++){
-                    fscanf(f, "%d", &matriz[i][j]);
-                    if(matriz[i][j] > maior){
-                        maior = matriz[i][j];
-                        maiori = i;
-                        maiorj = j;
-                    }
-                    if(matriz[i][j] < menor){
-                        menor = matriz[i][j];
-                        menori = i;
-                        menorj = j;
-                    }
-
+    if(f!=NULL)
+    {
+        int rows = 0, cols = 0;
+        fscanf(f,"%d", &rows);
+        fscanf(f,"%d", &cols);
+        int maior = 0;
+        int menor = 1000, maiori = 0, maiorj = 0, menori = 0, menorj =0;
+        int matriz[rows][cols];
+        for(int i = 0; i < rows; i++)
+        {
+            for(int j = 0; j < cols; j++)
+            {
+                fscanf(f, "%d", &matriz[i][j]);
+                if(matriz[i][j] > maior)
+                {
+                    maior = matriz[i][j];
+                    maiori = i;
+                    maiorj = j;
                 }
+                if(matriz[i][j] < menor)
+                {
+                    menor = matriz[i][j];
+                    menori = i;
+                    menorj = j;
+                }
+
             }
-            if(maiori == menori || maiorj == menorj){
-               return 1;
-            }else{
-                return -1;
-            }
-            fclose(f);
         }
+        if(maiori == menori || maiorj == menorj)
+        {
+            return 1;
+        }
+        else
+        {
+            return -1;
+        }
+        fclose(f);
+    }
 }
 
-void p07() {
+void p07()
+{
     printf("\nExercicio 07:\n\n");
     int n = f_07("MATRIZ.txt");
     printf("%d", n);
@@ -292,50 +345,76 @@ void p07() {
 }
 
 
-void opcoes08(){
-    printf("\n1) Codigo original");
-    printf("\n2) Codigo atualizado");
-    printf("\nEscolha qual codigo voce quer testar:\n");
-}
+struct s_Park
+{
+    int he;
+    int me;
+    int se;
+    int hs;
+    int ms;
+    int ss;
+};
 
-void escolha(int n){
-    char v1[TAM_STR], v2[TAM_STR];
-    int total1 = 0, total2 = 0;
-    if(n==1){
-        printf("\nDigite a primeira cadeia:\n");
-        scanf("%s", &v1);
-        printf("\nDigite a segunda cadeia:\n");
-        scanf("%s", &v2);
-        minhasolucao(v1,v2);
-    }else if(n == 2){
-        printf("\nDigite a primeira cadeia:\n");
-        scanf("%s", &v1);
-        printf("\nDigite a segunda cadeia:\n");
-        scanf("%s", &v2);
-        total1 = solucaoupdate(v1);
-        total2 = solucaoupdate(v2);
-        printar(total1,total2,v1,v2);
+struct s_Park soma(struct s_Park c1)
+{
+    struct s_Park result;
+    result.ss = c1.ss - c1.se;
+    result.ms = c1.ms - c1.me;
+    result.hs = c1.hs - c1.he;
+    if (result.ss < 0)
+    {
+        result.ss += 60;
+        result.ms -= 1;
     }
+    if (result.ms < 0)
+    {
+        result.ms += 60;
+        result.hs -= 1;
+    }
+    return result;
 }
 
-void p08() {
+int total(struct s_Park result)
+{
+    int totalMinutos = result.hs * 60 + result.ms;
+    int t = totalMinutos / 15;
+    if (totalMinutos < 15)
+    {
+        t = 0;
+    }
+    return t;
+}
+
+void p08()
+{
 // identificacao
     int n = 0;
     printf( "\nExercicio 08:\n\n" );
-    opcoes08();
-    scanf("%d", &n);
-    escolha(n);
-    getchar();
+    struct s_Park car;
+    struct s_Park tempoPermanencia;
+    car.he = 10;
+    car.me = 30;
+    car.se = 0;
+    car.hs = 12;
+    car.ms = 45;
+    car.ss = 0;
+    tempoPermanencia = soma(car);
+    int totl = total(tempoPermanencia);
+    int valor = 5 * totl; //Defini o valor que será cobrado a cada 5 minutos;
+    printf("Tempo de permanencia: %d horas, %d minutos, %d segundos\n", tempoPermanencia.hs, tempoPermanencia.ms, tempoPermanencia.ss);
+    printf("\nTotal a pagar: R$%d", valor );
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
 }
 
 
 // Função principal
-int main(void) {
+int main(void)
+{
     int opcao;
 
-    do {
+    do
+    {
         menuOpcoes(); // Chama a função que exibe as opções
 
         printf("\nOpcao = ");
@@ -343,22 +422,41 @@ int main(void) {
         getchar(); // Limpar o buffer de entrada
 
         // Executar a opção escolhida
-        switch (opcao) {
-            case 0: break;
-            case 1: p01(); break;
-            case 2: p02(); break;
-            case 3: p03(); break;
-            case 4: p04(); break;
-            case 5: p05(); break;
-            case 6: p06(); break;
-            case 7: p07(); break;
-            case 8: p08(); break;
-            default:
-                printf("\nERRO: OPCAO INVALIDA\n\n");
-                break;
+        switch (opcao)
+        {
+        case 0:
+            break;
+        case 1:
+            p01();
+            break;
+        case 2:
+            p02();
+            break;
+        case 3:
+            p03();
+            break;
+        case 4:
+            p04();
+            break;
+        case 5:
+            p05();
+            break;
+        case 6:
+            p06();
+            break;
+        case 7:
+            p07();
+            break;
+        case 8:
+            p08();
+            break;
+        default:
+            printf("\nERRO: OPCAO INVALIDA\n\n");
+            break;
         } // fim switch
 
-    } while (opcao != 0);
+    }
+    while (opcao != 0);
 
     printf("\nAperte ENTER para terminar!\n");
     getchar();
