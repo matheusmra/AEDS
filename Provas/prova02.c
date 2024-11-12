@@ -250,77 +250,47 @@ int sum(int num) {
     return soma;
 }
 
-bool amigos() {
-    bool resposta = false;
-    for (int x = 10; x <= 99; x++) {
-        for (int y = x + 1; y <= 99; y++) {
-            if (sum(x * x) == y && sum(y * y) == x) {
-                resposta = true;
-                // printf("Quadrados amigos encontrados: %d e %d\n", x, y);
+int f_07(const char *name){
+    FILE *f = fopen(name, "r");
+        if(f!=NULL){
+            int rows = 0, cols = 0;
+                fscanf(f,"%d", &rows);
+                fscanf(f,"%d", &cols);
+            int maior = 0; int menor = 1000, maiori = 0, maiorj = 0, menori = 0, menorj =0;
+            int matriz[rows][cols];
+            for(int i = 0; i < rows; i++){
+                for(int j = 0; j < cols; j++){
+                    fscanf(f, "%d", &matriz[i][j]);
+                    if(matriz[i][j] > maior){
+                        maior = matriz[i][j];
+                        maiori = i;
+                        maiorj = j;
+                    }
+                    if(matriz[i][j] < menor){
+                        menor = matriz[i][j];
+                        menori = i;
+                        menorj = j;
+                    }
+
+                }
             }
+            if(maiori == menori || maiorj == menorj){
+               return 1;
+            }else{
+                return -1;
+            }
+            fclose(f);
         }
-    }
-    return resposta;
 }
 
 void p07() {
     printf("\nExercicio 07:\n\n");
-    if (amigos()) {
-        printf("Existem dois numeros que sao quadrados amigos.\n");
-    } else {
-        printf("Nao existem numeros que sao quadrados amigos no intervalo [10-99].\n");
-    }
-
-    // Encerrar
-    getchar();
+    int n = f_07("MATRIZ.txt");
+    printf("%d", n);
     printf("\nAperte ENTER para continuar!\n");
     getchar();
 }
 
-
-
-char minhasolucao(char v1[], char v2[]){
-    int t1 = 0, t2 = 0;
-    for(int i = 0; i <(strlen(v1)/2); i++){
-        if(v1[i]=='g' || v1[i]=='j' || v1[i]=='p' || v1[i]=='q' || v1[i]=='v'){
-            t1++;
-        }
-    }
-    for(int i = 0; i <(strlen(v2)/2); i++){
-        if(v2[i]=='g' || v2[i]=='j' || v2[i]=='p' || v2[i]=='q' || v2[i]=='v'){
-            t2++;
-        }
-    }
-    if(t1>t2){
-        printf("%c", v1);
-    }else if(t2 > t1){
-        printf("%c", v2);
-    }else{
-        printf("Ambas as cadeias possuem o mesmo numero");
-    }
-
-}
-
-char solucaoupdate(char v1[]){
-    int total = 0;
-    for(int i = 0; i <(strlen(v1)/2); i++){
-        if(v1[i]=='g' || v1[i]=='j' || v1[i]=='p' || v1[i]=='q' || v1[i]=='v'){
-            total++;
-        }
-    }
-    return total;
-
-}
-
-void printar(int total1, int total2, char v1[], char v2[]){
-    if(total1>total2){
-        printf("%c", v1);
-    }else if(total2 > total1){
-        printf("%c", v2);
-    }else{
-        printf("Ambas as cadeias possuem o mesmo numero");
-    }
-}
 
 void opcoes08(){
     printf("\n1) Codigo original");
