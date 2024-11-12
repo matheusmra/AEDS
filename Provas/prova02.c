@@ -127,93 +127,73 @@ void p03() {
     getchar();
 }
 
-int f_04(int a, int b){
-    while(a>0 && b>0 && a>= b){
-        a =a - b;
-        if(a < b){
-            a = a+b;
-            b = a-b;
-            a = a-b;
-        }
+int f_04(int m, char * text1, int n, char * text2){
+    int result = 0;
+    if(text1 && text1[m] != '\0' && text2 && text2[n] != '\0'){
+        if(text1[m] != text2[n])
+            result = 0 + f_04 (m+1, text1,n,text2);
+        else
+            result = 1 + f_04(m+1,text1,n+1,text2);
     }
-    return (a);
+    return result;
 }
 void opcoes04 (){
-    printf("\na) 12");
-    printf("\nb) 8");
-    printf("\nc) 6");
-    printf("\nd) 4");
+    printf("\na) 5");
+    printf("\nb) 4");
+    printf("\nc) 3");
+    printf("\nd) 2");
 }
-void testar04(char v1){
-    if(v1 == 'a' || v1 == 'A'){
-    printf("A) 12 != %d\n   (INCORRETA)", f_04(54,24));
-    }else if(v1 == 'b' || v1 == 'B'){
-    printf("B) 8 != %d\n   (INCORRETA)", f_04(54,24));
-    }else if(v1 == 'c' || v1 == 'C'){
-    printf("C) 6 == %d\n   (CORRETA)", f_04(54,24));
-    }else if(v1 == 'd' || v1 == 'D'){
-    printf("D) 4 != %d\n   (INCORRETA)", f_04(54,24));
-    }else{
-        printf("\nOP invalida");
-    }
-}
+
 
 void p04() {
 // identificacao
     printf( "\nExercicio 04:\n\n" );
     opcoes04();
-    char v1 = 'a';
-    printf("\nEscolha a letra:");
-    scanf("%c", &v1);
-    testar04(v1);
-    getchar();
+    char p1[] = "pista";
+    char p2[] = "despistar";
+    printf("\nAlternativa correta: (A) = %d", f_04(0,p2,0,p1));
     // encerrar
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
 }
 
 void opcoes05 (){
-    printf("\na) f_05( 7) = 128");
-    printf("\nb) f_05( 8) = 164");
-    printf("\nc) f_05( 9) = 208");
-    printf("\nd) f_05( 10) = 252");
+    printf("\na) (3,15/16)");
+    printf("\nb) (3,31/32)");
+    printf("\nc) (3,63/64)");
+    printf("\nd) (3,124/128)");
 }
 
-int f_05(int n) {
-    int s = 0, z = 0;
-    while (n > 0) {
-        z = z + 4;
-        if (z % 5 == 0) {
-            n = n + 1; // Isso pode fazer o loop não terminar
-        } else {
-            s = s + z;
-        }
-        n = n - 1; // Decrementa n
+struct s_Fraction{
+    int x, y, z;
+};
+struct s_Fraction f_05(double a){
+    struct s_Fraction f = {0,0,0};
+    int y = 2;
+    if(a > 0){
+        f.x = (int)a;
+        a = (a-f.x);
     }
-    return s;
-}
+    f.y = (int)(a*128);
+    f.z = 128;
+    while(y <= 64)
+    if(f.y%y==0 && f.z%y==0){
+        f.y=f.y/y;
+        f.z=f.z/y;
+    }
+    else
+        y = y*2;
+    return (f);
 
+
+};
 
 void p05() {
     // Identificação
     printf("\nExercicio 05:\n\n");
     opcoes05();
-    char v1 = 'a';
-    int a = 7, b = 8, c = 9, d = 10;
-    printf("\nEscolha a letra:");
-    scanf("%c", &v1);
-    if(v1 == 'a' || v1 == 'A'){
-    printf("A = %d\n   (INCORRETA)", f_05(a));
-    }else if(v1 == 'b' || v1 == 'B'){
-    printf("B = %d\n   (INCORRETA)", f_05(b));
-    }else if(v1 == 'c' || v1 == 'C'){
-    printf("C = %d\n   (INCORRETA)", f_05(c));
-    }else if(v1 == 'd' || v1 == 'D'){
-    printf("D = %d\n   (CORRETA)", f_05(d));
-    }else{
-        printf("\nOP invalida");
-    }
-    getchar();
+    struct s_Fraction a = f_05(3.94);
+    printf("\nAlternativa correta: (A) = (%d,%d/%d)\n", a.x, a.y, a.z);
     // Encerrar
     printf("\nAperte ENTER para continuar!\n");
     getchar();
