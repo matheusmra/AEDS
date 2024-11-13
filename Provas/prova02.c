@@ -226,71 +226,45 @@ void p05()
     getchar();
 }
 
-bool bissexto(int ano)
+int f_06(const char *nome_arquivo, int arr[], int n, int m)
 {
-    bool resposta = false;
-    int controle1 = ano, controle2 = ano, controle3 = ano;
-    while(controle1 > 0)
+    FILE *arquivo = fopen(nome_arquivo, "w");
+    int soma = 0;
+    int cont = 0;
+    for (int i = 0; i < n && soma + arr[i] < m; i++)
     {
-        controle1 = controle1 - 400;
+        soma += arr[i];
+        cont++;
     }
-    while(controle2 > 0)
+    fprintf(arquivo, "Quantidade de valores somados: %d\n", cont);
+    fprintf(arquivo, "Valores somados:\n");
+    for (int i = 0; i < cont; i++)
     {
-        controle2 = controle2 - 100;
+        fprintf(arquivo, "%d ", arr[i]);
     }
-    while(controle3 > 0)
-    {
-        controle3 = controle3 - 4;
-    }
-    if(controle1 == 0)
-    {
-        resposta = true;
-    }
-    else if(controle2 != 0)
-    {
-        resposta = false;
-    }
-    else if(controle3 == 0)
-    {
-        resposta = true;
-    }
-    return(resposta);
-}
+    fprintf(arquivo, "\n");
 
+    fclose(arquivo);
+    return cont;
+}
 
 void p06()
 {
 // identificacao
     printf( "\nExercicio 06:\n" );
     // programa
-    int ano = 0;
-    printf("\nDigite o ano:\n");
-    scanf("%d", &ano);
-    if (bissexto(ano))
-    {
-        printf("%d eh um ano bissexto.\n", ano);
-    }
-    else
-    {
-        printf("%d nao eh um ano bissexto.\n", ano);
-    }
-    // encerrar
-    getchar();
+    int arr[] = {1,2,3,4,5,6};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    int m = 0;
+    printf("\nDigite o limite da soma:\n");
+    scanf("%d", &m);
+    int qtd = f_06("DADOS.TXT", arr, size, m);
+    printf("Quantidade de valores somados antes de atingir o limite: %d\n", qtd);
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
 }
 
 
-int sum(int num)
-{
-    int soma = 0;
-    while (num > 0)
-    {
-        soma += num % 10;
-        num /= 10;
-    }
-    return soma;
-}
 
 int f_07(const char *name)
 {
