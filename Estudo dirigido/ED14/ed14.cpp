@@ -15,6 +15,8 @@
 #include <ctime>
 #include <fstream>
 #include <string>
+#include <algorithm>
+#include <cctype>
 using namespace std;
 // Tamanho max string
 const int TAM_STR = 80;
@@ -59,6 +61,29 @@ public:
         }
     }
 
+    double getDouble() {
+        try {
+            double value = stod(nome);
+            return value;
+        } catch (invalid_argument& e) {
+            return 0.0;
+        } catch (out_of_range& e) {
+            return 0.0;
+        }
+    }
+    bool getBoolean(){
+        string lower = nome;
+        transform(lower.begin(), lower.end(), lower.begin(), ::tolower);
+        if (lower == "true" || lower == "t" || lower == "1"){
+            return true;
+        } else if(lower == "false" || lower == "f" || lower == "0"){
+            return false;
+        } else {
+            return false;
+        }
+
+    }
+
 };
 
 
@@ -89,7 +114,18 @@ int ex1412()
 {
     // Identifica��o
     cout << "\nExercicio 1412:\n\n";
-
+    Contato c1("abc");
+    Contato c2("123");
+    Contato c3("1.5678");
+    double resultado1 = c1.getDouble();
+    double resultado2 = c2.getDouble();
+    double resultado3 = c3.getDouble();
+    cout << "Teste de caracteres" << endl;
+    cout << "Resultado = " << resultado1 << endl;
+    cout << "Teste de inteiros" << endl;
+    cout << "Resultado = " << resultado2 << endl;
+    cout << "Teste de reais" << endl;
+    cout << "Resultado = " << resultado3 << endl;
     close();
 
 
@@ -101,7 +137,18 @@ void ex1413()
 {
 // identificacao
     cout << "\nExercicio 1413:\n\n" ;
-
+    Contato c1("true");
+    Contato c2("F");
+    Contato c3("abc");
+    bool resultado1 = c1.getBoolean();
+    bool resultado2 = c2.getBoolean();
+    bool resultado3 = c3.getBoolean();
+    cout << "Teste de verdadeiro" << endl;
+    cout << "Resultado = " << resultado1 << endl;
+    cout << "Teste de falso" << endl;
+    cout << "Resultado = " << resultado2 << endl;
+    cout << "Teste de caracter" << endl;
+    cout << "Resultado = " << resultado3 << endl;
     close();
 
 }
