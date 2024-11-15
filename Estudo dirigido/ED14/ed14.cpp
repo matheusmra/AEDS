@@ -48,7 +48,9 @@ void menuOpcoes()
 class Contato{
 private:
     string nome;
+    int pos;
 public:
+    Contato(const string& nome, int pos) : nome(nome), pos(pos) {}
     Contato(const string& nome) : nome(nome) {}
     int getInt() {
         try {
@@ -83,6 +85,60 @@ public:
         }
 
     }
+    bool contains(const string& texto){
+        if(nome.find(texto) != string::npos){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    string toUpperCase() {
+        string upper = nome;
+        transform(upper.begin(), upper.end(), upper.begin(), ::toupper);
+        return upper;
+    }
+    string toLowerCase() {
+        string lower = nome;
+        transform(lower.begin(), lower.end(), lower.begin(), ::tolower);
+        return lower;
+    }
+
+    string trocar(char procurado, char novo){
+        string modificar = nome;
+        for(size_t i = 0; i < modificar.length(); i++){
+            if(modificar[i] == procurado) {
+                modificar[i] = novo;
+            }
+        }
+        return modificar;
+    }
+
+    string encrypt() {
+        string encrypted = nome;
+            for(int i = 0; i < encrypted.length(); i++){
+                if(isalpha(encrypted[i])){
+                    char base = islower(encrypted[i]) ? 'a' : 'A';
+                    encrypted[i] = (encrypted[i] - base + pos) % 26 + base;
+                }
+            }
+            return encrypted;
+
+    }
+
+    string decrypt() {
+        string decrypted = nome;
+            for(int i = 0; i < decrypted.length(); i++){
+                if(isalpha(decrypted[i])){
+                    char base = islower(decrypted[i]) ? 'a' : 'A';
+                    decrypted[i] = (decrypted[i] - base - pos) % 26 + base;
+                }
+            }
+            return decrypted;
+
+    }
+
+
 
 };
 
@@ -157,6 +213,14 @@ void ex1414()
 {
 // identificacao
     cout << "\nExercicio 1414:\n\n" ;
+    Contato c1("Matheus de Almeida");
+    bool resultado = c1.contains("Almeida");
+    cout << "A string possui Almeida?" << endl;
+    if(resultado){
+        cout << "Sim" << endl;
+    }else {
+        cout << "Nao" << endl;
+    }
     close();
 }
 
@@ -166,6 +230,9 @@ void ex1415()
 {
 // identificacao
     cout << "\nExercicio 1415:\n\n" ;
+    Contato c1("matheus");
+    string resultado = c1.toUpperCase();
+    cout << "String maiuscula = " << resultado << endl;
     close();
 }
 
@@ -174,6 +241,9 @@ void ex1416()
 {
 // identificacao
     cout << "\nExercicio 1416:\n\n" ;
+    Contato c1("MATHEUS");
+    string resultado = c1.toLowerCase();
+    cout << "String minuscula = " << resultado << endl;
     close();
 }
 
@@ -182,6 +252,9 @@ void ex1417()
 {
 // identificacao
     cout << "\nExercicio 1417:\n\n" ;
+    Contato c1("Matheus");
+    string resultado = c1.trocar('s', 'b');
+    cout << "String trocada = " << resultado << endl;
     close();
 }
 
@@ -191,6 +264,9 @@ void ex1418()
 {
 // identificacao
     cout << "\nExercicio 1418:\n\n" ;
+    Contato c1("Matheus", 3);
+    string resultado = c1.encrypt();
+    cout << "String criptografada = " << resultado << endl;
     close();
 }
 
@@ -200,7 +276,12 @@ void ex1419()
 {
     // identificacao
     cout << "\nExercicio 1419:\n\n";
-
+    Contato c1("Matheus", 3);
+    string resultado = c1.encrypt();
+    cout << "String criptografada = " << resultado << endl;
+    Contato c2(resultado, 3);
+    string decodificado = c2.decrypt();
+    cout << "String descriptografada = " << decodificado << endl;
     close();
 }
 
