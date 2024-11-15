@@ -44,8 +44,20 @@ void menuOpcoes()
 } // fim menuOpcoes()
 
 class Contato{
+private:
+    string nome;
 public:
-    string nome
+    Contato(const string& nome) : nome(nome) {}
+    int getInt() {
+        try {
+            int value = stoi(nome);
+            return value;
+        } catch (invalid_argument& e) {
+            return -1;
+        } catch (out_of_range& e) {
+            return -1;
+        }
+    }
 
 };
 
@@ -54,6 +66,18 @@ int ex1411()
 {
 // identificacao
     cout << "\nExercicio 1411:\n\n";
+    Contato c1("abc");
+    Contato c2("123");
+    Contato c3("1.5678");
+    int resultado1 = c1.getInt();
+    int resultado2 = c2.getInt();
+    int resultado3 = c3.getInt();
+    cout << "Teste de caracteres" << endl;
+    cout << "Resultado = " << resultado1 << endl;
+    cout << "Teste de inteiros" << endl;
+    cout << "Resultado = " << resultado2 << endl;
+    cout << "Teste de reais" << endl;
+    cout << "Resultado = " << resultado3 << endl;
     close();
 }
 
