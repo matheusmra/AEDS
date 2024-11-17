@@ -269,6 +269,20 @@ void criar_matriz_tridiagonal(int n, int matriz[n][n]) {
     }
 }
 
+void gerarMatrizTridiagonalSecundaria(int n, int matriz[n][n]) {
+    int valor = n*n;
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            matriz[i][j] = 0;
+        }
+    }
+    for (int i = 0; i < n; i++) {
+        if (i - 1 >= 0) matriz[i][n - i] = valor--;     // Diagonal inferior
+        matriz[i][n - i - 1] = valor--;                 // Diagonal secundária principal
+        if (i + 1 < n) matriz[i][n - i - 2] = valor--;  // Diagonal superior
+    }
+}
+
 void exibir_matriz(int n, int matriz[n][n]) {
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
@@ -296,6 +310,7 @@ void gravar_matriz(const char *nome_arquivo, int n, int matriz[n][n]) {
 }
 
 
+
 void ex6() {
 // identificacao
     printf( "\nExercicio 06:\n\n" );
@@ -317,7 +332,16 @@ void ex6() {
 void ex7() {
 // identificacao
     printf( "\nExercicio 07:\n\n" );
-
+    int n = 0;
+    printf("Digite o valor de N: ");
+    scanf("%d", &n);
+    int matriz[n][n];
+    gerarMatrizTridiagonalSecundaria(n, matriz);
+    printf("\nMatriz Tridiagonal Secundaria Decrescente:\n");
+    exibir_matriz(n, matriz);
+    gravar_matriz("MATRIZ2.TXT", n, matriz);
+    printf("Matriz gravada no arquivo MATRIZ2.TXT com sucesso!\n");
+    getchar();
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
 }// Fim da função ex0917
