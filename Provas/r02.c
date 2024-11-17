@@ -344,48 +344,63 @@ void ex7() {
     getchar();
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
-}// Fim da função ex0917
+}
 
-// Função para o exercício 1018
-//- ler três valores reais (x,y,z) do teclado, um por vez;
-//- dizer se esses valores estão em ordem crescente,
-//decrescente ou em nenhuma dessas ordens e, nesse caso, o menor e o maior.
-//DICA: Usar testes com maior número de comparações usando conectivos lógicos ( &&, || e ! ).
-//Definir funções para testar as ordens crescente e decrescente.
-//O resultado NÃO deverá ser mostrado dentro da função.
-//Exemplos:
-//x = 10, y = 20, z = 30
-//x = 30, y = 20, z = 10
-//x = 10, y = 10, z = 10
-//resposta1 = crescente ( x, y, z );
-//resposta2 = decrescente ( x, y, z );
-//resposta3 = maior ( x, y, z );
-//resposta4 = menor ( x, y, z );
 
+int ler_matriz(const char *nome_arquivo, int matriz[10][10]) {
+    FILE *arquivo = fopen(nome_arquivo, "r");
+    if (arquivo == NULL) {
+        printf("Erro ao abrir o arquivo %s.\n", nome_arquivo);
+        return -1;
+    }
+    int linhas = 0, colunas = 0;
+    while (fscanf(arquivo, "%d", &matriz[linhas][colunas]) != EOF) {
+        colunas++;
+        if (fgetc(arquivo) == '\n') {
+            linhas++;
+            colunas = 0;
+        }
+    }
+    fclose(arquivo);
+    return linhas;
+}
+
+int verificar_potencias_por_linha(int linha[], int colunas) {
+    int base = linha[0];
+    for (int j = 1; j < colunas; j++) {
+        if (linha[j] != pow(base, j)) {
+            return 0;
+        }
+    }
+    return 1;
+}
 
 void ex8() {
 // identificacao
     printf( "\nExercicio 08:\n\n" );
+    int matriz[10][10];
+    int linhas;
+    linhas = ler_matriz("MATRIZ3.TXT", matriz);
+    if (linhas == -1) {
+        return 1;
+    }
+    int colunas = 0;
+    while (matriz[0][colunas] != '\0') {
+    }
+    int matriz_valida = 1;
+    for (int i = 0; i < linhas; i++) {
+        if (!verificar_potencias_por_linha(matriz[i], colunas)) {
+            printf("A linha %d não segue a característica de potências por linha.\n", i + 1);
+            matriz_valida = 0;
+        }
+    }
 
+    if (matriz_valida) {
+        printf("Todas as linhas seguem a característica de potências por linha.\n");
+    }
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
-}// Fim da função ex1018
-
-// Função para o exercício 0919
-//- ler três caracteres (x,y,z) do teclado, um por vez;
-//- dizer se esses valores estão em ordem crescente,
-//decrescente ou em nenhuma dessas ordens.
-//DICA: Usar uma função lógica para comparar os códigos inteiros de cada caractere,
-//e dizer se o segundo sucede o primeiro em ordem alfabética.
-//Definir funções para testar as ordens alfabéticas crescente e decrescente.
-//O resultado NÃO deverá ser mostrado dentro da função.
-//Exemplos:
-//x = '1', y = '2', z = '3'
-//x = '3', y = '2', z = '1'
-//x = '1', y = '1', z = '1'
-//resposta1 = crescente ( x, y, z );
-//resposta2 = decrescente ( x, y, z );
-//resposta3 = sucessor ( x, y );
+}
 
 
 void ex9() {
@@ -394,26 +409,7 @@ void ex9() {
 
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
-}// Fim da função ex0919
-
-// Função para o exercício 1020
-//- ler três cadeias de caracteres (x,y,z) do teclado, uma por vez;
-//- dizer se essas cadeias estão em ordem alfabética decrescente,
-//decrescente ou em nenhuma dessas ordens e, nesse caso, a menor e a maior.
-//DICA: Usar strcmp( ) da biblioteca <string.h> e comparar o resultado com zero.
-//A função para a comparação poderá retornar um dentre
-//os seguintes resultados:
-//O resultado NÃO deverá ser mostrado dentro da função.
-//negativo, se a primeira cadeia preceder a segunda (resultado menor que zero);
-//nulo , se as cadeias forem iguais (resultado igual a zero);
-//positivo , se a primeira cadeia suceder a segunda (resultado maior que zero).
-//Exemplo:
-//char s1 [ ] = abc;
-//char s2 [ ] = ABC;
-//if ( strcmp ( s1, s2 ) != 0 )
-//{
-//printf ( "%s\n", diferentes );
-//} // end if
+}
 
 
 void ex10() {
