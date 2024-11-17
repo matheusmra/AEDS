@@ -31,113 +31,238 @@ void menuOpcoes()
 {
     cout << "\nEscolha alguma das opcoes a seguir:\n\n";
     cout << "  0 - Encerrar programa\n";
-    cout << "  1 - Exercicio 1311\n";
-    cout << "  2 - Exercicio 1312\n";
-    cout << "  3 - Exercicio 1313\n";
-    cout << "  4 - Exercicio 1314\n";
-    cout << "  5 - Exercicio 1315\n";
-    cout << "  6 - Exercicio 1316\n";
-    cout << "  7 - Exercicio 1317\n";
-    cout << "  8 - Exercicio 1318\n";
-    cout << "  9 - Exercicio 1319\n";
-    cout << "  10 - Exercicio 1320\n";
-    cout << "  11 - Exercicio 13E1\n";
-    cout << "  12 - Exercicio 13E2\n";
+    cout << "  1 - Exercicio 1411\n";
+    cout << "  2 - Exercicio 1412\n";
+    cout << "  3 - Exercicio 1413\n";
+    cout << "  4 - Exercicio 1414\n";
+    cout << "  5 - Exercicio 1415\n";
+    cout << "  6 - Exercicio 1416\n";
+    cout << "  7 - Exercicio 1417\n";
+    cout << "  8 - Exercicio 1418\n";
+    cout << "  9 - Exercicio 1419\n";
+    cout << "  10 - Exercicio 1420\n";
+    cout << "  11 - Exercicio 14E1\n";
+    cout << "  12 - Exercicio 14E2\n";
 } // fim menuOpcoes()
 
-class Contato{
+class Contato
+{
 private:
     string nome;
     int pos;
 public:
+    string sequencias[100];
     Contato(const string& nome, int pos) : nome(nome), pos(pos) {}
-    Contato(const string& nome) : nome(nome) {}
-    int getInt() {
-        try {
+    Contato(const string& nome) : nome(nome)
+    {
+        sequencias[0] = nome;
+    }
+    int getInt()
+    {
+        try
+        {
             int value = stoi(nome);
             return value;
-        } catch (invalid_argument& e) {
+        }
+        catch (invalid_argument& e)
+        {
             return -1;
-        } catch (out_of_range& e) {
+        }
+        catch (out_of_range& e)
+        {
             return -1;
         }
     }
 
-    double getDouble() {
-        try {
+    double getDouble()
+    {
+        try
+        {
             double value = stod(nome);
             return value;
-        } catch (invalid_argument& e) {
+        }
+        catch (invalid_argument& e)
+        {
             return 0.0;
-        } catch (out_of_range& e) {
+        }
+        catch (out_of_range& e)
+        {
             return 0.0;
         }
     }
-    bool getBoolean(){
+    bool getBoolean()
+    {
         string lower = nome;
-        transform(lower.begin(), lower.end(), lower.begin(), ::tolower);
-        if (lower == "true" || lower == "t" || lower == "1"){
+        for (size_t i = 0; i < lower.length(); ++i)
+        {
+            if (lower[i] >= 'A' && lower[i] <= 'Z')
+            {
+                lower[i] = lower[i] + ('a' - 'A');
+            }
+        }
+        if (lower == "true" || lower == "t" || lower == "1")
+        {
             return true;
-        } else if(lower == "false" || lower == "f" || lower == "0"){
-            return false;
-        } else {
+        }
+        else if (lower == "false" || lower == "f" || lower == "0")
+        {
             return false;
         }
-
-    }
-    bool contains(const string& texto){
-        if(nome.find(texto) != string::npos){
-            return true;
-        } else {
+        else
+        {
             return false;
         }
     }
-
-    string toUpperCase() {
+    bool contains(const string& texto)
+    {
+        if(nome.find(texto) != string::npos)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    string toUpperCase()
+    {
         string upper = nome;
-        transform(upper.begin(), upper.end(), upper.begin(), ::toupper);
+        for (size_t i = 0; i < upper.length(); ++i)
+        {
+            if (upper[i] >= 'a' && upper[i] <= 'z')
+            {
+                upper[i] = upper[i] - ('a' - 'A');
+            }
+        }
         return upper;
     }
-    string toLowerCase() {
+    string toLowerCase()
+    {
         string lower = nome;
-        transform(lower.begin(), lower.end(), lower.begin(), ::tolower);
+        for (size_t i = 0; i < lower.length(); ++i)
+        {
+            if (lower[i] >= 'A' && lower[i] <= 'Z')
+            {
+                lower[i] = lower[i] + ('a' - 'A');
+            }
+        }
         return lower;
     }
 
-    string trocar(char procurado, char novo){
+    string trocar(char procurado, char novo)
+    {
         string modificar = nome;
-        for(size_t i = 0; i < modificar.length(); i++){
-            if(modificar[i] == procurado) {
+        for(size_t i = 0; i < modificar.length(); i++)
+        {
+            if(modificar[i] == procurado)
+            {
                 modificar[i] = novo;
             }
         }
         return modificar;
     }
 
-    string encrypt() {
+    string encrypt()
+    {
         string encrypted = nome;
-            for(int i = 0; i < encrypted.length(); i++){
-                if(isalpha(encrypted[i])){
-                    char base = islower(encrypted[i]) ? 'a' : 'A';
-                    encrypted[i] = (encrypted[i] - base + pos) % 26 + base;
-                }
+        for(int i = 0; i < encrypted.length(); i++)
+        {
+            if(isalpha(encrypted[i]))
+            {
+                char base = islower(encrypted[i]) ? 'a' : 'A';
+                encrypted[i] = (encrypted[i] - base + pos) % 26 + base;
             }
-            return encrypted;
+        }
+        return encrypted;
 
     }
 
-    string decrypt() {
+    string decrypt()
+    {
         string decrypted = nome;
-            for(int i = 0; i < decrypted.length(); i++){
-                if(isalpha(decrypted[i])){
-                    char base = islower(decrypted[i]) ? 'a' : 'A';
-                    decrypted[i] = (decrypted[i] - base - pos) % 26 + base;
-                }
+        for(int i = 0; i < decrypted.length(); i++)
+        {
+            if(isalpha(decrypted[i]))
+            {
+                char base = islower(decrypted[i]) ? 'a' : 'A';
+                decrypted[i] = (decrypted[i] - base - pos) % 26 + base;
             }
-            return decrypted;
+        }
+        return decrypted;
 
     }
+    int split()
+    {
+        int count = 0;
+        string palavra = "";
+        string entrada = sequencias[0];
+        for (size_t i = 0; i < entrada.length(); ++i)
+        {
+            char c = entrada[i];
+            if (c == ' ' || c == '\t' || c == '\n')
+            {
+                if (!palavra.empty())
+                {
+                    sequencias[++count] = palavra;
+                    palavra = "";
+                }
+            }
+            else
+            {
+                palavra += c;
+            }
+        }
+        if (!palavra.empty())
+        {
+            sequencias[++count] = palavra;
+        }
+        return count;
+    }
+    int splitWithDelimiter(char delimitador)
+    {
+        int count = 0;
+        string palavra = "";
+        string entrada = sequencias[0];
+        for (size_t i = 0; i < entrada.length(); ++i)
+        {
+            char c = entrada[i];
+            if (c == delimitador)
+            {
+                if (!palavra.empty())
+                {
+                    sequencias[++count] = palavra;
+                    palavra = "";
+                }
+            }
+            else
+            {
+                palavra += c;
+            }
+        }
+        if (!palavra.empty())
+        {
+            sequencias[++count] = palavra;
+        }
+        return count;
+    }
+    string getSequencia(int index)
+    {
+        return sequencias[index];
+    }
+    string inverter()
+    {
+        string invert = nome;
+        int left = 0;
+        int right = invert.length() - 1;
+        while (left < right)
+        {
+            swap(invert[left], invert[right]);
+            left++;
+            right--;
+        }
 
+        return invert;
+    }
 
 
 };
@@ -216,9 +341,12 @@ void ex1414()
     Contato c1("Matheus de Almeida");
     bool resultado = c1.contains("Almeida");
     cout << "A string possui Almeida?" << endl;
-    if(resultado){
+    if(resultado)
+    {
         cout << "Sim" << endl;
-    }else {
+    }
+    else
+    {
         cout << "Nao" << endl;
     }
     close();
@@ -289,8 +417,15 @@ void ex1419()
 
 void ex1420()
 {
-// identificacao
+    // identificacao
     cout << "\nExercicio 1420:\n\n";
+    Contato c1("Meu nome eh Matheus de Almeida e minha matricula eh 848813");
+    int quantidade = c1.split();
+    cout << "Quantidade de palavras: " << quantidade << endl;
+    for (int i = 1; i <= quantidade; ++i)
+    {
+        cout << "Palavra " << i << ": " << c1.sequencias[i] << endl;
+    }
     close();
 }
 
@@ -299,6 +434,16 @@ void ex1420()
 void ex14E1()
 {
     cout << "\nExercicio 14E1:\n\n";
+    Contato c1("Matheus,Pedro,Artur,Gustavo,Claudio");
+    char c = '0';
+    cout << "Delimitador =" << endl;
+    cin >> c;
+    int quantidade = c1.splitWithDelimiter(c);
+    cout << "Quantidade de palavras: " << quantidade << endl;
+    for (int i = 1; i <= quantidade; ++i)
+    {
+        cout << "Palavra " << i << ": " << c1.getSequencia(i) << endl;
+    }
     close();
 }
 
@@ -309,6 +454,9 @@ void ex14E2()
 {
     // identificacao
     cout << "\nExercicio 14E2:\n\n";
+    Contato c1("Matheus");
+    string invertida = c1.inverter();
+    cout << "String invertida: " << invertida << endl;
     close();
 }
 
