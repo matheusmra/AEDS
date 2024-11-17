@@ -19,6 +19,8 @@
 #include <math.h>
 // Tamanho max string
 const int TAM_STR = 80;
+#define MAX_LINHAS 10
+#define MAX_COLUNAS 10
 // Função para mostrar o menu de opções
 void menuOpcoes() {
     printf("\nEscolha alguma das opcoes a seguir:\n\n");
@@ -347,50 +349,56 @@ void ex7() {
 }
 
 
-int ler_matriz(const char *nome_arquivo, int matriz[10][10]) {
+int ler_matriz(const char *nome_arquivo, int matriz[MAX_LINHAS][MAX_COLUNAS]) {
     FILE *arquivo = fopen(nome_arquivo, "r");
     if (arquivo == NULL) {
         printf("Erro ao abrir o arquivo %s.\n", nome_arquivo);
         return -1;
     }
+
     int linhas = 0, colunas = 0;
     while (fscanf(arquivo, "%d", &matriz[linhas][colunas]) != EOF) {
         colunas++;
         if (fgetc(arquivo) == '\n') {
             linhas++;
-            colunas = 0;
+            colunas = 0;  // Reset de colunas para a próxima linha
         }
     }
+
     fclose(arquivo);
-    return linhas;
+    return linhas + 1;  // Retorna o número de linhas
 }
 
+// Função para verificar se uma linha é uma sequência de potências
 int verificar_potencias_por_linha(int linha[], int colunas) {
-    int base = linha[0];
+    int base = linha[0];  // O primeiro número da linha será a base
     for (int j = 1; j < colunas; j++) {
         if (linha[j] != pow(base, j)) {
-            return 0;
+            return 0;  // Se algum número não for uma potência, retorna 0
         }
     }
-    return 1;
+    return 1;  // Caso todas as colunas sejam potências da base
 }
 
+// Função para o exercício 8
 void ex8() {
-// identificacao
-    printf( "\nExercicio 08:\n\n" );
-    int matriz[10][10];
-    int linhas;
-    linhas = ler_matriz("MATRIZ3.TXT", matriz);
+    printf("\nExercicio 08:\n\n");
+    int matriz[MAX_LINHAS][MAX_COLUNAS];
+    int linhas = ler_matriz("MATRIZ3.TXT", matriz);
     if (linhas == -1) {
-        return 1;
+        return; // Se falhar ao ler a matriz, sai da função
     }
+
+    // Determina o número de colunas usando a primeira linha
     int colunas = 0;
     while (matriz[0][colunas] != '\0') {
+        colunas++;
     }
+
     int matriz_valida = 1;
     for (int i = 0; i < linhas; i++) {
         if (!verificar_potencias_por_linha(matriz[i], colunas)) {
-            printf("A linha %d não segue a característica de potências por linha.\n", i + 1);
+            printf("A linha %d nao segue a caracterstica de potências por linha.\n", i + 1);
             matriz_valida = 0;
         }
     }
@@ -398,7 +406,7 @@ void ex8() {
     if (matriz_valida) {
         printf("Todas as linhas seguem a característica de potências por linha.\n");
     }
-    printf( "\nAperte ENTER para continuar!\n" );
+    printf("\nAperte ENTER para continuar!\n");
     getchar();
 }
 
@@ -411,11 +419,69 @@ void ex9() {
     getchar();
 }
 
+#define MAX_SUPERMERCADOS 100
+#define MAX_NOME 50
+
+typedef struct {
+    char nome[MAX_NOME];
+    int codigo;
+    float preco;
+} Supermercado;
+
+int lerDados(const char *nomeArquivo, Supermercado supermercados[], int *quantidade) {
+    FILE *arquivo = fopen(nomeArquivo, "r");
+    if (arquivo == NULL) {
+        fprintf(stderr, "Erro ao abrir o arquivo %s\n", nomeArquivo);
+        return 0;
+    }
+    fscanf(arquivo, "%d", quantidade);
+    for (int i = 0; i < *quantidade; i++) {
+        fscanf(arquivo, "%s %d %f", supermercados[i].nome, &supermercados[i].codigo, &supermercados[i].preco);
+    }
+    fclose(arquivo);
+    return 1;
+}
+
+
+float calcularMedia(Supermercado supermercados[], int quantidade) {
+    float soma = 0.0;
+    for (int i = 0; i < quantidade; i++) {
+        soma += supermercados[i].preco;
+    }
+    return soma / quantidade;
+}
+
+
+void exibirInferiores(Supermercado supermercados[], int quantidade, float media) {
+    int contador = 0;
+
+    printf("Supermercados com precos abaixo da media (%.lf):\n", media);
+    for (int i = 0; i < quantidade; i++) {
+        if (supermercados[i].preco < media) {
+            printf("- Nome: %s | Codigo: %d | Preco: %.2f\n",
+                   supermercados[i].nome,
+                   supermercados[i].codigo,
+                   supermercados[i].preco);
+            contador++;
+            if (contador == 2) break;
+        }
+    }
+
+    if (contador < 2) {
+        printf("Nao existem pelo menos 2 supermercados com precos abaixo da media.\n");
+    }
+}
 
 void ex10() {
 // identificacao
     printf( "\nExercicio 10:\n\n" );
-
+    Supermercado supermercados[MAX_SUPERMERCADOS];
+    int quantidade = 0;
+    if (!lerDados("DADOS3.TXT", supermercados, &quantidade)) {
+        return 1;
+    }
+    float media = calcularMedia(supermercados, quantidade);
+    exibirInferiores(supermercados, quantidade, media);
     printf( "\nAperte ENTER para continuar!\n" );
     getchar();
 }// Fim da função ex0320
