@@ -18,9 +18,6 @@
 #include <algorithm>
 #include <cctype>
 using namespace std;
-// Tamanho max string
-const int TAM_STR = 80;
-// Fun��o para mostrar o menu de op��es
 
 void close()
 {
@@ -57,8 +54,6 @@ int ex1511()
 
     close();
 }
-
-
 
 
 
