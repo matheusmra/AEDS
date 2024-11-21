@@ -157,7 +157,6 @@ void ex1514()
     str = str_pop_front(str);
     cout << "String apos o pop front: " << str << endl;
     close();
-    close();
 }
 
 
