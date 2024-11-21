@@ -17,6 +17,7 @@
 #include <string>
 #include <algorithm>
 #include <cctype>
+#include <cstring>
 using namespace std;
 
 void close()
@@ -43,7 +44,19 @@ void menuOpcoes()
 } // fim menuOpcoes()
 
 
+char* str_push_back(char* s, char c) {
+    size_t len = strlen(s);
+    char* new_str = new char[len + 2];
+    for (size_t i = 0; i < len; ++i) {
+        new_str[i] = s[i];
+    }
+    new_str[len] = c;
+    new_str[len + 1] = '\0';
 
+    delete[] s;
+
+    return new_str;
+}
 
 
 
@@ -51,38 +64,99 @@ int ex1511()
 {
 // identificacao
     cout << "\nExercicio 1511:\n\n";
-
+    char* str = new char[5];
+    str[0] = 'T',str[1] = 'e',str[2] = 's', str[3] = 't', str[4] = 'e';
+    char inserido = '\0';
+    cout << "Digite o caractere a ser inserido na string" << endl;
+    cin >> inserido;
+    str = str_push_back(str,inserido);
+    cout << "String final: " << str << endl;
+    delete[] str;
+    getchar();
     close();
 }
 
-
+char* str_pop_back(char* s) {
+    size_t len = strlen(s);
+    if (len == 0) {
+        return s;
+    }
+    char* new_str = new char[len];
+    for (size_t i = 0; i < len - 1; ++i) {
+        new_str[i] = s[i];
+    }
+    new_str[len - 1] = '\0';
+    delete[] s;
+    return new_str;
+}
 
 int ex1512()
 {
     // Identifica��o
     cout << "\nExercicio 1512:\n\n";
-
+    char* str = new char[5];
+    str[0] = 'T',str[1] = 'e',str[2] = 's', str[3] = 't', str[4] = 'e';
+    cout << "String original: " << str << endl;
+    str = str_pop_back(str);
+    cout << "String apos o pop back: " << str << endl;
     close();
 
 
 }
 
-
+char* str_push_front(char c, char* s) {
+    size_t len = strlen(s);
+    char* new_str = new char[len + 2];
+    new_str[0] = c;
+    for (size_t i = 0; i < len; ++i) {
+        new_str[i + 1] = s[i];
+    }
+    new_str[len + 1] = '\0';
+    delete[] s;
+    return new_str;
+}
 
 void ex1513()
 {
 // identificacao
     cout << "\nExercicio 1513:\n\n" ;
-
+    char* str = new char[5];
+    str[0] = 'T',str[1] = 'e',str[2] = 's', str[3] = 't', str[4] = 'e';
+    char inserido = '\0';
+    cout << "Digite o caractere a ser inserido na string" << endl;
+    cin >> inserido;
+    str = str_push_front(inserido, str);
+    cout << "String apos o push front: " << str << endl;
+    delete[] str;
+    getchar();
     close();
 
+}
+
+char* str_pop_front(char* s) {
+    size_t len = strlen(s);
+    if (len == 0) {
+        return s;
+    }
+    char* new_str = new char[len];
+    for (size_t i = 1; i < len; ++i) {
+        new_str[i - 1] = s[i];
+    }
+    new_str[len - 1] = '\0';
+    delete[] s;
+    return new_str;
 }
 
 void ex1514()
 {
 // identificacao
     cout << "\nExercicio 1514:\n\n" ;
-
+    char* str = new char[5];
+    str[0] = 'T',str[1] = 'e',str[2] = 's', str[3] = 't', str[4] = 'e';
+    cout << "String original: " << str << endl;
+    str = str_pop_front(str);
+    cout << "String apos o pop front: " << str << endl;
+    close();
     close();
 }
 
