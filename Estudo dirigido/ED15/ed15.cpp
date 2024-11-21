@@ -159,40 +159,138 @@ void ex1514()
     close();
 }
 
-
+char* str_push_mid(char c, char* s) {
+    size_t len = strlen(s);
+    int mid = len / 2;
+    char* new_str = new char[len + 2];
+    for (size_t i = 0; i < mid; ++i) {
+        new_str[i] = s[i];
+    }
+    new_str[mid] = c;
+    for (size_t i = mid; i < len; ++i) {
+        new_str[i + 1] = s[i];
+    }
+    new_str[len + 1] = '\0';
+    delete[] s;
+    return new_str;
+}
 
 void ex1515()
 {
 // identificacao
     cout << "\nExercicio 1515:\n\n" ;
-
+    char* str = new char[5];
+    str[0] = 'T',str[1] = 'e',str[2] = 's', str[3] = 't', str[4] = 'e';
+    char inserido = '\0';
+    cout << "Digite o caractere a ser inserido na string" << endl;
+    cin >> inserido;
+    str = str_push_mid(inserido, str);
+    cout << "String apos o push mid: " << str << endl;
+    delete[] str;
+    getchar();
     close();
 }
 
-
+char* str_pop_mid(char* s) {
+    size_t len = strlen(s);
+    int mid = len / 2;
+    char* new_str = new char[len];
+    for (size_t i = 0; i < mid; ++i) {
+        new_str[i] = s[i];
+    }
+    for (size_t i = mid + 1; i < len; ++i) {
+        new_str[i - 1] = s[i];
+    }
+    new_str[len - 1] = '\0';
+    delete[] s;
+    return new_str;
+}
 void ex1516()
 {
 // identificacao
     cout << "\nExercicio 1516:\n\n" ;
+    char* str = new char[5];
+    char inserido = '\0';
+    str[0] = 'T',str[1] = 'e',str[2] = 's', str[3] = 't', str[4] = 'e';
+    cout << "String original: " << str << endl;
+    str = str_pop_mid(str);
+    cout << "String apos o pop mid: " << str << endl;
+    cout << "Digite o caractere a ser inserido na string" << endl;
+    cin >> inserido;
+    str = str_push_mid(inserido, str);
+    cout << "String apos o push mid: " << str << endl;
+    str = str_pop_mid(str);
+    cout << "String apos o pop mid: " << str << endl;
+    getchar();
     close();
 }
 
+char* str_insert(char c, char* s, int index) {
+    size_t len = strlen(s);
+    char* new_str = new char[len + 2];
+    for (size_t i = 0; i < index; ++i) {
+        new_str[i] = s[i];
+    }
+    new_str[index] = c;
+    for (size_t i = index; i < len; ++i) {
+        new_str[i + 1] = s[i];
+    }
+    new_str[len + 1] = '\0';
+    delete[] s;
+    return new_str;
+}
 
 void ex1517()
 {
 // identificacao
     cout << "\nExercicio 1517:\n\n" ;
-
+    char* str = new char[5];
+    str[0] = 'T',str[1] = 'e',str[2] = 's', str[3] = 't', str[4] = 'e';
+    char inserido = '\0';
+    cout << "Digite o caractere a ser inserido na string" << endl;
+    cin >> inserido;
+    int index = 0;
+    cout << "Digite a posicao que caractere vai ser inserido na string" << endl;
+    cin >> index;
+    int maxi = strlen(str);
+    if(index >= 0 && index <= maxi){
+    str = str_insert(inserido, str, index);
+    cout << "String apos o insert: " << str << endl;
+    delete[] str;
+    getchar();
+    }else{
+    cout << "O valor do indice deve ser maior ou igual 0 e menor ou igual a: " << maxi << endl;
+    }
     close();
 }
 
-
+char* str_remove(char* s, int index) {
+    size_t len = strlen(s);
+    char* new_str = new char[len];
+    for (size_t i = 0; i < index; ++i) {
+        new_str[i] = s[i];
+    }
+    for (size_t i = index + 1; i < len; ++i) {
+        new_str[i - 1] = s[i];
+    }
+    new_str[len - 1] = '\0';
+    delete[] s;
+    return new_str;
+}
 
 void ex1518()
 {
 // identificacao
     cout << "\nExercicio 1518:\n\n" ;
-
+    char* str = new char[5];
+    str[0] = 'T',str[1] = 'e',str[2] = 's', str[3] = 't', str[4] = 'e';
+    int index = 0;
+    cout << "Digite a posicao que caractere vai ser removida da string" << endl;
+    cin >> index;
+    cout << "String original: " << str << endl;
+    str = str_remove(str, index);
+    cout << "String alterada: " << str << endl;
+    getchar();
     close();
 }
 
