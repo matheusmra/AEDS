@@ -44,19 +44,7 @@ void menuOpcoes()
 } // fim menuOpcoes()
 
 
-char* str_push_back(char* s, char c) {
-    size_t len = strlen(s);
-    char* new_str = new char[len + 2];
-    for (size_t i = 0; i < len; ++i) {
-        new_str[i] = s[i];
-    }
-    new_str[len] = c;
-    new_str[len + 1] = '\0';
 
-    delete[] s;
-
-    return new_str;
-}
 
 
 
