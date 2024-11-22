@@ -67,46 +67,19 @@ int ex1612()
 }
 
 
-void ex1513()
+void ex1613()
 {
 // identificacao
-    cout << "\nExercicio 1513:\n\n" ;
-    char* str = new char[5];
-    str[0] = 'T',str[1] = 'e',str[2] = 's', str[3] = 't', str[4] = 'e';
-    char inserido = '\0';
-    cout << "Digite o caractere a ser inserido na string" << endl;
-    cin >> inserido;
-    str = str_push_front(inserido, str);
-    cout << "String apos o push front: " << str << endl;
-    delete[] str;
-    getchar();
+    cout << "\nExercicio 1613:\n\n" ;
     close();
 
 }
 
-char* str_pop_front(char* s) {
-    size_t len = strlen(s);
-    if (len == 0) {
-        return s;
-    }
-    char* new_str = new char[len];
-    for (size_t i = 1; i < len; ++i) {
-        new_str[i - 1] = s[i];
-    }
-    new_str[len - 1] = '\0';
-    delete[] s;
-    return new_str;
-}
 
-void ex1514()
+void ex1614()
 {
 // identificacao
-    cout << "\nExercicio 1514:\n\n" ;
-    char* str = new char[5];
-    str[0] = 'T',str[1] = 'e',str[2] = 's', str[3] = 't', str[4] = 'e';
-    cout << "String original: " << str << endl;
-    str = str_pop_front(str);
-    cout << "String apos o pop front: " << str << endl;
+    cout << "\nExercicio 1614:\n\n" ;
     close();
 }
 
