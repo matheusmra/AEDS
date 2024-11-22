@@ -83,69 +83,19 @@ void ex1614()
     close();
 }
 
-char* str_push_mid(char c, char* s) {
-    size_t len = strlen(s);
-    int mid = len / 2;
-    char* new_str = new char[len + 2];
-    for (size_t i = 0; i < mid; ++i) {
-        new_str[i] = s[i];
-    }
-    new_str[mid] = c;
-    for (size_t i = mid; i < len; ++i) {
-        new_str[i + 1] = s[i];
-    }
-    new_str[len + 1] = '\0';
-    delete[] s;
-    return new_str;
-}
 
-void ex1515()
+void ex1615()
 {
 // identificacao
-    cout << "\nExercicio 1515:\n\n" ;
-    char* str = new char[5];
-    str[0] = 'T',str[1] = 'e',str[2] = 's', str[3] = 't', str[4] = 'e';
-    char inserido = '\0';
-    cout << "Digite o caractere a ser inserido na string" << endl;
-    cin >> inserido;
-    str = str_push_mid(inserido, str);
-    cout << "String apos o push mid: " << str << endl;
-    delete[] str;
-    getchar();
+    cout << "\nExercicio 1615:\n\n" ;
     close();
 }
 
-char* str_pop_mid(char* s) {
-    size_t len = strlen(s);
-    int mid = len / 2;
-    char* new_str = new char[len];
-    for (size_t i = 0; i < mid; ++i) {
-        new_str[i] = s[i];
-    }
-    for (size_t i = mid + 1; i < len; ++i) {
-        new_str[i - 1] = s[i];
-    }
-    new_str[len - 1] = '\0';
-    delete[] s;
-    return new_str;
-}
-void ex1516()
+void ex1616()
 {
 // identificacao
-    cout << "\nExercicio 1516:\n\n" ;
-    char* str = new char[5];
-    char inserido = '\0';
-    str[0] = 'T',str[1] = 'e',str[2] = 's', str[3] = 't', str[4] = 'e';
-    cout << "String original: " << str << endl;
-    str = str_pop_mid(str);
-    cout << "String apos o pop mid: " << str << endl;
-    cout << "Digite o caractere a ser inserido na string" << endl;
-    cin >> inserido;
-    str = str_push_mid(inserido, str);
-    cout << "String apos o push mid: " << str << endl;
-    str = str_pop_mid(str);
-    cout << "String apos o pop mid: " << str << endl;
-    getchar();
+    cout << "\nExercicio 1616:\n\n" ;
+
     close();
 }
 
