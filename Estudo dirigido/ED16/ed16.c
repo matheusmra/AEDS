@@ -57,31 +57,15 @@ int ex1611()
 
 
 
-int ex1512()
+int ex1612()
 {
     // Identifica��o
-    cout << "\nExercicio 1512:\n\n";
-    char* str = new char[5];
-    str[0] = 'T',str[1] = 'e',str[2] = 's', str[3] = 't', str[4] = 'e';
-    cout << "String original: " << str << endl;
-    str = str_pop_back(str);
-    cout << "String apos o pop back: " << str << endl;
+    cout << "\nExercicio 1612:\n\n";
     close();
 
 
 }
 
-char* str_push_front(char c, char* s) {
-    size_t len = strlen(s);
-    char* new_str = new char[len + 2];
-    new_str[0] = c;
-    for (size_t i = 0; i < len; ++i) {
-        new_str[i + 1] = s[i];
-    }
-    new_str[len + 1] = '\0';
-    delete[] s;
-    return new_str;
-}
 
 void ex1513()
 {
