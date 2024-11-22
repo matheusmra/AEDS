@@ -169,40 +169,40 @@ int main(void)
         case 0:
             break;
         case 1:
-            ex1511();
+            ex1611();
             break;
         case 2:
-            ex1512();
+            ex1612();
             break;
         case 3:
-            ex1513();
+            ex1613();
             break;
         case 4:
-            ex1514();
+            ex1614();
             break;
         case 5:
-            ex1515();
+            ex1615();
             break;
         case 6:
-            ex1516();
+            ex1616();
             break;
         case 7:
-            ex1517();
+            ex1617();
             break;
         case 8:
-            ex1518();
+            ex1618();
             break;
         case 9:
-            ex1519();
+            ex1619();
             break;
         case 10:
-            ex1520();
+            ex1620();
             break;
         case 11:
-            ex15E1();
+            ex16E1();
             break;
         case 12:
-            ex15E2();
+            ex16E2();
             break;
         default:
             cout << "\nERRO: OPCAO INVALIDA\n\n";
