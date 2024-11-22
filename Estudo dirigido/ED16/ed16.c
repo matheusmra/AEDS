@@ -55,19 +55,7 @@ int ex1611()
     close();
 }
 
-char* str_pop_back(char* s) {
-    size_t len = strlen(s);
-    if (len == 0) {
-        return s;
-    }
-    char* new_str = new char[len];
-    for (size_t i = 0; i < len - 1; ++i) {
-        new_str[i] = s[i];
-    }
-    new_str[len - 1] = '\0';
-    delete[] s;
-    return new_str;
-}
+
 
 int ex1512()
 {
