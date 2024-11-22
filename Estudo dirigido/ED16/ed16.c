@@ -48,19 +48,10 @@ void menuOpcoes()
 
 
 
-int ex1511()
+int ex1611()
 {
 // identificacao
-    cout << "\nExercicio 1511:\n\n";
-    char* str = new char[5];
-    str[0] = 'T',str[1] = 'e',str[2] = 's', str[3] = 't', str[4] = 'e';
-    char inserido = '\0';
-    cout << "Digite o caractere a ser inserido na string" << endl;
-    cin >> inserido;
-    str = str_push_back(str,inserido);
-    cout << "String final: " << str << endl;
-    delete[] str;
-    getchar();
+    cout << "\nExercicio 1611:\n\n";
     close();
 }
 
