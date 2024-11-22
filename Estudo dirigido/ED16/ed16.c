@@ -99,154 +99,42 @@ void ex1616()
     close();
 }
 
-char* str_insert(char c, char* s, int index) {
-    size_t len = strlen(s);
-    char* new_str = new char[len + 2];
-    for (size_t i = 0; i < index; ++i) {
-        new_str[i] = s[i];
-    }
-    new_str[index] = c;
-    for (size_t i = index; i < len; ++i) {
-        new_str[i + 1] = s[i];
-    }
-    new_str[len + 1] = '\0';
-    delete[] s;
-    return new_str;
-}
 
-void ex1517()
+void ex1617()
 {
 // identificacao
-    cout << "\nExercicio 1517:\n\n" ;
-    char* str = new char[5];
-    str[0] = 'T',str[1] = 'e',str[2] = 's', str[3] = 't', str[4] = 'e';
-    char inserido = '\0';
-    cout << "Digite o caractere a ser inserido na string" << endl;
-    cin >> inserido;
-    int index = 0;
-    cout << "Digite a posicao que caractere vai ser inserido na string" << endl;
-    cin >> index;
-    int maxi = strlen(str);
-    if(index >= 0 && index <= maxi){
-    str = str_insert(inserido, str, index);
-    cout << "String apos o insert: " << str << endl;
-    delete[] str;
-    getchar();
-    }else{
-    cout << "O valor do indice deve ser maior ou igual 0 e menor ou igual a: " << maxi << endl;
-    }
+    cout << "\nExercicio 1617:\n\n" ;
     close();
 }
 
-char* str_remove(char* s, int index) {
-    size_t len = strlen(s);
-    char* new_str = new char[len];
-    for (size_t i = 0; i < index; ++i) {
-        new_str[i] = s[i];
-    }
-    for (size_t i = index + 1; i < len; ++i) {
-        new_str[i - 1] = s[i];
-    }
-    new_str[len - 1] = '\0';
-    delete[] s;
-    return new_str;
-}
-
-void ex1518()
+void ex1618()
 {
 // identificacao
-    cout << "\nExercicio 1518:\n\n" ;
-    char* str = new char[5];
-    str[0] = 'T',str[1] = 'e',str[2] = 's', str[3] = 't', str[4] = 'e';
-    int index = 0;
-    cout << "Digite a posicao que caractere vai ser removida da string" << endl;
-    cin >> index;
-    cout << "String original: " << str << endl;
-    int maxi = strlen(str);
-    if(index >= 0 && index < maxi){
-    str = str_remove(str, index);
-    cout << "String alterada: " << str << endl;
-    }else{
-    cout << "Erro" << endl;
-    }
-    getchar();
+    cout << "\nExercicio 1618:\n\n" ;
     close();
 }
 
-char* str_chr(char* s, char c) {
-    while (*s != '\0') {
-        if (*s == c) {
-            return s;
-        }
-        s++;
-    }
-    return nullptr;
-}
 
-void ex1519()
+void ex1619()
 {
     // identificacao
-    cout << "\nExercicio 1519:\n\n";
-    char* str = "Exemplo de busca na string";
-    char c = '\0';
-    cout << "Caractere que deseja procurar =";
-    cin >> c;
-    char *result = str_chr(str, c);
-    if (result != nullptr) {
-        cout << "Caractere '" << c << "' encontrado em: " << result << endl;
-    } else {
-        cout << "Caractere '" << c << "' nao encontrado na string." << endl;
-    }
-    getchar();
+    cout << "\nExercicio 1619:\n\n";
     close();
 }
 
-char* str_tok(char* s, char delimiter) {
-    static char* last_pos = nullptr;
 
-    if (s != nullptr) {
-        last_pos = s;
-    }
-
-    if (last_pos == nullptr || *last_pos == '\0') {
-        return nullptr;
-    }
-    char* start = last_pos;
-    while (*last_pos != '\0' && *last_pos != delimiter) {
-        last_pos++;
-    }
-    if (*last_pos == delimiter) {
-        *last_pos = '\0';
-        last_pos++;
-    }
-
-    return start;
-}
-
-void ex1520()
+void ex1620()
 {
     // identificacao
-    cout << "\nExercicio 1520:\n\n";
-    char str[] = "Matheus,de,Almeida,Moreira";
-    char delimiter = ',';
-    cout << "Delimitador =";
-    cin >> delimiter;
-    char* strings = str_tok(str, delimiter);
-    int i = 1;
-    while (strings != nullptr) {
-        cout << "String " << "("<< i << ")" << " = " << strings << endl;
-        strings = str_tok(nullptr, delimiter);
-        i++;
-    }
-    getchar();
+    cout << "\nExercicio 1620:\n\n";
     close();
 }
 
 
 
-void ex15E1()
+void ex16E1()
 {
-    cout << "\nExercicio 15E1:\n\n";
+    cout << "\nExercicio 16E1:\n\n";
 
     close();
 }
@@ -254,10 +142,10 @@ void ex15E1()
 
 
 
-void ex15E2()
+void ex16E2()
 {
     // identificacao
-    cout << "\nExercicio 15E2:\n\n";
+    cout << "\nExercicio 16E2:\n\n";
 
     close();
 }
