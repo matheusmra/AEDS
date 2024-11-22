@@ -30,17 +30,17 @@ void menuOpcoes()
     cout << "\nEscolha alguma das opcoes a seguir:\n\n";
     cout << "  0 - Encerrar programa\n";
     cout << "  1 - Exercicio 1611\n";
-    cout << "  2 - Exercicio 1512\n";
-    cout << "  3 - Exercicio 1513\n";
-    cout << "  4 - Exercicio 1514\n";
-    cout << "  5 - Exercicio 1515\n";
-    cout << "  6 - Exercicio 1516\n";
-    cout << "  7 - Exercicio 1517\n";
-    cout << "  8 - Exercicio 1518\n";
-    cout << "  9 - Exercicio 1519\n";
-    cout << "  10 - Exercicio 1520\n";
-    cout << "  11 - Exercicio 15E1\n";
-    cout << "  12 - Exercicio 15E2\n";
+    cout << "  2 - Exercicio 1612\n";
+    cout << "  3 - Exercicio 1613\n";
+    cout << "  4 - Exercicio 1614\n";
+    cout << "  5 - Exercicio 1615\n";
+    cout << "  6 - Exercicio 1616\n";
+    cout << "  7 - Exercicio 1617\n";
+    cout << "  8 - Exercicio 1618\n";
+    cout << "  9 - Exercicio 1619\n";
+    cout << "  10 - Exercicio 1620\n";
+    cout << "  11 - Exercicio 16E1\n";
+    cout << "  12 - Exercicio 16E2\n";
 } // fim menuOpcoes()
 
 
