@@ -142,7 +142,7 @@ IntArray* array_push_front(IntArray* array, int value) {
     }
     int* new_data = (int*)realloc(array->data, (array->size + 1) * sizeof(int));
     if (new_data == nullptr) {
-        cerr << "Erro ao alocar memória!" << endl;
+        cout << "Erro ao alocar memória!" << endl;
         return array;
     }
 
@@ -184,7 +184,7 @@ IntArray* array_pop_front(IntArray* array) {
     }
     int* new_data = (int*)realloc(array->data, (array->size - 1) * sizeof(int));
     if (new_data == nullptr && array->size > 1) {
-        cerr << "Erro ao alocar memória!" << endl;
+        cout << "Erro ao alocar memoria!" << endl;
         return array;
     }
 
@@ -213,16 +213,14 @@ void ex1614()
         cout << arr->data[i] << " ";
     }
     cout << endl;
-
     arr = array_pop_front(arr);
     cout << "Apos a segunda remocao:" << endl;
     for (int i = 0; i < arr->size; i++) {
         cout << arr->data[i] << " ";
     }
     cout << endl;
-
     arr = array_pop_front(arr);
-    cout << "Apos a terceira remocao (array vazio):" << endl;
+    cout << "Apos a terceira remocao:" << endl;
     if (arr->size == 0) {
         cout << "Array esta vazio." << endl;
     }
@@ -230,10 +228,43 @@ void ex1614()
 }
 
 
+IntArray* array_push_mid(IntArray* array, int value) {
+    if (array == nullptr) {
+        array = new IntArray;
+        array->data = nullptr;
+        array->size = 0;
+    }
+    int* new_data = (int*)realloc(array->data, (array->size + 1) * sizeof(int));
+    if (new_data == nullptr) {
+        cout << "Erro ao alocar memoria!" << endl;
+        return array;
+    }
+
+    array->data = new_data;
+    int mid = array->size / 2;
+    for (int i = array->size; i > mid; i--) {
+        array->data[i] = array->data[i - 1];
+    }
+    array->data[mid] = value;
+    array->size++;
+    return array;
+}
+
 void ex1615()
 {
 // identificacao
     cout << "\nExercicio 1615:\n\n" ;
+    IntArray* arr = nullptr;
+    arr = array_push_front(arr, 30);
+    arr = array_push_front(arr, 10);
+    arr = array_push_mid(arr, 20);
+
+    // Exibir o resultado
+    cout << "Array apos insercoes no meio:" << endl;
+    for (int i = 0; i < arr->size; i++) {
+        cout << arr->data[i] << " ";
+    }
+    cout << endl;
     close();
 }
 
