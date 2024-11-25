@@ -20,6 +20,11 @@
 #include <cstring>
 using namespace std;
 
+struct IntArray {
+    int* data;
+    int size;
+};
+
 void close()
 {
     cout << "\nAperte ENTER para continuar!\n";
@@ -44,42 +49,183 @@ void menuOpcoes()
 } // fim menuOpcoes()
 
 
+IntArray* array_push_back(IntArray* array, int value) {
+    if (array == nullptr) {
+        array = new IntArray;
+        array->data = nullptr;
+        array->size = 0;
+    }
+    int* new_data = (int*)realloc(array->data, (array->size + 1) * sizeof(int));
+    if (new_data == nullptr) {
+        cerr << "Erro ao alocar memoria!" << endl;
+        return array;
+    }
 
+    array->data = new_data;
+    array->data[array->size] = value;
+    array->size++;
 
+    return array;
+}
 
 
 int ex1611()
 {
 // identificacao
     cout << "\nExercicio 1611:\n\n";
+    IntArray* arr = nullptr;
+    arr = array_push_back(arr, 10);
+    arr = array_push_back(arr, 20);
+    arr = array_push_back(arr, 30);
+    cout << "Array: " << endl;
+    for (int i = 0; i < 3; i++) {
+        cout << arr->data[i] << " ";
+    }
     close();
 }
 
+IntArray* array_pop_back(IntArray* array) {
+    if (array == nullptr || array->size == 0) {
+        cout << "Array está vazio, nada a remover." << endl;
+        return array;
+    }
 
+    // Realoca o espaço no array para remover o último valor
+    int* new_data = (int*)realloc(array->data, (array->size - 1) * sizeof(int));
+    if (new_data == nullptr && array->size > 1) {
+        cerr << "Erro ao realocar memoria!" << endl;
+        return array;
+    }
+
+    array->data = new_data;
+    array->size--;  // Decrementa o tamanho
+
+    return array;
+}
 
 int ex1612()
 {
     // Identifica��o
     cout << "\nExercicio 1612:\n\n";
+    IntArray* arr = nullptr;
+
+    arr = array_push_back(arr, 10);
+    arr = array_push_back(arr, 20);
+    arr = array_push_back(arr, 30);
+
+    cout << "Preenchendo o array com push_back:" << endl;
+    for (int i = 0; i < 3; i++) {
+        cout << arr->data[i] << " ";
+    }
+    cout << endl;
+
+    cout << "Alterando o array com pop_back:" << endl;
+    for (int i = 0; i < 3; i++) {
+        arr = array_pop_back(arr);
+        for (int j = 0; j < 3 - i - 1; j++) {
+            cout << arr->data[j] << " ";
+        }
+        cout << endl;
+    }
+
+    free(arr);
     close();
-
-
 }
 
+
+
+IntArray* array_push_front(IntArray* array, int value) {
+    if (array == nullptr) {
+        array = new IntArray;
+        array->data = nullptr;
+        array->size = 0;
+    }
+    int* new_data = (int*)realloc(array->data, (array->size + 1) * sizeof(int));
+    if (new_data == nullptr) {
+        cerr << "Erro ao alocar memória!" << endl;
+        return array;
+    }
+
+    array->data = new_data;
+    for(int i = array->size; i > 0; i--) {
+        array->data[i] = array->data[i - 1];
+    }
+    array->data[0] = value;
+    array->size++;
+    return array;
+}
 
 void ex1613()
 {
 // identificacao
     cout << "\nExercicio 1613:\n\n" ;
+    IntArray* arr = nullptr;
+
+    arr = array_push_front(arr, 30);
+    arr = array_push_front(arr, 20);
+    arr = array_push_front(arr, 10);
+
+    cout << "Preenchendo o array com push_front:" << endl;
+    for (int i = 0; i < 3; i++) {
+        cout << arr->data[i] << " ";
+    }
+    cout << endl;
     close();
 
 }
 
+IntArray* array_pop_front(IntArray* array) {
+    if (array == nullptr || array->size == 0) {
+        cout << "Erro: Array vazio" << endl;
+        return array;
+    }
+    for (int i = 0; i < array->size - 1; i++) {
+        array->data[i] = array->data[i + 1];
+    }
+    int* new_data = (int*)realloc(array->data, (array->size - 1) * sizeof(int));
+    if (new_data == nullptr && array->size > 1) {
+        cerr << "Erro ao alocar memória!" << endl;
+        return array;
+    }
+
+    array->data = new_data;
+    array->size--;
+    return array;
+}
 
 void ex1614()
 {
 // identificacao
     cout << "\nExercicio 1614:\n\n" ;
+    IntArray* arr = nullptr;
+    arr = array_push_front(arr, 30);
+    arr = array_push_front(arr, 20);
+    arr = array_push_front(arr, 10);
+    cout << "Preenchendo o array com push_front:" << endl;
+    for (int i = 0; i < 3; i++) {
+        cout << arr->data[i] << " ";
+    }
+    cout << endl;
+    cout << "Realizando o pop front:" << endl;
+    arr = array_pop_front(arr);
+    cout << "Apos a primeira remocao:" << endl;
+    for (int i = 0; i < arr->size; i++) {
+        cout << arr->data[i] << " ";
+    }
+    cout << endl;
+
+    arr = array_pop_front(arr);
+    cout << "Apos a segunda remocao:" << endl;
+    for (int i = 0; i < arr->size; i++) {
+        cout << arr->data[i] << " ";
+    }
+    cout << endl;
+
+    arr = array_pop_front(arr);
+    cout << "Apos a terceira remocao (array vazio):" << endl;
+    if (arr->size == 0) {
+        cout << "Array esta vazio." << endl;
+    }
     close();
 }
 
