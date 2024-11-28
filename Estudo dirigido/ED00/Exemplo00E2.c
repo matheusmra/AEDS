@@ -8,7 +8,7 @@
  Para executar em terminal (janela de comandos):
  Linux : ./exemplo00E2
  Windows: exemplo00E2
-*/
+*/ 
 
 // -------------------------------------------- Dependencias
 #include <stdio.h>   // para as entradas e saidas
