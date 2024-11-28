@@ -1,5 +1,5 @@
 /*
- Prova 02 - v0.0. - 12 / 11 / 2024
+ Prova 02 - v0.0. - 14 / 11 / 2024
  Author: Matheus de Almeida Moreira
 
  Para compilar em terminal (janela de comandos):
@@ -18,7 +18,7 @@
 #include <stdbool.h>
 // Tamanho max string
 const int TAM_STR = 80;
-// Função para mostrar o menu de opções
+// FunÃ§Ã£o para mostrar o menu de opÃ§Ãµes
 void menuOpcoes()
 {
     printf("\nEscolha alguma das opcoes a seguir:\n\n");
@@ -216,7 +216,7 @@ struct s_Fraction f_05(double a)
 
 void p05()
 {
-    // Identificação
+    // IdentificaÃ§Ã£o
     printf("\nExercicio 05:\n\n");
     opcoes05();
     struct s_Fraction a = f_05(3.94);
@@ -374,7 +374,7 @@ void p08()
     car.ss = 0;
     tempoPermanencia = soma(car);
     int totl = total(tempoPermanencia);
-    int valor = 5 * totl; //Defini o valor que será cobrado a cada 5 minutos;
+    int valor = 5 * totl; //Defini o valor que serÃ¡ cobrado a cada 5 minutos;
     printf("Tempo de permanencia: %d horas, %d minutos, %d segundos\n", tempoPermanencia.hs, tempoPermanencia.ms, tempoPermanencia.ss);
     printf("\nTotal a pagar: R$%d", valor );
     printf( "\nAperte ENTER para continuar!\n" );
@@ -382,20 +382,20 @@ void p08()
 }
 
 
-// Função principal
+// FunÃ§Ã£o principal
 int main(void)
 {
     int opcao;
 
     do
     {
-        menuOpcoes(); // Chama a função que exibe as opções
+        menuOpcoes(); // Chama a funÃ§Ã£o que exibe as opÃ§Ãµes
 
         printf("\nOpcao = ");
         scanf("%d", &opcao);
         getchar(); // Limpar o buffer de entrada
 
-        // Executar a opção escolhida
+        // Executar a opÃ§Ã£o escolhida
         switch (opcao)
         {
         case 0:
@@ -436,4 +436,4 @@ int main(void)
     getchar();
 
     return 0;
-} // Fim da função principal
+} // Fim da funÃ§Ã£o principal
