@@ -58,7 +58,7 @@ IntArray* array_push_back(IntArray* array, int value) {
 
     int* new_data = (int*)calloc(array->length + 1, sizeof(int));
     if (new_data == nullptr) {
-        cerr << "Erro ao alocar memória!" << endl;
+        cerr << "Erro ao alocar memoria!" << endl;
         return array;
     }
     for (int i = 0; i < array->length; ++i) {
@@ -68,7 +68,7 @@ IntArray* array_push_back(IntArray* array, int value) {
     free(array->data);
 
     array->data = new_data;
-    array->data[array->length] = value; // Adicionar o novo valor
+    array->data[array->length] = value;
     array->length++;
 
     return array;
@@ -251,7 +251,7 @@ IntArray* array_push_mid(IntArray* array, int value) {
     }
     int* new_data = (int*)calloc(array->length + 1, sizeof(int));
     if (new_data == nullptr) {
-        cout << "Erro ao alocar memória!" << endl;
+        cout << "Erro ao alocar memoria!" << endl;
         return array;
     }
     int mid = array->length / 2;
@@ -296,7 +296,7 @@ IntArray* array_pop_mid(IntArray* array) {
 
     int* new_data = (int*)calloc(array->length - 1, sizeof(int));
     if (new_data == nullptr) {
-        cout << "Erro ao alocar memória!" << endl;
+        cout << "Erro ao alocar memoria!" << endl;
         return array;
     }
     int mid = array->length / 2;
