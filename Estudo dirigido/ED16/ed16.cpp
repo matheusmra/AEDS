@@ -24,6 +24,7 @@ struct IntArray {
     int* data;
     int length;
 };
+typedef IntArray* ref_intArray;
 
 void close()
 {
@@ -335,34 +336,167 @@ void ex1616()
     close();
 }
 
+int intArray_cmp(ref_intArray p, ref_intArray q) {
+    int minLength = (p->length < q->length) ? p->length : q->length;
+    for (int i = 0; i < minLength; i++) {
+        if (p->data[i] != q->data[i]) {
+            return p->data[i] - q->data[i];
+        }
+    }
+    if (p->length == q->length) return 0;
+    return (p->length < q->length) ? -1 : 1;
+}
+void imprimir_arr(int arr[], int length) {
+    for (int i = 0; i < length; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+}
 
 void ex1617()
 {
 // identificacao
     cout << "\nExercicio 1617:\n\n" ;
+    int arr1[] = {1, 2, 3};
+    int arr2[] = {1, 2, 4};
+    int arr3[] = {1, 2, 3};
+    IntArray intArr1 = {arr1, 3};
+    IntArray intArr2 = {arr2, 3};
+    IntArray intArr3 = {arr3, 3};
+    ref_intArray p1 = &intArr1;
+    ref_intArray p2 = &intArr2;
+    ref_intArray p3 = &intArr3;
+    cout << "Array 1: " << endl;
+    imprimir_arr(arr1, 3);
+    cout << "Array 2: " << endl;
+    imprimir_arr(arr2, 3);
+    cout << "Array 3: " << endl;
+    imprimir_arr(arr3, 3);
+    cout << "Comparacao arr1 e arr2: " << intArray_cmp(p1, p2) << endl;
+    cout << "Comparacao arr1 e arr3: " << intArray_cmp(p1, p3) << endl;
+    cout << "Comparacao arr2 e arr3: " << intArray_cmp(p2, p3) << endl;
     close();
 }
 
+ref_intArray intArray_cat(ref_intArray p, ref_intArray q) {
+    int newLength = p->length + q->length;
+    int* newData = new int[newLength];
+    for (int i = 0; i < p->length; i++) {
+        newData[i] = p->data[i];
+    }
+    for (int i = 0; i < q->length; i++) {
+        newData[p->length + i] = q->data[i];
+    }
+    ref_intArray result = new IntArray;
+    result->data = newData;
+    result->length = newLength;
+    return result;
+}
+
+void imprimir_intArray(ref_intArray arr) {
+    if (arr == nullptr || arr->length == 0) {
+        cout << "Erro" << endl;
+        return;
+    }
+
+    for (int i = 0; i < arr->length; i++) {
+        cout << arr->data[i] << " ";
+    }
+    cout << endl;
+}
 void ex1618()
 {
 // identificacao
     cout << "\nExercicio 1618:\n\n" ;
+    int arr1[] = {1, 2, 3};
+    int arr2[] = {4, 5, 6};
+    IntArray intArr1 = {arr1, 3};
+    IntArray intArr2 = {arr2, 3};
+    ref_intArray p1 = &intArr1;
+    ref_intArray p2 = &intArr2;
+    ref_intArray result = intArray_cat(p1, p2);
+    cout << "Array concatenado: ";
+    imprimir_intArray(result);
+    delete[] result->data;
+    delete result;
     close();
 }
+
+ref_intArray intArray_seek(ref_intArray a, int x) {
+    for (int i = 0; i < a->length; i++) {
+        if (a->data[i] == x) {
+            ref_intArray result = new IntArray;
+            result->data = &a->data[i];
+            result->length = a->length - i;
+            return result;
+        }
+    }
+    return nullptr;
+}
+
 
 
 void ex1619()
 {
     // identificacao
     cout << "\nExercicio 1619:\n\n";
+    int arr[] = {5, 10, 15, 10, 20};
+    IntArray intArr = {arr, 5};
+    ref_intArray a = &intArr;
+    int x = 0;
+    cout << "Valor procurado =";
+    cin >> x;
+    cout << "Array original:";
+    imprimir_intArray(a);
+    ref_intArray result = intArray_seek(a, x);
+    if (result) {
+        cout << "Imprimindo restante do array a partir da ocorrencia: ";
+        imprimir_intArray(result);
+        delete result;
+    }else{
+        cout << x << " nao existe no array" << endl;
+    }
+    getchar();
     close();
 }
 
+ref_intArray intArray_sub(ref_intArray a, int start, int size) {
+    if (start < 0 || start >= a->length || size <= 0 || (start + size) > a->length) {
+        return nullptr;
+    }
+
+    int* newData = new int[size];
+    for (int i = 0; i < size; i++) {
+        newData[i] = a->data[start + i];
+    }
+    ref_intArray result = new IntArray;
+    result->data = newData;
+    result->length = size;
+
+    return result;
+}
 
 void ex1620()
 {
     // identificacao
     cout << "\nExercicio 1620:\n\n";
+    int arr[] = {5, 10, 15, 20, 25, 30};
+    IntArray intArr = {arr, 6};
+    ref_intArray a = &intArr;
+    int start = 2;
+    int size = 0;
+    cout << "Digite o tamanho do subarray:" << endl;
+    cin >> size;
+    ref_intArray result = intArray_sub(a, start, size);
+    if (result && size > 0 && size <= result->length) {
+        cout << "Subarray: ";
+        imprimir_intArray(result);
+        delete[] result->data;
+        delete result;
+    } else {
+        cout << "Erro" << endl;
+    }
+    getchar();
     close();
 }
 
