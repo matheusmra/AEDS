@@ -55,18 +55,25 @@ IntArray* array_push_back(IntArray* array, int value) {
         array->data = nullptr;
         array->length = 0;
     }
-    int* new_data = (int*)realloc(array->data, (array->length + 1) * sizeof(int));
+
+    int* new_data = (int*)calloc(array->length + 1, sizeof(int));
     if (new_data == nullptr) {
-        cerr << "Erro ao alocar memoria!" << endl;
+        cerr << "Erro ao alocar memória!" << endl;
         return array;
     }
+    for (int i = 0; i < array->length; ++i) {
+        new_data[i] = array->data[i];
+    }
+
+    free(array->data);
 
     array->data = new_data;
-    array->data[array->length] = value;
+    array->data[array->length] = value; // Adicionar o novo valor
     array->length++;
 
     return array;
 }
+
 
 
 int ex1611()
@@ -86,22 +93,25 @@ int ex1611()
 
 IntArray* array_pop_back(IntArray* array) {
     if (array == nullptr || array->length == 0) {
-        cout << "Array está vazio, nada a remover." << endl;
+        cout << "Array esta vazio, nada a remover." << endl;
         return array;
     }
-
-    // Realoca o espaço no array para remover o último valor
-    int* new_data = (int*)realloc(array->data, (array->length - 1) * sizeof(int));
-    if (new_data == nullptr && array->length > 1) {
-        cerr << "Erro ao realocar memoria!" << endl;
+    int* new_data = (int*)calloc(array->length - 1, sizeof(int));
+    if (new_data == nullptr) {
+        cerr << "Erro ao alocar memoria!" << endl;
         return array;
     }
+    for (int i = 0; i < array->length - 1; ++i) {
+        new_data[i] = array->data[i];
+    }
+    free(array->data);
 
     array->data = new_data;
-    array->length--;  // Decrementa o tamanho
+    array->length--;
 
     return array;
 }
+
 
 int ex1612()
 {
@@ -140,38 +150,42 @@ IntArray* array_push_front(IntArray* array, int value) {
         array->data = nullptr;
         array->length = 0;
     }
-    int* new_data = (int*)realloc(array->data, (array->length + 1) * sizeof(int));
+    int* new_data = (int*)calloc(array->length + 1, sizeof(int));
     if (new_data == nullptr) {
         cout << "Erro ao alocar memória!" << endl;
         return array;
     }
-
-    array->data = new_data;
-    for(int i = array->length; i > 0; i--) {
-        array->data[i] = array->data[i - 1];
+    new_data[0] = value;
+    for (int i = 0; i < array->length; i++) {
+        new_data[i + 1] = array->data[i];
     }
-    array->data[0] = value;
+    free(array->data);
+    array->data = new_data;
     array->length++;
+
     return array;
 }
 
-void ex1613()
-{
-// identificacao
-    cout << "\nExercicio 1613:\n\n" ;
+void ex1613() {
+    // Identificação
+    cout << "\nExercicio 1613:\n\n";
+
     IntArray* arr = nullptr;
-
     arr = array_push_front(arr, 30);
-    arr = array_push_front(arr, 20);
-    arr = array_push_front(arr, 10);
+    cout << "Primeiro push front: " << arr->data[0] << endl;
 
-    cout << "Preenchendo o array com push_front:" << endl;
-    for (int i = 0; i < 3; i++) {
+    arr = array_push_front(arr, 20);
+    cout << "Segundo push front: " << arr->data[0] << endl;
+
+    arr = array_push_front(arr, 10);
+    cout << "Terceiro push front: " << arr->data[0] << endl;
+
+    cout << "Arranjo preenchido:" << endl;
+    for (int i = 0; i < arr->length; i++) {
         cout << arr->data[i] << " ";
     }
     cout << endl;
     close();
-
 }
 
 IntArray* array_pop_front(IntArray* array) {
@@ -179,17 +193,18 @@ IntArray* array_pop_front(IntArray* array) {
         cout << "Erro: Array vazio" << endl;
         return array;
     }
-    for (int i = 0; i < array->length - 1; i++) {
-        array->data[i] = array->data[i + 1];
-    }
-    int* new_data = (int*)realloc(array->data, (array->length - 1) * sizeof(int));
-    if (new_data == nullptr && array->length > 1) {
-        cout << "Erro ao alocar memoria!" << endl;
+    int* new_data = (int*)calloc(array->length - 1, sizeof(int));
+    if (new_data == nullptr) {
+        cout << "Erro ao alocar memória!" << endl;
         return array;
     }
-
+    for (int i = 0; i < array->length - 1; i++) {
+        new_data[i] = array->data[i + 1];
+    }
+    free(array->data);
     array->data = new_data;
     array->length--;
+
     return array;
 }
 
@@ -234,21 +249,26 @@ IntArray* array_push_mid(IntArray* array, int value) {
         array->data = nullptr;
         array->length = 0;
     }
-    int* new_data = (int*)realloc(array->data, (array->length + 1) * sizeof(int));
+    int* new_data = (int*)calloc(array->length + 1, sizeof(int));
     if (new_data == nullptr) {
-        cout << "Erro ao alocar memoria!" << endl;
+        cout << "Erro ao alocar memória!" << endl;
         return array;
     }
-
-    array->data = new_data;
     int mid = array->length / 2;
-    for (int i = array->length; i > mid; i--) {
-        array->data[i] = array->data[i - 1];
+    for (int i = 0; i < mid; i++) {
+        new_data[i] = array->data[i];
     }
-    array->data[mid] = value;
+    new_data[mid] = value;
+    for (int i = mid; i < array->length; i++) {
+        new_data[i + 1] = array->data[i];
+    }
+    free(array->data);
+    array->data = new_data;
     array->length++;
+
     return array;
 }
+
 
 void ex1615()
 {
@@ -268,11 +288,50 @@ void ex1615()
     close();
 }
 
+IntArray* array_pop_mid(IntArray* array) {
+    if (array == nullptr || array->length == 0) {
+        cout << "Erro: Array vazio ou nulo" << endl;
+        return array;
+    }
+
+    int* new_data = (int*)calloc(array->length - 1, sizeof(int));
+    if (new_data == nullptr) {
+        cout << "Erro ao alocar memória!" << endl;
+        return array;
+    }
+    int mid = array->length / 2;
+    for (int i = 0; i < mid; i++) {
+        new_data[i] = array->data[i];
+    }
+    for (int i = mid + 1; i < array->length; i++) {
+        new_data[i - 1] = array->data[i];
+    }
+
+    free(array->data);
+    array->data = new_data;
+    array->length--;
+
+    return array;
+}
+
 void ex1616()
 {
 // identificacao
     cout << "\nExercicio 1616:\n\n" ;
-
+    IntArray* arr = nullptr;
+    arr = array_push_front(arr, 10);
+    arr = array_push_front(arr, 20);
+    arr = array_push_front(arr, 30);
+    cout << "Array inicial:" << endl;
+    for(int i = 0; i < 3; i++){
+        cout << arr->data[i] << " ";
+    }
+    cout << endl;
+    arr = array_pop_mid(arr);
+    cout << "Array apos remover o valor do meio:" << endl;
+    for(int i = 0; i < 2; i++){
+        cout << arr->data[i] << " ";
+    }
     close();
 }
 
