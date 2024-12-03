@@ -21,10 +21,20 @@
 using namespace std;
 
 typedef struct s_intStack {
-    int* data;
     int length;
-};
-typedef IntArray* ref_intStack;
+    int* data;
+}intStack;
+
+typedef intStack* ref_intStack;
+
+
+typedef struct s_intQueue {
+    int length;
+    int* data;
+} intQueue;
+
+typedef intQueue* ref_intQueue;
+
 
 void close()
 {
@@ -49,12 +59,74 @@ void menuOpcoes()
     cout << "  12 - Exercicio 17E2\n";
 } // fim menuOpcoes()
 
+void printStack(ref_intStack stack) {
+    if (!stack || stack->length == 0) {
+        cout << "Pilha está vazia." << endl;
+        return;
+    }
+    cout << "Pilha (topo para base): ";
+    for (int i = stack->length - 1; i >= 0; --i) {
+        cout << stack->data[i] << " ";
+    }
+    cout << endl;
+}
+void printQueue(ref_intQueue queue) {
+    if (!queue || queue->length == 0) {
+        cout << "Fila esta vazia." << endl;
+        return;
+    }
+    cout << "Fila: ";
+    for (int i = 0; i < queue->length; i++) {
+        cout << queue->data[i] << " ";
+    }
+    cout << endl;
+}
+
+ref_intStack intStack_push(ref_intStack stack, int value) {
+    if (!stack) {
+        stack = new intStack();
+        stack->data = new int[4];
+        stack->length = 0;
+    }
+    int capacity = (stack->length > 0) ? stack->length : 4;
+    if (stack->length == capacity) {
+        capacity *= 2;
+        int* newData = new int[capacity];
+        for (int i = 0; i < stack->length; ++i) {
+            newData[i] = stack->data[i];
+        }
+        delete[] stack->data;
+        stack->data = newData;
+    }
+    stack->data[stack->length++] = value;
+
+    return stack;
+}
+
 
 int ex1711()
 {
 // identificacao
     cout << "\nExercicio 1711:\n\n";
+    intStack* stack = nullptr;
+    stack = intStack_push(stack, 10);
+    stack = intStack_push(stack, 20);
+    stack = intStack_push(stack, 30);
+    printStack(stack);
+
+    // Liberar memória
+    delete[] stack->data;
+    delete stack;
     close();
+}
+
+ref_intStack intStack_pop(ref_intStack stack) {
+    if (!stack || stack->length == 0) {
+        cout << "Pilha vazia!" << endl;
+        return nullptr;
+    }
+    stack->length--;
+    return stack;
 }
 
 
@@ -62,69 +134,295 @@ int ex1712()
 {
     // Identifica��o
     cout << "\nExercicio 1172:\n\n";
+    intStack* stack = nullptr;
+    stack = intStack_push(stack, 20);
+    stack = intStack_push(stack, 30);
+    printStack(stack);
+    stack = intStack_pop(stack);
+    cout << "Topo da pilha apos remocao: " << stack->data[stack->length - 1] << endl;
     close();
+}
+
+ref_intStack intStack_dup(ref_intStack stack) {
+    if (!stack || stack->length == 0) {
+        cout << "Erro: Pilha vazia!" << endl;
+        return stack;
+    }
+    int topValue = stack->data[stack->length - 1];
+    stack = intStack_push(stack, topValue);
+    return stack;
 }
 
 void ex1713() {
     // Identificação
     cout << "\nExercicio 1713:\n\n";
+    intStack* stack = nullptr;
+    stack = intStack_push(stack, 10);
+    stack = intStack_push(stack, 20);
+    stack = intStack_push(stack, 30);
+    printStack(stack);
+    cout << "Duplicando valor do topo da pilha: " << endl;
+    stack = intStack_dup(stack);
+    printStack(stack);
     close();
+}
+
+ref_intStack intStack_swap(ref_intStack stack) {
+    if (!stack || stack->length < 2) {
+        cout << "Erro: Pilha invalida ou com menos de dois elementos!" << endl;
+        return stack;
+    }
+    int primeiro = stack->length - 1;
+    int segundo = stack->length - 2;
+    int temp = stack->data[primeiro];
+    stack->data[primeiro] = stack->data[segundo];
+    stack->data[segundo] = temp;
+    return stack;
 }
 
 void ex1714()
 {
 // identificacao
     cout << "\nExercicio 1714:\n\n" ;
+    intStack* stack = nullptr;
+    stack = intStack_push(stack, 30);
+    stack = intStack_push(stack, 20);
+    printStack(stack);
+    cout << "Trocando os valores da pilha: " << endl;
+    stack = intStack_swap(stack);
+    printStack(stack);
     close();
 }
 
+ref_intStack intStack_invert(ref_intStack stack) {
+    if (!stack || stack->length < 2) {
+        cout << "Erro: Pilha invalida ou com menos de dois elementos!" << endl;
+        return stack;
+    }
+    int start = 0;
+    int end = stack->length - 1;
+
+    while (start < end) {
+        int temp = stack->data[start];
+        stack->data[start] = stack->data[end];
+        stack->data[end] = temp;
+        start++;
+        end--;
+    }
+    return stack;
+}
 
 
 void ex1715()
 {
 // identificacao
     cout << "\nExercicio 1715:\n\n" ;
+    intStack* stack = nullptr;
+    stack = intStack_push(stack, 30);
+    stack = intStack_push(stack, 20);
+    stack = intStack_push(stack, 10);
+    printStack(stack);
+    cout << "Invertendo os valores da pilha: " << endl;
+    stack = intStack_invert(stack);
+    printStack(stack);
     close();
 }
+
+
+ref_intQueue intQueue_push(ref_intQueue queue, int value) {
+    if (!queue) {
+        queue = new intQueue();
+        queue->data = new int[4];
+        queue->length = 0;
+    }
+    int capacity = (queue->length > 0) ? queue->length : 4;
+    if (queue->length == capacity) {
+        capacity *= 2;
+        int* newData = new int[capacity];
+        for (int i = 0; i < queue->length; ++i) {
+            newData[i] = queue->data[i];
+        }
+        delete[] queue->data;
+        queue->data = newData;
+    }
+    queue->data[queue->length++] = value;
+
+    return queue;
+}
+
 
 void ex1716()
 {
 // identificacao
     cout << "\nExercicio 1716:\n\n" ;
+    ref_intQueue queue = nullptr;
+    queue = intQueue_push(queue, 10);
+    queue = intQueue_push(queue, 20);
+    queue = intQueue_push(queue, 30);
+    cout << "Fila apos insercoes:" << endl;
+    printQueue(queue);
+    cout << endl;
+    delete[] queue->data;
+    delete queue;
 
     close();
 }
 
+ref_intQueue intQueue_pop(ref_intQueue queue) {
+    if (!queue || queue->length == 0) {
+        cout << "Erro: Fila vazia ou invalida!" << endl;
+        return nullptr;
+    }
+    for (int i = 1; i < queue->length; ++i) {
+        queue->data[i - 1] = queue->data[i];
+    }
+    queue->length--;
+    if (queue->length == 0) {
+        delete[] queue->data;
+        delete queue;
+        return nullptr;
+    }
+    return queue;
+}
 
 void ex1717()
 {
 // identificacao
     cout << "\nExercicio 1717:\n\n" ;
+    ref_intQueue queue = nullptr;
+    queue = intQueue_push(queue, 10);
+    queue = intQueue_push(queue, 20);
+    queue = intQueue_push(queue, 30);
+    printQueue(queue);
+    queue = intQueue_pop(queue);
+    cout << "Apos remover o primeiro elemento:" << endl;
+    printQueue(queue);
+    delete[] queue->data;
+    delete queue;
     close();
+}
+
+int intQueue_compare(ref_intQueue p, ref_intQueue q) {
+    if (p->length != q->length) {
+        return p->length - q->length;
+    }
+    for (int i = 0; i < p->length; ++i) {
+        if (p->data[i] < q->data[i]) {
+            return -1;
+        } else if (p->data[i] > q->data[i]) {
+            return 1;
+        }
+    }
+    return 0;
 }
 
 void ex1718()
 {
 // identificacao
     cout << "\nExercicio 1718:\n\n" ;
-
+    ref_intQueue queue1 = nullptr;
+    ref_intQueue queue2 = nullptr;
+    queue1 = intQueue_push(queue1, 10);
+    queue1 = intQueue_push(queue1, 20);
+    queue1 = intQueue_push(queue1, 30);
+    queue2 = intQueue_push(queue2, 10);
+    queue2 = intQueue_push(queue2, 20);
+    queue2 = intQueue_push(queue2, 30);
+    int result = intQueue_compare(queue1, queue2);
+    if (result == 0) {
+        cout << "As filas sao iguais." << endl;
+    } else if (result < 0) {
+        cout << "A primeira fila eh menor que a segunda fila." << endl;
+    } else {
+        cout << "A primeira fila eh maior que a segunda fila." << endl;
+    }
+    delete[] queue1->data;
+    delete queue1;
+    delete[] queue2->data;
+    delete queue2;
     close();
 }
 
+ref_intQueue intQueue_join(ref_intQueue p, ref_intQueue q) {
+    if (!p) {
+        return q;
+    }
+    if (!q) {
+        return p;
+    }
+    ref_intQueue result = new intQueue;
+    result->length = p->length + q->length;
+    result->data = new int[result->length];
+    for (int i = 0; i < p->length; ++i) {
+        result->data[i] = p->data[i];
+    }
+    for (int i = 0; i < q->length; ++i) {
+        result->data[p->length + i] = q->data[i];
+    }
+    delete[] p->data;
+    delete p;
+    delete[] q->data;
+    delete q;
 
+    return result;
+}
 
 void ex1719()
 {
     // identificacao
     cout << "\nExercicio 1719:\n\n";
-
+    ref_intQueue queue1 = nullptr;
+    ref_intQueue queue2 = nullptr;
+    queue1 = intQueue_push(queue1, 10);
+    queue1 = intQueue_push(queue1, 20);
+    cout << "Primeira fila: " << endl;
+    printQueue(queue1);
+    cout << "Segunda fila: " << endl;
+    queue2 = intQueue_push(queue2, 30);
+    queue2 = intQueue_push(queue2, 40);
+    printQueue(queue2);
+    cout << "Juncao das duas filas:" << endl;
+    ref_intQueue mergedQueue = intQueue_join(queue1, queue2);
+    printQueue(mergedQueue);
+    delete[] mergedQueue->data;
+    delete mergedQueue;
     close();
+}
+
+int intQueue_search(ref_intQueue queue, int value) {
+    if (!queue || queue->length == 0) {
+        return 0;
+    }
+    for (int i = 0; i < queue->length; ++i) {
+        if (queue->data[i] == value) {
+            return 1;
+        }
+    }
+
+    return 0;
 }
 
 void ex1720()
 {
     // identificacao
     cout << "\nExercicio 1720:\n\n";
+    ref_intQueue queue = nullptr;
+    queue = intQueue_push(queue, 10);
+    queue = intQueue_push(queue, 20);
+    queue = intQueue_push(queue, 30);
+    printQueue(queue);
+    int search = 0;
+    cout << "Valor procurado =";
+    cin >> search;
+    int result = intQueue_search(queue, search);
+    if (result == 1) {
+        cout << "Valor encontrado na fila!" << endl;
+    } else {
+        cout << "Valor nao encontrado na fila!" << endl;
+    }
+    delete[] queue->data;
+    delete queue;
+    getchar();
     close();
 }
 
