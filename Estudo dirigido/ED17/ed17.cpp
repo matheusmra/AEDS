@@ -7,7 +7,7 @@
  Windows: gcc -o ed17 ed17.c
  Para executar em terminal (janela de comandos):
  Linux : ./ed17
- Windows: ed1
+ Windows: ed17
 */
 
 // dependencias
@@ -133,7 +133,7 @@ ref_intStack intStack_pop(ref_intStack stack) {
 int ex1712()
 {
     // Identifica��o
-    cout << "\nExercicio 1172:\n\n";
+    cout << "\nExercicio 1712:\n\n";
     intStack* stack = nullptr;
     stack = intStack_push(stack, 20);
     stack = intStack_push(stack, 30);
