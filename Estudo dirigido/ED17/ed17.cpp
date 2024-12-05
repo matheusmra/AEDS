@@ -113,8 +113,6 @@ int ex1711()
     stack = intStack_push(stack, 20);
     stack = intStack_push(stack, 30);
     printStack(stack);
-
-    // Liberar memória
     delete[] stack->data;
     delete stack;
     close();
