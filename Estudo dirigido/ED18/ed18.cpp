@@ -20,7 +20,19 @@
 #include <cstring>
 using namespace std;
 
+class intStack {
+private:
+    static int length;
+    int* data;
+public:
+    intStack() {
+        length = 0;
+        data = nullptr;
+    }
 
+};
+
+using ref_intStack = intStack*;
 
 void close()
 {
