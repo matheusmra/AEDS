@@ -293,7 +293,7 @@ void ex1717()
     queue = intQueue_push(queue, 30);
     printQueue(queue);
     queue = intQueue_pop(queue);
-    cout << "Apos remover o primeiro elemento:" << endl;
+    cout << "Fila apos remover o primeiro elemento:" << endl;
     printQueue(queue);
     delete[] queue->data;
     delete queue;
@@ -389,15 +389,15 @@ void ex1719()
 
 int intQueue_search(ref_intQueue queue, int value) {
     if (!queue || queue->length == 0) {
-        return 0;
+        return -2;
     }
     for (int i = 0; i < queue->length; ++i) {
         if (queue->data[i] == value) {
-            return 1;
+            return i;
         }
     }
 
-    return 0;
+    return -1;
 }
 
 void ex1720()
@@ -413,10 +413,10 @@ void ex1720()
     cout << "Valor procurado =";
     cin >> search;
     int result = intQueue_search(queue, search);
-    if (result == 1) {
-        cout << "Valor encontrado na fila!" << endl;
+    if (result > -1) {
+        cout << "Valor encontrado na fila | Posicao: (" << result << ")" << "!" << endl;
     } else {
-        cout << "Valor nao encontrado na fila!" << endl;
+        cout << "O valor digitado nao existe na fila!" << endl;
     }
     delete[] queue->data;
     delete queue;
@@ -424,25 +424,121 @@ void ex1720()
     close();
 }
 
+ref_intQueue intQueue_merge(ref_intQueue p, ref_intQueue q) {
+    ref_intQueue result = new intQueue;
+    result->length = 0;
+    result->data = new int[(p ? p->length : 0) + (q ? q->length : 0)];
+    int i = 0, j = 0;
+    while ((p && i < p->length) || (q && j < q->length)) {
+        if (p && i < p->length) {
+            bool exists = false;
+            for (int k = 0; k < result->length; ++k) {
+                if (result->data[k] == p->data[i]) {
+                    exists = true;
+                    break;
+                }
+            }
+            if (!exists) {
+                result->data[result->length++] = p->data[i];
+            }
+            i++;
+        }
+        if (q && j < q->length) {
+            bool exists = false;
+            for (int k = 0; k < result->length; ++k) {
+                if (result->data[k] == q->data[j]) {
+                    exists = true;
+                    break;
+                }
+            }
+            if (!exists) {
+                result->data[result->length++] = q->data[j];
+            }
+            j++;
+        }
+    }
+    return result;
+}
 
 
 void ex17E1()
 {
     cout << "\nExercicio 17E1:\n\n";
-
+    ref_intQueue queue1 = nullptr;
+    ref_intQueue queue2 = nullptr;
+    queue1 = intQueue_push(queue1, 10);
+    queue1 = intQueue_push(queue1, 20);
+    queue1 = intQueue_push(queue1, 30);
+    queue2 = intQueue_push(queue2, 20);
+    queue2 = intQueue_push(queue2, 40);
+    queue2 = intQueue_push(queue2, 50);
+    cout << "Fila 1: ";
+    printQueue(queue1);
+    cout << "Fila 2: ";
+    printQueue(queue2);
+    ref_intQueue mergedQueue = intQueue_merge(queue1, queue2);
+    cout << "Fila intercalada:";
+    printQueue(mergedQueue);
+    delete[] mergedQueue->data;
+    delete mergedQueue;
+    delete[] queue1->data;
+    delete queue1;
+    delete[] queue2->data;
+    delete queue2;
     close();
 }
 
 
+ref_intQueue intQueue_mergeUp(ref_intQueue p, ref_intQueue q) {
+    ref_intQueue result = new intQueue;
+    result->length = 0;
+    result->data = new int[(p ? p->length : 0) + (q ? q->length : 0)];
+    int i = 0, j = 0;
+    while((p && i < p->length) || (q && j < q->length)){
+        int value;
+        if(p && i < p->length && (!q || j >= q->length || p->data[i] < q->data[j])){
+            value = p->data[i++];
+        } else if (q && j < q->length && (!p || i >= p->length || q->data[j] < p->data[i])){
+            value = q->data[j++];
+        }else{
+            value = p->data[i++];
+            j++;
+        }
+        if(result->length == 0 || result->data[result->length - 1] != value){
+            result->data[result->length++] = value;
+        }
+    }
+
+    return result;
+}
 
 
-void ex17E2()
-{
-    // identificacao
+void ex17E2() {
     cout << "\nExercicio 17E2:\n\n";
-
+    ref_intQueue queue1 = nullptr;
+    ref_intQueue queue2 = nullptr;
+    queue1 = intQueue_push(queue1, 10);
+    queue1 = intQueue_push(queue1, 30);
+    queue1 = intQueue_push(queue1, 50);
+    queue2 = intQueue_push(queue2, 20);
+    queue2 = intQueue_push(queue2, 30);
+    queue2 = intQueue_push(queue2, 60);
+    cout << "Fila 1: ";
+    printQueue(queue1);
+    cout << "Fila 2: ";
+    printQueue(queue2);
+    ref_intQueue mergedQueue = intQueue_mergeUp(queue1, queue2);
+    cout << "Fila mesclada em ordem crescente (sem duplicatas): ";
+    printQueue(mergedQueue);
+    delete[] mergedQueue->data;
+    delete mergedQueue;
+    delete[] queue1->data;
+    delete queue1;
+    delete[] queue2->data;
+    delete queue2;
     close();
 }
+
 
 // Fun��o principal
 int main(void)
