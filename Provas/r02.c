@@ -1,13 +1,13 @@
 /*
- Lista Recuperação 01 - v0.0. - 17 / 10 / 2024
+ Lista Recuperação 02 - v0.0. - 17 / 10 / 2024
  Author: Matheus de Almeida Moreira
 
  Para compilar em terminal (janela de comandos):
- Linux : gcc -o r01 r01.c
- Windows: gcc -o r01 r01.c
+ Linux : gcc -o r02 r02.c
+ Windows: gcc -o r02 r02.c
  Para executar em terminal (janela de comandos):
- Linux : ./r01
- Windows: r01
+ Linux : ./r02
+ Windows: r02
 */
 
 // dependencias
