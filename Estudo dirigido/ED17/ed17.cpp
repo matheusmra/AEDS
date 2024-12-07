@@ -379,7 +379,7 @@ void ex1719()
     queue2 = intQueue_push(queue2, 30);
     queue2 = intQueue_push(queue2, 40);
     printQueue(queue2);
-    cout << "Juncao das duas filas:" << endl;
+    cout << "Unindo a duas filas:" << endl;
     ref_intQueue mergedQueue = intQueue_join(queue1, queue2);
     printQueue(mergedQueue);
     delete[] mergedQueue->data;
