@@ -17,7 +17,7 @@
 #include <ctype.h>
 #include <stdbool.h>
 #include <math.h>
-// Tamanho max string
+// Tamanho maximo string
 const int TAM_STR = 80;
 #define MAX_LINHAS 10
 #define MAX_COLUNAS 10
